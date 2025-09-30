@@ -148,6 +148,56 @@ def parse_entry_body(entry) -> Dict:
 
     return pos
 
+def _merge_pronunciations_from_english(ch_res: Dict, en_res: Dict) -> Dict:
+    """
+    将英文页面的 pronunciation 覆盖到中文页面抓取结果上。
+    匹配策略：先按 wordPrototype 精确匹配；匹配不到则按索引对齐。
+    返回修改后的 ch_res（不产生新参照）。
+    """
+    if not ch_res or not en_res:
+        return ch_res
+
+    ch_parts = ch_res.get("partOfSpeech", [])
+    en_parts = en_res.get("partOfSpeech", [])
+    if not ch_parts or not en_parts:
+        return ch_res
+
+    # 建 index by wordPrototype for english parts
+    en_by_proto = {}
+    for idx, p in enumerate(en_parts):
+        proto = p.get("wordPrototype", "")
+        if proto:
+            # 若重复 proto 则保留第一个
+            if proto not in en_by_proto:
+                en_by_proto[proto] = p
+
+    # 尝试按 prototype 覆盖
+    used_en_indices = set()
+    for i, ch_p in enumerate(ch_parts):
+        proto = ch_p.get("wordPrototype", "")
+        matched = None
+        if proto and proto in en_by_proto:
+            matched = en_by_proto[proto]
+        else:
+            # fallback: try to use same-index english part
+            if i < len(en_parts):
+                matched = en_parts[i]
+        if matched:
+            # 如果英文页有非空 pronunciation 字段则覆盖
+            uk = matched.get("pronunciationUK", {}) or {}
+            us = matched.get("pronunciationUS", {}) or {}
+            # 只有当英文页面提供了 phonetic 才覆盖（避免用空覆盖）
+            if uk.get("phonetic"):
+                ch_p["pronunciationUK"]["phonetic"] = uk.get("phonetic", "")
+            if uk.get("pronUrl"):
+                ch_p["pronunciationUK"]["pronUrl"] = uk.get("pronUrl", "")
+            if us.get("phonetic"):
+                ch_p["pronunciationUS"]["phonetic"] = us.get("phonetic", "")
+            if us.get("pronUrl"):
+                ch_p["pronunciationUS"]["pronUrl"] = us.get("pronUrl", "")
+
+    return ch_res
+
 
 def get_word_info_from_url(url: str, sleep: float = 0.0) -> Dict:
     """
@@ -224,12 +274,12 @@ def get_word_info(word_or_url: str, sleep: float = 1.0) -> Dict:
 # Example usage:
 if __name__ == "__main__":
     # 单词形式
-    res1 = get_word_info("spare")
+    res1 = get_word_info("methane")
     print("By word:", res1)
 
     # 或直接用 URL
-    res2 = get_word_info("https://dictionary.cambridge.org/dictionary/english-chinese-simplified/counselor")
-    print("By URL:", res2)
+    # res2 = get_word_info("https://dictionary.cambridge.org/dictionary/english/methane")
+    # print("By URL:", res2)
 
 
 

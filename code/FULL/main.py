@@ -12,6 +12,7 @@ from dictionary import dict as dict_
 from vcs import vcs
 from save import save
 from info import info
+from NLP import NLP
 
 deck = "CambridgeDeck"
 
@@ -54,7 +55,12 @@ old_word_info_list = save.load_latest_dict_list(folder="../../data/backup/info")
 new_word_info_list = []
 for new_word_dict in tqdm(new_word_dict_list, desc="处理单词", unit="词"):
     new_word = new_word_dict.get('text')
-    word_info = dict_.get_word_info(new_word)
+    sentence = new_word_dict.get('notes')
+    new_word_ori = NLP.analyze_word(sentence, new_word)
+    if new_word_ori is not None:
+        word_info = dict_.get_word_info(new_word_ori)
+    else:
+        word_info = dict_.get_word_info(new_word)
     word_info['sentences'] = []
     word_info['sentences'].append(new_word_dict)
     new_word_info_list.append(word_info)
@@ -89,10 +95,11 @@ if len(empty_word_texts) != 0:
 
         texts = [s.get("text") for s in word_info.get("sentences", []) if isinstance(s, dict)]
         text_str = " ".join(t for t in texts if isinstance(t, str))  # 安全拼接
-
+        sentence = word_info.get("sentences")[0]["notes"]
         # 进入选择-执行-确认循环
         while True:
             choose = input(
+                f"{sentence}\n"
                 f"您选择通过以下哪种方式写入单词{texts}的信息：\n"
                 "    [1] 爬虫获取\n"
                 "    [2] 自己编写原型和释义\n"
