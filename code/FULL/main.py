@@ -56,6 +56,7 @@ new_word_info_list = []
 for new_word_dict in tqdm(new_word_dict_list, desc="处理单词", unit="词"):
     new_word = new_word_dict.get('text')
     sentence = new_word_dict.get('notes')
+    print(sentence)
     new_word_ori = NLP.analyze_word(sentence, new_word)
     if new_word_ori is not None:
         word_info = dict_.get_word_info(new_word_ori)
