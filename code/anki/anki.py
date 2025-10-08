@@ -20,7 +20,7 @@ from typing import Dict, Any, List, Tuple
 # ==================== 配置项 ====================
 ANKI_CONNECT_URL = "http://localhost:8765"
 MODEL_NAME = "WordType" # 您可以根据需要修改模型名称
-REQUEST_TIMEOUT = 10.0
+REQUEST_TIMEOUT = 2.0
 # ================================================
 
 def get_word_info(word: str) -> Dict[str, Any]:
