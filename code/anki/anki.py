@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Anki 导入脚本：将 word_info 转为 Anki note，包含词性/发音/释义/短语，并把例句（sentences）写入 Examples 字段。
-要求：
-- 例句在正面就显示（在显示答案之前），同时在背面答案之后也要显示；
-- 例句中目标词（来自 sentence 的 text 字段）**只匹配整词**并用 <strong> 加粗（不使用背景高亮）；
-- 例句来源如 "--《Elon Musk》" 靠右显示。
-需要 AnkiConnect（http://localhost:8765）和已打开 Anki。
+Anki 导入与更新脚本:
+- 功能1: 将 word_info 转为 Anki note，包含词性/发音/释义/短语等。
+- 功能2: 'Examples' 字段中的目标词用 <strong> 加粗。
+- 功能3: 'Blanked_Examples' 字段中，例句的所有单词字母被替换为下划线 `_`。
+- 功能4: 提供一个函数，用于更新牌组中已有笔记的空字段。
+
+需要 AnkiConnect（http://localhost:8765）和已打开的 Anki 客户端。
 """
 
 import requests
@@ -14,17 +15,59 @@ import time
 import html
 import re
 import json
-from typing import Dict, List, Any
+from typing import Dict, Any, List, Tuple
 
-# ====== 请替换为你实际的 get_word_info 导入或定义 ======
-# from my_crawler_module import get_word_info
-# ======================================================
-
+# ==================== 配置项 ====================
 ANKI_CONNECT_URL = "http://localhost:8765"
-MODEL_NAME = "WordWithExamples"
+MODEL_NAME = "WordType" # 您可以根据需要修改模型名称
 REQUEST_TIMEOUT = 10.0
+# ================================================
+
+def get_word_info(word: str) -> Dict[str, Any]:
+    """
+    [占位符] 根据单词获取其详细信息。
+    请您务必将其替换为您自己的数据获取实现（例如，网络爬虫或API调用）。
+    """
+    print(f"--- [模拟] 正在为 '{word}' 获取信息... ---")
+    if "juvenile prison" in word:
+        return {
+            "word": "juvenile prison",
+            "wordUrl": "",
+            "partOfSpeech": [{
+                "type": "", "wordPrototype": "juvenile prison",
+                "pronunciationUK": {"phonetic": "", "pronUrl": ""},
+                "pronunciationUS": {"phonetic": "", "pronUrl": ""},
+                "definitions": [{"enMeaning": "a prison for people who are young", "chMeaning": "青少年监狱"}],
+                "phrases": [], "phraseDefinitions": []
+            }],
+            "sentences": [{
+                "key": 1758084501416, "bookKey": 1738143464138, "date": "2025-09-17", "chapter": "Cover",
+                "text": "juvenile prison",
+                "notes": "The perpetrator ended up being sent to juvenile prison for it.",
+                "bookName": "Elon Musk", "bookAuthor": "Walter Isaacson"
+            }, {
+                "text": "juvenile prison",
+                "notes": "This is another example sentence about the juvenile prison.",
+                "bookName": "Example Book"
+            }]
+        }
+    print(f"--- [模拟] 未找到单词 '{word}' 的信息。 ---")
+    return {}
+
+
+
+
+
+def replace_alnum_with_underscores(match_obj: re.Match) -> str:
+    """
+    接收一个正则表达式匹配对象，
+    并将其中的字母和数字替换为下划线。
+    """
+    word = match_obj.group(0)
+    return ''.join(['_' if char.isalnum() else char for char in word])
 
 def invoke(action: str, **params):
+    """向 AnkiConnect 发送请求的辅助函数"""
     try:
         r = requests.post(
             ANKI_CONNECT_URL,
@@ -32,147 +75,68 @@ def invoke(action: str, **params):
             timeout=REQUEST_TIMEOUT
         )
         r.raise_for_status()
-        return r.json()
+        response_json = r.json()
+        if response_json.get("error"):
+            print(f"[AnkiConnect 错误] Action: {action}, Error: {response_json['error']}")
+        return response_json
     except requests.RequestException as e:
-        print(f"[错误] 无法连接 AnkiConnect（{ANKI_CONNECT_URL}）：{e}")
+        print(f"[错误] 无法连接 AnkiConnect ({ANKI_CONNECT_URL}): {e}")
         sys.exit(1)
 
-def model_exists(model_name: str) -> bool:
-    res = invoke("modelNames")
-    if res.get("error"):
-        print("[错误] 调用 modelNames 出错：", res)
-        return False
-    return model_name in (res.get("result") or [])
 
-def create_word_with_examples_model(model_name: str):
+def blank_out_all_words(sentence: str) -> str:
     """
-    创建 Note Type：简化字段：Word, POS_Definitions, Examples, Tags
-    front: 显示 Word 与 Examples（使例句在答案前显示）
-    back: 显示 Word, POS_Definitions（答案），然后再次显示 Examples（答案后也有例句）
+    将句子中所有单词的英文字母替换为下划线，保留非字母字符（如标点、数字）和空格。
+    例如："Hello world!" -> "_____ _____!"
     """
-    css = """
-.card {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 16px;
-  text-align: left;
-  color: #111;
-  background: white;
-  line-height: 1.5;
-  padding: 8px;
-}
-.word-header {
-  font-size: 34px;
-  text-align: center;
-  margin: 8px 0 6px 0;
-  font-weight: 600;
-}
-.pos-block {
-  margin-bottom: 12px;
-  font-size: 16px;
-}
-.pos-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.definition-en {
-  font-size: 15px;
-}
-.definition-ch {
-  color: #666;
-  font-size: 14px;
-}
-.phrase {
-  font-style: italic;
-}
-.audio-row {
-  margin: 4px 0;
-  font-size: 14px;
-}
+    if not sentence:
+        return ""
+    
+    words = sentence.split(' ')
+    blanked_words = []
+    for word in words:
+        # 对单词中的每个字符进行判断，是字母则替换，否则保留
+        blanked_word = ''.join(['_' if char.isalpha() else char for char in word])
+        blanked_words.append(blanked_word)
+    return ' '.join(blanked_words)
 
-/* 例句样式与来源靠右 */
-.example {
-  margin-top: 8px;
-  padding: 6px 8px;
-  border-radius: 6px;
-  background: #fbfbfb;
-  line-height: 1.4;
-}
-.example-text {
-  font-size: 15px;
-  margin-bottom: 6px;
-}
-.example-meta {
-  color: #666;
-  font-size: 13px;
-  text-align: right;  /* 来源靠右 */
-}
-
-/* 如果需要让加粗看起来更明显，可调整 strong 的样式 */
-.example-text strong {
-  font-weight: 700;
-}
-"""
-
-    # front: Word + Examples (示例在答案前显示)
-    front = r"""<div class="word-header">{{Word}}</div>
-<hr>
-{{#Examples}}
-<div class="pos-block">{{Examples}}</div>
-{{/Examples}}"""
-
-    # back: Word + POS_Definitions（答案） + Examples（答案后再次显示）
-    back = r"""<div class="word-header">{{Word}}</div>
-<hr>
-{{#POS_Definitions}}
-<div class="pos-block">{{POS_Definitions}}</div>
-{{/POS_Definitions}}
-
-{{#Examples}}
-<div style="margin-top:8px;">
-  <b>Examples</b>
-  <div>{{Examples}}</div>
-</div>
-{{/Examples}}
-
-{{#Tags}}
-<div style="margin-top:8px; color:gray; font-size:12px;">Tags: {{Tags}}</div>
-{{/Tags}}"""
-
-    fields = ["Word", "POS_Definitions", "Examples", "Tags"]
-    card_templates = [
-        {
-            "Name": "Card 1",
-            "Front": front,
-            "Back": back
-        }
-    ]
-
-    print(f"正在创建模型: {model_name} ...")
-    res = invoke(
-        "createModel",
-        modelName=model_name,
-        inOrderFields=fields,
-        css=css,
-        cardTemplates=card_templates
-    )
-    if res.get("error"):
-        print("[错误] createModel 返回错误：", res)
-    else:
-        print(f"模型 {model_name} 创建请求发送成功（Anki 端可能需要短暂时间应用）。")
 
 def build_html_from_word_info(word_info: Dict[str, Any]) -> Dict[str, str]:
     """
-    将 get_word_info 的结构转换为写入字段的 HTML 字符串，
-    发音（audio）放在每个词性下面（不会在顶部重复显示）。
-    处理 sentences 数组：
-      - 将例句写入 Examples 字段；
-      - 在例句中将 target word（来自 sentence 的 text）**只匹配整词**并用 <strong> 包裹（加粗）。
+    根据 word_info 构建笔记中各个字段的 HTML 内容。
     """
+    # ... (此函数的其他部分与您原脚本类似，为了简洁此处省略了定义和短语部分)
     pos_html_parts: List[str] = []
+    pronunciation_parts: List[str] = []
+    definition_parts: List[str] = []
     examples_parts: List[str] = []
+    blanked_examples_parts: List[str] = []
+    
+    word_to_highlight = word_info.get("word", "")
 
-    # 处理词性/定义/短语
+    # 处理发音、释义等
+    for pos in word_info.get("partOfSpeech", []):
+        pos_type = pos.get("type", "")
+        pos_title_html = f"<div class='pos-title'>{html.escape(str(pos_type)).capitalize()}</div>" if pos_type else ""
+        
+        # 发音
+        uk_p = pos.get("pronunciationUK", {}).get("phonetic", "")
+        us_p = pos.get("pronunciationUS", {}).get("phonetic", "")
+        if uk_p or us_p:
+            pronunciation_parts.append(f"<div>{pos_title_html}UK: {html.escape(uk_p)} | US: {html.escape(us_p)}</div>")
+        
+        # 释义
+        defs = pos.get("definitions") or []
+        if defs:
+            def_block = [pos_title_html, "<ul>"]
+            for d in defs:
+                en = (d.get("enMeaning") or "").strip()
+                ch = (d.get("chMeaning") or "").strip()
+                def_block.append(f"<li><div class='definition-en'>{html.escape(en)}</div><div class='definition-ch'>{html.escape(ch)}</div></li>")
+            def_block.append("</ul>")
+            definition_parts.append("".join(def_block))
+        # 处理词性/定义/短语
+    
     for pos in word_info.get("partOfSpeech", []):
         pos_type = pos.get("type", "")
         part_lines: List[str] = []
@@ -229,412 +193,227 @@ def build_html_from_word_info(word_info: Dict[str, Any]) -> Dict[str, str]:
 
         pos_html_parts.append("<div>" + "\n".join(part_lines) + "</div>")
 
-    # 处理例句数组（如果存在）
+    # 处理例句
     for s in word_info.get("sentences", []):
-        # 首选 notes，其次 sentence，其次尝试解析 cfi 中的 text，最后 fallback 到 text 字段
-        sentence_text = None
-        if s.get("notes"):
-            sentence_text = s.get("notes")
-        elif s.get("sentence"):
-            sentence_text = s.get("sentence")
-        else:
-            cfi_raw = s.get("cfi")
-            if isinstance(cfi_raw, str):
-                try:
-                    cfi_obj = json.loads(cfi_raw)
-                    sentence_text = cfi_obj.get("text")
-                except Exception:
-                    sentence_text = None
-
-        if not sentence_text:
-            sentence_text = s.get("text") or ""
-
-        if not isinstance(sentence_text, str):
-            continue
-        sentence_text = sentence_text.strip()
+        sentence_text = s.get("notes").strip()
         if not sentence_text:
             continue
-
-        # 要加粗的目标词（来自 sentence 的 text 字段）
-        target = s.get("text") or ""
+        
+        # 1. 'Examples' 字段: 目标词加粗
         escaped_sentence = html.escape(sentence_text)
-
         highlighted = escaped_sentence
-        if target and isinstance(target, str) and target.strip():
+        target_word = s.get("text") or word_to_highlight # 用于加粗的目标词
+        if target_word:
             try:
-                tgt = target.strip()
-                escaped_target = html.escape(tgt)
-                # 使用整词匹配；对 escaped_sentence 与 escaped_target 使用单词边界
-                pattern_escaped = re.compile(r'\b' + re.escape(escaped_target) + r'\b', flags=re.IGNORECASE | re.UNICODE)
-                highlighted = pattern_escaped.sub(lambda m: f"<strong>{m.group(0)}</strong>", escaped_sentence)
+                pattern = re.compile(r'\b' + re.escape(html.escape(target_word.strip())) + r'\b', re.IGNORECASE)
+
+                highlighted = pattern.sub(lambda m: f"<strong>{m.group(0)}</strong>", escaped_sentence)
             except re.error:
-                # 回退：不使用边界，简单替换（忽略大小写）
-                escaped_target = html.escape(target.strip())
-                highlighted = re.sub(re.escape(escaped_target), lambda m: f"<strong>{m.group(0)}</strong>", escaped_sentence, flags=re.IGNORECASE)
+                pass # 忽略正则错误
+        escaped_target = html.escape(target_word.strip())
+        if " " in target_word:
+            # 多词短语，不加 \b
+            pattern_for_blanking = re.compile(re.escape(escaped_target), re.IGNORECASE)
+        else:
+            # 单词，加边界防止误匹配
+            pattern_for_blanking = re.compile(r'\b' + re.escape(escaped_target) + r'\b', re.IGNORECASE)
+        # pattern_for_blanking = re.compile(r'\b' + re.escape(target_word) + r'\b', re.IGNORECASE)
+        # 2. 'Blanked_Examples' 字段: 所有单词字母替换为下划线
+        blanked_sentence = pattern_for_blanking.sub(replace_alnum_with_underscores, sentence_text)
+        escaped_blanked = html.escape(blanked_sentence)
 
-        # 来源信息（书名与章节，来源靠右显示）
-        book = s.get("bookName") or s.get("book") or ""
-        chapter = s.get("chapter") or s.get("chapterTitle") or ""
-        meta_parts: List[str] = []
-        if book:
-            meta_parts.append(f"《{html.escape(book)}》")
-        if chapter:
-            meta_parts.append(html.escape(str(chapter)))
-        meta = ""
-        if meta_parts:
-            meta = " — " + " ".join(meta_parts)
+        # 来源信息
+        book = s.get("bookName") or ""
+        meta = f" — 《{html.escape(book)}》" if book else ""
 
-        examples_parts.append(
-            "<div class='example'>"
-            f"<div class='example-text'>{highlighted}</div>"
-            f"<div class='example-meta'>{meta}</div>"
-            "</div>"
-        )
-
-    pos_html = "\n".join(pos_html_parts)
-    examples_html = "\n".join(examples_parts)
+        examples_parts.append(f"<div class='example'><div class='example-text'>{highlighted}</div><div class='example-meta'>{meta}</div></div>")
+        blanked_examples_parts.append(f"<div class='example'><div class='example-text'>{escaped_blanked}</div><div class='example-meta'>{meta}</div></div>")
 
     return {
-        "POS_Definitions": pos_html,
-        "Examples": examples_html
+        "POS_Definitions": "\n".join(pos_html_parts),
+        "Pronunciation": "\n".join(pronunciation_parts),
+        "Definition": "\n".join(definition_parts),
+        "Examples": "\n".join(examples_parts),
+        "Blanked_Examples": "\n".join(blanked_examples_parts)
     }
 
-def add_word_to_anki(deck_name: str, word: str, word_info: Dict[str, Any]):
-    fields = build_html_from_word_info(word_info)
-    tags_field = word_info.get("tags", [])
-    if isinstance(tags_field, list):
-        tags_str = ", ".join(tags_field)
+def create_anki_model(model_name: str):
+    """创建或更新 Anki 的 Note Type (模型)"""
+    css = """
+    .card { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 16px; text-align: left; color: #111; background: white; line-height: 1.5; padding: 12px; }
+    .word-header { font-size: 34px; text-align: center; margin: 8px 0 12px 0; font-weight: 600; }
+    .pos-block, .definition-block { margin-bottom: 12px; font-size: 16px; }
+    .pos-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .definition-en { font-size: 15px; }
+    .definition-ch { color: #555; font-size: 14px; }
+    .example { margin-top: 10px; padding: 8px 12px; border-radius: 8px; background: #f7f7f7; line-height: 1.5; border: 1px solid #eee; }
+    .example-text { font-size: 16px; margin-bottom: 6px; }
+    .example-meta { color: #666; font-size: 13px; text-align: right; }
+    .example-text strong { font-weight: 700; color: #0066cc; }
+    hr { margin: 15px 0; }
+    
+    /* 输入框样式 (用于 type card) */
+    input[type=text] { font-family: inherit; font-size: 20px; text-align: center; border: 1px solid #ccc; border-radius: 5px; padding: 8px; margin-top: 20px; width: 90%; display: block; margin-left: auto; margin-right: auto; }
+    
+    /* 暗色模式 (Night Mode) 适配 */
+    .nightMode .card { color: #f0f0f0; background: #272828; }
+    .nightMode .definition-ch, .nightMode .example-meta { color: #aaa; }
+    .nightMode .example-text strong { color: #5db0ff; }
+    .nightMode .example { background: #3a3a3a; border: 1px solid #4f4f4f; }
+    .nightMode input[type=text] { background-color: #333; color: #eee; border-color: #555; }
+    """
+    
+    fields = ["Word", "Pronunciation", "Definition", "POS_Definitions", "Examples", "Blanked_Examples", "Tags"]
+    
+    # 卡片模板定义
+    card_templates = [
+        {
+            "Name": "Basic",
+            "Front": "{{Word}}<hr>{{#Examples}}{{Examples}}{{/Examples}}",
+            "Back": """
+                {{FrontSide}}
+                <hr>
+                <div class='word-header'>{{Word}}</div>
+                <div class='definition-block'>{{Definition}}</div>
+                <div class='pos-block'>{{Pronunciation}}</div>
+                <div style='margin-top:20px;'><b>Examples:</b>{{Examples}}</div>
+            """
+        },
+        {
+            "Name": "Type",
+            "Front": "{{Definition}}<div style='margin-top:20px;'>{{Blanked_Examples}}</div>{{type:Word}}",
+            "Back": """
+                <div class='word-header'>{{Word}}</div>
+                <hr>
+                <div class='definition-block'>{{Definition}}</div>
+                <div class='pos-block'>{{Pronunciation}}</div>
+                <div style='margin-top:20px;'><b>Examples:</b>{{Examples}}</div>
+            """
+        }
+    ]
+
+    print(f"正在创建模型: {model_name} ...")
+    invoke(
+        "createModel",
+        modelName=model_name,
+        inOrderFields=fields,
+        css=css,
+        cardTemplates=card_templates
+    )
+
+def ensure_model_and_deck(deck_name: str, model_name: str):
+    """确保牌组和模型存在，不存在则创建"""
+    invoke("createDeck", deck=deck_name)
+    model_names = invoke("modelNames").get("result", [])
+    if model_name not in model_names:
+        create_anki_model(model_name)
+        print(f"模型 {model_name} 创建请求已发送。")
     else:
-        tags_str = str(tags_field) if tags_field else ""
+        print(f"模型 {model_name} 已存在。")
+
+def add_word_to_anki(deck_name: str, word: str, word_info: Dict[str, Any]):
+    """将一个单词作为新笔记添加到 Anki"""
+    fields = build_html_from_word_info(word_info)
+    word_prototype = word_info.get("partOfSpeech")[0].get("wordPrototype", "")
+    if " " in word_prototype:
+        tags = "phrase"
+    else:
+        tags = "word"
+    
     note = {
         "deckName": deck_name,
         "modelName": MODEL_NAME,
         "fields": {
             "Word": word,
+            "Pronunciation": fields.get("Pronunciation", ""),
+            "Definition": fields.get("Definition", ""),
             "POS_Definitions": fields.get("POS_Definitions", ""),
             "Examples": fields.get("Examples", ""),
-            "Tags": tags_str
+            "Blanked_Examples": fields.get("Blanked_Examples", ""),
+            "Tags": tags
         },
         "options": {"allowDuplicate": True},
-        "tags": word_info.get("tags", []) or ["cambridge"]
+        "tags": None
     }
-
+    
+    print(f"正在添加笔记: '{word}'...")
     res = invoke("addNote", note=note)
-    # 若模型尚未被 Anki 识别，重试一次
-    if res.get("error") and "model was not found" in str(res.get("error")):
-        print("[警告] addNote 返回 model was not found，尝试等待并重试...")
-        time.sleep(1.0)
-        if not model_exists(MODEL_NAME):
-            print("[错误] 模型仍然不存在，添加失败：", res)
-            return res
-        res = invoke("addNote", note=note)
-    return res
-
-def ensure_model_and_deck(deck_name: str):
-    invoke("createDeck", deck=deck_name)
-    if not model_exists(MODEL_NAME):
-        create_word_with_examples_model(MODEL_NAME)
-        # 等待模型被 Anki 端应用
-        for i in range(10):
-            time.sleep(0.4)
-            if model_exists(MODEL_NAME):
-                print(f"模型 {MODEL_NAME} 已创建并可用。")
-                break
-        else:
-            print(f"[错误] 等待模型创建超时，请检查 Anki 端是否有错误提示。")
+    if res and not res.get("error") and res.get("result"):
+        print(f"  [成功] 笔记 '{word}' 添加成功, Note ID: {res.get('result')}")
     else:
-        print(f"模型 {MODEL_NAME} 已存在，跳过创建。")
+        print(f"  [失败] 添加笔记 '{word}' 失败。可能是笔记重复或发生其他错误。")
 
-import html
-import re
-import json
-from typing import Dict, Any, List, Tuple
 
-def _format_sentence_html_and_plain(s: Dict[str, Any]) -> Tuple[str, str]:
+def update_missing_fields_for_word(deck_name: str, word: str):
     """
-    将单个 sentence 对象格式化为 Examples 字段中对应的 HTML 块，
-    并返回 (html_block, plain_sentence_text) 其中 plain_sentence_text 用于去重比较。
-    采用与之前相同的规则优先使用 notes -> sentence -> cfi.text -> text。
-    句子中目标词（s['text']）用 <strong> 包裹，匹配整词（\b）。
+    查找指定单词的笔记，并为其填充空的 Pronunciation, Definition, 和 Blanked_Examples 字段。
     """
-    # 获取整句文本（优先级 notes > sentence > cfi.text > text）
-    sentence_text = None
-    if s.get("notes"):
-        sentence_text = s.get("notes")
-    elif s.get("sentence"):
-        sentence_text = s.get("sentence")
-    else:
-        cfi_raw = s.get("cfi")
-        if isinstance(cfi_raw, str):
-            try:
-                cfi_obj = json.loads(cfi_raw)
-                sentence_text = cfi_obj.get("text")
-            except Exception:
-                sentence_text = None
-    if not sentence_text:
-        sentence_text = s.get("text") or ""
-    if not isinstance(sentence_text, str):
-        sentence_text = str(sentence_text)
+    print(f"\n===== 开始更新单词: '{word}' =====")
+    
+    # 步骤 1: 获取单词信息
+    word_info = get_word_info(word) 
+    if not word_info:
+        print(f"[错误] 无法获取 '{word}' 的信息，更新中止。")
+        return
 
-    sentence_text = sentence_text.strip()
-    if not sentence_text:
-        return ("", "")
-
-    # target word
-    target = s.get("text") or ""
-    escaped_sentence = html.escape(sentence_text)
-
-    highlighted = escaped_sentence
-    if target and isinstance(target, str) and target.strip():
-        try:
-            tgt = target.strip()
-            escaped_target = html.escape(tgt)
-            # 使用整词边界匹配已 escape 的目标（对 escaped_sentence 进行替换）
-            pattern_escaped = re.compile(r'\b' + re.escape(escaped_target) + r'\b', flags=re.IGNORECASE | re.UNICODE)
-            highlighted = pattern_escaped.sub(lambda m: f"<strong>{m.group(0)}</strong>", escaped_sentence)
-        except re.error:
-            escaped_target = html.escape(target.strip())
-            highlighted = re.sub(re.escape(escaped_target), lambda m: f"<strong>{m.group(0)}</strong>", escaped_sentence, flags=re.IGNORECASE)
-
-    # 来源信息
-    book = s.get("bookName") or s.get("book") or ""
-    chapter = s.get("chapter") or s.get("chapterTitle") or ""
-    meta_parts: List[str] = []
-    if book:
-        meta_parts.append(f"《{html.escape(book)}》")
-    if chapter:
-        meta_parts.append(html.escape(str(chapter)))
-    meta = ""
-    if meta_parts:
-        meta = " — " + " ".join(meta_parts)
-
-    html_block = (
-        "<div class='example'>"
-        f"<div class='example-text'>{highlighted}</div>"
-        f"<div class='example-meta'>{meta}</div>"
-        "</div>"
-    )
-    # plain text 用于去重（不含 HTML，原始句子）
-    plain = sentence_text
-    return (html_block, plain)
-
-
-def _extract_existing_example_plaintexts(existing_examples_html: str) -> List[str]:
-    """
-    从已有 Examples 字段的 HTML 中提取所有 <div class='example-text'>...</div> 的纯文本（去标签、unescape）。
-    返回文本列表（顺序与出现顺序一致）。
-    """
-    if not existing_examples_html:
-        return []
-    # 找到所有 example-text 段落
-    matches = re.findall(r"<div\s+class=['\"]example-text['\"]\s*>(.*?)</div>", existing_examples_html, flags=re.S | re.I)
-    plain_texts = []
-    for m in matches:
-        # 去掉 HTML 标签（如 <strong> 等）
-        no_tags = re.sub(r"<[^>]+>", "", m)
-        unescaped = html.unescape(no_tags).strip()
-        if unescaped:
-            plain_texts.append(unescaped)
-    # 备用：如果没有找到匹配，作为降级处理尝试从整段 HTML 提取纯文本并按行分割
-    if not plain_texts:
-        all_text = re.sub(r"<[^>]+>", "", existing_examples_html)
-        all_text = html.unescape(all_text).strip()
-        if all_text:
-            # 用换行或句点粗略分割
-            parts = [p.strip() for p in re.split(r'\n+|(?<=\.)\s+', all_text) if p.strip()]
-            plain_texts.extend(parts)
-    return plain_texts
-
-
-def upsert_sentences_into_deck(deck_name: str,
-                              word_info: Dict[str, Any],
-                              update_all: bool = True,
-                              dedupe: bool = True,
-                              limit: int = None) -> Dict[str, Any]:
-    """
-    主函数：
-    - deck_name: 目标牌组名称
-    - word_info: 你的词条结构（包含 Word 或 可从 partOfSpeech 中推断的词）
-    - update_all: 如果在牌组中找到多条 note，是否更新所有（True）或只更新第一条（False）
-    - dedupe: 是否按纯句子文本去重（默认 True）
-    - limit: 如果希望最多添加的句子数，设置为 int；None 表示不限制
-    返回：字典，包含 created/updated/skipped/errors 等信息
-    """
-    result = {"created": False, "created_note_result": None, "updated": [], "skipped": [], "errors": []}
-
-    # 确定单词（优先使用 word_info 中的明确字段）
-    word = word_info.get("word") or word_info.get("Word") or ""
-    if not word:
-        # 退回到 partOfSpeech[0].wordPrototype
-        pos_list = word_info.get("partOfSpeech") or []
-        if pos_list and isinstance(pos_list, list) and pos_list[0].get("wordPrototype"):
-            word = pos_list[0].get("wordPrototype")
-    if not word:
-        result["errors"].append("无法从 word_info 中推断单词（缺少 'word' 或 partOfSpeech[0].wordPrototype）。")
-        return result
-
-    # 查找 note ids
+    # 步骤 2: 查找笔记
     query = f'deck:"{deck_name}" "Word:{word}"'
-    try:
-        find_res = invoke("findNotes", query=query)
-    except Exception as e:
-        result["errors"].append(f"findNotes 调用异常: {e}")
-        return result
-
-    if find_res.get("error"):
-        result["errors"].append(f"findNotes 返回错误: {find_res}")
-        return result
-
-    note_ids = find_res.get("result", []) or []
-
-    # 如果没找到 note -> 创建新的 note（完整添加）
+    note_ids = invoke("findNotes", query=query).get("result", [])
     if not note_ids:
-        try:
-            add_res = add_word_to_anki(deck_name, word, word_info)
-            result["created"] = True
-            result["created_note_result"] = add_res
-        except Exception as e:
-            result["errors"].append(f"add_word_to_anki 异常: {e}")
-        return result
+        print(f"在牌组 '{deck_name}' 中未找到单词 '{word}' 的笔记。")
+        return
+    print(f"找到 {len(note_ids)} 个相关笔记。")
 
-    # 如果找到了 note，准备把 sentences 转为 HTML 块列表
-    sentences = word_info.get("sentences") or []
-    formatted: List[Tuple[str, str]] = []
-    for s in sentences:
-        html_block, plain = _format_sentence_html_and_plain(s)
-        if html_block and plain:
-            formatted.append((html_block, plain))
-    if not formatted:
-        result["skipped"].append("word_info 中没有有效的 sentences 可添加。")
-        return result
+    # 步骤 3: 生成新内容
+    generated_fields = build_html_from_word_info(word_info)
 
-    # 如果 limit 存在，截断 formatted
-    if limit is not None:
-        formatted = formatted[:limit]
+    # 步骤 4: 获取笔记详情并更新
+    notes_info = invoke("notesInfo", notes=note_ids).get("result", [])
+    for note in notes_info:
+        note_id = note["noteId"]
+        current_fields = note["fields"]
+        fields_to_update = {}
 
-    # 更新匹配到的 notes（全部或仅第一条）
-    target_note_ids = note_ids if update_all else note_ids[:1]
-    for nid in target_note_ids:
-        try:
-            info_res = invoke("notesInfo", notes=[nid])
-        except Exception as e:
-            result["errors"].append(f"notesInfo({nid}) 调用异常: {e}")
-            continue
-        if info_res.get("error"):
-            result["errors"].append(f"notesInfo 错误 for {nid}: {info_res}")
-            continue
-        info_list = info_res.get("result") or []
-        if not info_list:
-            result["errors"].append(f"notesInfo 返回空结果 for {nid}")
-            continue
-        info = info_list[0]
-        # 取得现有 Examples 字段（如果存在）
-        existing_examples_html = ""
-        try:
-            existing_examples_html = info.get("fields", {}).get("Examples", {}).get("value", "") or ""
-        except Exception:
-            existing_examples_html = ""
-
-        existing_plain_texts = _extract_existing_example_plaintexts(existing_examples_html) if existing_examples_html else []
-
-        # 构造新的 Examples 内容（在末尾追加未去重的 items）
-        new_adds_html = []
-        added_count = 0
-        for html_block, plain in formatted:
-            if dedupe and any(plain == ex for ex in existing_plain_texts):
-                result["skipped"].append({"note_id": nid, "sentence": plain})
-                continue
-            # 还需防止同一 run 中重复添加多个相同句子：也和 new_adds_html 的 plain 比较
-            if dedupe and any(plain == re.sub(r'<[^>]+>', '', html.unescape(re.sub(r"^.*?>(.*)$", r"\1", nb))) for nb, _ in new_adds_html):
-                # 这里为保险措施（实际上 new_adds_html 存放 html，需要提取 plain；为简洁我们直接用 plain comparisons below）
-                pass
-            new_adds_html.append((html_block, plain))
-            existing_plain_texts.append(plain)  # 防止同 run 重复
-            added_count += 1
-            if limit is not None and added_count >= limit:
-                break
-
-        if not new_adds_html:
-            # 没有要添加的句子
-            result["updated"].append({"note_id": nid, "added": 0})
-            continue
-
-        # 将新块拼接到现有 Examples 字段（直接字符串连接）
-        appended_html = "".join([nb for nb, _ in new_adds_html])
-        new_examples_field = (existing_examples_html or "") + appended_html
-
-        # 执行 updateNoteFields
-        try:
-            upd = invoke("updateNoteFields", note={"id": nid, "fields": {"Examples": new_examples_field}})
-            # 记录结果
-            result["updated"].append({"note_id": nid, "added": len(new_adds_html), "update_result": upd})
-        except Exception as e:
-            result["errors"].append(f"updateNoteFields({nid}) 异常: {e}")
-
-    return result
-
-
+        # 检查需要填充的字段
+        fields_to_check = ["Pronunciation", "Definition", "Blanked_Examples"]
+        for field_name in fields_to_check:
+            if field_name in current_fields and not current_fields[field_name]["value"].strip():
+                fields_to_update[field_name] = generated_fields.get(field_name, "")
+        
+        if fields_to_update:
+            print(f"  - 准备更新笔记 ID: {note_id} (字段: {', '.join(fields_to_update.keys())})")
+            update_payload = {"id": note_id, "fields": fields_to_update}
+            res = invoke("updateNoteFields", note=update_payload)
+            if not res.get("error"):
+                print(f"    [成功] 笔记已更新。")
+        else:
+            print(f"  - 笔记 ID: {note_id} 无需更新。")
 
 
 # ----------------- 主流程示例 -----------------
 if __name__ == "__main__":
-    deck = "CambridgeDeck"
-    ensure_model_and_deck(deck)
+    DECK = "test" # 定义你的目标牌组
+    
+    # 确保牌组和模型都存在
+    ensure_model_and_deck(DECK, MODEL_NAME)
+    
+    print("\n" + "="*40)
+    print("模式1: 添加一个全新的单词笔记")
+    print("="*40)
+    word_to_add = "juvenile prison"
+    word_info_to_add = get_word_info(word_to_add)
+    if word_info_to_add:
+        # 检查单词是否已存在，避免重复添加
+        if not invoke("findNotes", query=f'deck:"{DECK}" "Word:{word_to_add}"').get("result"):
+             add_word_to_anki(DECK, word_to_add, word_info_to_add)
+        else:
+             print(f"单词 '{word_to_add}' 已存在于牌组中，跳过添加。")
 
-    # 尝试调用 get_word_info；如果不存在则使用示例数据进行演示
-    try:
-        word = "recount"
-        word_info = get_word_info(word)  # 请确保 get_word_info 在当前作用域可用
-    except NameError:
-        print("[提示] 未找到 get_word_info 函数，使用内置示例数据进行演示。")
-        word = "juvenile prison"
-        word_info = {
-    "wordUrl": "",
-    "partOfSpeech": [
-      {
-        "type": "",
-        "wordPrototype": "juvenile prison",
-        "pronunciationUK": {
-          "phonetic": "",
-          "pronUrl": ""
-        },
-        "pronunciationUS": {
-          "phonetic": "",
-          "pronUrl": ""
-        },
-        "definitions": [
-          {
-            "enMeaning": "",
-            "chMeaning": "青少年监狱"
-          }],
-        "phrases": [],
-        "phraseDefinitions": []
-      }
-    ],
-    "sentences": [
-      {
-        "key": 1758084501416,
-        "bookKey": 1738143464138,
-        "date": "2025-09-17",
-        "chapter": "Cover",
-        "chapterIndex": 5,
-        "text": "juvenile prison",
-        "cfi": "{\"text\":\"When Elon finally came home from the hospital, his father berated him. “I had to stand for an hour as he yelled at me and called me an idiot and told me that I was just worthless,” Elon recalls. Kimbal, who had to watch the tirade, says it was the worst memory of his life. “My father just lost it, went ballistic, as he often did. He had zero compassion.”\",\"chapterTitle\":\"\",\"chapterDocIndex\":\"5\",\"chapterHref\":\"\",\"count\":\"10\",\"percentage\":\"0.02512562814070352\",\"page\":\"\"}",
-        "range": "{\"characterRange\":{\"start\":4574,\"end\":4589},\"backward\":false}",
-        "notes": "Both Elon and Kimbal, who no longer speak to their father, say his claim that Elon provoked the attack is unhinged and that the perpetrator ended up being sent to juvenile prison for it.",
-        "percentage": 0.0,
-        "color": "#FBF1D1",
-        "tag": "",
-        "highlightType": "background",
-        "bookName": "Elon Musk",
-        "bookAuthor": "Walter Isaacson"
-      }
-    ]
-  }
-    print(f"导入单词 {word} ...")
-    result = add_word_to_anki(deck, word, word_info)
-    print("AnkiConnect 返回：", result)
-
-    # word_info["sentences"][0]["notes"] += "NEW"
-    # out = upsert_sentences_into_deck("CambridgeDeck", word_info, update_all=True, dedupe=True, limit=None)
-    # print(out)
+    
+    print("\n" + "="*40)
+    print("模式2: 更新一个已存在单词的空字段")
+    print("="*40)
+    word_to_update = "juvenile prison" 
+    update_missing_fields_for_word(DECK, word_to_update)
+    
+    print("\n脚本执行完毕。")
