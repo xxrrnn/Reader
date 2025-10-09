@@ -1,0 +1,247 @@
+{
+  "upsides": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/upside",
+    "partOfSpeech": [
+      {
+        "type": "noun [ S ]",
+        "wordPrototype": "upside",
+        "pronunciationUK": {
+          "phonetic": "/ ˈʌp.saɪd /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/uku/ukupl/ukuplan024.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ ˈʌp.saɪd /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/u/ups/upsid/upside.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "the advantage of a situation",
+            "chMeaning": "优点 ； 好处 ； 有利的 一 面"
+          }
+        ],
+        "phrases": [],
+        "phraseDefinitions": []
+      }
+    ]
+  },
+  "nitric oxide": {
+    "type": "phrase",
+    "wordPrototype": "nitric oxide",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "一氧化氮，氧化氮"
+      }
+    ]
+  },
+  "BY RIGHTS": {
+    "type": "phrase",
+    "wordPrototype": "by rights",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "按理说，按道理说"
+      }
+    ]
+  },
+  "militants": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/militant",
+    "partOfSpeech": [
+      {
+        "type": "adjective",
+        "wordPrototype": "militant",
+        "pronunciationUK": {
+          "phonetic": "/ ˈmɪl.ɪ.t ə nt /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/ukm/ukmil/ukmilea009.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ ˈmɪl.ə.t ə nt /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/m/mil/milit/militant.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "active , determined , and often willing to use force",
+            "chMeaning": "激进的 ; 行动积极的 ; 好战的 ， 好斗的"
+          }
+        ],
+        "phrases": [],
+        "phraseDefinitions": []
+      }
+    ]
+  },
+  "Informed sources": {
+    "type": "phrase",
+    "wordPrototype": "informed sources",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "消息灵通人士，消息人士"
+      }
+    ]
+  },
+  "buy time for": {
+    "type": "phrase",
+    "wordPrototype": "buy time for",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "为...争取时间"
+      }
+    ]
+  },
+  "gathers pace": {
+    "type": "phrase",
+    "wordPrototype": "gather pace",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "加紧推进，加快步伐"
+      }
+    ]
+  },
+  "utility-scale electricity generation": {
+    "type": "phrase",
+    "wordPrototype": "utility-scale electricity generation",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "公用事业规模发电量"
+      }
+    ]
+  },
+  "gas turbines": {
+    "type": "phrase",
+    "wordPrototype": "gas turbine",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "燃气轮机，燃气涡轮机"
+      }
+    ]
+  },
+  "sun-soaked": {
+    "type": "word",
+    "wordPrototype": "sun-soaked",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "阳光普照的"
+      }
+    ]
+  },
+  "Individuals shift the frontier for all": {
+    "type": "phrase",
+    "wordPrototype": "Individuals shift the frontier for all",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "这些个体推动着全人类的科学边界不断前移"
+      }
+    ]
+  },
+  "look minor by comparison": {
+    "type": "phrase",
+    "wordPrototype": "look minor by comparison",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "相比之下微不足道"
+      }
+    ]
+  },
+  "performance venues": {
+    "type": "phrase",
+    "wordPrototype": "performance venue",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "演出场地"
+      }
+    ]
+  },
+  "wellspring": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/wellspring",
+    "partOfSpeech": [
+      {
+        "type": "noun [ S ]",
+        "wordPrototype": "wellspring",
+        "pronunciationUK": {
+          "phonetic": "/ ˈwel.sprɪŋ /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/ukw/ukwel/ukwellg024.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ ˈwel.sprɪŋ /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/u/usw/uswel/uswellg021.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "the place something comes from or starts at, or the cause of something",
+            "chMeaning": "源头 ; 源泉"
+          }
+        ],
+        "phrases": [],
+        "phraseDefinitions": []
+      }
+    ]
+  },
+  "hyperdrive": {
+    "type": "word",
+    "wordPrototype": "hyperdrive",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "超光速引擎"
+      }
+    ]
+  },
+  "a space-faring species": {
+    "type": "phrase",
+    "wordPrototype": "a space-faring species",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "太空物种"
+      }
+    ]
+  },
+  "nooks and crannies": {
+    "type": "phrase",
+    "wordPrototype": "nooks and crannies",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "每个角落，隐秘处"
+      }
+    ]
+  },
+  "unfathomability": {
+    "type": "word",
+    "wordPrototype": "unfathomability",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "深不可测"
+      }
+    ]
+  },
+  "tore out": {
+    "type": "phrase",
+    "wordPrototype": "tear out",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "撕开，撕裂，撕下"
+      }
+    ]
+  },
+  "hotwire": {
+    "type": "word",
+    "wordPrototype": "hotwire",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "热线"
+      }
+    ]
+  }
+}
