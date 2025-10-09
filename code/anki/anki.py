@@ -11,10 +11,8 @@ Anki 导入与更新脚本:
 
 import requests
 import sys
-import time
 import html
 import re
-import json
 from typing import Dict, Any, List, Tuple
 
 # ==================== 配置项 ====================
@@ -311,7 +309,7 @@ def ensure_model_and_deck(deck_name: str, model_name: str):
     else:
         print(f"模型 {model_name} 已存在。")
 
-def add_word_to_anki(deck_name: str, word: str, word_info: Dict[str, Any]):
+def add_word_to_anki(deck_name: str, word_info: Dict[str, Any]):
     """将一个单词作为新笔记添加到 Anki"""
     fields = build_html_from_word_info(word_info)
     word_prototype = word_info.get("partOfSpeech")[0].get("wordPrototype", "")
@@ -324,7 +322,7 @@ def add_word_to_anki(deck_name: str, word: str, word_info: Dict[str, Any]):
         "deckName": deck_name,
         "modelName": MODEL_NAME,
         "fields": {
-            "Word": word,
+            "Word": word_prototype,
             "Pronunciation": fields.get("Pronunciation", ""),
             "Definition": fields.get("Definition", ""),
             "POS_Definitions": fields.get("POS_Definitions", ""),
@@ -336,58 +334,39 @@ def add_word_to_anki(deck_name: str, word: str, word_info: Dict[str, Any]):
         "tags": None
     }
     
-    print(f"正在添加笔记: '{word}'...")
+    # print(f"正在添加笔记: '{word}'...")
     res = invoke("addNote", note=note)
     if res and not res.get("error") and res.get("result"):
-        print(f"  [成功] 笔记 '{word}' 添加成功, Note ID: {res.get('result')}")
+        print(f"  [成功] 笔记 '{word_prototype}' 添加成功, Note ID: {res.get('result')}")
     else:
-        print(f"  [失败] 添加笔记 '{word}' 失败。可能是笔记重复或发生其他错误。")
+        print(f"  [失败] 添加笔记 '{word_prototype}' 失败。可能是笔记重复或发生其他错误。")
 
 
-def update_missing_fields_for_word(deck_name: str, word: str):
-    """
-    查找指定单词的笔记，并为其填充空的 Pronunciation, Definition, 和 Blanked_Examples 字段。
-    """
-    print(f"\n===== 开始更新单词: '{word}' =====")
-    
-    # 步骤 1: 获取单词信息
-    word_info = get_word_info(word) 
-    if not word_info:
-        print(f"[错误] 无法获取 '{word}' 的信息，更新中止。")
-        return
-
+def update_anki_full(deck_name: str, word_info: str):
+    word = word_info.get("partOfSpeech")[0].get("wordPrototype", "")
     # 步骤 2: 查找笔记
     query = f'deck:"{deck_name}" "Word:{word}"'
     note_ids = invoke("findNotes", query=query).get("result", [])
     if not note_ids:
-        print(f"在牌组 '{deck_name}' 中未找到单词 '{word}' 的笔记。")
+        print(f"在牌组 '{deck_name}' 中未找到单词 '{word}' 的笔记。\n 开始加入笔记")
+        add_word_to_anki(deck_name, word_info)
         return
-    print(f"找到 {len(note_ids)} 个相关笔记。")
 
     # 步骤 3: 生成新内容
     generated_fields = build_html_from_word_info(word_info)
 
     # 步骤 4: 获取笔记详情并更新
-    notes_info = invoke("notesInfo", notes=note_ids).get("result", [])
-    for note in notes_info:
-        note_id = note["noteId"]
-        current_fields = note["fields"]
-        fields_to_update = {}
+    info_res = invoke("notesInfo", notes=note_ids[0]).get("result", [])
+    example_sentence_html = info_res.get("result")[0].get("fields").get("Examples").get("value") or ""
+    example_blanked_sentence_html = info_res.get("result")[0].get("fields").get("Blanked_Examples").get("value")
+    new_sentence_html = example_sentence_html + generated_fields.get("Examples","")
+    new_blanked_sentence_html = example_blanked_sentence_html + generated_fields.get("Blanked_Examples","")
 
-        # 检查需要填充的字段
-        fields_to_check = ["Pronunciation", "Definition", "Blanked_Examples"]
-        for field_name in fields_to_check:
-            if field_name in current_fields and not current_fields[field_name]["value"].strip():
-                fields_to_update[field_name] = generated_fields.get(field_name, "")
-        
-        if fields_to_update:
-            print(f"  - 准备更新笔记 ID: {note_id} (字段: {', '.join(fields_to_update.keys())})")
-            update_payload = {"id": note_id, "fields": fields_to_update}
-            res = invoke("updateNoteFields", note=update_payload)
-            if not res.get("error"):
-                print(f"    [成功] 笔记已更新。")
-        else:
-            print(f"  - 笔记 ID: {note_id} 无需更新。")
+    upd0 = invoke("updateNoteFields", note={"id": note_ids[0], "fields": {"Examples": new_sentence_html}})
+    upd1 = invoke("updateNoteFields", note={"id": note_ids[0], "fields": {"Blanked_Examples": new_blanked_sentence_html}})
+    print(upd0, upd1)
+
+    return
 
 
 # ----------------- 主流程示例 -----------------
@@ -405,15 +384,14 @@ if __name__ == "__main__":
     if word_info_to_add:
         # 检查单词是否已存在，避免重复添加
         if not invoke("findNotes", query=f'deck:"{DECK}" "Word:{word_to_add}"').get("result"):
-             add_word_to_anki(DECK, word_to_add, word_info_to_add)
+            add_word_to_anki(DECK, word_to_add, word_info_to_add)
         else:
-             print(f"单词 '{word_to_add}' 已存在于牌组中，跳过添加。")
+            print(f"单词 '{word_to_add}' 已存在于牌组中，跳过添加。")
 
-    
     print("\n" + "="*40)
     print("模式2: 更新一个已存在单词的空字段")
     print("="*40)
     word_to_update = "juvenile prison" 
-    update_missing_fields_for_word(DECK, word_to_update)
+    # update_missing_fields_for_word(DECK, word_to_update)
     
     print("\n脚本执行完毕。")
