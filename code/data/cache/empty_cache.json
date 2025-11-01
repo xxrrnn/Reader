@@ -243,5 +243,722 @@
         "chMeaning": "热线"
       }
     ]
+  },
+  "factory-gate prices": {
+    "type": "phrase",
+    "wordPrototype": "factory-gate price",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "出厂价：指产品在生产厂家交付给购买者时的价格，不包括运输、保险和其他费用。"
+      }
+    ]
+  },
+  "on track to": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/on-track",
+    "partOfSpeech": [
+      {
+        "type": "idiom",
+        "wordPrototype": "on track",
+        "definitions": [
+          {
+            "enMeaning": "making progress and likely to succeed in doing something or in achieving a particular result",
+            "chMeaning": "有望成功 ; 在正轨上"
+          }
+        ]
+      }
+    ]
+  },
+  "record-setting": {
+    "type": "word",
+    "wordPrototype": "record-setting",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "创纪录的"
+      }
+    ]
+  },
+  "give no ground": {
+    "type": "phrase",
+    "wordPrototype": "give no ground",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "不让步"
+      }
+    ]
+  },
+  "soyabeans": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/soya-bean",
+    "partOfSpeech": [
+      {
+        "type": "noun [ C usually plural ]",
+        "wordPrototype": "soya bean",
+        "pronunciationUK": {
+          "phonetic": "/ ˈsɔɪ.ə ˌbiːn /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/uks/uksou/uksouth017.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ ˈsɔɪ.ə ˌbiːn /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/u/uss/ussou/ussourp018.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "a small bean grown originally in Asia , used as a food for people and animals",
+            "chMeaning": "大豆"
+          }
+        ],
+        "phrases": [],
+        "phraseDefinitions": []
+      },
+      {
+        "type": "noun",
+        "wordPrototype": "soya bean",
+        "definitions": [
+          {
+            "enMeaning": "a small bean grown originally in Asia , used as a food for people and animals",
+            "chMeaning": "大豆"
+          }
+        ]
+      }
+    ]
+  },
+  "rare-earth minerals": {
+    "type": "phrase",
+    "wordPrototype": "rare-earth minerals",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "稀土矿物"
+      }
+    ]
+  },
+  "near-total": {
+    "type": "word",
+    "wordPrototype": "near-total",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "近乎完全，近乎"
+      }
+    ]
+  },
+  "earn you a fine": {
+    "type": "phrase",
+    "wordPrototype": "earn you a fine",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "给你罚款"
+      }
+    ]
+  },
+  "the windscreen wipers": {
+    "type": "phrase",
+    "wordPrototype": "windscreen wiper",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "挡风玻璃雨刷器，雨刷器"
+      }
+    ]
+  },
+  "Authoritarians": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/authoritarian",
+    "partOfSpeech": [
+      {
+        "type": "adjective",
+        "wordPrototype": "authoritarian",
+        "pronunciationUK": {
+          "phonetic": "/ ˌɔː.θɒr.ɪˈteə.ri.ən /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/uka/ukaur/ukauror022.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ əˌθɔːr.əˈter.i.ən /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/a/aut/autho/authoritarian.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "demanding that people obey completely and refusing to allow them freedom to act as they wish",
+            "chMeaning": "独裁的 ; 专制的"
+          }
+        ],
+        "phrases": [],
+        "phraseDefinitions": []
+      },
+      {
+        "type": "adjective",
+        "wordPrototype": "authoritarian",
+        "definitions": [
+          {
+            "enMeaning": "demanding that people obey completely and refusing to allow them freedom to act as they wish",
+            "chMeaning": "独裁的 ; 专制的"
+          }
+        ]
+      }
+    ]
+  },
+  "converted-barn": {
+    "type": "word",
+    "wordPrototype": "converted-barn",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "改建的谷仓"
+      }
+    ]
+  },
+  "canoer": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/canoe",
+    "partOfSpeech": [
+      {
+        "type": "noun [ C ]",
+        "wordPrototype": "canoe",
+        "pronunciationUK": {
+          "phonetic": "/ kəˈnuː /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/ukc/ukcan/ukcandy022.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ kəˈnuː /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/c/can/canoe/canoe.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "a small , light , narrow boat , pointed at both ends and moved using a paddle (= a short pole with a flat blade )",
+            "chMeaning": "独木舟 ， 划子 ， 皮划"
+          }
+        ],
+        "phrases": [],
+        "phraseDefinitions": []
+      },
+      {
+        "type": "verb [ I usually + adv/prep ]",
+        "wordPrototype": "canoe",
+        "pronunciationUK": {
+          "phonetic": "/ kəˈnuː /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/ukc/ukcan/ukcandy022.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ kəˈnuː /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/c/can/canoe/canoe.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "to travel in a canoe",
+            "chMeaning": "乘独木舟 ； 划独木舟"
+          }
+        ],
+        "phrases": [],
+        "phraseDefinitions": []
+      },
+      {
+        "type": "noun",
+        "wordPrototype": "canoe",
+        "definitions": [
+          {
+            "enMeaning": "a small , light , narrow boat , pointed at both ends and moved using a paddle (= a short pole with a flat blade )",
+            "chMeaning": "独木舟 ， 划子 ， 皮划"
+          },
+          {
+            "enMeaning": "to travel in a canoe",
+            "chMeaning": "乘独木舟 ； 划独木舟"
+          }
+        ]
+      }
+    ]
+  },
+  "midsentence": {
+    "type": "word",
+    "wordPrototype": "midsentence",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "句中的，句子中间的"
+      }
+    ]
+  },
+  "selectmen": {
+    "type": "word",
+    "wordPrototype": "selectman",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "行政委员"
+      }
+    ]
+  },
+  "pulled off a miracle": {
+    "type": "phrase",
+    "wordPrototype": "pull off a miracle",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "创造奇迹"
+      }
+    ]
+  },
+  "slid into view": {
+    "type": "phrase",
+    "wordPrototype": "slide into view",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "滑入视野"
+      }
+    ]
+  },
+  "concreteness": {
+    "type": "word",
+    "wordPrototype": "concreteness",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "具体化，具体性"
+      }
+    ]
+  },
+  "took time off": {
+    "type": "phrase",
+    "wordPrototype": "take time off",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "请假，抽出时间"
+      }
+    ]
+  },
+  "diffuseness": {
+    "type": "word",
+    "wordPrototype": "diffuseness",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "扩散；扩散性；漫射性"
+      }
+    ]
+  },
+  "circus-clown duo": {
+    "type": "phrase",
+    "wordPrototype": "circus-clown duo",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "马戏团小丑二人组"
+      }
+    ]
+  },
+  "seafoam": {
+    "type": "word",
+    "wordPrototype": "seafoam",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "海泡石，海洋泡沫"
+      }
+    ]
+  },
+  "filtering down to": {
+    "type": "phrase",
+    "wordPrototype": "filter down to",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "渗透到"
+      }
+    ]
+  },
+  "customs facility": {
+    "type": "phrase",
+    "wordPrototype": "customs facility",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "海关设施"
+      }
+    ]
+  },
+  "major engineering projects": {
+    "type": "phrase",
+    "wordPrototype": "major engineering projects",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "重大工程项目"
+      }
+    ]
+  },
+  "Daoist": {
+    "type": "word",
+    "wordPrototype": "Daoist",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "道家，道家的"
+      }
+    ]
+  },
+  "call the shots on": {
+    "type": "phrase",
+    "wordPrototype": "call the shots on",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "发号施令"
+      }
+    ]
+  },
+  "the rank of field": {
+    "type": "phrase",
+    "wordPrototype": "the rank of field marshal",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "陆军元帅"
+      }
+    ]
+  },
+  "of this nature": {
+    "wordUrl": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/nature",
+    "partOfSpeech": [
+      {
+        "type": "noun",
+        "wordPrototype": "nature",
+        "pronunciationUK": {
+          "phonetic": "/ ˈneɪ.tʃə r /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/uk_pron/u/ukn/uknat/uknativ015.mp3"
+        },
+        "pronunciationUS": {
+          "phonetic": "/ ˈneɪ.tʃɚ /",
+          "pronUrl": "https://dictionary.cambridge.org/media/english-chinese-simplified/us_pron/n/nat/natur/nature.mp3"
+        },
+        "definitions": [
+          {
+            "enMeaning": "all the animals , plants , rocks , etc. in the world and all the features , forces , and processes that happen or exist independently of people , such as the weather , the sea , mountains , the production of young animals or plants , and growth",
+            "chMeaning": "大自然 ， 自然界"
+          },
+          {
+            "enMeaning": "the type or main characteristic of something",
+            "chMeaning": "种类 ； 特性 ； 本质"
+          },
+          {
+            "enMeaning": "a person's character",
+            "chMeaning": "性格 ， 本性"
+          }
+        ],
+        "phrases": [
+          "Nature",
+          "be in the nature of things"
+        ],
+        "phraseDefinitions": [
+          {
+            "enMeaning": "the force that is responsible for physical life and that is sometimes spoken of as a person",
+            "chMeaning": "自然力"
+          },
+          {
+            "enMeaning": "to be usual and expected",
+            "chMeaning": "是正常的 ， 是理所当然的"
+          }
+        ]
+      },
+      {
+        "type": "noun",
+        "wordPrototype": "nature",
+        "definitions": [
+          {
+            "enMeaning": "all the animals , plants , rocks , etc. in the world and all the features , forces , and processes that happen or exist independently of people , such as the weather , the sea , mountains , the production of young animals or plants , and growth",
+            "chMeaning": "大自然 ， 自然界"
+          },
+          {
+            "enMeaning": "the type or main characteristic of something",
+            "chMeaning": "种类 ； 特性 ； 本质"
+          },
+          {
+            "enMeaning": "a person's character",
+            "chMeaning": "性格 ， 本性"
+          }
+        ]
+      }
+    ]
+  },
+  "dawn-to-dusk curfew": {
+    "type": "phrase",
+    "wordPrototype": "dawn-to-dusk curfew",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "黎明至黄昏宵禁"
+      }
+    ]
+  },
+  "Ox-carts": {
+    "type": "word",
+    "wordPrototype": "ox-cart",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "牛车"
+      }
+    ]
+  },
+  "centreward": {
+    "type": "word",
+    "wordPrototype": "centreward",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "向中间"
+      }
+    ]
+  },
+  "heteronormativity": {
+    "type": "word",
+    "wordPrototype": "heteronormativity",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "异性恋正统主义, 异性恋常规"
+      }
+    ]
+  },
+  "spreading its sails": {
+    "type": "phrase",
+    "wordPrototype": "spread one's sails",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "扬帆起航"
+      }
+    ]
+  },
+  "had a positive image of": {
+    "type": "phrase",
+    "wordPrototype": "have a positive image of",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "有一个正面(积极)的形象"
+      }
+    ]
+  },
+  "shake-ups": {
+    "type": "word",
+    "wordPrototype": "shake-up",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "重大调整,重组"
+      }
+    ]
+  },
+  "the means of production": {
+    "type": "phrase",
+    "wordPrototype": "the means of production",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "生产资料"
+      }
+    ]
+  },
+  "gazillionaires": {
+    "type": "word",
+    "wordPrototype": "gazillionaire",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "亿万富翁"
+      }
+    ]
+  },
+  "flexing their muscles": {
+    "type": "phrase",
+    "wordPrototype": "flex one's muscles",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "展现实力, 影响力"
+      }
+    ]
+  },
+  "commenters": {
+    "type": "word",
+    "wordPrototype": "commenter",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "评论家，批评家"
+      }
+    ]
+  },
+  "pre-schools": {
+    "type": "word",
+    "wordPrototype": "pre-school",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "学前教育"
+      }
+    ]
+  },
+  "ticked up": {
+    "type": "phrase",
+    "wordPrototype": "tick up",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "增加，上升"
+      }
+    ]
+  },
+  "is down to": {
+    "type": "phrase",
+    "wordPrototype": "is down to",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "原因在于"
+      }
+    ]
+  },
+  "It is not a stretch to": {
+    "type": "phrase",
+    "wordPrototype": "It is not a stretch to",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "并不难，毫不夸张地"
+      }
+    ]
+  },
+  "wells up": {
+    "type": "phrase",
+    "wordPrototype": "well up",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "涌出；（某种情感）迸发，涌起；冒出；溢出；流出"
+      }
+    ]
+  },
+  "eke out a living": {
+    "type": "phrase",
+    "wordPrototype": "eke out a living",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "勉强维持生活"
+      }
+    ]
+  },
+  "picks up the pieces": {
+    "type": "phrase",
+    "wordPrototype": "pick up the pieces",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "收拾残局"
+      }
+    ]
+  },
+  "turning up its nose": {
+    "type": "phrase",
+    "wordPrototype": "turn up its nose",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "嗤之以鼻，对...轻蔑或不屑的态度"
+      }
+    ]
+  },
+  "capybaras": {
+    "type": "word",
+    "wordPrototype": "capybara",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "水豚"
+      }
+    ]
+  },
+  "malnourished": {
+    "type": "word",
+    "wordPrototype": "malnourished",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "营养不良的"
+      }
+    ]
+  },
+  "vaudevillisation": {
+    "type": "word",
+    "wordPrototype": "vaudevillisation",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "杂耍表演"
+      }
+    ]
+  },
+  "a before and after": {
+    "type": "phrase",
+    "wordPrototype": "a before and after",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "前后之分"
+      }
+    ]
+  },
+  "in a landslide": {
+    "type": "phrase",
+    "wordPrototype": "in a landslide",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "以压倒性优势，大获全胜"
+      }
+    ]
+  },
+  "scarcely believable": {
+    "type": "phrase",
+    "wordPrototype": "scarcely believable",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "几乎不可信"
+      }
+    ]
+  },
+  "megabank": {
+    "type": "word",
+    "wordPrototype": "megabank",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "大银行"
+      }
+    ]
+  },
+  "under Vladimir Putin’s thumb": {
+    "type": "phrase",
+    "wordPrototype": "under one's thumb",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "在...控制下；深受...影响"
+      }
+    ]
+  },
+  "Mar-a-Lago": {
+    "type": "word",
+    "wordPrototype": "Mar-a-Lago",
+    "definitions": [
+      {
+        "enMeaning": "",
+        "chMeaning": "海湖庄园"
+      }
+    ]
   }
 }

@@ -59,6 +59,66 @@ def _text_or_empty(elem) -> str:
     text = ' '.join(text.split())
     return text
 
+def parse_idiom_block(entry) -> Dict:
+    """
+    解析 idiom-block（或类似结构），返回包含 wordPrototype/type/definitions/examples 的字典。
+    definitions: List[{"enMeaning": str, "chMeaning": str}]
+    examples: List[{"en": str, "ch": str}]
+    """
+    pos: Dict = {
+        "type": "",
+        "wordPrototype": "",
+        "definitions": [],   # 每项: {"enMeaning": "...", "chMeaning": "..."}
+    }
+
+    # 词头（原型）—— snippet 中 headword 在 h2.headword ... <b>on track</b>
+    headword = entry.select_one(".headword.dhw, .headword")
+    # 有时词头被包在 <b> 内
+    if headword:
+        b = headword.select_one("b")
+        pos["wordPrototype"] = _text_or_empty(b) if b else _text_or_empty(headword)
+    else:
+        pos["wordPrototype"] = ""
+
+    # 词性（type），在 snippet 中是 <span class="pos dpos">
+    pos_tag = entry.select_one(".pos.dpos, .pos")
+    pos["type"] = _text_or_empty(pos_tag)
+
+    # 解析 definitions（排除短语块中的定义）
+    for ddef in entry.select("div.def-block.ddef_block, div.def-block.ddef_block "):
+        # 如果这个 ddef 在 phrase-block 内则跳过
+        if ddef.find_parent(class_="phrase-block"):
+            continue
+
+        en_def_el = ddef.select_one(".def.ddef_d.db, .def.ddef_d")
+        en_def = _text_or_empty(en_def_el)
+
+        # 找中文释义，优先选 .trans.dtrans.dtrans-se 且不属于 .hdb
+        ch_text = ""
+        ch_candidates = ddef.select(".trans.dtrans.dtrans-se, .trans.dtrans")
+        if ch_candidates:
+            for ch in ch_candidates:
+                # 跳过属于 .hdb 的（通常是隐藏类或次要翻译）
+                if ch.find_parent(class_="hdb"):
+                    continue
+                # 跳过空的
+                txt = _text_or_empty(ch)
+                if txt:
+                    ch_text = txt
+                    break
+            # 如果都被跳过，取第一个非空的备选
+            if not ch_text:
+                for ch in ch_candidates:
+                    txt = _text_or_empty(ch)
+                    if txt:
+                        ch_text = txt
+                        break
+        pos["definitions"].append({"enMeaning": en_def, "chMeaning": ch_text})
+
+    return pos
+
+
+
 
 def parse_entry_body(entry) -> Dict:
     """解析单个 .entry-body__el，返回 PartOfSpeech 的字典表示"""
@@ -214,12 +274,20 @@ def get_word_info_from_url(url: str, sleep: float = 0.0) -> Dict:
 
     # 遍历每个 entry-body__el
     entry_elems = soup.select(".entry-body__el")
-    for entry_el in entry_elems:
-        pos_dict = parse_entry_body(entry_el)
-        # 仅当至少有 headword 或 definitions 时认为有效
-        if pos_dict["wordPrototype"] or pos_dict["definitions"] or pos_dict["phrases"]:
-            # push a shallow copy to avoid引用
-            result["partOfSpeech"].append(dict(pos_dict))
+    if len(entry_elems):
+        for entry_el in entry_elems:
+            pos_dict = parse_entry_body(entry_el)
+            # 仅当至少有 headword 或 definitions 时认为有效
+            if pos_dict["wordPrototype"] or pos_dict["definitions"] or pos_dict["phrases"]:
+                # push a shallow copy to avoid引用
+                result["partOfSpeech"].append(dict(pos_dict))
+    di_elems = soup.select(".di-body")
+    if len(di_elems):
+        for entry_idiom in di_elems:
+            pos_dict = parse_idiom_block(entry_idiom)
+            if pos_dict["wordPrototype"] or pos_dict["definitions"] or pos_dict["phrases"]:
+                # push a shallow copy to avoid引用
+                result["partOfSpeech"].append(dict(pos_dict))
     return result
 
 

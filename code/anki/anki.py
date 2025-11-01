@@ -8,18 +8,37 @@ Anki 导入与更新脚本:
 
 需要 AnkiConnect（http://localhost:8765）和已打开的 Anki 客户端。
 """
-
+import os
 import requests
 import sys
 import html
 import re
 from typing import Dict, Any, List, Tuple
+os.environ['NO_PROXY'] = 'localhost,127.0.0.1'
 
 # ==================== 配置项 ====================
 ANKI_CONNECT_URL = "http://localhost:8765"
 MODEL_NAME = "WordType" # 您可以根据需要修改模型名称
 REQUEST_TIMEOUT = 2.0
 # ================================================
+
+def invoke(action: str, **params):
+    """向 AnkiConnect 发送请求的辅助函数"""
+    try:
+        r = requests.post(
+            ANKI_CONNECT_URL,
+            json={"action": action, "version": 6, "params": params},
+            timeout=REQUEST_TIMEOUT
+        )
+        r.raise_for_status()
+        response_json = r.json()
+        if response_json.get("error"):
+            print(f"[AnkiConnect 错误] Action: {action}, Error: {response_json['error']}")
+        return response_json
+    except requests.RequestException as e:
+        print(f"[错误] 无法连接 AnkiConnect ({ANKI_CONNECT_URL}): {e}")
+        sys.exit(1)
+
 
 def get_word_info(word: str) -> Dict[str, Any]:
     """
@@ -64,22 +83,6 @@ def replace_alnum_with_underscores(match_obj: re.Match) -> str:
     word = match_obj.group(0)
     return ''.join(['_' if char.isalnum() else char for char in word])
 
-def invoke(action: str, **params):
-    """向 AnkiConnect 发送请求的辅助函数"""
-    try:
-        r = requests.post(
-            ANKI_CONNECT_URL,
-            json={"action": action, "version": 6, "params": params},
-            timeout=REQUEST_TIMEOUT
-        )
-        r.raise_for_status()
-        response_json = r.json()
-        if response_json.get("error"):
-            print(f"[AnkiConnect 错误] Action: {action}, Error: {response_json['error']}")
-        return response_json
-    except requests.RequestException as e:
-        print(f"[错误] 无法连接 AnkiConnect ({ANKI_CONNECT_URL}): {e}")
-        sys.exit(1)
 
 
 def blank_out_all_words(sentence: str) -> str:
@@ -222,7 +225,8 @@ def build_html_from_word_info(word_info: Dict[str, Any]) -> Dict[str, str]:
 
         # 来源信息
         book = s.get("bookName") or ""
-        meta = f" — 《{html.escape(book)}》" if book else ""
+        chapter = s.get("chapter") or ""
+        meta = f" — 《{html.escape(book)}》: {html.escape(chapter)}" if book else ""
 
         examples_parts.append(f"<div class='example'><div class='example-text'>{highlighted}</div><div class='example-meta'>{meta}</div></div>")
         blanked_examples_parts.append(f"<div class='example'><div class='example-text'>{escaped_blanked}</div><div class='example-meta'>{meta}</div></div>")
@@ -356,14 +360,14 @@ def update_anki_full(deck_name: str, word_info: str):
     generated_fields = build_html_from_word_info(word_info)
 
     # 步骤 4: 获取笔记详情并更新
-    info_res = invoke("notesInfo", notes=note_ids[0]).get("result", [])
+    info_res = invoke("notesInfo", notes=note_ids).get("result", [])
     example_sentence_html = info_res.get("result")[0].get("fields").get("Examples").get("value") or ""
     example_blanked_sentence_html = info_res.get("result")[0].get("fields").get("Blanked_Examples").get("value")
     new_sentence_html = example_sentence_html + generated_fields.get("Examples","")
     new_blanked_sentence_html = example_blanked_sentence_html + generated_fields.get("Blanked_Examples","")
 
-    upd0 = invoke("updateNoteFields", note={"id": note_ids[0], "fields": {"Examples": new_sentence_html}})
-    upd1 = invoke("updateNoteFields", note={"id": note_ids[0], "fields": {"Blanked_Examples": new_blanked_sentence_html}})
+    upd0 = invoke("updateNoteFields", note={"id": note_ids, "fields": {"Examples": new_sentence_html}})
+    upd1 = invoke("updateNoteFields", note={"id": note_ids, "fields": {"Blanked_Examples": new_blanked_sentence_html}})
     print(upd0, upd1)
 
     return

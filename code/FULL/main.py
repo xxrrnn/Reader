@@ -17,7 +17,7 @@ from info import info
 from NLP import NLP
 
 # ---------- 配置 ----------
-deck = "CambridgeDeck"
+deck = "Word"
 anki.ensure_model_and_deck(deck, model_name="WordType")
 
 CACHE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "cache"))
@@ -72,7 +72,7 @@ new_word_info_list = []
 for new_word_dict in tqdm(new_word_dict_list, desc="处理单词", unit="词"):
     new_word = new_word_dict.get('text')
     sentence = new_word_dict.get('notes')
-    print(sentence)
+    print("\n"+sentence)
     # NLP 尝试分析出原型
     new_word_ori = NLP.analyze_word(sentence, new_word)
     if new_word_ori is not None:
@@ -98,7 +98,7 @@ for wi in list(new_word_info_list):
             out = f"anki update failed: {e}"
         # 收集要保存的 notes（从 sentences 中取出原始 note）
         notes_from_sentences = [s for s in wi.get('sentences', []) if isinstance(s, dict)]
-        auto_saved_notes.append(notes_from_sentences)
+        auto_saved_notes.append(notes_from_sentences[0])
         # 收集 info（避免重复）
         prototype = None
         pos = wi.get('partOfSpeech', [])
@@ -158,8 +158,8 @@ for index, word_info in enumerate(new_word_info_list):
         print(f"发现缓存（{CACHE_FILE}）中的候选：")
         import pprint
         pprint.pprint(cached)
-        use_cache = input("是否使用缓存中的词条？输入 y 使用 / n 继续手动输入（默认 n）：").strip().lower()
-        if use_cache == 'y':
+        use_cache = input("是否使用缓存中的词条？输入 y 使用 / n 继续手动输入（默认 y）：").strip().lower()
+        if use_cache != 'n':
             # 将缓存内容合并到 word_info
             # 缓存应该保存的是与 partOfSpeech/wordPrototype/definitions 等兼容的结构
             cached_info = cached

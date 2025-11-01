@@ -96,7 +96,10 @@ def merge_and_deduplicate(old_list, new_list, key="key"):
     seen = set()
     merged = []
     for item in old_list + new_list:
-        k = item.get(key)
+        try:
+            k = item.get(key)
+        except:
+            import code; code.interact(local=locals())
         if k not in seen:
             seen.add(k)
             merged.append(item)
