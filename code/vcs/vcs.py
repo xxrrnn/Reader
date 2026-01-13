@@ -64,7 +64,8 @@ def get_csv_info(csv_paths:list) -> list[dict]:
         words = df.to_dict(orient='records')
         all_words.extend(words)
     return all_words
-            
-get_csv_info(get_csv_path())
+
+# 移除模块级别的函数调用，避免导入时执行
+# get_csv_info(get_csv_path())
 
 

@@ -72,9 +72,10 @@ new_word_info_list = []
 for new_word_dict in tqdm(new_word_dict_list, desc="处理单词", unit="词"):
     new_word = new_word_dict.get('text')
     sentence = new_word_dict.get('notes')
-    print("\n"+sentence)
+    if sentence:
+        print("\n"+sentence)
     # NLP 尝试分析出原型
-    new_word_ori = NLP.analyze_word(sentence, new_word)
+    new_word_ori = NLP.analyze_word(sentence, new_word) if sentence else None
     if new_word_ori is not None:
         word_info = dict_.get_word_info(new_word_ori)
     else:
@@ -192,7 +193,7 @@ for index, word_info in enumerate(new_word_info_list):
     # 进入选择-执行-确认循环（原交互逻辑）
     while True:
         choose = input(
-            f"{index}/{len(empty_word_texts)}:{sentence}\n"
+            f"{index+1}/{len(new_word_info_list)}:{sentence}\n"
             f"您选择通过以下哪种方式写入单词{texts}的信息：\n"
             "    [1] 爬虫获取\n"
             "    [2] 自己编写原型和释义\n"
