@@ -16,13 +16,12 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from movie.extract_audio import (
     parse_words_file, parse_ass_file_for_timing, time_to_seconds,
     find_matching_dialogue, check_ffmpeg, extract_audio_segment,
-    extract_screenshot, add_subtitle_to_image, check_if_media_exists
+    extract_screenshot, add_subtitle_to_image
 )
 from movie.import_to_anki import (
     parse_ass_file, find_chinese_for_sentence, store_media_file,
-    format_timestamp, build_example_with_image, build_blanked_example,
-    check_if_example_exists, get_word_prototype_and_pos,
-    add_or_update_word_to_anki
+    build_example_with_image, build_blanked_example,
+    get_word_prototype_and_pos, add_or_update_word_to_anki
 )
 from dictionary.dict import get_word_info_by_word
 from anki.anki import MODEL_NAME, ensure_model_and_deck
@@ -72,130 +71,130 @@ def main():
     # 确保牌组和模型存在
     ensure_model_and_deck(DECK_NAME, MODEL_NAME)
     
-    # 步骤2: 检查哪些单词还没有媒体文件
+    # 步骤2: 检查哪些单词还没有mp3文件（新单词）
     print("\n" + "="*60)
-    print("步骤2: 检查缺失的媒体文件")
+    print("步骤2: 检查新单词（没有mp3文件的）")
     print("="*60)
-    missing_words = []
-    for word, sentence in words_sentences:
-        if not check_if_media_exists(word, audio_dir):
-            missing_words.append((word, sentence))
-            print(f"  [缺失] {word}: {sentence}")
+    new_words = []  # 新单词列表：(word, sentence, safe_word, index)
     
-    if not missing_words:
-        print("所有单词的媒体文件都已存在！")
-    else:
-        print(f"\n找到 {len(missing_words)} 个缺失媒体文件的单词")
+    # 创建单词到序号的映射（按照txt文件中的顺序）
+    word_to_index = {}
+    for idx, (w, _) in enumerate(words_sentences, 1):
+        safe_w = re.sub(r'[^\w\s-]', '', w).strip().replace(' ', '_')
+        if safe_w not in word_to_index:
+            word_to_index[safe_w] = idx
     
-    # 步骤3: 提取缺失的媒体文件
-    if missing_words:
-        print("\n" + "="*60)
-        print("步骤3: 提取媒体文件")
-        print("="*60)
+    for idx, (word, sentence) in enumerate(words_sentences, 1):
+        safe_word = re.sub(r'[^\w\s-]', '', word).strip().replace(' ', '_')
+        file_num = word_to_index.get(safe_word, idx)
         
-        for i, (word, sentence) in enumerate(missing_words, 1):
-            print(f"\n[{i}/{len(missing_words)}] 处理: {word}")
-            print(f"  例句: {sentence}")
-            
-            # 查找匹配的字幕
-            match = find_matching_dialogue(sentence, dialogues_timing, word)
-            
-            if not match:
-                print(f"  [跳过] 未找到匹配的字幕")
-                continue
-            
-            start_time_str, end_time_str, chinese_text, english_text = match
-            start_seconds = time_to_seconds(start_time_str)
-            end_seconds = time_to_seconds(end_time_str)
-            
-            print(f"  找到匹配字幕:")
-            print(f"    时间: {start_time_str} -> {end_time_str}")
-            if chinese_text:
-                print(f"    中文: {chinese_text}")
-            print(f"    英文: {english_text}")
-            
-            # 生成输出文件名
-            safe_word = re.sub(r'[^\w\s-]', '', word).strip().replace(' ', '_')
-            # 找到下一个可用的序号
-            existing_files = list(audio_dir.glob(f"{safe_word}_*.jpg"))
-            if existing_files:
-                max_num = max([int(f.stem.split('_')[-1]) for f in existing_files if f.stem.split('_')[-1].isdigit()] or [0])
-                file_num = max_num + 1
-            else:
-                file_num = 1
-            
-            audio_output_path = audio_dir / f"{safe_word}_{file_num:02d}.mp3"
-            screenshot_output_path = audio_dir / f"{safe_word}_{file_num:02d}.jpg"
-            
-            # 提取音频
-            print(f"  正在提取音频...")
-            if extract_audio_segment(VIDEO_PATH, start_seconds, end_seconds, str(audio_output_path)):
-                print(f"  [成功] 音频: {audio_output_path.name}")
-            else:
-                print(f"  [失败] 音频提取失败")
-                continue
-            
-            # 提取截图
-            screenshot_time = start_seconds + 0.5
-            if screenshot_time > end_seconds:
-                screenshot_time = start_seconds
-            
-            print(f"  正在提取截图...")
-            if extract_screenshot(VIDEO_PATH, screenshot_time, str(screenshot_output_path)):
-                print(f"  [成功] 截图: {screenshot_output_path.name}")
-                # 添加字幕
-                if add_subtitle_to_image(str(screenshot_output_path), chinese_text, english_text,
-                                      CHINESE_FONT_SIZE, ENGLISH_FONT_SIZE):
-                    print(f"  [成功] 已添加字幕到截图")
-            else:
-                print(f"  [失败] 截图提取失败")
-                continue
+        # 检查mp3文件是否存在（仅新格式：数字_单词.mp3）
+        word_variants = [word, word.capitalize(), word.title(), safe_word]
+        found_mp3 = False
+        
+        for variant in word_variants:
+            # 检查新格式：数字_单词.mp3
+            pattern_new = f"*_{variant}.mp3"
+            matches_new = list(audio_dir.glob(pattern_new))
+            if matches_new:
+                found_mp3 = True
+                break
+        
+        if not found_mp3:
+            new_words.append((word, sentence, safe_word, file_num))
+            print(f"  [新单词] {word} (序号: {file_num})")
     
-    # 步骤4: 导入到Anki
+    if not new_words:
+        print("所有单词的媒体文件都已存在！")
+        return
+    
+    print(f"\n找到 {len(new_words)} 个新单词需要处理")
+    
+    # 步骤3: 提取新单词的媒体文件
     print("\n" + "="*60)
-    print("步骤4: 导入到Anki")
+    print("步骤3: 提取新单词的媒体文件")
+    print("="*60)
+    
+    extracted_words = []  # 成功提取媒体文件的单词列表
+    
+    for i, (word, sentence, safe_word, file_num) in enumerate(new_words, 1):
+        print(f"\n[{i}/{len(new_words)}] 提取: {word}")
+        print(f"  例句: {sentence}")
+        
+        # 查找匹配的字幕
+        match = find_matching_dialogue(sentence, dialogues_timing, word)
+        
+        if not match:
+            print(f"  [跳过] 未找到匹配的字幕")
+            continue
+        
+        start_time_str, end_time_str, chinese_text, english_text = match
+        start_seconds = time_to_seconds(start_time_str)
+        end_seconds = time_to_seconds(end_time_str)
+        
+        print(f"  找到匹配字幕:")
+        print(f"    时间: {start_time_str} -> {end_time_str}")
+        if chinese_text:
+            print(f"    中文: {chinese_text}")
+        print(f"    英文: {english_text}")
+        
+        # 生成输出文件名（数字在前，按照txt顺序）
+        audio_output_path = audio_dir / f"{file_num:02d}_{safe_word}.mp3"
+        screenshot_output_path = audio_dir / f"{file_num:02d}_{safe_word}.jpg"
+        
+        # 提取音频
+        print(f"  正在提取音频...")
+        if not extract_audio_segment(VIDEO_PATH, start_seconds, end_seconds, str(audio_output_path)):
+            print(f"  [失败] 音频提取失败")
+            continue
+        print(f"  [成功] 音频: {audio_output_path.name}")
+        
+        # 提取截图
+        screenshot_time = start_seconds + 0.5
+        if screenshot_time > end_seconds:
+            screenshot_time = start_seconds
+        
+        print(f"  正在提取截图...")
+        if not extract_screenshot(VIDEO_PATH, screenshot_time, str(screenshot_output_path)):
+            print(f"  [失败] 截图提取失败")
+            continue
+        print(f"  [成功] 截图: {screenshot_output_path.name}")
+        
+        # 添加字幕
+        if not add_subtitle_to_image(str(screenshot_output_path), chinese_text, english_text,
+                                  CHINESE_FONT_SIZE, ENGLISH_FONT_SIZE):
+            print(f"  [警告] 添加字幕失败，继续处理")
+        
+        # 记录成功提取的单词
+        extracted_words.append((word, sentence, safe_word, file_num, audio_output_path, screenshot_output_path))
+    
+    if not extracted_words:
+        print("\n没有成功提取媒体文件的单词，无法导入到Anki")
+        return
+    
+    print(f"\n成功提取 {len(extracted_words)} 个单词的媒体文件")
+    
+    # 步骤4: 导入新单词到Anki
+    print("\n" + "="*60)
+    print("步骤4: 导入新单词到Anki")
     print("="*60)
     
     success_count = 0
     fail_count = 0
     
-    for i, (word, sentence) in enumerate(words_sentences, 1):
-        print(f"\n[{i}/{len(words_sentences)}] 处理单词: {word}")
+    for i, (word, sentence, safe_word, file_num, audio_file, image_file) in enumerate(extracted_words, 1):
+        print(f"\n[{i}/{len(extracted_words)}] 导入单词: {word}")
         print(f"  例句: {sentence}")
         
         try:
+            image_filename = image_file.name
+            audio_filename = audio_file.name
+            
             # 1. 使用NLP获取单词原型和词性
             prototype, pos = get_word_prototype_and_pos(sentence, word)
             print(f"  原型: {prototype}, 词性: {pos}")
             
-            # 2. 查找媒体文件
-            word_variants = [word, word.capitalize(), word.title()]
-            image_file = None
-            audio_file = None
-            
-            for variant in word_variants:
-                pattern = f"{variant}_*.jpg"
-                matches = list(audio_dir.glob(pattern))
-                if matches:
-                    image_file = matches[0]
-                    audio_file = audio_dir / image_file.name.replace('.jpg', '.mp3')
-                    if audio_file.exists():
-                        break
-            
-            if not image_file or not audio_file or not audio_file.exists():
-                print(f"  [跳过] 未找到对应的图片或音频文件")
-                fail_count += 1
-                continue
-            
-            image_filename = image_file.name
-            audio_filename = audio_file.name
-            
-            # 3. 检查重复性（在爬虫之前）
-            if check_if_example_exists(DECK_NAME, prototype, image_filename, sentence):
-                print(f"  [跳过] 单词和例句已存在，跳过处理")
-                continue
-            
-            # 4. 从Cambridge Dictionary获取单词信息
+            # 2. 从Cambridge Dictionary获取单词信息
             print(f"  正在从Cambridge Dictionary获取信息...")
             word_info = get_word_info_by_word(prototype, sleep=0.5)
             
@@ -215,10 +214,10 @@ def main():
                     }]
                 }
             
-            # 5. 从ASS文件获取中文翻译
+            # 3. 从ASS文件获取中文翻译
             chinese_text = find_chinese_for_sentence(sentence, dialogues_map)
             
-            # 6. 存储媒体文件到Anki
+            # 4. 存储媒体文件到Anki
             print(f"  图片: {image_filename}")
             print(f"  音频: {audio_filename}")
             
@@ -232,20 +231,20 @@ def main():
                 fail_count += 1
                 continue
             
-            # 7. 获取时间戳（从ASS文件中查找）
+            # 5. 获取时间戳（从ASS文件中查找）
             match = find_matching_dialogue(sentence, dialogues_timing, word)
             timestamp = ""
             if match:
                 start_time_str, _, _, _ = match
                 timestamp = start_time_str
             
-            # 8. 构建图片例句HTML和Blanked_Examples
+            # 6. 构建图片例句HTML和Blanked_Examples
             image_html = build_example_with_image(image_filename, audio_filename, sentence, chinese_text, 
                                                  book_name="Tenet", timestamp=timestamp)
             blanked_html = build_blanked_example(sentence, word)
             
-            # 9. 添加或更新到Anki
-            add_or_update_word_to_anki(DECK_NAME, word_info, image_html, blanked_html, audio_filename)
+            # 7. 添加或更新到Anki
+            add_or_update_word_to_anki(DECK_NAME, word_info, image_html, blanked_html, audio_filename, sentence)
             success_count += 1
             
         except Exception as e:

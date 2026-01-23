@@ -1213,7 +1213,7 @@ Dialogue: 0,1:30:21.10,1:30:22.85,Default,NTP,0,0,0,,-我能开车吗  -真会�
 Dialogue: 0,1:30:22.85,1:30:24.34,Default,NTP,0,0,0,,我不敢打包票\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1}I can't vouch for the handling.
 Dialogue: 0,1:30:24.36,1:30:26.55,Default,NTP,0,0,0,,摩擦力和风阻也是反向的\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1}Friction and wind resistance are reversed.
 Dialogue: 0,1:30:27.03,1:30:29.03,Default,NTP,0,0,0,,你人是逆向的  但这世界不是\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1}You are inverted. The world is not.
-Dialogue: 0,1:30:29.03,1:30:30.64,Default,NTP,0,0,0,,发信器装在箱子上了吗\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1}Was the transponder on the case?
+Dialogue: 0,1:30:29.03,1:30:30.64,Default,NTP,0,0,0,,发信器装在箱子上了吗\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1} Was the transponder on the case?
 Dialogue: 0,1:30:30.90,1:30:32.02,Default,NTP,0,0,0,,我们把那个箱子扔了\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1}We've tossed that case.
 Dialogue: 0,1:30:32.82,1:30:35.06,Default,NTP,0,0,0,,我要往回走  那是我的目标\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1}I'm moving backwards. It's the ball I have to follow.
 Dialogue: 0,1:30:35.33,1:30:36.06,Default,NTP,0,0,0,,把收信器给我\N{\fn微软雅黑}{\b0}{\fs14}{\3c&H202020&}{\shad1}Give me the reader.

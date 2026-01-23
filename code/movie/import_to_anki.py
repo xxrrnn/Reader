@@ -127,13 +127,15 @@ def store_media_file(file_path: str, filename: str) -> bool:
 
 
 def find_media_files(word: str, sentence: str, audio_dir: Path) -> Tuple[Optional[Path], Optional[Path]]:
-    """查找对应的图片和音频文件"""
-    # 尝试多种可能的文件名格式
-    word_variants = [word, word.capitalize(), word.title()]
+    """查找对应的图片和音频文件（仅新格式：数字_单词.jpg）"""
+    safe_word = re.sub(r'[^\w\s-]', '', word).strip().replace(' ', '_')
+    word_variants = [word, word.capitalize(), word.title(), safe_word]
     
     for variant in word_variants:
-        pattern = f"{variant}_*.jpg"
-        matches = list(audio_dir.glob(pattern))
+        # 检查新格式：数字_单词.jpg
+        pattern_new = f"*_{variant}.jpg"
+        matches = list(audio_dir.glob(pattern_new))
+        
         if matches:
             image_file = matches[0]
             audio_file = audio_dir / image_file.name.replace('.jpg', '.mp3')
@@ -279,7 +281,8 @@ def check_if_example_exists(deck_name: str, word_prototype: str, image_filename:
 
 
 def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any], 
-                               image_html: str, blanked_html: str, audio_filename: str):
+                               image_html: str, blanked_html: str, audio_filename: str,
+                               sentence: str = None):
     """
     添加或更新单词到Anki
     如果单词已存在，则添加例句；否则创建新笔记
@@ -318,33 +321,15 @@ def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any],
     note_ids = invoke("findNotes", query=query).get("result", [])
     
     if note_ids:
-        # 单词已存在，检查例句是否已存在
-        print(f"  [检查] 单词 '{word_prototype}' 已存在，检查例句...")
+        # 单词已存在，直接添加新例句（不检测重复）
+        print(f"  [更新] 单词 '{word_prototype}' 已存在，添加新例句...")
         note_info = invoke("notesInfo", notes=note_ids).get("result", [])
         if note_info:
             existing_examples_field = note_info[0].get("fields", {}).get("Examples", {}).get("value", "")
-            
-            # 检查图片文件名是否已存在于Examples字段中
-            # 提取图片文件名（不包含路径）
-            image_filename_in_html = image_html.split('src="')[1].split('"')[0] if 'src="' in image_html else ""
-            
-            # 检查例句是否已存在（通过检查图片文件名或句子文本）
-            if image_filename_in_html and image_filename_in_html in existing_examples_field:
-                print(f"  [跳过] 例句已存在，跳过添加")
-                return
-            
-            # 也检查句子文本是否已存在（作为备用检查）
-            sentence_text = image_html.split('<div class=\'example-text\'>')[1].split('</div>')[0] if '<div class=\'example-text\'>' in image_html else ""
-            if sentence_text and sentence_text in existing_examples_field:
-                print(f"  [跳过] 例句已存在，跳过添加")
-                return
-            
-            # 例句不存在，添加新例句
-            print(f"  [更新] 添加新例句...")
-            new_examples = existing_examples_field + image_html
-            
-            # 同时更新Blanked_Examples
             existing_blanked = note_info[0].get("fields", {}).get("Blanked_Examples", {}).get("value", "")
+            
+            # 直接添加新例句
+            new_examples = existing_examples_field + image_html
             new_blanked = existing_blanked + blanked_html
             
             result = invoke("updateNoteFields", 
@@ -430,10 +415,7 @@ def main():
             image_filename = image_file.name
             audio_filename = audio_file.name
             
-            # 3. 检查重复性（在爬虫之前）
-            if check_if_example_exists(DECK_NAME, prototype, image_filename, sentence):
-                print(f"  [跳过] 单词和例句已存在，跳过处理")
-                continue
+            # 3. 不再检查重复性，直接处理所有内容
             
             # 4. 从Cambridge Dictionary获取单词信息（只有在需要时才爬虫）
             print(f"  正在从Cambridge Dictionary获取信息...")
@@ -477,7 +459,7 @@ def main():
             blanked_html = build_blanked_example(sentence, word)
             
             # 8. 添加或更新到Anki
-            add_or_update_word_to_anki(DECK_NAME, word_info, image_html, blanked_html, audio_filename)
+            add_or_update_word_to_anki(DECK_NAME, word_info, image_html, blanked_html, audio_filename, sentence)
             success_count += 1
             
         except Exception as e:

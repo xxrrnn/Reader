@@ -183,7 +183,8 @@ def find_matching_dialogue(sentence: str, dialogues: List[Tuple[str, str, str, s
         if sentence_clean in english_clean or english_clean in sentence_clean:
             # 如果提供了单词，检查单词是否在文本中
             if word:
-                word_clean = word.lower().strip()
+                # 对单词也进行相同的清理，移除连字符等标点符号
+                word_clean = re.sub(r'[^\w\s]', '', word.lower().strip())
                 if word_clean in english_clean:
                     return (start_time, end_time, chinese_text, english_text)
             else:
@@ -193,15 +194,17 @@ def find_matching_dialogue(sentence: str, dialogues: List[Tuple[str, str, str, s
 
 
 def extract_audio_segment(video_path: str, start_time: float, end_time: float, 
-                          output_path: str) -> bool:
+                          output_path: str, use_gpu: bool = True, hwaccel: Optional[str] = None) -> bool:
     """
-    使用ffmpeg从视频中提取音频片段
+    使用ffmpeg从视频中提取音频片段（支持GPU加速）
     
     Args:
         video_path: 视频文件路径
         start_time: 开始时间（秒）
         end_time: 结束时间（秒）
         output_path: 输出音频文件路径
+        use_gpu: 是否使用GPU加速（默认True）
+        hwaccel: 硬件加速器名称（cuda/d3d11va/qsv），如果为None则自动检测
         
     Returns:
         是否成功
@@ -209,8 +212,16 @@ def extract_audio_segment(video_path: str, start_time: float, end_time: float,
     duration = end_time - start_time
     
     # 构建ffmpeg命令
-    cmd = [
-        'ffmpeg',
+    cmd = ['ffmpeg']
+    
+    # 添加GPU硬件加速（加速视频解码）
+    if use_gpu:
+        if hwaccel is None:
+            hwaccel = detect_gpu_acceleration()
+        if hwaccel:
+            cmd.extend(['-hwaccel', hwaccel])
+    
+    cmd.extend([
         '-i', video_path,
         '-ss', str(start_time),
         '-t', str(duration),
@@ -220,7 +231,7 @@ def extract_audio_segment(video_path: str, start_time: float, end_time: float,
         '-ar', '44100',  # 采样率
         '-y',  # 覆盖输出文件
         output_path
-    ]
+    ])
     
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
@@ -228,6 +239,10 @@ def extract_audio_segment(video_path: str, start_time: float, end_time: float,
     except subprocess.CalledProcessError as e:
         print(f"FFmpeg错误: {e}")
         print(f"错误输出: {e.stderr}")
+        # 如果GPU加速失败，尝试不使用GPU
+        if use_gpu and hwaccel:
+            print(f"GPU加速失败，尝试使用CPU...")
+            return extract_audio_segment(video_path, start_time, end_time, output_path, use_gpu=False)
         return False
     except FileNotFoundError:
         print("错误: 未找到ffmpeg，请确保已安装ffmpeg并添加到PATH")
@@ -351,28 +366,39 @@ def add_subtitle_to_image(image_path: str, chinese_text: str, english_text: str,
         return False
 
 
-def extract_screenshot(video_path: str, timestamp: float, output_path: str) -> bool:
+def extract_screenshot(video_path: str, timestamp: float, output_path: str, 
+                       use_gpu: bool = True, hwaccel: Optional[str] = None) -> bool:
     """
-    使用ffmpeg从视频中提取截图
+    使用ffmpeg从视频中提取截图（支持GPU加速）
     
     Args:
         video_path: 视频文件路径
         timestamp: 时间戳（秒）
         output_path: 输出图片文件路径
+        use_gpu: 是否使用GPU加速（默认True）
+        hwaccel: 硬件加速器名称（cuda/d3d11va/qsv），如果为None则自动检测
         
     Returns:
         是否成功
     """
     # 构建ffmpeg命令
-    cmd = [
-        'ffmpeg',
+    cmd = ['ffmpeg']
+    
+    # 添加GPU硬件加速（加速视频解码）
+    if use_gpu:
+        if hwaccel is None:
+            hwaccel = detect_gpu_acceleration()
+        if hwaccel:
+            cmd.extend(['-hwaccel', hwaccel])
+    
+    cmd.extend([
         '-i', video_path,
         '-ss', str(timestamp),
         '-vframes', '1',  # 只提取1帧
         '-q:v', '2',  # 高质量JPEG (2是高质量，范围1-31，数字越小质量越高)
         '-y',  # 覆盖输出文件
         output_path
-    ]
+    ])
     
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
@@ -380,6 +406,10 @@ def extract_screenshot(video_path: str, timestamp: float, output_path: str) -> b
     except subprocess.CalledProcessError as e:
         print(f"FFmpeg截图错误: {e}")
         print(f"错误输出: {e.stderr}")
+        # 如果GPU加速失败，尝试不使用GPU
+        if use_gpu and hwaccel:
+            print(f"GPU加速失败，尝试使用CPU...")
+            return extract_screenshot(video_path, timestamp, output_path, use_gpu=False)
         return False
     except FileNotFoundError:
         print("错误: 未找到ffmpeg，请确保已安装ffmpeg并添加到PATH")
@@ -389,18 +419,75 @@ def extract_screenshot(video_path: str, timestamp: float, output_path: str) -> b
 def check_ffmpeg() -> bool:
     """检查ffmpeg是否可用"""
     try:
-        subprocess.run(['ffmpeg', '-version'], capture_output=True, check=True)
-        return True
-    except (FileNotFoundError, subprocess.CalledProcessError):
+        result = subprocess.run(['ffmpeg', '-version'], 
+                              capture_output=True, 
+                              timeout=5,
+                              text=True)
+        # ffmpeg -version 返回 0 表示成功
+        return result.returncode == 0
+    except (FileNotFoundError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
         return False
 
 
+# 全局变量缓存GPU加速器检测结果
+_cached_hwaccel = None
+
+def detect_gpu_acceleration(force_recheck: bool = False) -> Optional[str]:
+    """
+    检测可用的GPU硬件加速器
+    
+    Args:
+        force_recheck: 是否强制重新检测（默认False，使用缓存结果）
+    
+    Returns:
+        可用的硬件加速器名称，如果不可用则返回None
+        优先顺序: cuda > d3d11va > qsv
+    """
+    global _cached_hwaccel
+    
+    # 使用缓存结果（如果已检测过且不强制重新检测）
+    if _cached_hwaccel is not None and not force_recheck:
+        return _cached_hwaccel
+    
+    if not check_ffmpeg():
+        _cached_hwaccel = None
+        return None
+    
+    # 检测顺序：CUDA (NVIDIA) -> d3d11va (Windows通用) -> qsv (Intel)
+    accelerators = ['cuda', 'd3d11va', 'qsv']
+    
+    for accel in accelerators:
+        try:
+            # 简单测试：检查ffmpeg是否支持该硬件加速器
+            # 使用-hwaccels选项列出所有支持的硬件加速器
+            cmd = ['ffmpeg', '-hide_banner', '-hwaccels']
+            result = subprocess.run(cmd, capture_output=True, timeout=3, text=True)
+            if result.returncode == 0 and accel in result.stdout:
+                # 进一步测试：尝试使用该加速器（使用简单的测试）
+                test_cmd = ['ffmpeg', '-hide_banner', '-hwaccel', accel, 
+                           '-f', 'lavfi', '-i', 'testsrc=duration=0.1:size=64x64:rate=1',
+                           '-frames:v', '1', '-f', 'null', '-']
+                test_result = subprocess.run(test_cmd, capture_output=True, timeout=5, text=True)
+                if test_result.returncode == 0:
+                    print(f"[GPU] 检测到可用的GPU加速器: {accel}")
+                    _cached_hwaccel = accel
+                    return accel
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError):
+            continue
+    
+    print("[GPU] 未检测到可用的GPU加速器，将使用CPU")
+    _cached_hwaccel = None
+    return None
+
+
 def check_if_media_exists(word: str, audio_dir: Path) -> bool:
-    """检查媒体文件是否已存在"""
-    word_variants = [word, word.capitalize(), word.title()]
+    """检查媒体文件是否已存在（仅新格式：数字_单词.jpg）"""
+    safe_word = re.sub(r'[^\w\s-]', '', word).strip().replace(' ', '_')
+    word_variants = [word, word.capitalize(), word.title(), safe_word]
     for variant in word_variants:
-        pattern = f"{variant}_*.jpg"
-        if list(audio_dir.glob(pattern)):
+        # 检查新格式：数字_单词.jpg
+        pattern_new = f"*_{variant}.jpg"
+        if list(audio_dir.glob(pattern_new)):
             return True
     return False
 
