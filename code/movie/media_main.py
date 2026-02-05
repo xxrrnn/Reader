@@ -7,6 +7,7 @@
 - 导入到Anki中
 """
 import os
+import json
 import re
 import sys
 from pathlib import Path
@@ -14,9 +15,9 @@ from pathlib import Path
 # 导入函数模块
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from movie.extract_audio import (
-    parse_words_file, parse_ass_file_for_timing, time_to_seconds,
+    parse_words_file, parse_subtitle_file_for_timing, time_to_seconds,
     find_matching_dialogue, check_ffmpeg, extract_audio_segment,
-    extract_screenshot, add_subtitle_to_image
+    extract_screenshot, add_subtitle_to_image, get_audio_lufs
 )
 from movie.import_to_anki import (
     parse_ass_file, find_chinese_for_sentence, store_media_file,
@@ -26,20 +27,124 @@ from movie.import_to_anki import (
 from dictionary.dict import get_word_info_by_word
 from anki.anki import MODEL_NAME, ensure_model_and_deck
 
-# ==================== 配置项 ====================
-DECK_NAME = "Media"
-VIDEO_PATH = r"G:\BYR\Tenet.2020.IMAX.1080p.Bluray.DTS-HD.MA.5.1.X264-EVO\Tenet.2020.IMAX.1080p.Bluray.DTS-HD.MA.5.1.X264-EVO.mkv"
-CHINESE_FONT_SIZE = 60  # 中文字体大小
-ENGLISH_FONT_SIZE = 50  # 英文字体大小
-# ================================================
+
+def load_config(config_path: Path = None) -> dict:
+    """加载配置文件"""
+    if config_path is None:
+        config_path = Path(__file__).parent / 'config.json'
+    
+    if not config_path.exists():
+        raise FileNotFoundError(f"配置文件不存在: {config_path}")
+    
+    with open(config_path, 'r', encoding='utf-8') as f:
+        config = json.load(f)
+    
+    return config
+
+
+def find_files_in_dir(directory: Path, extensions: list) -> list:
+    """在目录中查找指定扩展名的文件"""
+    files = []
+    for ext in extensions:
+        files.extend(list(directory.glob(f'*{ext}')))
+    return files
+
+
+def get_project_config(config: dict, project_name: str = None) -> dict:
+    """获取项目配置并自动查找文件"""
+    if project_name is None:
+        project_name = config.get('default_project', 'Tenet')
+    
+    projects = config.get('projects', {})
+    if project_name not in projects:
+        raise ValueError(f"项目 '{project_name}' 不存在于配置文件中")
+    
+    project_config = projects[project_name].copy()
+    base_dir = Path(__file__).parent.parent.parent
+    
+    # 解析project_dir
+    project_dir = project_config.get('project_dir', '')
+    if not os.path.isabs(project_dir):
+        project_dir = base_dir / project_dir
+    else:
+        project_dir = Path(project_dir)
+    
+    if not project_dir.exists():
+        raise FileNotFoundError(f"项目目录不存在: {project_dir}")
+    
+    project_config['project_dir'] = project_dir
+    project_config['book_name'] = project_dir.name  # 使用最后一级文件夹名
+    
+    # 自动查找txt和字幕文件（支持ass和srt）
+    txt_files = find_files_in_dir(project_dir, ['.txt'])
+    subtitle_files = find_files_in_dir(project_dir, ['.ass', '.srt'])
+    
+    if not txt_files:
+        raise FileNotFoundError(f"在 {project_dir} 中未找到txt文件")
+    if not subtitle_files:
+        raise FileNotFoundError(f"在 {project_dir} 中未找到字幕文件（.ass或.srt）")
+    
+    project_config['words_file'] = txt_files[0]
+    project_config['subtitle_file'] = subtitle_files[0]  # 重命名为更通用的名称
+    project_config['ass_file'] = subtitle_files[0]  # 保持兼容性
+    
+    # 音频目录在字幕文件所在目录创建（与字幕文件同级）
+    subtitle_file = project_config.get('subtitle_file', project_config.get('ass_file'))
+    project_config['audio_dir'] = subtitle_file.parent / 'audio'
+    
+    return project_config
 
 
 def main():
-    # 文件路径
-    base_dir = Path(__file__).parent.parent.parent
-    words_file = base_dir / 'data' / 'source' / 'Tenet' / 'Tenet.txt'
-    ass_file = base_dir / 'data' / 'source' / 'Tenet' / 'Tenet.2020.IMAX.1080p.BluRay.x264.DTS-HD.MA.5.1-FGT.简体&英文.ass'
-    audio_dir = base_dir / 'data' / 'source' / 'Tenet' / 'audio'
+    # 加载配置
+    try:
+        config = load_config()
+    except Exception as e:
+        print(f"错误: 加载配置文件失败: {e}")
+        return
+    
+    # 获取项目配置
+    try:
+        project_config = get_project_config(config)
+    except Exception as e:
+        print(f"错误: {e}")
+        return
+    
+    # 从配置中获取参数
+    project_dir = project_config['project_dir']
+    words_file = project_config['words_file']
+    subtitle_file = project_config.get('subtitle_file', project_config.get('ass_file'))
+    audio_dir = project_config['audio_dir']
+    video_path = project_config.get('video_path', '')
+    book_name = project_config.get('book_name', 'Movie')
+    deck_name = config.get('deck_name', 'Media')
+    chinese_font_size = config.get('chinese_font_size', 60)
+    english_font_size = config.get('english_font_size', 50)
+    
+    # 音频配置
+    audio_config = config.get('audio', {})
+    normalize_volume = audio_config.get('normalize_volume', True)
+    reference_audio = audio_config.get('reference_audio', '')
+    
+    # 获取参考音频的LUFS值
+    target_lufs = -23.0  # 默认值
+    if normalize_volume and reference_audio:
+        base_dir = Path(__file__).parent.parent.parent
+        if not os.path.isabs(reference_audio):
+            reference_audio_path = base_dir / reference_audio
+        else:
+            reference_audio_path = Path(reference_audio)
+        
+        if reference_audio_path.exists():
+            print(f"正在分析参考音频: {reference_audio_path}")
+            ref_lufs = get_audio_lufs(str(reference_audio_path))
+            if ref_lufs is not None:
+                target_lufs = ref_lufs
+                print(f"参考音频LUFS值: {target_lufs:.2f}")
+            else:
+                print(f"警告: 无法获取参考音频LUFS值，使用默认值: {target_lufs}")
+        else:
+            print(f"警告: 参考音频文件不存在: {reference_audio_path}，使用默认值: {target_lufs}")
     
     # 创建输出目录
     audio_dir.mkdir(parents=True, exist_ok=True)
@@ -51,25 +156,31 @@ def main():
         return
     
     # 检查视频文件
-    if not os.path.exists(VIDEO_PATH):
-        print(f"错误: 视频文件不存在: {VIDEO_PATH}")
+    if not os.path.exists(video_path):
+        print(f"错误: 视频文件不存在: {video_path}")
         return
     
     # 解析文件
     print("="*60)
     print("步骤1: 解析文件")
     print("="*60)
+    print(f"项目目录: {project_dir}")
+    print(f"书籍名称: {book_name}")
+    print(f"视频文件: {video_path}")
+    print(f"单词文件: {words_file.name}")
+    print(f"字幕文件: {subtitle_file.name}")
     print("正在解析单词文件...")
     words_sentences = parse_words_file(str(words_file))
     print(f"找到 {len(words_sentences)} 个单词")
     
     print("正在解析字幕文件...")
-    dialogues_map = parse_ass_file(str(ass_file))
-    dialogues_timing = parse_ass_file_for_timing(str(ass_file))
+    from movie.import_to_anki import parse_ass_file
+    dialogues_map = parse_ass_file(str(subtitle_file))
+    dialogues_timing = parse_subtitle_file_for_timing(str(subtitle_file))
     print(f"找到 {len(dialogues_map)} 条字幕")
     
     # 确保牌组和模型存在
-    ensure_model_and_deck(DECK_NAME, MODEL_NAME)
+    ensure_model_and_deck(deck_name, MODEL_NAME)
     
     # 步骤2: 检查哪些单词还没有mp3文件（新单词）
     print("\n" + "="*60)
@@ -113,6 +224,8 @@ def main():
     # 步骤3: 提取新单词的媒体文件
     print("\n" + "="*60)
     print("步骤3: 提取新单词的媒体文件")
+    if normalize_volume:
+        print(f"音量标准化: 启用 (目标LUFS: {target_lufs:.2f})")
     print("="*60)
     
     extracted_words = []  # 成功提取媒体文件的单词列表
@@ -144,7 +257,8 @@ def main():
         
         # 提取音频
         print(f"  正在提取音频...")
-        if not extract_audio_segment(VIDEO_PATH, start_seconds, end_seconds, str(audio_output_path)):
+        if not extract_audio_segment(video_path, start_seconds, end_seconds, str(audio_output_path),
+                                   normalize_volume=normalize_volume, target_lufs=target_lufs):
             print(f"  [失败] 音频提取失败")
             continue
         print(f"  [成功] 音频: {audio_output_path.name}")
@@ -155,14 +269,14 @@ def main():
             screenshot_time = start_seconds
         
         print(f"  正在提取截图...")
-        if not extract_screenshot(VIDEO_PATH, screenshot_time, str(screenshot_output_path)):
+        if not extract_screenshot(video_path, screenshot_time, str(screenshot_output_path)):
             print(f"  [失败] 截图提取失败")
             continue
         print(f"  [成功] 截图: {screenshot_output_path.name}")
         
         # 添加字幕
         if not add_subtitle_to_image(str(screenshot_output_path), chinese_text, english_text,
-                                  CHINESE_FONT_SIZE, ENGLISH_FONT_SIZE):
+                                  chinese_font_size, english_font_size):
             print(f"  [警告] 添加字幕失败，继续处理")
         
         # 记录成功提取的单词
@@ -240,11 +354,11 @@ def main():
             
             # 6. 构建图片例句HTML和Blanked_Examples
             image_html = build_example_with_image(image_filename, audio_filename, sentence, chinese_text, 
-                                                 book_name="Tenet", timestamp=timestamp)
+                                                 book_name=book_name, timestamp=timestamp)
             blanked_html = build_blanked_example(sentence, word)
             
             # 7. 添加或更新到Anki
-            add_or_update_word_to_anki(DECK_NAME, word_info, image_html, blanked_html, audio_filename, sentence)
+            add_or_update_word_to_anki(deck_name, word_info, image_html, blanked_html, audio_filename, sentence, book_name=book_name)
             success_count += 1
             
         except Exception as e:

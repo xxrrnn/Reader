@@ -16,9 +16,9 @@ from typing import Dict, Any, List, Tuple, Optional
 
 # 导入必要的模块
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from anki.anki import invoke, MODEL_NAME, MODEL_CSS, ensure_pronunciation_audio, build_html_from_word_info
+from anki.anki import invoke, MODEL_NAME, MODEL_CSS, ensure_pronunciation_audio, build_html_from_word_info, ensure_model_and_deck
 from dictionary.dict import get_word_info_by_word
-from NLP.NLP import analyze_word, nlp
+from NLP.NLP import nlp
 
 # ==================== 配置项 ====================
 DECK_NAME = "Media"  # 牌组名称
@@ -55,39 +55,105 @@ def parse_words_file(file_path: str) -> List[Tuple[str, str]]:
     return words_sentences
 
 
+def detect_file_encoding(file_path: str) -> str:
+    """
+    检测文件编码
+    
+    Args:
+        file_path: 文件路径
+        
+    Returns:
+        编码名称
+    """
+    encodings = ['utf-8', 'utf-8-sig', 'gbk', 'gb2312', 'gb18030', 
+                 'utf-16-le', 'utf-16-be', 'latin-1', 'cp1252']
+    
+    for encoding in encodings:
+        try:
+            with open(file_path, 'r', encoding=encoding) as f:
+                f.read()
+            return encoding
+        except (UnicodeDecodeError, UnicodeError):
+            continue
+    
+    # 如果都失败，返回utf-8（让调用者处理错误）
+    return 'utf-8'
+
+
 def parse_ass_file(file_path: str) -> dict:
     """
-    解析ASS字幕文件，返回英文到中文的映射
+    解析ASS或SRT字幕文件，返回英文到中文的映射
     """
-    dialogues_map = {}
-    with open(file_path, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    from pathlib import Path
+    file_ext = Path(file_path).suffix.lower()
     
-    for line in lines:
-        if line.startswith('Dialogue:'):
-            parts = line.split(',', 9)
-            if len(parts) >= 10:
-                text = parts[9].strip()
-                
-                chinese_text = ""
-                english_text = ""
-                
-                if '\\N' in text:
-                    parts_text = text.split('\\N', 1)
-                    chinese_text = parts_text[0].strip()
-                    if len(parts_text) > 1:
-                        english_text = parts_text[1]
+    dialogues_map = {}
+    
+    if file_ext == '.srt':
+        # 解析SRT文件
+        encoding = detect_file_encoding(file_path)
+        with open(file_path, 'r', encoding=encoding) as f:
+            content = f.read()
+        
+        # SRT格式解析
+        pattern = r'(\d+)\s*\n(\d{2}:\d{2}:\d{2}[,\.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,\.]\d{3})\s*\n(.*?)(?=\n\d+\s*\n|\Z)'
+        matches = re.finditer(pattern, content, re.MULTILINE | re.DOTALL)
+        
+        for match in matches:
+            text = match.group(4).strip()
+            lines = [line.strip() for line in text.split('\n') if line.strip()]
+            chinese_text = ""
+            english_text = ""
+            
+            for line in lines:
+                # 去除HTML标签
+                line = re.sub(r'<[^>]+>', '', line)
+                if any('\u4e00' <= char <= '\u9fff' for char in line):
+                    if chinese_text:
+                        chinese_text += " " + line
+                    else:
+                        chinese_text = line
                 else:
-                    english_text = text
-                
-                # 去除ASS样式标签
-                chinese_text = re.sub(r'\{[^}]*\}', '', chinese_text).strip()
-                english_text = re.sub(r'\{[^}]*\}', '', english_text).strip()
-                
-                if english_text:
-                    # 清理英文文本用于匹配
-                    english_clean = re.sub(r'[^\w\s]', '', english_text.lower())
-                    dialogues_map[english_clean] = (chinese_text, english_text)
+                    if english_text:
+                        english_text += " " + line
+                    else:
+                        english_text = line
+            
+            if english_text:
+                english_clean = re.sub(r'[^\w\s]', '', english_text.lower())
+                dialogues_map[english_clean] = (chinese_text, english_text)
+    
+    elif file_ext == '.ass':
+        # 解析ASS文件
+        encoding = detect_file_encoding(file_path)
+        with open(file_path, 'r', encoding=encoding) as f:
+            lines = f.readlines()
+        
+        for line in lines:
+            if line.startswith('Dialogue:'):
+                parts = line.split(',', 9)
+                if len(parts) >= 10:
+                    text = parts[9].strip()
+                    
+                    chinese_text = ""
+                    english_text = ""
+                    
+                    if '\\N' in text:
+                        parts_text = text.split('\\N', 1)
+                        chinese_text = parts_text[0].strip()
+                        if len(parts_text) > 1:
+                            english_text = parts_text[1]
+                    else:
+                        english_text = text
+                    
+                    # 去除ASS样式标签
+                    chinese_text = re.sub(r'\{[^}]*\}', '', chinese_text).strip()
+                    english_text = re.sub(r'\{[^}]*\}', '', english_text).strip()
+                    
+                    if english_text:
+                        # 清理英文文本用于匹配
+                        english_clean = re.sub(r'[^\w\s]', '', english_text.lower())
+                        dialogues_map[english_clean] = (chinese_text, english_text)
     
     return dialogues_map
 
@@ -282,7 +348,7 @@ def check_if_example_exists(deck_name: str, word_prototype: str, image_filename:
 
 def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any], 
                                image_html: str, blanked_html: str, audio_filename: str,
-                               sentence: str = None):
+                               sentence: str = None, book_name: str = "Movie"):
     """
     添加或更新单词到Anki
     如果单词已存在，则添加例句；否则创建新笔记
@@ -359,7 +425,7 @@ def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any],
                 "Tags": tags
             },
             "options": {"allowDuplicate": False},
-            "tags": ["tenet"]
+            "tags": [book_name.lower()]
         }
         
         result = invoke("addNote", note=note)

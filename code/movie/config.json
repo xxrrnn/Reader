@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "Tenet": {
+      "project_dir": "data/source/Interstellar",
+      "video_path": "G:\\BYR\\Interstellar 2014 IMAX Edition 720p BluRay DTS x264-TayTO.mkv"
+    }
+  },
+  "default_project": "Tenet",
+  "deck_name": "Media",
+  "chinese_font_size": 60,
+  "english_font_size": 50,
+  "audio": {
+    "normalize_volume": true,
+    "reference_audio": "data/source/posterity.mp3"
+  }
+}
