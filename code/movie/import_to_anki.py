@@ -425,7 +425,7 @@ def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any],
                 "Tags": tags
             },
             "options": {"allowDuplicate": False},
-            "tags": [book_name.lower()]
+            "tags": [book_name.lower().replace(" ", "_")]
         }
         
         result = invoke("addNote", note=note)

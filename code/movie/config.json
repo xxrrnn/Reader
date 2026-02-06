@@ -1,5 +1,9 @@
 {
   "projects": {
+    "The Silence of the Lambs": {
+      "project_dir": "data/source/The Silence of the Lambs",
+      "video_path": "/Volumes/PortableSSD/电影/The.Silence.of.the.Lambs.1991.720p.Criterion.BluRay.DD5.1.x264-ZQ.mkv"
+    },
     "Tenet": {
       "project_dir": "data/source/Interstellar",
       "video_path": "G:\\BYR\\Interstellar 2014 IMAX Edition 720p BluRay DTS x264-TayTO.mkv"
@@ -11,6 +15,6 @@
   "english_font_size": 50,
   "audio": {
     "normalize_volume": true,
-    "reference_audio": "data/source/posterity.mp3"
+    "reference_audio": "data/source/reference.mp3"
   }
 }

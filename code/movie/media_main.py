@@ -50,11 +50,15 @@ def find_files_in_dir(directory: Path, extensions: list) -> list:
     return files
 
 
-def get_project_config(config: dict, project_name: str = None) -> dict:
+def get_project_config(config: dict) -> dict:
     """获取项目配置并自动查找文件"""
-    if project_name is None:
+    projects = config.get('projects', {})
+    if projects:
+        # 使用 projects 中第一个项目（Python 3.7+ 字典保持插入顺序）
+        project_name = next(iter(projects))
+    else:
+        # 如果 projects 为空，回退到 default_project
         project_name = config.get('default_project', 'Tenet')
-    
     projects = config.get('projects', {})
     if project_name not in projects:
         raise ValueError(f"项目 '{project_name}' 不存在于配置文件中")

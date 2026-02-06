@@ -443,7 +443,7 @@ def normalize_audio_volume(input_path: str, output_path: str, target_lufs: float
 
 def extract_audio_segment(video_path: str, start_time: float, end_time: float, 
                           output_path: str, use_gpu: bool = True, hwaccel: Optional[str] = None,
-                          normalize_volume: bool = False, target_lufs: float = -23.0， end_padding=0.5) -> bool:
+                          normalize_volume: bool = False, target_lufs: float = -23.0, end_padding=0.5) -> bool:
     """
     使用ffmpeg从视频中提取音频片段（支持GPU加速和音量标准化）
     
@@ -560,20 +560,64 @@ def add_subtitle_to_image(image_path: str, chinese_text: str, english_text: str,
         chinese_font_size = int(chinese_font_size * scale_factor)
         english_font_size = int(english_font_size * scale_factor)
         
-        # 尝试加载字体（如果系统有的话）
-        try:
+        # 尝试加载字体（支持Windows和macOS）
+        import platform
+        system = platform.system()
+        
+        chinese_font = None
+        english_font = None
+        
+        if system == "Windows":
             # Windows系统字体
-            chinese_font = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", chinese_font_size)
-            english_font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", english_font_size)
-        except:
             try:
-                # 备用字体
-                chinese_font = ImageFont.truetype("C:/Windows/Fonts/simhei.ttf", chinese_font_size)
+                chinese_font = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", chinese_font_size)
                 english_font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", english_font_size)
             except:
-                # 使用默认字体
+                try:
+                    # 备用字体
+                    chinese_font = ImageFont.truetype("C:/Windows/Fonts/simhei.ttf", chinese_font_size)
+                    english_font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", english_font_size)
+                except:
+                    chinese_font = ImageFont.load_default()
+                    english_font = ImageFont.load_default()
+        elif system == "Darwin":  # macOS
+            # macOS系统字体（按优先级尝试）
+            mac_chinese_fonts = [
+                "/System/Library/Fonts/PingFang.ttc",  # 苹方（macOS默认中文字体）
+                "/System/Library/Fonts/STHeiti Light.ttc",  # 黑体
+                "/System/Library/Fonts/STSong.ttc",  # 宋体
+                "/Library/Fonts/Microsoft/SimHei.ttf",  # 如果安装了Office
+            ]
+            mac_english_fonts = [
+                "/System/Library/Fonts/Helvetica.ttc",  # Helvetica
+                "/Library/Fonts/Arial.ttf",  # Arial
+            ]
+            
+            # 尝试加载中文字体
+            for font_path in mac_chinese_fonts:
+                try:
+                    chinese_font = ImageFont.truetype(font_path, chinese_font_size)
+                    break
+                except:
+                    continue
+            
+            # 尝试加载英文字体
+            for font_path in mac_english_fonts:
+                try:
+                    english_font = ImageFont.truetype(font_path, english_font_size)
+                    break
+                except:
+                    continue
+            
+            # 如果都失败了，使用默认字体
+            if chinese_font is None:
                 chinese_font = ImageFont.load_default()
+            if english_font is None:
                 english_font = ImageFont.load_default()
+        else:
+            # Linux或其他系统
+            chinese_font = ImageFont.load_default()
+            english_font = ImageFont.load_default()
         
         # 计算文字位置（底部居中）
         # padding和line_spacing根据字体大小动态调整
