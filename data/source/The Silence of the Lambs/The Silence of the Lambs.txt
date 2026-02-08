@@ -20,6 +20,8 @@ spook
 Do you spook easily, Starling?
 psychiatrist
 -The psychiatrist, Hannibal Lecter. -''Hannibal the Cannibal.''
+Cannibal
+-The psychiatrist, Hannibal Lecter. -''Hannibal the Cannibal.''
 sketching
 ls he sketching, drawing? lf he is, what's he sketching?
 dossier
@@ -260,44 +262,71 @@ Sergeant
 l'm Lieutenant Boyle. This is Sergeant Patrick.
 cot
 You be a gentleman, you'll get three hots and a cot.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+affidavit
+...l've brought an affidavit guaranteeing your new rights.
+transient
+Apparently, Louis had murdered a transient...
+Toughened
+Toughened your nipples, didn't it?
+nipples
+Toughened your nipples, didn't it?
+Amputate
+Amputate a man's leg, and he can still feel it tickling.
+tickling
+Amputate a man's leg, and he can still feel it tickling.
+slab
+Tell me, Mom, when your little girl is on the slab...
+pale
+Hair, blond. Eyes, pale blue.
+Apprehending
+Apprehending the suspect.
+vampire
+He's some kind of vampire?
+thoughtful
+How very thoughtful.
+wheedle
+Or did Jack Crawford send you for one last wheedle...
+sulfide
+lron sulfide, also known as fool's gold.
+incidental
+No. That is incidental.
+covets
+He covets.
+slaughtering
+They were slaughtering the spring lambs?
+pen
+l opened the gate to their pen.
+chops
+Lamb chops, extra rare.
+cuffed
+Pembry, watch it, he's cuffed me!
+stripped
+He stripped the bed.
+strap
+Can we get the strap? Where's the oxygen?
+stairwell
+Main stairwell secured.
+Affirm
+lf there's any fire, it'll come from us. Affirm.
+lacerations
+...with severe facial lacerations.
+mal
+He had grand mal seizure activity. He's postdictal now.
+seizure
+He had grand mal seizure activity. He's postdictal now.
+postdictal
+He had grand mal seizure activity. He's postdictal now.
+Vital
+-l copy. -Vital signs are good.
+lactated
+We got him on lactated Ringer's running...
+liters
+...and the patient is on 1 0 liters of oxygen.
+indicted
+Link him to Bimmel before he's indicted.
+scraps
+Thanks for the scraps, asshole.
+snack
+l got a yummy, yummy snack for you.
+mister
+She's in a lot of pain, mister. She needs a vet.
