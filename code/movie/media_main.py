@@ -17,7 +17,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from movie.extract_audio import (
     parse_words_file, parse_subtitle_file_for_timing, time_to_seconds,
     find_matching_dialogue, check_ffmpeg, extract_audio_segment,
-    extract_screenshot, add_subtitle_to_image, get_audio_lufs
+    extract_screenshot, add_subtitle_to_image, get_audio_lufs,
+    detect_gpu_acceleration
 )
 from movie.import_to_anki import (
     parse_ass_file, find_chinese_for_sentence, store_media_file,
@@ -159,6 +160,14 @@ def main():
         print("错误: 未找到ffmpeg，请安装ffmpeg并添加到PATH")
         return
     
+    # 检测GPU加速器（仅检测一次，后续都使用此结果）
+    print("正在检测GPU加速器...")
+    hwaccel = detect_gpu_acceleration(force_recheck=False)
+    if hwaccel:
+        print(f"GPU加速器: {hwaccel}")
+    else:
+        print("GPU加速器: 未检测到，将使用CPU")
+    
     # 检查视频文件
     if not os.path.exists(video_path):
         print(f"错误: 视频文件不存在: {video_path}")
@@ -268,6 +277,7 @@ def main():
             # 提取音频
             print(f"  正在提取音频...")
             if not extract_audio_segment(video_path, start_seconds, end_seconds, str(audio_output_path),
+                                       use_gpu=True, hwaccel=hwaccel,
                                        normalize_volume=normalize_volume, target_lufs=target_lufs):
                 print(f"  [失败] 音频提取失败")
                 fail_count += 1
@@ -280,7 +290,8 @@ def main():
                 screenshot_time = start_seconds
             
             print(f"  正在提取截图...")
-            if not extract_screenshot(video_path, screenshot_time, str(screenshot_output_path)):
+            if not extract_screenshot(video_path, screenshot_time, str(screenshot_output_path),
+                                     use_gpu=True, hwaccel=hwaccel):
                 print(f"  [失败] 截图提取失败")
                 fail_count += 1
                 continue
