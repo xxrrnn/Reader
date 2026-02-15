@@ -71,7 +71,8 @@ def invoke(action: str, **params):
         return response_json
     except requests.RequestException as e:
         print(f"[错误] 无法连接 AnkiConnect ({ANKI_CONNECT_URL}): {e}")
-        sys.exit(1)
+        # 抛出异常而不是直接退出，让调用方处理
+        raise
 
 
 def sanitize_media_filename(value: str) -> str:
@@ -110,36 +111,51 @@ def ensure_pronunciation_audio(word_info: Dict[str, Any]) -> str:
     """
     根据 word_info 中的发音 URL 下载音频，存入 Anki 媒体库并返回 [sound:...] 语法。
     优先使用美音，若无则回退到英音。
+    包含完善的错误处理，确保不会因为异常导致程序崩溃。
     """
-    part_of_speech = word_info.get("partOfSpeech") or []
-    if not part_of_speech:
-        return ""
+    try:
+        part_of_speech = word_info.get("partOfSpeech") or []
+        if not part_of_speech:
+            return ""
 
-    preferred_url = ""
-    fallback_url = ""
-    for pos in part_of_speech:
-        us_url = ((pos or {}).get("pronunciationUS") or {}).get("pronUrl") or ""
-        uk_url = ((pos or {}).get("pronunciationUK") or {}).get("pronUrl") or ""
-        if us_url and not preferred_url:
-            preferred_url = us_url
-        if uk_url and not fallback_url:
-            fallback_url = uk_url
-        if preferred_url:
-            break
+        preferred_url = ""
+        fallback_url = ""
+        for pos in part_of_speech:
+            us_url = ((pos or {}).get("pronunciationUS") or {}).get("pronUrl") or ""
+            uk_url = ((pos or {}).get("pronunciationUK") or {}).get("pronUrl") or ""
+            if us_url and not preferred_url:
+                preferred_url = us_url
+            if uk_url and not fallback_url:
+                fallback_url = uk_url
+            if preferred_url:
+                break
 
-    audio_url = preferred_url or fallback_url
-    if not audio_url:
+        audio_url = preferred_url or fallback_url
+        if not audio_url:
+            return ""
+        
+        base_word = (
+            (part_of_speech[0] or {}).get("wordPrototype")
+            or word_info.get("word")
+            or "audio"
+        )
+        suffix = "-us" if audio_url == preferred_url and preferred_url else "-uk"
+        
+        # 调用 get_audio，它已经有完善的错误处理
+        return get_audio(audio_url, suffix, base_word)
+    except Exception as e:
+        # 捕获所有异常，确保不会因为音频问题导致整个流程失败
+        print(f"[音频] ensure_pronunciation_audio 异常: {e}")
+        import traceback
+        traceback.print_exc()
         return ""
-    
-    base_word = (
-        (part_of_speech[0] or {}).get("wordPrototype")
-        or word_info.get("word")
-        or "audio"
-    )
-    suffix = "-us" if audio_url == preferred_url and preferred_url else "-uk"
-    return get_audio(audio_url, suffix, base_word)
 
 def get_audio(audio_url: str, suffix:str, base_word:str) -> str:
+    """
+    下载音频并存储到 Anki 媒体库，返回 [sound:...] 标记
+    包含完善的错误处理和验证，确保文件真正存储成功
+    """
+    # 1. 下载音频
     try:
         resp = requests.get(
             audio_url,
@@ -151,23 +167,58 @@ def get_audio(audio_url: str, suffix:str, base_word:str) -> str:
         print(f"[音频] 下载失败: {audio_url} ({exc})")
         return ""
 
+    # 2. 推断文件扩展名
     extension = infer_audio_extension(audio_url, resp.headers.get("Content-Type", ""))
     
+    # 3. 生成文件名
     hash_tail = hashlib.md5(audio_url.encode("utf-8")).hexdigest()[:8]
     filename = f"{sanitize_media_filename(base_word)}{suffix}-{hash_tail}{extension}"
 
+    # 4. 验证下载内容
     audio_bytes = resp.content
     if not audio_bytes:
         print(f"[音频] 下载内容为空: {audio_url}")
         return ""
-
-    encoded = base64.b64encode(audio_bytes).decode("utf-8")
-    store_res = invoke("storeMediaFile", filename=filename, data=encoded)
-    if store_res.get("error"):
-        print(f"[音频] 存储失败: {store_res['error']}")
+    
+    # 验证音频文件大小（至少应该有一些内容）
+    if len(audio_bytes) < 100:  # 音频文件通常至少几百字节
+        print(f"[音频] 下载内容过小（{len(audio_bytes)} 字节），可能不是有效的音频文件")
         return ""
 
-    return f"[sound:{filename}]"
+    # 5. 编码并存储到 Anki
+    try:
+        encoded = base64.b64encode(audio_bytes).decode("utf-8")
+        store_res = invoke("storeMediaFile", filename=filename, data=encoded)
+        
+        # 6. 验证存储结果
+        if store_res is None:
+            print(f"[音频] 存储失败: 无响应 (文件: {filename})")
+            return ""
+        
+        if store_res.get("error"):
+            error_msg = store_res.get("error", "未知错误")
+            print(f"[音频] 存储失败: {error_msg} (文件: {filename})")
+            return ""
+        
+        # 7. 验证 result 字段
+        # storeMediaFile 成功时通常返回 null 或空字符串
+        result = store_res.get("result")
+        if result is False:
+            print(f"[音频] 存储失败: result 为 False (文件: {filename})")
+            return ""
+        
+        # 8. 如果所有验证都通过，返回音频标记
+        print(f"[音频] 成功存储: {filename} ({len(audio_bytes)} 字节)")
+        return f"[sound:{filename}]"
+        
+    except requests.RequestException as e:
+        print(f"[音频] 存储时网络错误: {filename} - {e}")
+        return ""
+    except Exception as e:
+        print(f"[音频] 存储异常: {filename} - {e}")
+        import traceback
+        traceback.print_exc()
+        return ""
 
 
 def get_word_info(word: str) -> Dict[str, Any]:
@@ -245,37 +296,92 @@ def build_html_from_word_info(word_info: Dict[str, Any]) -> Dict[str, str]:
     
     word_to_highlight = word_info.get("word", "")
 
-    # 处理发音、释义等
-    for pos in word_info.get("partOfSpeech", []):
-        pos_type = pos.get("type", "")
-        pos_title_html = f"<div class='pos-title'>{html.escape(str(pos_type)).capitalize()}</div>" if pos_type else ""
-        
-        # 发音
-        uk_p = pos.get("pronunciationUK", {}).get("phonetic", "")
-        us_p = pos.get("pronunciationUS", {}).get("phonetic", "")
-        if uk_p or us_p:
-            pronunciation_parts.append(f"<div>{pos_title_html}UK: {html.escape(uk_p)} | US: {html.escape(us_p)}</div>")
-        
-        # 释义
-        defs = pos.get("definitions") or []
-        if defs:
-            def_block = [pos_title_html, "<ul>"]
-            for d in defs:
-                en = (d.get("enMeaning") or "").strip()
-                ch = (d.get("chMeaning") or "").strip()
-                def_block.append(f"<li><div class='definition-en'>{html.escape(en)}</div><div class='definition-ch'>{html.escape(ch)}</div></li>")
-            def_block.append("</ul>")
-            definition_parts.append("".join(def_block))
-        # 处理词性/定义/短语
+    # 按词性分组，合并相同词性的条目，避免重复
+    # 使用基础词性类型（去掉标记如 [c]）作为key，但保留完整的词性字符串用于显示
+    pos_dict: Dict[str, Dict] = {}  # key: base_pos_type (如 "Noun"), value: merged pos data
+    pos_type_map: Dict[str, str] = {}  # key: base_pos_type, value: full_pos_type (用于显示，优先保留有标记的)
+    
+    def get_base_pos_type(pos_type: str) -> str:
+        """提取词性的基础类型，去掉标记如 [c], [u] 等"""
+        if not pos_type:
+            return "Unknown"
+        # 去掉方括号及其内容，如 "Noun [ c ]" -> "Noun"
+        base = re.sub(r'\s*\[.*?\]\s*', '', pos_type).strip()
+        return base if base else pos_type.strip()
     
     for pos in word_info.get("partOfSpeech", []):
-        pos_type = pos.get("type", "")
+        pos_type = pos.get("type", "").strip()
+        if not pos_type:
+            pos_type = "Unknown"
+        
+        base_pos_type = get_base_pos_type(pos_type)
+        
+        if base_pos_type not in pos_dict:
+            # 第一次遇到这个词性，直接使用
+            pos_dict[base_pos_type] = {
+                "pronunciationUK": pos.get("pronunciationUK", {}),
+                "pronunciationUS": pos.get("pronunciationUS", {}),
+                "definitions": list(pos.get("definitions", [])),
+                "phrases": list(pos.get("phrases", [])),
+                "phraseDefinitions": list(pos.get("phraseDefinitions", []))
+            }
+            pos_type_map[base_pos_type] = pos_type  # 保存完整的词性字符串
+        else:
+            # 合并相同基础词性的定义和短语（避免重复）
+            existing = pos_dict[base_pos_type]
+            
+            # 如果当前词性有标记（如 [c]），优先使用它作为显示
+            if '[' in pos_type and '[' not in pos_type_map[base_pos_type]:
+                pos_type_map[base_pos_type] = pos_type
+            
+            # 合并定义（去重）
+            new_defs = pos.get("definitions", [])
+            for new_def in new_defs:
+                # 检查是否已存在相同的定义
+                en_meaning = (new_def.get("enMeaning") or new_def.get("en") or "").strip()
+                ch_meaning = (new_def.get("chMeaning") or new_def.get("ch") or "").strip()
+                is_duplicate = False
+                for existing_def in existing["definitions"]:
+                    existing_en = (existing_def.get("enMeaning") or existing_def.get("en") or "").strip()
+                    existing_ch = (existing_def.get("chMeaning") or existing_def.get("ch") or "").strip()
+                    if en_meaning == existing_en and ch_meaning == existing_ch:
+                        is_duplicate = True
+                        break
+                if not is_duplicate:
+                    existing["definitions"].append(new_def)
+            
+            # 合并短语（去重）
+            new_phrases = pos.get("phrases", [])
+            new_phrase_defs = pos.get("phraseDefinitions", [])
+            for i, new_phrase in enumerate(new_phrases):
+                if new_phrase not in existing["phrases"]:
+                    existing["phrases"].append(new_phrase)
+                    if i < len(new_phrase_defs):
+                        existing["phraseDefinitions"].append(new_phrase_defs[i])
+            
+            # 如果当前条目的发音信息更完整，则更新
+            uk = pos.get("pronunciationUK", {})
+            us = pos.get("pronunciationUS", {})
+            if (uk.get("phonetic") or uk.get("pronUrl")) and not (existing["pronunciationUK"].get("phonetic") or existing["pronunciationUK"].get("pronUrl")):
+                existing["pronunciationUK"] = uk
+            if (us.get("phonetic") or us.get("pronUrl")) and not (existing["pronunciationUS"].get("phonetic") or existing["pronunciationUS"].get("pronUrl")):
+                existing["pronunciationUS"] = us
+
+    # 处理合并后的词性数据
+    for base_pos_type, pos_data in pos_dict.items():
         part_lines: List[str] = []
-        part_lines.append(f"<div class='pos-title'>{html.escape(str(pos_type)).capitalize()}</div>")
+        def_lines: List[str] = []  # 用于 Definition 字段（包含词性标题，但不包含发音）
+        
+        # 使用完整的词性字符串（优先使用有标记的）
+        display_pos_type = pos_type_map.get(base_pos_type, base_pos_type)
+        pos_title_html = f"<div class='pos-title'>{html.escape(str(display_pos_type)).capitalize()}</div>"
+        part_lines.append(pos_title_html)
+        # Definition 字段也包含词性标题
+        def_lines.append(pos_title_html)
 
         # 发音
-        uk = pos.get("pronunciationUK") or {}
-        us = pos.get("pronunciationUS") or {}
+        uk = pos_data.get("pronunciationUK") or {}
+        us = pos_data.get("pronunciationUS") or {}
         audio_lines: List[str] = []
         if uk.get("phonetic") or uk.get("pronUrl"):
             aud = f"UK: {html.escape(uk.get('phonetic',''))}"
@@ -291,38 +397,48 @@ def build_html_from_word_info(word_info: Dict[str, Any]) -> Dict[str, str]:
             part_lines.extend(audio_lines)
 
         # 定义
-        defs = pos.get("definitions") or []
+        defs = pos_data.get("definitions", [])
         if defs:
             part_lines.append("<ul>")
+            def_lines.append("<ul>")
             for d in defs:
                 en = (d.get("enMeaning") or d.get("en") or "").strip()
                 ch = (d.get("chMeaning") or d.get("ch") or "").strip()
-                part_lines.append(
+                def_item = (
                     "<li>"
                     f"<div class='definition-en'>{html.escape(en)}</div>"
                     f"<div class='definition-ch'>{html.escape(ch)}</div>"
                     "</li>"
                 )
+                part_lines.append(def_item)
+                def_lines.append(def_item)
             part_lines.append("</ul>")
+            def_lines.append("</ul>")
 
         # 短语
-        phrases = pos.get("phrases") or []
-        phrase_defs = pos.get("phraseDefinitions") or []
+        phrases = pos_data.get("phrases", [])
+        phrase_defs = pos_data.get("phraseDefinitions", [])
         if phrases:
-            part_lines.append("<div><b>Phrases:</b><ul>")
+            phrase_block = ["<div><b>Phrases:</b><ul>"]
             for i, ph in enumerate(phrases):
                 pd = phrase_defs[i] if i < len(phrase_defs) else {}
                 en = (pd.get("enMeaning") or pd.get("en") or "").strip()
                 ch = (pd.get("chMeaning") or pd.get("ch") or "").strip()
-                part_lines.append(
+                phrase_block.append(
                     "<li>"
                     f"<span class='phrase'>{html.escape(ph)}</span> — <span class='definition-en'>{html.escape(en)}</span>"
                     f"<div class='definition-ch'>{html.escape(ch)}</div>"
                     "</li>"
                 )
-            part_lines.append("</ul></div>")
+            phrase_block.append("</ul></div>")
+            phrase_html = "".join(phrase_block)
+            part_lines.append(phrase_html)
+            def_lines.append(phrase_html)
 
         pos_html_parts.append("<div>" + "\n".join(part_lines) + "</div>")
+        # 将定义和短语添加到 definition_parts（包含词性标题，但不包含发音）
+        if def_lines:
+            definition_parts.append("<div>" + "\n".join(def_lines) + "</div>")
 
     # 处理例句
     for s in word_info.get("sentences", []):

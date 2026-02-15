@@ -11,6 +11,7 @@ import base64
 import sys
 import html
 import re
+import requests
 from pathlib import Path
 from typing import Dict, Any, List, Tuple, Optional
 
@@ -175,20 +176,56 @@ def find_chinese_for_sentence(sentence: str, dialogues_map: dict) -> str:
 
 
 def store_media_file(file_path: str, filename: str) -> bool:
-    """将文件存储到Anki媒体库"""
+    """
+    将文件存储到Anki媒体库
+    包含完善的错误处理和验证，确保文件真正存储成功
+    """
     try:
+        # 1. 读取文件
         with open(file_path, 'rb') as f:
             file_data = f.read()
         
+        if not file_data:
+            print(f"  [错误] 文件为空: {file_path}")
+            return False
+        
+        # 2. 编码并存储
         encoded = base64.b64encode(file_data).decode('utf-8')
         result = invoke("storeMediaFile", filename=filename, data=encoded)
         
-        if result.get("error"):
-            print(f"  [错误] 存储媒体文件失败: {result['error']}")
+        # 3. 验证存储结果
+        if result is None:
+            print(f"  [错误] 存储媒体文件失败: 无响应 (文件: {filename})")
             return False
+        
+        if result.get("error"):
+            error_msg = result.get("error", "未知错误")
+            print(f"  [错误] 存储媒体文件失败: {error_msg} (文件: {filename})")
+            return False
+        
+        # 4. 验证 result 字段
+        result_value = result.get("result")
+        if result_value is False:
+            print(f"  [错误] 存储媒体文件失败: result 为 False (文件: {filename})")
+            return False
+        
+        # 5. 所有验证通过
+        print(f"  [成功] 存储媒体文件: {filename} ({len(file_data)} 字节)")
         return True
+        
+    except FileNotFoundError:
+        print(f"  [错误] 文件不存在: {file_path}")
+        return False
+    except PermissionError:
+        print(f"  [错误] 无权限读取文件: {file_path}")
+        return False
+    except requests.RequestException as e:
+        print(f"  [错误] 网络错误，无法连接 AnkiConnect: {e}")
+        return False
     except Exception as e:
-        print(f"  [错误] 读取文件失败 {file_path}: {e}")
+        print(f"  [错误] 存储媒体文件异常 {file_path}: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 

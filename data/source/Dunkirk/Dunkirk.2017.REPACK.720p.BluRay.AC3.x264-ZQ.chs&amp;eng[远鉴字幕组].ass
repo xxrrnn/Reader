@@ -1,0 +1,731 @@
+﻿[Script Info]
+;SrtEdit 6.3.2012.1001
+;Copyright(C) 2005-2012 Yuan Weiguo
+
+Title: 
+Original Script: 
+Original Translation: 
+Original Timing: 
+Original Editing: 
+Script Updated By: 
+Update Details: 
+ScriptType: v4.00+
+Collisions: Normal
+PlayResX: 384
+PlayResY: 288
+Timer: 100.0000
+Synch Point: 
+WrapStyle: 0
+ScaledBorderAndShadow: no
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,FZHei-B01,20,&H00FFFFFF,&HF0000000,&H00000000,&H32000000,0,0,0,0,100,100,0,0,1,2,1,2,5,5,2,134
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.74,0:00:11.25,Default,,0,0,0,,远鉴字幕组制作\N{\fnMicrosoft YaHei\fs14}[Visionary] 0day-sub{\r}
+Dialogue: 0,0:00:17.95,0:00:23.74,Default,,0000,0000,0000,,敦刻尔克 中英双语字幕：william2568 & Zcc911\N{\fnMicrosoft YaHei\fs14}DUNKIRK{\r}
+Dialogue: 0,0:02:55.75,0:02:57.96,Default,,0000,0000,0000,,走吧 英国佬 快溜吧\N{\fnMicrosoft YaHei\fs14}Allez, Anglais. Bon voyage.{\r}
+Dialogue: 0,0:06:12.22,0:06:18.48,Default,,0000,0000,0000,,陆 一周\N{\fnMicrosoft YaHei\fs14}1. THE MOLE\None week{\r}
+Dialogue: 0,0:08:16.85,0:08:20.43,Default,,0000,0000,0000,,海 一天\N{\fnMicrosoft YaHei\fs14}2. THE SEA\None day{\r}
+Dialogue: 0,0:09:02.57,0:09:07.91,Default,,0000,0000,0000,,空 一小时\N{\fnMicrosoft YaHei\fs14}3. THE AIR\None hour{\r}
+Dialogue: 0,0:00:49.56,0:00:53.48,Default,,0000,0000,0000,,受敌方压制 英法联军撤至海边\N{\fnMicrosoft YaHei\fs14}THE ENEMY HAVE DRIVEN THE BRITISH AND FRENCH ARMIES\NTO THE SEA{\r}
+Dialogue: 0,0:00:58.26,0:01:01.22,Default,,0000,0000,0000,,"你们已被包围"\N{\fnMicrosoft YaHei\fs14}"WE SURROUND YOU"{\r}
+Dialogue: 0,0:01:01.22,0:01:04.87,Default,,0000,0000,0000,,困于敦刻尔克 等候命运降临\N{\fnMicrosoft YaHei\fs14}TRAPPED AT DUNKIRK, THEY AWAIT THEIR FATE{\r}
+Dialogue: 0,0:01:17.51,0:01:21.77,Default,,0000,0000,0000,,祈求奇迹出现\N{\fnMicrosoft YaHei\fs14}HOPING FOR DELIVERANCE{\r}
+Dialogue: 0,0:01:37.91,0:01:43.29,Default,,0000,0000,0000,,以逃出重围\N{\fnMicrosoft YaHei\fs14}FOR A MIRACLE{\r}
+Dialogue: 0,1:37:52.74,1:37:54.96,Default,,0000,0000,0000,,{\an8}{\fn方正黑体_GBK\fs18\b1\bord1\shad1\3c&H2F2F2F&}"本地男孩 乔治·米尔斯 年仅17岁 敦刻尔克的救人英雄"
+Dialogue: 0,1:35:25.22,1:35:26.35,Default,,0000,0000,0000,,{\an8}{\fn方正黑体_GBK\fs18\b1\bord1\shad1\3c&H2F2F2F&}敦刻尔克：三十三万五千人获救!
+Dialogue: 0,1:35:26.35,1:35:27.75,Default,,0000,0000,0000,,{\an8}{\fn方正黑体_GBK\fs18\b1\bord1\shad1\3c&H2F2F2F&}丘吉尔在众议院发表关于敦刻尔克撤退的演讲
+Dialogue: 0,0:02:38.91,0:02:40.13,Default,,0000,0000,0000,,英国人! 我是英国人! 英国人!\N{\fnMicrosoft YaHei\fs14}English! I'm English!{\r}
+Dialogue: 0,0:05:40.02,0:05:41.78,Default,,0000,0000,0000,,这里是掷弹兵团 伙计\N{\fnMicrosoft YaHei\fs14}It's grenadiers, mate.{\r}
+Dialogue: 0,0:05:55.60,0:05:56.90,Default,,0000,0000,0000,,让开\N{\fnMicrosoft YaHei\fs14}Make way!{\r}
+Dialogue: 0,0:06:00.77,0:06:02.33,Default,,0000,0000,0000,,让开\N{\fnMicrosoft YaHei\fs14}Out of the way!{\r}
+Dialogue: 0,0:06:02.54,0:06:04.01,Default,,0000,0000,0000,,走走走\N{\fnMicrosoft YaHei\fs14}Go, go, go!{\r}
+Dialogue: 0,0:06:04.44,0:06:06.31,Default,,0000,0000,0000,,沿着防波堤 一路走过去\N{\fnMicrosoft YaHei\fs14}Along the mole. All the way.{\r}
+Dialogue: 0,0:06:06.55,0:06:08.31,Default,,0000,0000,0000,,船就要开\N{\fnMicrosoft YaHei\fs14}The ship's about to leave.{\r}
+Dialogue: 0,0:06:09.35,0:06:11.48,Default,,0000,0000,0000,,沿着防波堤 一路走过去 船就要开了\N{\fnMicrosoft YaHei\fs14}Along the mole. All the way. The ship's about to leave.{\r}
+Dialogue: 0,0:07:45.61,0:07:47.60,Default,,0000,0000,0000,,我们的空军都死哪去了?!\N{\fnMicrosoft YaHei\fs14}Where's the bloody air force?{\r}
+Dialogue: 0,0:08:34.99,0:08:37.33,Default,,0000,0000,0000,,海军要征用这船\N{\fnMicrosoft YaHei\fs14}The navy's requisitioned her.{\r}
+Dialogue: 0,0:08:37.50,0:08:40.43,Default,,0000,0000,0000,,他们一小时内回来 父亲想在那之前准备妥当\N{\fnMicrosoft YaHei\fs14}They'll be back in an hour. My dad wants to be ready before then.{\r}
+Dialogue: 0,0:08:42.50,0:08:45.13,Default,,0000,0000,0000,,海军要我们清理船舱 给救生衣腾地方\N{\fnMicrosoft YaHei\fs14}They've told us to strip her and load those life jackets.{\r}
+Dialogue: 0,0:08:45.37,0:08:48.17,Default,,0000,0000,0000,,有些人在对岸的敦刻尔克 他们需要这船\N{\fnMicrosoft YaHei\fs14}Some men across the Channel, at Dunkirk, need taking off.{\r}
+Dialogue: 0,0:08:48.54,0:08:49.60,Default,,0000,0000,0000,,有些人?\N{\fnMicrosoft YaHei\fs14}Some men?{\r}
+Dialogue: 0,0:09:09.80,0:09:11.86,Default,,0000,0000,0000,,检查燃油 福蒂斯小队1号 2号\N{\fnMicrosoft YaHei\fs14}Check fuel, Fortis 1 and 2.{\r}
+Dialogue: 0,0:09:16.14,0:09:17.16,Default,,0000,0000,0000,,70加仑(318升)\N{\fnMicrosoft YaHei\fs14}70 gallons.{\r}
+Dialogue: 0,0:09:19.51,0:09:21.37,Default,,0000,0000,0000,,68加仑(309升) 福蒂斯长机\N{\fnMicrosoft YaHei\fs14}68 gallons, Fortis Leader.{\r}
+Dialogue: 0,0:09:22.24,0:09:24.73,Default,,0000,0000,0000,,高度降至500英尺(152米) 节省燃料\N{\fnMicrosoft YaHei\fs14}Stay down at 500 feet to leave fuel{\r}
+Dialogue: 0,0:09:24.81,0:09:27.47,Default,,0000,0000,0000,,准备在敦刻尔克上空战斗40分钟\N{\fnMicrosoft YaHei\fs14}for 40-minute fighting time over Dunkirk.{\r}
+Dialogue: 0,0:09:28.18,0:09:31.08,Default,,0000,0000,0000,,明白 航向128 高度500英尺(152米)\N{\fnMicrosoft YaHei\fs14}Understood. Vector 128, angels point five.{\r}
+Dialogue: 0,0:09:32.02,0:09:34.42,Default,,0000,0000,0000,,随时注意仪表读数\N{\fnMicrosoft YaHei\fs14}And keep an eye on that gauge, even when it gets lively.{\r}
+Dialogue: 0,0:09:34.59,0:09:36.52,Default,,0000,0000,0000,,预留充足返航燃料\N{\fnMicrosoft YaHei\fs14}Save enough to get back.{\r}
+Dialogue: 0,0:10:45.12,0:10:48.99,Default,,0000,0000,0000,,不收法军 不收法军\N{\fnMicrosoft YaHei\fs14}No French soldiers. No French soldiers. No.{\r}
+Dialogue: 0,0:10:49.16,0:10:52.53,Default,,0000,0000,0000,,不不 不收法国人 只向英国人开放 只收英军!\N{\fnMicrosoft YaHei\fs14}No, no French. English only. English only past this point.{\r}
+Dialogue: 0,0:10:52.73,0:10:55.13,Default,,0000,0000,0000,,不 这艘是英国船 你们会有自己的\N{\fnMicrosoft YaHei\fs14}No. It's a British ship. No, you have your own ships.{\r}
+Dialogue: 0,0:10:55.30,0:10:56.89,Default,,0000,0000,0000,,退后! 退后!\N{\fnMicrosoft YaHei\fs14}Get back. Get back.{\r}
+Dialogue: 0,0:10:57.07,0:10:59.16,Default,,0000,0000,0000,,你们的船会到的 这是英国船\N{\fnMicrosoft YaHei\fs14}No, you've got your own ships. This is a British ship.{\r}
+Dialogue: 0,0:10:59.34,0:11:00.67,Default,,0000,0000,0000,,退后!\N{\fnMicrosoft YaHei\fs14}No, get back.{\r}
+Dialogue: 0,0:11:00.84,0:11:02.74,Default,,0000,0000,0000,,把担架抬过来 有担架来了\N{\fnMicrosoft YaHei\fs14}Look, get the stretchers through. There are stretchers coming.{\r}
+Dialogue: 0,0:11:02.91,0:11:04.90,Default,,0000,0000,0000,,让开来! 别挡道!\N{\fnMicrosoft YaHei\fs14}Get out of the way! Out of the way!{\r}
+Dialogue: 0,0:11:05.08,0:11:08.01,Default,,0000,0000,0000,,沿着防波堤 一路走过去\N{\fnMicrosoft YaHei\fs14}Go, go, go. Along the mole. All the way.{\r}
+Dialogue: 0,0:11:08.18,0:11:10.62,Default,,0000,0000,0000,,船快要开了 快开了\N{\fnMicrosoft YaHei\fs14}The ship's about to leave. About to leave.{\r}
+Dialogue: 0,0:11:10.78,0:11:11.81,Default,,0000,0000,0000,,沿着防波堤 一路走过去\N{\fnMicrosoft YaHei\fs14}Along the mole. All the way.{\r}
+Dialogue: 0,0:11:11.98,0:11:14.25,Default,,0000,0000,0000,,沿着防波堤 一路过去\N{\fnMicrosoft YaHei\fs14}Along the mole. Along the mole. All the way. All the way.{\r}
+Dialogue: 0,0:11:14.49,0:11:15.48,Default,,0000,0000,0000,,不行\N{\fnMicrosoft YaHei\fs14}No.{\r}
+Dialogue: 0,0:11:15.66,0:11:18.39,Default,,0000,0000,0000,,只收英国人! 只收英国人!\N{\fnMicrosoft YaHei\fs14}No, English only. English only!{\r}
+Dialogue: 0,0:11:21.43,0:11:22.42,Default,,0000,0000,0000,,不行\N{\fnMicrosoft YaHei\fs14}No!{\r}
+Dialogue: 0,0:11:37.81,0:11:39.18,Default,,0000,0000,0000,,船艉已就绪!\N{\fnMicrosoft YaHei\fs14}Ready on the stern!{\r}
+Dialogue: 0,0:11:39.35,0:11:40.33,Default,,0000,0000,0000,,是 长官\N{\fnMicrosoft YaHei\fs14}Yes, sir!{\r}
+Dialogue: 0,0:11:51.66,0:11:53.12,Default,,0000,0000,0000,,升起船帆!\N{\fnMicrosoft YaHei\fs14}Man the bowline!{\r}
+Dialogue: 0,0:11:53.29,0:11:54.69,Default,,0000,0000,0000,,还有位置吗?\N{\fnMicrosoft YaHei\fs14}Any more room?{\r}
+Dialogue: 0,0:12:02.24,0:12:03.90,Default,,0000,0000,0000,,退回去! 退回去!\N{\fnMicrosoft YaHei\fs14}You have to get back!{\r}
+Dialogue: 0,0:12:11.74,0:12:13.23,Default,,0000,0000,0000,,只剩两分钟\N{\fnMicrosoft YaHei\fs14}That's two minutes.{\r}
+Dialogue: 0,0:12:13.41,0:12:15.38,Default,,0000,0000,0000,,你们已经错过了 错过了\N{\fnMicrosoft YaHei\fs14}You've missed it. You've missed it.{\r}
+Dialogue: 0,0:12:43.64,0:12:44.63,Default,,0000,0000,0000,,这是最后一个了吗?\N{\fnMicrosoft YaHei\fs14}Is that the last one?{\r}
+Dialogue: 0,0:12:45.18,0:12:46.24,Default,,0000,0000,0000,,是 长官\N{\fnMicrosoft YaHei\fs14}Aye, sir.{\r}
+Dialogue: 0,0:12:49.18,0:12:50.24,Default,,0000,0000,0000,,解掉船缆!\N{\fnMicrosoft YaHei\fs14}Break the line.{\r}
+Dialogue: 0,0:12:54.02,0:12:55.39,Default,,0000,0000,0000,,出发! 出发!\N{\fnMicrosoft YaHei\fs14}Come on! Come on!{\r}
+Dialogue: 0,0:13:51.78,0:13:54.30,Default,,0000,0000,0000,,敦刻尔克太远了 怎么不到加来(法国)上船?\N{\fnMicrosoft YaHei\fs14}Dunkirk's so far. Why can't they just load at Calais?{\r}
+Dialogue: 0,0:13:54.48,0:13:56.97,Default,,0000,0000,0000,,敌人可不答应\N{\fnMicrosoft YaHei\fs14}The enemy had something to say about it.{\r}
+Dialogue: 0,0:13:58.88,0:14:01.68,Default,,0000,0000,0000,,从这出发 他们可就成活靶子了\N{\fnMicrosoft YaHei\fs14}Ah, down here we're sitting ducks.{\r}
+Dialogue: 0,0:14:01.89,0:14:04.52,Default,,0000,0000,0000,,保持警惕 敌机会在太阳方位出现\N{\fnMicrosoft YaHei\fs14}Keep 'em peeled. They'll come out of the sun.{\r}
+Dialogue: 0,0:14:17.34,0:14:18.33,Default,,0000,0000,0000,,排队\N{\fnMicrosoft YaHei\fs14}Up the line.{\r}
+Dialogue: 0,0:14:20.51,0:14:22.37,Default,,0000,0000,0000,,嘿 交给我们 ...\N{\fnMicrosoft YaHei\fs14}Oi. We'll take it.{\r}
+Dialogue: 0,0:14:24.71,0:14:26.14,Default,,0000,0000,0000,,收起跳板!\N{\fnMicrosoft YaHei\fs14}Drop the gangplank!{\r}
+Dialogue: 0,0:14:26.31,0:14:27.30,Default,,0000,0000,0000,,是 长官\N{\fnMicrosoft YaHei\fs14}Yes, sir!{\r}
+Dialogue: 0,0:14:44.46,0:14:45.73,Default,,0000,0000,0000,,试着走过来!\N{\fnMicrosoft YaHei\fs14}Take a run at it.{\r}
+Dialogue: 0,0:15:15.59,0:15:17.53,Default,,0000,0000,0000,,把艉缆收好 乔治\N{\fnMicrosoft YaHei\fs14}Ready on the stern line, George.{\r}
+Dialogue: 0,0:15:20.23,0:15:21.76,Default,,0000,0000,0000,,不等海军的人了吗?\N{\fnMicrosoft YaHei\fs14}Aren't you waiting on the navy?{\r}
+Dialogue: 0,0:15:22.03,0:15:23.97,Default,,0000,0000,0000,,他们要征用"月光宝石"号 那就给他们吧\N{\fnMicrosoft YaHei\fs14}They've asked for the Moonstone, they'll have her.{\r}
+Dialogue: 0,0:15:24.17,0:15:25.33,Default,,0000,0000,0000,,船长跟着船走\N{\fnMicrosoft YaHei\fs14}And her captain.{\r}
+Dialogue: 0,0:15:25.54,0:15:27.70,Default,,0000,0000,0000,,他儿子也去\N{\fnMicrosoft YaHei\fs14}And his son.{\r}
+Dialogue: 0,0:15:30.41,0:15:31.93,Default,,0000,0000,0000,,谢谢你来帮忙 乔治\N{\fnMicrosoft YaHei\fs14}Thanks for the help, George.{\r}
+Dialogue: 0,0:15:35.51,0:15:36.98,Default,,0000,0000,0000,,你在干嘛?\N{\fnMicrosoft YaHei\fs14}What are you doing?{\r}
+Dialogue: 0,0:15:37.18,0:15:38.34,Default,,0000,0000,0000,,你知道我们去哪吗?\N{\fnMicrosoft YaHei\fs14}You do know where we're going?{\r}
+Dialogue: 0,0:15:40.19,0:15:41.18,Default,,0000,0000,0000,,去法国\N{\fnMicrosoft YaHei\fs14}France.{\r}
+Dialogue: 0,0:15:42.72,0:15:44.12,Default,,0000,0000,0000,,是去参战 乔治\N{\fnMicrosoft YaHei\fs14}Into war, George.{\r}
+Dialogue: 0,0:15:45.16,0:15:46.39,Default,,0000,0000,0000,,我会帮上忙的 先生\N{\fnMicrosoft YaHei\fs14}I'll be useful, sir.{\r}
+Dialogue: 0,0:15:54.97,0:15:56.43,Default,,0000,0000,0000,,敌机 8点钟方向\N{\fnMicrosoft YaHei\fs14}Bandit, 11 o'clock.{\r}
+Dialogue: 0,0:15:57.44,0:15:58.63,Default,,0000,0000,0000,,散开\N{\fnMicrosoft YaHei\fs14}Break.{\r}
+Dialogue: 0,0:16:12.18,0:16:13.17,Default,,0000,0000,0000,,他咬住我了\N{\fnMicrosoft YaHei\fs14}He's on me.{\r}
+Dialogue: 0,0:16:15.59,0:16:16.89,Default,,0000,0000,0000,,我对付他\N{\fnMicrosoft YaHei\fs14}I'm on him.{\r}
+Dialogue: 0,0:16:52.09,0:16:55.03,Default,,0000,0000,0000,,\N{\fnMicrosoft YaHei\fs14}1, 2, 3, 4, 5, 6, 7, 8...\NOne, two, three, four, five, six, seven, eight...{\r}
+Dialogue: 0,0:16:55.23,0:16:56.22,Default,,0000,0000,0000,,你俩 赶紧回去!\N{\fnMicrosoft YaHei\fs14}Oi, you two.{\r}
+Dialogue: 0,0:16:56.46,0:16:57.79,Default,,0000,0000,0000,,上岸归队!\N{\fnMicrosoft YaHei\fs14}Get a shift on.{\r}
+Dialogue: 0,0:16:59.47,0:17:02.33,Default,,0000,0000,0000,,把这拉紧了 打个结\N{\fnMicrosoft YaHei\fs14}Yeah, pull him tight. Tie a knot in it.{\r}
+Dialogue: 0,0:17:02.50,0:17:04.44,Default,,0000,0000,0000,,你们两个 退后\N{\fnMicrosoft YaHei\fs14}Back up the line. Both of you.{\r}
+Dialogue: 0,0:17:04.60,0:17:06.00,Default,,0000,0000,0000,,可以走了!\N{\fnMicrosoft YaHei\fs14}Off you go.{\r}
+Dialogue: 0,0:17:06.17,0:17:07.33,Default,,0000,0000,0000,,可以走了!\N{\fnMicrosoft YaHei\fs14}Off you go!{\r}
+Dialogue: 0,0:17:07.51,0:17:09.84,Default,,0000,0000,0000,,上次轰炸把船舵给弄坏了!\N{\fnMicrosoft YaHei\fs14}That last barrage has damaged the rudder.{\r}
+Dialogue: 0,0:17:10.18,0:17:11.34,Default,,0000,0000,0000,,呃 ... 好的\N{\fnMicrosoft YaHei\fs14}Uh, okay...{\r}
+Dialogue: 0,0:17:49.75,0:17:50.74,Default,,0000,0000,0000,,道森先生!\N{\fnMicrosoft YaHei\fs14}Mr. Dawson!{\r}
+Dialogue: 0,0:17:50.92,0:17:52.28,Default,,0000,0000,0000,,咱们的飞机 乔治\N{\fnMicrosoft YaHei\fs14}One of ours, George.{\r}
+Dialogue: 0,0:19:02.45,0:19:04.62,Default,,0000,0000,0000,,福蒂斯2号 听我口令 诱他到左舷\N{\fnMicrosoft YaHei\fs14}On my mark, Fortis 2. Draw him left.{\r}
+Dialogue: 0,0:19:06.79,0:19:08.59,Default,,0000,0000,0000,,\N{\fnMicrosoft YaHei\fs14}3, 2, 1\NThree, two, one.{\r}
+Dialogue: 0,0:19:09.13,0:19:10.15,Default,,0000,0000,0000,,机动\N{\fnMicrosoft YaHei\fs14}Mark.{\r}
+Dialogue: 0,0:19:24.44,0:19:25.50,Default,,0000,0000,0000,,搞定\N{\fnMicrosoft YaHei\fs14}Clear.{\r}
+Dialogue: 0,0:19:28.95,0:19:30.64,Default,,0000,0000,0000,,他坠机了吗?\N{\fnMicrosoft YaHei\fs14}Is he down?{\r}
+Dialogue: 0,0:19:39.26,0:19:40.52,Default,,0000,0000,0000,,对 他完蛋了\N{\fnMicrosoft YaHei\fs14}Yeah, he's down for the count.{\r}
+Dialogue: 0,0:19:47.00,0:19:49.19,Default,,0000,0000,0000,,福蒂斯长机 击落敌机一架\N{\fnMicrosoft YaHei\fs14}Fortis Leader, one bandit down.{\r}
+Dialogue: 0,0:19:54.24,0:19:55.73,Default,,0000,0000,0000,,福蒂斯长机 收到了吗?\N{\fnMicrosoft YaHei\fs14}Fortis Leader, do you read?{\r}
+Dialogue: 0,0:20:00.71,0:20:04.27,Default,,0000,0000,0000,,福蒂斯2号 你在我左舷 但我看不到长机 完毕\N{\fnMicrosoft YaHei\fs14}Fortis 2, I have you to my port. I have no eyes on Fortis Leader. Over.{\r}
+Dialogue: 0,0:20:04.45,0:20:06.54,Default,,0000,0000,0000,,明白 福蒂斯1号\N{\fnMicrosoft YaHei\fs14}Understood, Fortis 1.{\r}
+Dialogue: 0,0:20:06.72,0:20:08.15,Default,,0000,0000,0000,,绕圈搜寻 ...\N{\fnMicrosoft YaHei\fs14}Orbit for a look.{\r}
+Dialogue: 0,0:20:20.87,0:20:22.13,Default,,0000,0000,0000,,还要多久 上尉?\N{\fnMicrosoft YaHei\fs14}How long, Lieutenant?{\r}
+Dialogue: 0,0:20:22.30,0:20:25.36,Default,,0000,0000,0000,,得换新缆绳 长官 旧的缠得厉害\N{\fnMicrosoft YaHei\fs14}We need to run a new cable, sir. They're scrambling.{\r}
+Dialogue: 0,0:20:25.54,0:20:26.83,Default,,0000,0000,0000,,去吧\N{\fnMicrosoft YaHei\fs14}Very well.{\r}
+Dialogue: 0,0:20:31.61,0:20:34.55,Default,,0000,0000,0000,,上校 你得下决定了 还要撤离多少伤员 ...\N{\fnMicrosoft YaHei\fs14}Colonel, you're gonna have to decide how many more wounded to evacuate.{\r}
+Dialogue: 0,0:20:34.71,0:20:37.31,Default,,0000,0000,0000,,一副担架就得挤掉7个人的位置\N{\fnMicrosoft YaHei\fs14}One stretcher takes the space of seven standing men.{\r}
+Dialogue: 0,0:20:37.48,0:20:38.54,Default,,0000,0000,0000,,对不起\N{\fnMicrosoft YaHei\fs14}Excuse me.{\r}
+Dialogue: 0,0:20:52.87,0:20:54.70,Default,,0000,0000,0000,,- 少将 - 中校\N{\fnMicrosoft YaHei\fs14}- Rear Admiral. - Commander.{\r}
+Dialogue: 0,0:20:57.27,0:20:58.63,Default,,0000,0000,0000,,防线如何?\N{\fnMicrosoft YaHei\fs14}How's the perimeter?{\r}
+Dialogue: 0,0:20:58.84,0:21:00.33,Default,,0000,0000,0000,,每天都在收缩\N{\fnMicrosoft YaHei\fs14}Shrinking every day.{\r}
+Dialogue: 0,0:21:00.77,0:21:03.57,Default,,0000,0000,0000,,不过后卫部队和法军 都还在坚守阵地\N{\fnMicrosoft YaHei\fs14}But between our rear guard and the French, we're holding the line.{\r}
+Dialogue: 0,0:21:04.08,0:21:05.91,Default,,0000,0000,0000,,还有 敌人的坦克停下来了\N{\fnMicrosoft YaHei\fs14}And the enemy tanks have stopped.{\r}
+Dialogue: 0,0:21:06.08,0:21:07.44,Default,,0000,0000,0000,,为什么?\N{\fnMicrosoft YaHei\fs14}Why have they stopped?{\r}
+Dialogue: 0,0:21:08.05,0:21:09.17,Default,,0000,0000,0000,,光靠空袭就够了 咱们已经是瓮中之鳖\N{\fnMicrosoft YaHei\fs14}Waste precious tanks{\r}
+Dialogue: 0,0:21:09.38,0:21:11.08,Default,,0000,0000,0000,,何必再耗费宝贵的坦克?\N{\fnMicrosoft YaHei\fs14}when they can pick us off from the air, like fish in a barrel?{\r}
+Dialogue: 0,0:21:11.25,0:21:14.28,Default,,0000,0000,0000,,在达成协议前 伦敦方面 还要我们守多久?\N{\fnMicrosoft YaHei\fs14}How long does London expect the army to hold out before we make terms?{\r}
+Dialogue: 0,0:21:14.45,0:21:15.44,Default,,0000,0000,0000,,达成协议?\N{\fnMicrosoft YaHei\fs14}Make terms?{\r}
+Dialogue: 0,0:21:16.12,0:21:19.45,Default,,0000,0000,0000,,德国人不会善罢甘休的 我们得把军队撤回去\N{\fnMicrosoft YaHei\fs14}They're not stopping here. We need to get our army back.{\r}
+Dialogue: 0,0:21:20.06,0:21:22.75,Default,,0000,0000,0000,,敌人下一步就是英国 然后就是称霸世界\N{\fnMicrosoft YaHei\fs14}Britain's next and then the rest of the world.{\r}
+Dialogue: 0,0:21:22.93,0:21:24.02,Default,,0000,0000,0000,,老天 ...\N{\fnMicrosoft YaHei\fs14}Christ.{\r}
+Dialogue: 0,0:21:24.80,0:21:27.36,Default,,0000,0000,0000,,在这几乎都能望见了 ...\N{\fnMicrosoft YaHei\fs14}I mean, you can practically see it from here.{\r}
+Dialogue: 0,0:21:27.53,0:21:28.63,Default,,0000,0000,0000,,什么?\N{\fnMicrosoft YaHei\fs14}What?{\r}
+Dialogue: 0,0:21:29.57,0:21:30.80,Default,,0000,0000,0000,,家\N{\fnMicrosoft YaHei\fs14}Home.{\r}
+Dialogue: 0,0:21:31.90,0:21:33.53,Default,,0000,0000,0000,,法国人怎么办?\N{\fnMicrosoft YaHei\fs14}What about the French?{\r}
+Dialogue: 0,0:21:33.71,0:21:36.04,Default,,0000,0000,0000,,台面上 丘吉尔说要"手挽着手"\N{\fnMicrosoft YaHei\fs14}Publicly, Churchill's told them, "Bras dessous."{\r}
+Dialogue: 0,0:21:36.21,0:21:38.20,Default,,0000,0000,0000,,携手并肩 不离不弃\N{\fnMicrosoft YaHei\fs14}Arm in arm, leaving together.{\r}
+Dialogue: 0,0:21:38.41,0:21:39.60,Default,,0000,0000,0000,,私下呢？\N{\fnMicrosoft YaHei\fs14}And privately?{\r}
+Dialogue: 0,0:21:39.78,0:21:41.27,Default,,0000,0000,0000,,让咱们的人撤回来\N{\fnMicrosoft YaHei\fs14}We need our army back.{\r}
+Dialogue: 0,0:21:41.85,0:21:43.91,Default,,0000,0000,0000,,要撤多少人 长官?\N{\fnMicrosoft YaHei\fs14}How many men are they talking about, sir?{\r}
+Dialogue: 0,0:21:44.92,0:21:48.41,Default,,0000,0000,0000,,丘吉尔的计划是3万人 拉姆齐中将希望能撤4万5千人\N{\fnMicrosoft YaHei\fs14}Churchill wants 30,000. Ramsay's hoping we can give him 45.{\r}
+Dialogue: 0,0:21:49.99,0:21:52.25,Default,,0000,0000,0000,,这海滩上可挤了40万人 长官\N{\fnMicrosoft YaHei\fs14}There are 400,000 men on this beach, sir.{\r}
+Dialogue: 0,0:21:53.23,0:21:55.32,Default,,0000,0000,0000,,大家都尽力吧\N{\fnMicrosoft YaHei\fs14}We'll just have to do our best.{\r}
+Dialogue: 0,0:21:56.50,0:21:59.06,Default,,0000,0000,0000,,没错 要不惜一切代价 让防波堤保持畅通\N{\fnMicrosoft YaHei\fs14}Right, well, this mole stays open at all costs.{\r}
+Dialogue: 0,0:22:00.27,0:22:04.22,Default,,0000,0000,0000,,我们处在西侧敌人的炮火范围内 要是这儿有东西沉了\N{\fnMicrosoft YaHei\fs14}We're in artillery range from the west. If anything else sinks here,{\r}
+Dialogue: 0,0:22:04.40,0:22:06.39,Default,,0000,0000,0000,,就会堵瘫整个防波堤\N{\fnMicrosoft YaHei\fs14}the mole's blocked and we're stuffed.{\r}
+Dialogue: 0,0:22:06.57,0:22:08.10,Default,,0000,0000,0000,,不能到海滩上装船吗?\N{\fnMicrosoft YaHei\fs14}Can't we load from the beaches?{\r}
+Dialogue: 0,0:22:08.27,0:22:09.80,Default,,0000,0000,0000,,总比呆这儿挨炸要强\N{\fnMicrosoft YaHei\fs14}Better than standing out here when the dive bombs come.{\r}
+Dialogue: 0,0:22:09.98,0:22:11.34,Default,,0000,0000,0000,,- 不可能的 - 水太浅吗?\N{\fnMicrosoft YaHei\fs14}- It's impossible. - Too shallow?{\r}
+Dialogue: 0,0:22:11.51,0:22:13.41,Default,,0000,0000,0000,,吃水超过3英尺(0.9米) 船就进不来\N{\fnMicrosoft YaHei\fs14}'Cause anything that drafts over three feet can't get near.{\r}
+Dialogue: 0,0:22:13.58,0:22:16.64,Default,,0000,0000,0000,,我们的划桨船也不够 没法把人分批送上驱逐舰\N{\fnMicrosoft YaHei\fs14}We don't have enough small boats to ferry men to the destroyers.{\r}
+Dialogue: 0,0:22:17.18,0:22:20.08,Default,,0000,0000,0000,,那么先生们 全靠防波堤了\N{\fnMicrosoft YaHei\fs14}The mole it is, then, gentlemen.{\r}
+Dialogue: 0,0:23:09.54,0:23:10.56,Default,,0000,0000,0000,,嘿\N{\fnMicrosoft YaHei\fs14}Hey!{\r}
+Dialogue: 0,0:23:11.54,0:23:13.70,Default,,0000,0000,0000,,嘿! 你能游过来吗?\N{\fnMicrosoft YaHei\fs14}Hey! Can you swim it?{\r}
+Dialogue: 0,0:23:15.74,0:23:16.90,Default,,0000,0000,0000,,能不能再近点?\N{\fnMicrosoft YaHei\fs14}Dad, can you get closer?{\r}
+Dialogue: 0,0:23:17.68,0:23:19.14,Default,,0000,0000,0000,,别冒险!\N{\fnMicrosoft YaHei\fs14}Can't risk it!{\r}
+Dialogue: 0,0:23:20.71,0:23:21.70,Default,,0000,0000,0000,,坚持住\N{\fnMicrosoft YaHei\fs14}Hang on.{\r}
+Dialogue: 0,0:24:11.30,0:24:12.56,Default,,0000,0000,0000,,你叫什么名字?\N{\fnMicrosoft YaHei\fs14}What's your name?{\r}
+Dialogue: 0,0:24:31.82,0:24:33.08,Default,,0000,0000,0000,,下面有残骸\N{\fnMicrosoft YaHei\fs14}Wreckage below.{\r}
+Dialogue: 0,0:24:34.29,0:24:36.05,Default,,0000,0000,0000,,109战机吗?\N{\fnMicrosoft YaHei\fs14}Is it more of the 109?{\r}
+Dialogue: 0,0:24:36.19,0:24:37.38,Default,,0000,0000,0000,,不\N{\fnMicrosoft YaHei\fs14}No.{\r}
+Dialogue: 0,0:24:37.66,0:24:39.32,Default,,0000,0000,0000,,是福蒂斯长机 完毕\N{\fnMicrosoft YaHei\fs14}It's Fortis Leader. Over.{\r}
+Dialogue: 0,0:24:40.83,0:24:41.82,Default,,0000,0000,0000,,他逃出来没?\N{\fnMicrosoft YaHei\fs14}You think he got out?{\r}
+Dialogue: 0,0:24:42.06,0:24:43.05,Default,,0000,0000,0000,,我没见到降落伞\N{\fnMicrosoft YaHei\fs14}I didn't see a 'chute.{\r}
+Dialogue: 0,0:24:44.83,0:24:46.80,Default,,0000,0000,0000,,记录长机坐标\N{\fnMicrosoft YaHei\fs14}Record his position.{\r}
+Dialogue: 0,0:24:46.97,0:24:49.16,Default,,0000,0000,0000,,转至128航向 高度 ...\N{\fnMicrosoft YaHei\fs14}Then set heading 128,{\r}
+Dialogue: 0,0:24:49.33,0:24:51.20,Default,,0000,0000,0000,,1000英尺(305米) 完毕\N{\fnMicrosoft YaHei\fs14}height 1,000. Over.{\r}
+Dialogue: 0,0:24:51.40,0:24:53.46,Default,,0000,0000,0000,,航向128 高度1000英尺(305米) 明白\N{\fnMicrosoft YaHei\fs14}Vector 128, angels one. Understood.{\r}
+Dialogue: 0,0:24:59.51,0:25:00.84,Default,,0000,0000,0000,,福蒂斯2号 燃油状况?\N{\fnMicrosoft YaHei\fs14}Fortis 2, what's your fuel?{\r}
+Dialogue: 0,0:25:02.21,0:25:03.34,Default,,0000,0000,0000,,50加仑(189升) 完毕\N{\fnMicrosoft YaHei\fs14}50 gallons. Over.{\r}
+Dialogue: 0,0:25:03.85,0:25:06.18,Default,,0000,0000,0000,,50加仑(189升)\N{\fnMicrosoft YaHei\fs14}50 gallons.{\r}
+Dialogue: 0,0:25:09.82,0:25:11.76,Default,,0000,0000,0000,,好的 保持提醒\N{\fnMicrosoft YaHei\fs14}All right, keep letting me know.{\r}
+Dialogue: 0,0:25:11.92,0:25:13.69,Default,,0000,0000,0000,,我的仪表刚才被打坏了\N{\fnMicrosoft YaHei\fs14}My gauge took a bit of a knock back there.{\r}
+Dialogue: 0,0:25:15.29,0:25:16.78,Default,,0000,0000,0000,,你要不要返航?\N{\fnMicrosoft YaHei\fs14}Shouldn't you turn back?{\r}
+Dialogue: 0,0:25:16.96,0:25:18.45,Default,,0000,0000,0000,,不用\N{\fnMicrosoft YaHei\fs14}No, no.{\r}
+Dialogue: 0,0:25:19.10,0:25:21.46,Default,,0000,0000,0000,,相信只是仪表出了问题\N{\fnMicrosoft YaHei\fs14}I'm fairly confident it's just the gauge.{\r}
+Dialogue: 0,0:26:50.69,0:26:52.71,Default,,0000,0000,0000,,- 船要沉了! - 砍掉缆绳!\N{\fnMicrosoft YaHei\fs14}- She's going down! - Cut her loose!{\r}
+Dialogue: 0,0:26:52.89,0:26:53.95,Default,,0000,0000,0000,,伤员们怎么办?\N{\fnMicrosoft YaHei\fs14}What about the wounded?{\r}
+Dialogue: 0,0:26:55.26,0:26:57.63,Default,,0000,0000,0000,,全体弃船 弃船!\N{\fnMicrosoft YaHei\fs14}Abandon ship! Abandon ship!{\r}
+Dialogue: 0,0:27:00.03,0:27:01.46,Default,,0000,0000,0000,,砍掉缆绳 把船挪走!\N{\fnMicrosoft YaHei\fs14}Cut her loose, and push her off!{\r}
+Dialogue: 0,0:27:01.63,0:27:03.40,Default,,0000,0000,0000,,别让船沉在这儿!\N{\fnMicrosoft YaHei\fs14}We can't let her sink at the mole!{\r}
+Dialogue: 0,0:27:04.10,0:27:05.93,Default,,0000,0000,0000,,推下去!\N{\fnMicrosoft YaHei\fs14}Push the bloody boat off!{\r}
+Dialogue: 0,0:27:13.41,0:27:14.40,Default,,0000,0000,0000,,救命!\N{\fnMicrosoft YaHei\fs14}Help us!{\r}
+Dialogue: 0,0:28:27.72,0:28:29.58,Default,,0000,0000,0000,,你要不要下来?\N{\fnMicrosoft YaHei\fs14}Do you want to come below?{\r}
+Dialogue: 0,0:28:29.79,0:28:31.69,Default,,0000,0000,0000,,里头更暖和\N{\fnMicrosoft YaHei\fs14}It's much warmer.{\r}
+Dialogue: 0,0:28:32.59,0:28:33.79,Default,,0000,0000,0000,,甲板上风大\N{\fnMicrosoft YaHei\fs14}It's out of the wind.{\r}
+Dialogue: 0,0:28:33.96,0:28:35.36,Default,,0000,0000,0000,,喝点吧\N{\fnMicrosoft YaHei\fs14}Here you go.{\r}
+Dialogue: 0,0:28:38.06,0:28:39.66,Default,,0000,0000,0000,,别管他 乔治\N{\fnMicrosoft YaHei\fs14}Leave him be, George.{\r}
+Dialogue: 0,0:28:39.83,0:28:41.66,Default,,0000,0000,0000,,呆在甲板上 他觉得更安全\N{\fnMicrosoft YaHei\fs14}He feels safer on deck.{\r}
+Dialogue: 0,0:28:42.57,0:28:44.23,Default,,0000,0000,0000,,你被炸了也会有同感\N{\fnMicrosoft YaHei\fs14}You would too if you'd been bombed.{\r}
+Dialogue: 0,0:28:44.40,0:28:45.39,Default,,0000,0000,0000,,U型潜艇\N{\fnMicrosoft YaHei\fs14}U-boat.{\r}
+Dialogue: 0,0:28:48.11,0:28:49.90,Default,,0000,0000,0000,,是U型潜艇\N{\fnMicrosoft YaHei\fs14}It was a U-boat.{\r}
+Dialogue: 0,0:28:53.85,0:28:55.14,Default,,0000,0000,0000,,再给他倒杯茶 乔治\N{\fnMicrosoft YaHei\fs14}Get him some more tea, George.{\r}
+Dialogue: 0,0:29:10.16,0:29:12.43,Default,,0000,0000,0000,,好了 我们还有5分钟航程\N{\fnMicrosoft YaHei\fs14}Right, we're about five minutes out,{\r}
+Dialogue: 0,0:29:12.60,0:29:14.26,Default,,0000,0000,0000,,爬升至2000英尺(610米) 完毕\N{\fnMicrosoft YaHei\fs14}so climb to 2,000. Over.{\r}
+Dialogue: 0,0:29:14.43,0:29:15.56,Default,,0000,0000,0000,,那样更费油吧\N{\fnMicrosoft YaHei\fs14}That's more fuel.{\r}
+Dialogue: 0,0:29:15.73,0:29:17.22,Default,,0000,0000,0000,,现在我可不想遭遇敌机\N{\fnMicrosoft YaHei\fs14}I know, but I don't want to get jumped again.{\r}
+Dialogue: 0,0:29:17.44,0:29:18.42,Default,,0000,0000,0000,,咱们先爬升上去\N{\fnMicrosoft YaHei\fs14}Let's get a decent altitude.{\r}
+Dialogue: 0,0:29:18.60,0:29:20.54,Default,,0000,0000,0000,,然后再俯冲作战 完毕\N{\fnMicrosoft YaHei\fs14}We can dive down on the bastards from above. Over.{\r}
+Dialogue: 0,0:29:20.71,0:29:22.20,Default,,0000,0000,0000,,明白 二号\N{\fnMicrosoft YaHei\fs14}Understood. Angels two.{\r}
+Dialogue: 0,0:29:22.37,0:29:23.36,Default,,0000,0000,0000,,完毕\N{\fnMicrosoft YaHei\fs14}Over.{\r}
+Dialogue: 0,0:29:25.88,0:29:26.87,Default,,0000,0000,0000,,好了 高地兵\N{\fnMicrosoft YaHei\fs14}Right, Highlanders.{\r}
+Dialogue: 0,0:29:27.41,0:29:29.00,Default,,0000,0000,0000,,再给你们找艘船吧\N{\fnMicrosoft YaHei\fs14}Let's find you another ship.{\r}
+Dialogue: 0,0:30:41.12,0:30:42.11,Default,,0000,0000,0000,,快点\N{\fnMicrosoft YaHei\fs14}Come on.{\r}
+Dialogue: 0,0:30:45.12,0:30:47.68,Default,,0000,0000,0000,,所有人 继续爬 爬到甲板上\N{\fnMicrosoft YaHei\fs14}Everyone else, keep climbing. Climb on the deck.{\r}
+Dialogue: 0,0:30:48.26,0:30:50.99,Default,,0000,0000,0000,,爬到甲板上\N{\fnMicrosoft YaHei\fs14}Climb on the deck.{\r}
+Dialogue: 0,0:30:51.50,0:30:53.52,Default,,0000,0000,0000,,小心! 小心别碰到头了!\N{\fnMicrosoft YaHei\fs14}Watch your heads on the rail. Watch it.{\r}
+Dialogue: 0,0:30:55.27,0:30:57.10,Default,,0000,0000,0000,,往下走 拿上毯子\N{\fnMicrosoft YaHei\fs14}That's right, keep going down. Take a blanket.{\r}
+Dialogue: 0,0:30:57.27,0:30:58.36,Default,,0000,0000,0000,,从这儿往下走 披上这个 亲爱的\N{\fnMicrosoft YaHei\fs14}Down you go. Put this on, my love.{\r}
+Dialogue: 0,0:30:59.17,0:31:02.04,Default,,0000,0000,0000,,往下走 一直往下走\N{\fnMicrosoft YaHei\fs14}Down you go. Keep going down.{\r}
+Dialogue: 0,0:31:02.21,0:31:04.33,Default,,0000,0000,0000,,底下给你们准备了热茶\N{\fnMicrosoft YaHei\fs14}There's a nice cup of tea for you down there.{\r}
+Dialogue: 0,0:31:04.51,0:31:05.50,Default,,0000,0000,0000,,一直往下走\N{\fnMicrosoft YaHei\fs14}Keep moving down.{\r}
+Dialogue: 0,0:31:05.68,0:31:07.34,Default,,0000,0000,0000,,裹上毯子\N{\fnMicrosoft YaHei\fs14}Take a blanket.{\r}
+Dialogue: 0,0:31:08.55,0:31:09.54,Default,,0000,0000,0000,,好了 挪一挪\N{\fnMicrosoft YaHei\fs14}Try and make some room.{\r}
+Dialogue: 0,0:31:09.71,0:31:11.15,Default,,0000,0000,0000,,往下走 小伙子们\N{\fnMicrosoft YaHei\fs14}Keep moving down, boys.{\r}
+Dialogue: 0,0:31:12.48,0:31:13.54,Default,,0000,0000,0000,,走这边\N{\fnMicrosoft YaHei\fs14}This way.{\r}
+Dialogue: 0,0:31:14.69,0:31:16.28,Default,,0000,0000,0000,,这里有茶可供饮用\N{\fnMicrosoft YaHei\fs14}A cup of tea down there.{\r}
+Dialogue: 0,0:31:41.01,0:31:43.95,Default,,0000,0000,0000,,这边 请往下走!\N{\fnMicrosoft YaHei\fs14}There you go. Down there. Move down there.{\r}
+Dialogue: 0,0:32:03.20,0:32:04.67,Default,,0000,0000,0000,,你朋友怎么了?\N{\fnMicrosoft YaHei\fs14}What's wrong with your friend?{\r}
+Dialogue: 0,0:32:23.99,0:32:25.25,Default,,0000,0000,0000,,他在找逃生捷径\N{\fnMicrosoft YaHei\fs14}He's looking for a quick way out.{\r}
+Dialogue: 0,0:32:27.69,0:32:29.09,Default,,0000,0000,0000,,万一船沉了 就派上用场了\N{\fnMicrosoft YaHei\fs14}In case we go down.{\r}
+Dialogue: 0,0:33:07.63,0:33:09.07,Default,,0000,0000,0000,,我们要去哪儿?\N{\fnMicrosoft YaHei\fs14}Where are we going?{\r}
+Dialogue: 0,0:33:09.20,0:33:10.72,Default,,0000,0000,0000,,敦刻尔克\N{\fnMicrosoft YaHei\fs14}Dunkirk.{\r}
+Dialogue: 0,0:33:12.77,0:33:14.83,Default,,0000,0000,0000,,不 不 我知道 是回英格兰!\N{\fnMicrosoft YaHei\fs14}No, uh, no, no, we're going to England.{\r}
+Dialogue: 0,0:33:16.57,0:33:18.57,Default,,0000,0000,0000,,我们得先去敦刻尔克\N{\fnMicrosoft YaHei\fs14}We have to go to Dunkirk first.{\r}
+Dialogue: 0,0:33:19.11,0:33:21.91,Default,,0000,0000,0000,,我不要回去!\N{\fnMicrosoft YaHei\fs14}Look, I'm not going back.{\r}
+Dialogue: 0,0:33:23.31,0:33:24.84,Default,,0000,0000,0000,,我不要回去 ...\N{\fnMicrosoft YaHei\fs14}I'm not going back.{\r}
+Dialogue: 0,0:33:25.82,0:33:27.11,Default,,0000,0000,0000,,你瞧瞧!\N{\fnMicrosoft YaHei\fs14}Look at it.{\r}
+Dialogue: 0,0:33:28.35,0:33:29.98,Default,,0000,0000,0000,,如果我们 ... 我们去了就死定了!\N{\fnMicrosoft YaHei\fs14}If we go there, we'll die.{\r}
+Dialogue: 0,0:33:37.16,0:33:38.15,Default,,0000,0000,0000,,我明白你的意思了 年轻人\N{\fnMicrosoft YaHei\fs14}I see your point, son.{\r}
+Dialogue: 0,0:33:39.03,0:33:41.12,Default,,0000,0000,0000,,咱们绘个航线吧\N{\fnMicrosoft YaHei\fs14}Well, let's plot a course.{\r}
+Dialogue: 0,0:33:44.47,0:33:47.13,Default,,0000,0000,0000,,你先下去喝喝茶 暖暖身子\N{\fnMicrosoft YaHei\fs14}You can take your tea below and warm up.{\r}
+Dialogue: 0,0:33:49.71,0:33:52.30,Default,,0000,0000,0000,,彼得 给他找个地方休息下\N{\fnMicrosoft YaHei\fs14}Peter, have we got space for a man to lie down?{\r}
+Dialogue: 0,0:33:52.44,0:33:53.84,Default,,0000,0000,0000,,好的\N{\fnMicrosoft YaHei\fs14}Uh, yeah.{\r}
+Dialogue: 0,0:33:59.25,0:34:00.65,Default,,0000,0000,0000,,这里 来吧\N{\fnMicrosoft YaHei\fs14}Here, come on.{\r}
+Dialogue: 0,0:34:06.02,0:34:07.01,Default,,0000,0000,0000,,小心\N{\fnMicrosoft YaHei\fs14}Careful.{\r}
+Dialogue: 0,0:34:09.46,0:34:10.62,Default,,0000,0000,0000,,小心\N{\fnMicrosoft YaHei\fs14}Careful.{\r}
+Dialogue: 0,0:34:16.97,0:34:18.23,Default,,0000,0000,0000,,就这里\N{\fnMicrosoft YaHei\fs14}Just in there.{\r}
+Dialogue: 0,0:34:19.00,0:34:20.47,Default,,0000,0000,0000,,我去给你加点茶\N{\fnMicrosoft YaHei\fs14}I'll get you some more tea.{\r}
+Dialogue: 0,0:34:37.22,0:34:38.75,Default,,0000,0000,0000,,他是懦夫吗 道森先生?\N{\fnMicrosoft YaHei\fs14}Is he a coward, Mr. Dawson?{\r}
+Dialogue: 0,0:34:38.92,0:34:40.55,Default,,0000,0000,0000,,乔治 他患了炮弹休克症\N{\fnMicrosoft YaHei\fs14}He's shell-shocked, George.{\r}
+Dialogue: 0,0:34:40.73,0:34:42.28,Default,,0000,0000,0000,,现在神志不清\N{\fnMicrosoft YaHei\fs14}He's not himself.{\r}
+Dialogue: 0,0:34:45.06,0:34:47.43,Default,,0000,0000,0000,,搞不好一辈子都这样了\N{\fnMicrosoft YaHei\fs14}He may never be himself again.{\r}
+Dialogue: 0,0:34:56.01,0:34:57.20,Default,,0000,0000,0000,,喝吧\N{\fnMicrosoft YaHei\fs14}Here you are.{\r}
+Dialogue: 0,0:35:14.76,0:35:16.69,Default,,0000,0000,0000,,40加仑(151升) 福蒂斯1号\N{\fnMicrosoft YaHei\fs14}40 gallons, Fortis 1.{\r}
+Dialogue: 0,0:35:18.23,0:35:19.32,Default,,0000,0000,0000,,40加仑(151升) 明白\N{\fnMicrosoft YaHei\fs14}40 gallons, understood.{\r}
+Dialogue: 0,0:35:23.50,0:35:24.97,Default,,0000,0000,0000,,海因克尔轰炸机 11点钟方向\N{\fnMicrosoft YaHei\fs14}Heinkel, 11 o'clock.{\r}
+Dialogue: 0,0:35:25.40,0:35:28.30,Default,,0000,0000,0000,,它在轰炸队形里 目标是扫雷舰\N{\fnMicrosoft YaHei\fs14}She's lining up to drop her load on that minesweeper.{\r}
+Dialogue: 0,0:35:28.47,0:35:29.46,Default,,0000,0000,0000,,战斗机呢?\N{\fnMicrosoft YaHei\fs14}Fighters?{\r}
+Dialogue: 0,0:35:29.64,0:35:32.11,Default,,0000,0000,0000,,恩 都是109 在它右舷\N{\fnMicrosoft YaHei\fs14}Yeah, 109s off her starboard.{\r}
+Dialogue: 0,0:35:33.21,0:35:34.64,Default,,0000,0000,0000,,我负责轰炸机\N{\fnMicrosoft YaHei\fs14}I'm on the bomber.{\r}
+Dialogue: 0,0:36:26.46,0:36:27.45,Default,,0000,0000,0000,,打中了! 打中了!\N{\fnMicrosoft YaHei\fs14}Got him! Got him!{\r}
+Dialogue: 0,0:36:59.83,0:37:01.59,Default,,0000,0000,0000,,它转向了 肯定被你击中了\N{\fnMicrosoft YaHei\fs14}Oh, she's turning. You must've damaged her.{\r}
+Dialogue: 0,0:37:02.00,0:37:03.19,Default,,0000,0000,0000,,护卫机呢?\N{\fnMicrosoft YaHei\fs14}Where's the escort?{\r}
+Dialogue: 0,0:37:03.37,0:37:04.53,Default,,0000,0000,0000,,我击落一架 ...\N{\fnMicrosoft YaHei\fs14}Well, I got one of...{\r}
+Dialogue: 0,0:37:05.20,0:37:06.19,Default,,0000,0000,0000,,噢! 上帝!\N{\fnMicrosoft YaHei\fs14}Jesus!{\r}
+Dialogue: 0,0:37:25.02,0:37:26.25,Default,,0000,0000,0000,,我正在下坠\N{\fnMicrosoft YaHei\fs14}I'm going down.{\r}
+Dialogue: 0,0:37:26.42,0:37:27.98,Default,,0000,0000,0000,,我缠住他 你跳伞\N{\fnMicrosoft YaHei\fs14}I'm on him. Bail out.{\r}
+Dialogue: 0,0:37:48.18,0:37:49.58,Default,,0000,0000,0000,,海况良好 准备水上迫降\N{\fnMicrosoft YaHei\fs14}No, the swell looks good. I'm ditching.{\r}
+Dialogue: 0,0:38:10.57,0:38:11.80,Default,,0000,0000,0000,,别抛下我们\N{\fnMicrosoft YaHei\fs14}Don't leave us!{\r}
+Dialogue: 0,0:38:12.74,0:38:14.30,Default,,0000,0000,0000,,回来!\N{\fnMicrosoft YaHei\fs14}Come back!{\r}
+Dialogue: 0,0:38:14.84,0:38:17.36,Default,,0000,0000,0000,,- 等等我们! - 救命!\N{\fnMicrosoft YaHei\fs14}- Wait for us! - Help! Help us!{\r}
+Dialogue: 0,0:38:20.21,0:38:23.61,Default,,0000,0000,0000,,带我们走! 带我们走!\N{\fnMicrosoft YaHei\fs14}Pick us up! Pick us up!{\r}
+Dialogue: 0,0:38:27.32,0:38:28.79,Default,,0000,0000,0000,,回来!\N{\fnMicrosoft YaHei\fs14}Come back!{\r}
+Dialogue: 0,0:38:30.56,0:38:31.75,Default,,0000,0000,0000,,鱼雷!\N{\fnMicrosoft YaHei\fs14}Torpedo!{\r}
+Dialogue: 0,0:39:03.02,0:39:06.98,Default,,0000,0000,0000,,弃船!\N{\fnMicrosoft YaHei\fs14}Abandon ship! Abandon ship!{\r}
+Dialogue: 0,0:40:53.53,0:40:54.73,Default,,0000,0000,0000,,救命!\N{\fnMicrosoft YaHei\fs14}Help!{\r}
+Dialogue: 0,0:40:54.90,0:40:56.56,Default,,0000,0000,0000,,把我们救出去!\N{\fnMicrosoft YaHei\fs14}Get us out of here!{\r}
+Dialogue: 0,0:41:11.28,0:41:12.58,Default,,0000,0000,0000,,喷火战斗机 乔治\N{\fnMicrosoft YaHei\fs14}Spitfires, George.{\r}
+Dialogue: 0,0:41:12.75,0:41:15.08,Default,,0000,0000,0000,,史上最棒的飞机\N{\fnMicrosoft YaHei\fs14}Greatest plane ever built.{\r}
+Dialogue: 0,0:41:18.92,0:41:19.91,Default,,0000,0000,0000,,你没看就知道啦\N{\fnMicrosoft YaHei\fs14}You didn't even look.{\r}
+Dialogue: 0,0:41:21.29,0:41:23.26,Default,,0000,0000,0000,,劳斯莱斯“梅林”发动机\N{\fnMicrosoft YaHei\fs14}Rolls-Royce Merlin engines.{\r}
+Dialogue: 0,0:41:24.10,0:41:27.29,Default,,0000,0000,0000,,这是战场上最悦耳的声音了\N{\fnMicrosoft YaHei\fs14}Sweetest sound you could hear out here.{\r}
+Dialogue: 0,0:41:28.10,0:41:29.09,Default,,0000,0000,0000,,有人吗?!\N{\fnMicrosoft YaHei\fs14}Hello?{\r}
+Dialogue: 0,0:41:30.77,0:41:32.76,Default,,0000,0000,0000,,把门打开!\N{\fnMicrosoft YaHei\fs14}Could you open the door?{\r}
+Dialogue: 0,0:41:32.94,0:41:34.46,Default,,0000,0000,0000,,喂 能听到我吗?\N{\fnMicrosoft YaHei\fs14}Hello? Can you hear me?{\r}
+Dialogue: 0,0:41:36.01,0:41:38.31,Default,,0000,0000,0000,,快开门哪!\N{\fnMicrosoft YaHei\fs14}Open the door!{\r}
+Dialogue: 0,0:41:38.74,0:41:40.11,Default,,0000,0000,0000,,能听见我吗?!\N{\fnMicrosoft YaHei\fs14}Do you hear me?{\r}
+Dialogue: 0,0:41:42.45,0:41:43.74,Default,,0000,0000,0000,,他想出来\N{\fnMicrosoft YaHei\fs14}He wants to come out.{\r}
+Dialogue: 0,0:41:43.91,0:41:45.91,Default,,0000,0000,0000,,你干了什么? 把他锁里头?\N{\fnMicrosoft YaHei\fs14}What have you done? Locked him in?{\r}
+Dialogue: 0,0:41:46.08,0:41:47.57,Default,,0000,0000,0000,,让他出来 天呐!\N{\fnMicrosoft YaHei\fs14}Let him out, for God's sake.{\r}
+Dialogue: 0,0:41:47.75,0:41:48.74,Default,,0000,0000,0000,,有人吗?\N{\fnMicrosoft YaHei\fs14}Hello?{\r}
+Dialogue: 0,0:41:50.69,0:41:52.35,Default,,0000,0000,0000,,让我出去!\N{\fnMicrosoft YaHei\fs14}Let me out!{\r}
+Dialogue: 0,0:42:06.87,0:42:09.34,Default,,0000,0000,0000,,你们没有掉头!\N{\fnMicrosoft YaHei\fs14}You haven't turned around.{\r}
+Dialogue: 0,0:42:11.94,0:42:13.71,Default,,0000,0000,0000,,没有 我们有任务在身\N{\fnMicrosoft YaHei\fs14}No. We have a job to do.{\r}
+Dialogue: 0,0:42:15.75,0:42:18.34,Default,,0000,0000,0000,,任 ... 任务? 这 ... 这可是艘游艇!\N{\fnMicrosoft YaHei\fs14}Job? This is a pleasure yacht.{\r}
+Dialogue: 0,0:42:18.45,0:42:21.21,Default,,0000,0000,0000,,你们 ... 你们只是业余水手 又不是海军!\N{\fnMicrosoft YaHei\fs14}You're weekend sailors, not the bloody navy.{\r}
+Dialogue: 0,0:42:21.89,0:42:23.51,Default,,0000,0000,0000,,像你这把年纪的人 …\N{\fnMicrosoft YaHei\fs14}A man your age?{\r}
+Dialogue: 0,0:42:23.99,0:42:26.46,Default,,0000,0000,0000,,像我这把年纪的人 有些正在主导这场战争\N{\fnMicrosoft YaHei\fs14}Men my age dictate this war.{\r}
+Dialogue: 0,0:42:26.62,0:42:29.32,Default,,0000,0000,0000,,我们又凭什么 只让年轻人去战斗?\N{\fnMicrosoft YaHei\fs14}Why should we be allowed to send our children to fight it?{\r}
+Dialogue: 0,0:42:29.49,0:42:31.26,Default,,0000,0000,0000,,你就该待家里头!\N{\fnMicrosoft YaHei\fs14}You should be at home!{\r}
+Dialogue: 0,0:42:31.33,0:42:34.99,Default,,0000,0000,0000,,如果这场战争蔓延到英国 我也就无家可归了\N{\fnMicrosoft YaHei\fs14}Well, there won't be any home if we allow a slaughter across the Channel.{\r}
+Dialogue: 0,0:42:42.04,0:42:43.67,Default,,0000,0000,0000,,他掉头逃了 我去追他\N{\fnMicrosoft YaHei\fs14}He's turning tail. I'm gonna get after him.{\r}
+Dialogue: 0,0:42:45.68,0:42:46.67,Default,,0000,0000,0000,,祝好运\N{\fnMicrosoft YaHei\fs14}Good luck.{\r}
+Dialogue: 0,0:42:46.84,0:42:49.84,Default,,0000,0000,0000,,留意燃油 你还有15加仑(57升)\N{\fnMicrosoft YaHei\fs14}Watch your fuel. You're at 15 gallons.{\r}
+Dialogue: 0,0:42:52.48,0:42:53.92,Default,,0000,0000,0000,,15加仑(57升) 明白\N{\fnMicrosoft YaHei\fs14}15 gallons, understood.{\r}
+Dialogue: 0,0:42:56.02,0:42:57.58,Default,,0000,0000,0000,,祝你好运 柯林斯\N{\fnMicrosoft YaHei\fs14}Best of luck, Collins.{\r}
+Dialogue: 0,0:43:00.66,0:43:02.82,Default,,0000,0000,0000,,柯林斯 你没事吧?\N{\fnMicrosoft YaHei\fs14}Collins, do you read?{\r}
+Dialogue: 0,0:44:04.62,0:44:06.78,Default,,0000,0000,0000,,不! 不!\N{\fnMicrosoft YaHei\fs14}Oi! No! No!{\r}
+Dialogue: 0,0:44:06.96,0:44:08.65,Default,,0000,0000,0000,,一边去!\N{\fnMicrosoft YaHei\fs14}Get off! Get off!{\r}
+Dialogue: 0,0:44:09.23,0:44:11.06,Default,,0000,0000,0000,,滚开 船上太挤了!\N{\fnMicrosoft YaHei\fs14}Piss off, the both of you. It's too crowded.{\r}
+Dialogue: 0,0:44:11.23,0:44:12.46,Default,,0000,0000,0000,,你们不能撇下我们!\N{\fnMicrosoft YaHei\fs14}You can't leave us!{\r}
+Dialogue: 0,0:44:13.53,0:44:14.59,Default,,0000,0000,0000,,腾腾位子!\N{\fnMicrosoft YaHei\fs14}Make some room!{\r}
+Dialogue: 0,0:44:14.77,0:44:15.75,Default,,0000,0000,0000,,不! 不!\N{\fnMicrosoft YaHei\fs14}No!{\r}
+Dialogue: 0,0:44:16.67,0:44:17.96,Default,,0000,0000,0000,,一边去!\N{\fnMicrosoft YaHei\fs14}No! Get off!{\r}
+Dialogue: 0,0:44:18.14,0:44:19.50,Default,,0000,0000,0000,,你们快住手 船会翻掉的\N{\fnMicrosoft YaHei\fs14}You men, leave off. You'll capsize the boat.{\r}
+Dialogue: 0,0:44:19.67,0:44:21.83,Default,,0000,0000,0000,,来这的路上已经翻过两次了\N{\fnMicrosoft YaHei\fs14}She's gone over twice on the way out here.{\r}
+Dialogue: 0,0:44:22.01,0:44:23.60,Default,,0000,0000,0000,,冷静下来 船是够用的\N{\fnMicrosoft YaHei\fs14}You have to stay calm. There are plenty of boats.{\r}
+Dialogue: 0,0:44:23.81,0:44:24.80,Default,,0000,0000,0000,,冷静?!\N{\fnMicrosoft YaHei\fs14}Calm?{\r}
+Dialogue: 0,0:44:24.98,0:44:27.24,Default,,0000,0000,0000,,等你也被鱼雷炸了 再来扯这个吧!\N{\fnMicrosoft YaHei\fs14}Wait till you get torpedoed, then tell us to be calm!{\r}
+Dialogue: 0,0:44:27.78,0:44:29.08,Default,,0000,0000,0000,,你们有救生衣吗?\N{\fnMicrosoft YaHei\fs14}You have life jackets?{\r}
+Dialogue: 0,0:44:29.25,0:44:30.54,Default,,0000,0000,0000,,有 他们有的\N{\fnMicrosoft YaHei\fs14}Yes, they do.{\r}
+Dialogue: 0,0:44:30.75,0:44:32.68,Default,,0000,0000,0000,,你们不要慌 海水还算平静\N{\fnMicrosoft YaHei\fs14}Don't panic, boys. The water's not too rough{\r}
+Dialogue: 0,0:44:32.85,0:44:33.94,Default,,0000,0000,0000,,也不太冷\N{\fnMicrosoft YaHei\fs14}or too cold.{\r}
+Dialogue: 0,0:44:34.12,0:44:35.64,Default,,0000,0000,0000,,我们先回海滩上\N{\fnMicrosoft YaHei\fs14}We're heading back to the beach.{\r}
+Dialogue: 0,0:44:35.82,0:44:38.08,Default,,0000,0000,0000,,- 咱们去多佛(英国)吧! - 对!\N{\fnMicrosoft YaHei\fs14}- Let's go to Dover! - Yeah!{\r}
+Dialogue: 0,0:44:38.82,0:44:40.48,Default,,0000,0000,0000,,这船没法渡过海峡 伙计们\N{\fnMicrosoft YaHei\fs14}We can't make it across the Channel in this, lads.{\r}
+Dialogue: 0,0:44:40.66,0:44:44.12,Default,,0000,0000,0000,,我们得回到海滩上 等下一班船\N{\fnMicrosoft YaHei\fs14}We need to get back to the beach and wait for another ride.{\r}
+Dialogue: 0,0:44:44.46,0:44:47.26,Default,,0000,0000,0000,,水里的弟兄们 保持体力\N{\fnMicrosoft YaHei\fs14}You men in the water, float here, save your strength.{\r}
+Dialogue: 0,0:44:47.43,0:44:48.96,Default,,0000,0000,0000,,我们会回来接你们的\N{\fnMicrosoft YaHei\fs14}We'll come back for you.{\r}
+Dialogue: 0,0:44:49.13,0:44:50.12,Default,,0000,0000,0000,,提桨!\N{\fnMicrosoft YaHei\fs14}Oars in!{\r}
+Dialogue: 0,0:44:51.27,0:44:53.96,Default,,0000,0000,0000,,提桨! 划!\N{\fnMicrosoft YaHei\fs14}Together, pull!{\r}
+Dialogue: 0,0:44:55.24,0:44:57.50,Default,,0000,0000,0000,,提! 划!\N{\fnMicrosoft YaHei\fs14}Together, pull!{\r}
+Dialogue: 0,0:44:59.84,0:45:00.83,Default,,0000,0000,0000,,划!\N{\fnMicrosoft YaHei\fs14}Pull!{\r}
+Dialogue: 0,0:45:01.88,0:45:04.04,Default,,0000,0000,0000,,提桨! 划!\N{\fnMicrosoft YaHei\fs14}Together, pull!{\r}
+Dialogue: 0,0:45:06.28,0:45:07.31,Default,,0000,0000,0000,,划!\N{\fnMicrosoft YaHei\fs14}Pull!{\r}
+Dialogue: 0,0:45:08.89,0:45:11.35,Default,,0000,0000,0000,,提! 划!\N{\fnMicrosoft YaHei\fs14}Together, pull!{\r}
+Dialogue: 0,0:45:14.59,0:45:16.79,Default,,0000,0000,0000,,这是躲不掉的 孩子\N{\fnMicrosoft YaHei\fs14}There's no hiding from this, son.{\r}
+Dialogue: 0,0:45:19.06,0:45:21.73,Default,,0000,0000,0000,,你以为你们能帮到什么?  就凭这玩意?\N{\fnMicrosoft YaHei\fs14}What is it you think you can do out there, on this thing?{\r}
+Dialogue: 0,0:45:21.97,0:45:25.06,Default,,0000,0000,0000,,我们不是孤军作战 号令下来了\N{\fnMicrosoft YaHei\fs14}There's not just us. A call went out.{\r}
+Dialogue: 0,0:45:25.24,0:45:27.30,Default,,0000,0000,0000,,大家都挺身而出\N{\fnMicrosoft YaHei\fs14}We aren't the only ones to answer, you know.{\r}
+Dialogue: 0,0:45:27.47,0:45:29.13,Default,,0000,0000,0000,,你们连枪都没有!\N{\fnMicrosoft YaHei\fs14}You don't even have guns.{\r}
+Dialogue: 0,0:45:29.51,0:45:30.50,Default,,0000,0000,0000,,你有枪吗?\N{\fnMicrosoft YaHei\fs14}Do you have a gun?{\r}
+Dialogue: 0,0:45:30.67,0:45:33.40,Default,,0000,0000,0000,,有 当然了! 来复步枪 303口径\N{\fnMicrosoft YaHei\fs14}Yes, of course. A rifle, a 303.{\r}
+Dialogue: 0,0:45:33.58,0:45:36.60,Default,,0000,0000,0000,,它能帮你回击俯冲轰炸机吗? U型潜艇呢?\N{\fnMicrosoft YaHei\fs14}Did it help you against the dive bombers and the U-boats?{\r}
+Dialogue: 0,0:45:37.85,0:45:39.51,Default,,0000,0000,0000,,你真是个老糊涂\N{\fnMicrosoft YaHei\fs14}You're an old fool.{\r}
+Dialogue: 0,0:45:40.72,0:45:42.55,Default,,0000,0000,0000,,我不会回去的!\N{\fnMicrosoft YaHei\fs14}I'm not going back.{\r}
+Dialogue: 0,0:45:43.15,0:45:44.38,Default,,0000,0000,0000,,不会回去的!\N{\fnMicrosoft YaHei\fs14}I'm not going back.{\r}
+Dialogue: 0,0:45:45.09,0:45:46.08,Default,,0000,0000,0000,,掉头返航!\N{\fnMicrosoft YaHei\fs14}Turn it around.{\r}
+Dialogue: 0,0:45:47.19,0:45:48.59,Default,,0000,0000,0000,,我们不会掉头的\N{\fnMicrosoft YaHei\fs14}I'm not turning round.{\r}
+Dialogue: 0,0:45:49.26,0:45:50.42,Default,,0000,0000,0000,,掉回去!\N{\fnMicrosoft YaHei\fs14}Turn it around!{\r}
+Dialogue: 0,0:45:52.20,0:45:53.39,Default,,0000,0000,0000,,让它掉 ...\N{\fnMicrosoft YaHei\fs14}Turn it...{\r}
+Dialogue: 0,0:45:55.40,0:45:56.87,Default,,0000,0000,0000,,- 冷静 老兄! - 掉头回去\N{\fnMicrosoft YaHei\fs14}- Calm it down, mate. - Turn it around!{\r}
+Dialogue: 0,0:45:57.03,0:45:58.02,Default,,0000,0000,0000,,冷静 冷静\N{\fnMicrosoft YaHei\fs14}Wait, wait!{\r}
+Dialogue: 0,0:45:58.20,0:45:59.60,Default,,0000,0000,0000,,冷静点 老兄!\N{\fnMicrosoft YaHei\fs14}Calm it down, mate.{\r}
+Dialogue: 0,0:46:01.07,0:46:02.06,Default,,0000,0000,0000,,乔治?\N{\fnMicrosoft YaHei\fs14}George?{\r}
+Dialogue: 0,0:46:02.91,0:46:03.90,Default,,0000,0000,0000,,乔治?!\N{\fnMicrosoft YaHei\fs14}George!{\r}
+Dialogue: 0,0:46:06.71,0:46:07.70,Default,,0000,0000,0000,,你都做了什么?\N{\fnMicrosoft YaHei\fs14}What have you done?{\r}
+Dialogue: 0,0:46:09.41,0:46:10.88,Default,,0000,0000,0000,,好的 你没事了 乔治\N{\fnMicrosoft YaHei\fs14}Okay, you're all right, George.{\r}
+Dialogue: 0,0:46:11.62,0:46:12.78,Default,,0000,0000,0000,,你没事的!\N{\fnMicrosoft YaHei\fs14}You're all right.{\r}
+Dialogue: 0,0:46:13.52,0:46:16.51,Default,,0000,0000,0000,,坚持住\N{\fnMicrosoft YaHei\fs14}Hang on. Okay. Okay, just...{\r}
+Dialogue: 0,0:46:16.65,0:46:18.18,Default,,0000,0000,0000,,好的 现在\N{\fnMicrosoft YaHei\fs14}That's it. That's good enough.{\r}
+Dialogue: 0,0:46:18.36,0:46:21.26,Default,,0000,0000,0000,,要给你压一下 好了\N{\fnMicrosoft YaHei\fs14}It's gonna keep some pressure on. There we go.{\r}
+Dialogue: 0,0:46:21.43,0:46:23.02,Default,,0000,0000,0000,,好了\N{\fnMicrosoft YaHei\fs14}There we go.{\r}
+Dialogue: 0,0:46:23.19,0:46:24.42,Default,,0000,0000,0000,,能听到我吗 乔治?\N{\fnMicrosoft YaHei\fs14}Can you hear me, George?{\r}
+Dialogue: 0,0:48:58.98,0:49:00.47,Default,,0000,0000,0000,,加把劲 伙计们\N{\fnMicrosoft YaHei\fs14}Come on, lads!{\r}
+Dialogue: 0,0:49:01.75,0:49:04.59,Default,,0000,0000,0000,,加把劲 伙计们\N{\fnMicrosoft YaHei\fs14}Come on! Come on, boys!{\r}
+Dialogue: 0,0:51:10.08,0:51:11.24,Default,,0000,0000,0000,,等到海水涨起来\N{\fnMicrosoft YaHei\fs14}It's a pier.{\r}
+Dialogue: 0,0:51:12.35,0:51:13.91,Default,,0000,0000,0000,,就把它当码头用\N{\fnMicrosoft YaHei\fs14}For when the water comes in.{\r}
+Dialogue: 0,0:51:18.49,0:51:19.85,Default,,0000,0000,0000,,现在在涨潮了\N{\fnMicrosoft YaHei\fs14}The tide's turning now.{\r}
+Dialogue: 0,0:51:21.93,0:51:22.91,Default,,0000,0000,0000,,你怎么知道?\N{\fnMicrosoft YaHei\fs14}How can you tell?{\r}
+Dialogue: 0,0:51:25.40,0:51:26.86,Default,,0000,0000,0000,,尸体都漂回来了\N{\fnMicrosoft YaHei\fs14}The bodies come back.{\r}
+Dialogue: 0,0:51:57.69,0:51:58.68,Default,,0000,0000,0000,,嘿!\N{\fnMicrosoft YaHei\fs14}Hey.{\r}
+Dialogue: 0,0:52:11.04,0:52:12.70,Default,,0000,0000,0000,,嘿! 高地兵们!\N{\fnMicrosoft YaHei\fs14}Hey, Highlanders!{\r}
+Dialogue: 0,0:52:22.62,0:52:24.28,Default,,0000,0000,0000,,嘿! 高地兵们!\N{\fnMicrosoft YaHei\fs14}Hey, Highlanders!{\r}
+Dialogue: 0,0:52:24.45,0:52:25.65,Default,,0000,0000,0000,,那边是什么?\N{\fnMicrosoft YaHei\fs14}What's that way?{\r}
+Dialogue: 0,0:52:26.16,0:52:27.15,Default,,0000,0000,0000,,有艘船\N{\fnMicrosoft YaHei\fs14}A boat.{\r}
+Dialogue: 0,0:52:27.26,0:52:28.25,Default,,0000,0000,0000,,搁浅了\N{\fnMicrosoft YaHei\fs14}She's grounded.{\r}
+Dialogue: 0,0:52:29.06,0:52:31.12,Default,,0000,0000,0000,,等到涨潮后 就不是了\N{\fnMicrosoft YaHei\fs14}Not when the tide comes in, she's not.{\r}
+Dialogue: 0,0:52:48.41,0:52:51.01,Default,,0000,0000,0000,,挺住 兄弟\N{\fnMicrosoft YaHei\fs14}Be a brave lad.{\r}
+Dialogue: 0,0:52:53.55,0:52:55.02,Default,,0000,0000,0000,,遇见你和道森先生\N{\fnMicrosoft YaHei\fs14}You and Mr. Dawson?{\r}
+Dialogue: 0,0:52:57.12,0:52:58.35,Default,,0000,0000,0000,,是我做过最棒的事情\N{\fnMicrosoft YaHei\fs14}It's the best thing I've ever done.{\r}
+Dialogue: 0,0:52:59.29,0:53:01.69,Default,,0000,0000,0000,,你没事的 你很好\N{\fnMicrosoft YaHei\fs14}You're all right. You're okay.{\r}
+Dialogue: 0,0:53:12.77,0:53:15.26,Default,,0000,0000,0000,,参加海事青年团 那是我做过的唯一一件事了\N{\fnMicrosoft YaHei\fs14}Sea Cadet. It's the only thing I've ever done.{\r}
+Dialogue: 0,0:53:15.44,0:53:17.57,Default,,0000,0000,0000,,没事的 好了 喝口水吧\N{\fnMicrosoft YaHei\fs14}It's all right. It's okay. Just have some water.{\r}
+Dialogue: 0,0:53:20.44,0:53:22.11,Default,,0000,0000,0000,,我跟父亲说过\N{\fnMicrosoft YaHei\fs14}I told my dad...{\r}
+Dialogue: 0,0:53:22.28,0:53:24.44,Default,,0000,0000,0000,,我在学校里虽然一事无成\N{\fnMicrosoft YaHei\fs14}I've done nothing at school{\r}
+Dialogue: 0,0:53:26.35,0:53:28.51,Default,,0000,0000,0000,,可总有一天会混出点名堂\N{\fnMicrosoft YaHei\fs14}and that I would do something one day.{\r}
+Dialogue: 0,0:53:31.32,0:53:33.79,Default,,0000,0000,0000,,也许会登上本地报纸\N{\fnMicrosoft YaHei\fs14}Maybe get in the local paper.{\r}
+Dialogue: 0,0:53:34.02,0:53:36.22,Default,,0000,0000,0000,,也许老师们会读到我的报道\N{\fnMicrosoft YaHei\fs14}Maybe my teachers would see it.{\r}
+Dialogue: 0,0:53:36.39,0:53:37.95,Default,,0000,0000,0000,,好了 休息一下\N{\fnMicrosoft YaHei\fs14}Okay, get some rest.{\r}
+Dialogue: 0,0:53:38.60,0:53:41.12,Default,,0000,0000,0000,,等你恢复了 甲板上我还需要你\N{\fnMicrosoft YaHei\fs14}I need you back up on deck as soon as you're able.{\r}
+Dialogue: 0,0:53:42.40,0:53:43.39,Default,,0000,0000,0000,,做不到\N{\fnMicrosoft YaHei\fs14}I can't.{\r}
+Dialogue: 0,0:53:44.13,0:53:45.66,Default,,0000,0000,0000,,什么?\N{\fnMicrosoft YaHei\fs14}What?{\r}
+Dialogue: 0,0:53:49.57,0:53:50.90,Default,,0000,0000,0000,,我看不见了\N{\fnMicrosoft YaHei\fs14}I can't see.{\r}
+Dialogue: 0,0:54:50.83,0:54:51.82,Default,,0000,0000,0000,,长官\N{\fnMicrosoft YaHei\fs14}Sir.{\r}
+Dialogue: 0,0:54:53.20,0:54:55.64,Default,,0000,0000,0000,,西侧的法军已经被迫后撤了\N{\fnMicrosoft YaHei\fs14}The French have been forced back on the western side.{\r}
+Dialogue: 0,0:54:56.57,0:54:57.90,Default,,0000,0000,0000,,但原来的防线还在吧?\N{\fnMicrosoft YaHei\fs14}They're still holding a perimeter?{\r}
+Dialogue: 0,0:54:58.07,0:54:59.06,Default,,0000,0000,0000,,目前是的\N{\fnMicrosoft YaHei\fs14}For now.{\r}
+Dialogue: 0,0:55:00.64,0:55:02.70,Default,,0000,0000,0000,,给长官让路 都让让 让让!\N{\fnMicrosoft YaHei\fs14}Officer coming through. Move yourselves. Move yourselves!{\r}
+Dialogue: 0,0:55:13.72,0:55:15.05,Default,,0000,0000,0000,,驱逐舰在哪里?\N{\fnMicrosoft YaHei\fs14}Where are the destroyers?{\r}
+Dialogue: 0,0:55:15.23,0:55:16.75,Default,,0000,0000,0000,,很快会再来一艘\N{\fnMicrosoft YaHei\fs14}There'll be one soon.{\r}
+Dialogue: 0,0:55:19.86,0:55:20.85,Default,,0000,0000,0000,,一艘?\N{\fnMicrosoft YaHei\fs14}One?{\r}
+Dialogue: 0,0:55:21.00,0:55:23.59,Default,,0000,0000,0000,,经过昨天的损失 现在一次就来一艘了\N{\fnMicrosoft YaHei\fs14}After yesterday's losses, it's one ship on the mole at a time.{\r}
+Dialogue: 0,0:55:23.77,0:55:24.83,Default,,0000,0000,0000,,这就是战场\N{\fnMicrosoft YaHei\fs14}The battle is here.{\r}
+Dialogue: 0,0:55:25.00,0:55:26.49,Default,,0000,0000,0000,,他们藏着船究竟想做什么?\N{\fnMicrosoft YaHei\fs14}What the hell are they saving them for?{\r}
+Dialogue: 0,0:55:26.67,0:55:28.14,Default,,0000,0000,0000,,为了以后的战斗\N{\fnMicrosoft YaHei\fs14}The next battle.{\r}
+Dialogue: 0,0:55:28.31,0:55:29.77,Default,,0000,0000,0000,,为了保卫不列颠\N{\fnMicrosoft YaHei\fs14}The one for Britain.{\r}
+Dialogue: 0,0:55:29.94,0:55:31.87,Default,,0000,0000,0000,,飞机也一样\N{\fnMicrosoft YaHei\fs14}It's the same with the planes.{\r}
+Dialogue: 0,0:55:34.01,0:55:35.64,Default,,0000,0000,0000,,可英国近在眼前!\N{\fnMicrosoft YaHei\fs14}But it's right there.{\r}
+Dialogue: 0,0:55:36.35,0:55:37.34,Default,,0000,0000,0000,,你几乎可以看 ...\N{\fnMicrosoft YaHei\fs14}You can practically...{\r}
+Dialogue: 0,0:55:37.51,0:55:39.57,Default,,0000,0000,0000,,就算看得到 也不意味着你能平安返家 上尉\N{\fnMicrosoft YaHei\fs14}Seeing home doesn't help us get there, Colonel.{\r}
+Dialogue: 0,0:55:39.75,0:55:41.68,Default,,0000,0000,0000,,那边得增派更多船只\N{\fnMicrosoft YaHei\fs14}They need to send more ships.{\r}
+Dialogue: 0,0:55:42.62,0:55:44.18,Default,,0000,0000,0000,,敌人时刻都在逼近\N{\fnMicrosoft YaHei\fs14}Every hour the enemy pushes closer.{\r}
+Dialogue: 0,0:55:45.02,0:55:47.01,Default,,0000,0000,0000,,当局已经启用"小型运力池"来增援了\N{\fnMicrosoft YaHei\fs14}They've activated the small vessels pool.{\r}
+Dialogue: 0,0:55:47.99,0:55:48.98,Default,,0000,0000,0000,,"小型运力"\N{\fnMicrosoft YaHei\fs14}Small vessels?{\r}
+Dialogue: 0,0:55:49.16,0:55:51.63,Default,,0000,0000,0000,,也就是征召民船\N{\fnMicrosoft YaHei\fs14}It's the list of civilian boats for requisition.{\r}
+Dialogue: 0,0:55:52.13,0:55:53.12,Default,,0000,0000,0000,,民船?\N{\fnMicrosoft YaHei\fs14}Civilian?{\r}
+Dialogue: 0,0:55:54.97,0:55:56.69,Default,,0000,0000,0000,,我们要的是驱逐舰\N{\fnMicrosoft YaHei\fs14}We need destroyers.{\r}
+Dialogue: 0,0:55:56.87,0:55:58.63,Default,,0000,0000,0000,,小船可以到海滩上载人\N{\fnMicrosoft YaHei\fs14}Small boats can load from the beach.{\r}
+Dialogue: 0,0:55:58.80,0:56:00.03,Default,,0000,0000,0000,,但现在不合适\N{\fnMicrosoft YaHei\fs14}Not in these conditions.{\r}
+Dialogue: 0,0:56:00.20,0:56:02.69,Default,,0000,0000,0000,,比起俯冲轰炸 我宁愿它波浪滔天\N{\fnMicrosoft YaHei\fs14}Well, I'd rather face waves than dive bombers.{\r}
+Dialogue: 0,0:56:05.68,0:56:08.44,Default,,0000,0000,0000,,说的没错 这海况没法出航 ...\N{\fnMicrosoft YaHei\fs14}No, you're right. They won't get up in this.{\r}
+Dialogue: 0,0:56:09.78,0:56:12.54,Default,,0000,0000,0000,,皇家工兵团在用卡车搭建临时码头\N{\fnMicrosoft YaHei\fs14}The Royal Engineers are building piers from lorries.{\r}
+Dialogue: 0,0:56:12.72,0:56:15.34,Default,,0000,0000,0000,,起码在涨潮后能派上用场\N{\fnMicrosoft YaHei\fs14}At least that should help us when the tide comes back.{\r}
+Dialogue: 0,0:56:15.52,0:56:17.68,Default,,0000,0000,0000,,我们只有6个小时\N{\fnMicrosoft YaHei\fs14}Well, we'll know in six hours' time.{\r}
+Dialogue: 0,0:56:18.69,0:56:20.12,Default,,0000,0000,0000,,不是3小时一次涨潮吗?\N{\fnMicrosoft YaHei\fs14}I thought the tides were every three?{\r}
+Dialogue: 0,0:56:21.93,0:56:24.72,Default,,0000,0000,0000,,所以才说 你是陆军 我是海军 对吧?\N{\fnMicrosoft YaHei\fs14}Then it's good that you're army and I'm navy, isn't it?{\r}
+Dialogue: 0,0:56:26.20,0:56:28.49,Default,,0000,0000,0000,,那儿 "征服者"号驱逐舰 ...\N{\fnMicrosoft YaHei\fs14}There. Vanquisher.{\r}
+Dialogue: 0,0:56:43.31,0:56:44.51,Default,,0000,0000,0000,,船员去哪儿了?\N{\fnMicrosoft YaHei\fs14}Where's the crew?{\r}
+Dialogue: 0,0:56:44.68,0:56:46.55,Default,,0000,0000,0000,,可能是搁浅后害怕了\N{\fnMicrosoft YaHei\fs14}Probably got spooked after they ran aground.{\r}
+Dialogue: 0,0:56:47.35,0:56:48.87,Default,,0000,0000,0000,,逃到了海滩上\N{\fnMicrosoft YaHei\fs14}Scarpered up the beach.{\r}
+Dialogue: 0,0:56:49.35,0:56:50.34,Default,,0000,0000,0000,,为什么?\N{\fnMicrosoft YaHei\fs14}Why?{\r}
+Dialogue: 0,0:56:50.52,0:56:53.72,Default,,0000,0000,0000,,因为我们在防线外头 敌人可能就在附近\N{\fnMicrosoft YaHei\fs14}'Cause we're outside the perimeter. Enemy could be right there.{\r}
+Dialogue: 0,0:56:54.89,0:56:57.33,Default,,0000,0000,0000,,好的 咱们最好藏到里头 弟兄们!\N{\fnMicrosoft YaHei\fs14}All right, best shut ourselves inside, boys.{\r}
+Dialogue: 0,0:56:57.49,0:56:58.48,Default,,0000,0000,0000,,然后待到涨潮\N{\fnMicrosoft YaHei\fs14}Wait for the high tide.{\r}
+Dialogue: 0,0:56:58.66,0:57:00.22,Default,,0000,0000,0000,,那要多久?\N{\fnMicrosoft YaHei\fs14}How long's that?{\r}
+Dialogue: 0,0:57:00.40,0:57:02.02,Default,,0000,0000,0000,,3小时一次\N{\fnMicrosoft YaHei\fs14}Every three hours.{\r}
+Dialogue: 0,0:57:25.59,0:57:27.68,Default,,0000,0000,0000,,我用力压住了伤口\N{\fnMicrosoft YaHei\fs14}I've put a bit of pressure on it.{\r}
+Dialogue: 0,0:57:27.86,0:57:29.79,Default,,0000,0000,0000,,给他缠上了绷带 希望能他能舒服些\N{\fnMicrosoft YaHei\fs14}Strapped him up, made him comfortable.{\r}
+Dialogue: 0,0:57:31.06,0:57:32.09,Default,,0000,0000,0000,,什么?\N{\fnMicrosoft YaHei\fs14}What?{\r}
+Dialogue: 0,0:57:34.40,0:57:35.39,Default,,0000,0000,0000,,他情况很糟 爸爸\N{\fnMicrosoft YaHei\fs14}It's bad, Dad.{\r}
+Dialogue: 0,0:57:38.40,0:57:39.89,Default,,0000,0000,0000,,我们要不要掉头?\N{\fnMicrosoft YaHei\fs14}Well, should we turn back?{\r}
+Dialogue: 0,0:57:46.28,0:57:47.27,Default,,0000,0000,0000,,船都到这了\N{\fnMicrosoft YaHei\fs14}We've come so far.{\r}
+Dialogue: 0,0:57:48.65,0:57:50.14,Default,,0000,0000,0000,,那边是咱们的飞机吗?\N{\fnMicrosoft YaHei\fs14}Dad, is that one of ours?{\r}
+Dialogue: 0,0:57:51.72,0:57:54.98,Default,,0000,0000,0000,,那架是海因克尔轰炸机 他们要攻击那艘扫雷舰\N{\fnMicrosoft YaHei\fs14}That's a Heinkel. They'll go for that minesweeper there.{\r}
+Dialogue: 0,0:57:55.49,0:57:57.25,Default,,0000,0000,0000,,我们是不是要准备援救幸存者了?\N{\fnMicrosoft YaHei\fs14}Hang on. Shouldn't we stand by to pick up survivors?{\r}
+Dialogue: 0,0:57:57.45,0:57:59.32,Default,,0000,0000,0000,,先活下来再说吧\N{\fnMicrosoft YaHei\fs14}To do that we have to survive ourselves.{\r}
+Dialogue: 0,0:58:04.09,0:58:06.26,Default,,0000,0000,0000,,把头伸出去 看看涨潮了没\N{\fnMicrosoft YaHei\fs14}Poke your head out. See if the water's come in.{\r}
+Dialogue: 0,0:58:11.73,0:58:13.20,Default,,0000,0000,0000,,你不是很健谈么?\N{\fnMicrosoft YaHei\fs14}Talkative sod, aren't you?{\r}
+Dialogue: 0,0:58:39.33,0:58:41.13,Default,,0000,0000,0000,,几乎没有\N{\fnMicrosoft YaHei\fs14}It's barely come in at all.{\r}
+Dialogue: 0,0:58:41.30,0:58:43.46,Default,,0000,0000,0000,,- 他妈的! - 冷静点!\N{\fnMicrosoft YaHei\fs14}- Fuck's sake. - Calm down.{\r}
+Dialogue: 0,0:58:43.63,0:58:45.79,Default,,0000,0000,0000,,有退潮自然会有涨潮 不是么?\N{\fnMicrosoft YaHei\fs14}What goes out comes back in again, right?{\r}
+Dialogue: 0,0:58:45.97,0:58:47.37,Default,,0000,0000,0000,,对啊 但要等多久?\N{\fnMicrosoft YaHei\fs14}Yeah, but how long?{\r}
+Dialogue: 0,0:59:03.99,0:59:04.98,Default,,0000,0000,0000,,喷火战斗机!\N{\fnMicrosoft YaHei\fs14}Spitfires!{\r}
+Dialogue: 0,0:59:05.85,0:59:06.88,Default,,0000,0000,0000,,加油\N{\fnMicrosoft YaHei\fs14}Come on.{\r}
+Dialogue: 0,0:59:13.53,0:59:14.55,Default,,0000,0000,0000,,加油 加油\N{\fnMicrosoft YaHei\fs14}Come on, come on.{\r}
+Dialogue: 0,0:59:23.34,0:59:24.67,Default,,0000,0000,0000,,爸爸! 他打中了!\N{\fnMicrosoft YaHei\fs14}Dad, he got him!{\r}
+Dialogue: 0,0:59:24.84,0:59:26.40,Default,,0000,0000,0000,,好!\N{\fnMicrosoft YaHei\fs14}Yeah! Yeah!{\r}
+Dialogue: 0,0:59:33.75,0:59:35.27,Default,,0000,0000,0000,,轰炸机飞走了!\N{\fnMicrosoft YaHei\fs14}The Heinkel's moving off.{\r}
+Dialogue: 0,0:59:40.42,0:59:41.41,Default,,0000,0000,0000,,对!\N{\fnMicrosoft YaHei\fs14}Yeah.{\r}
+Dialogue: 0,0:59:43.06,0:59:44.05,Default,,0000,0000,0000,,噢 不\N{\fnMicrosoft YaHei\fs14}Oh, no.{\r}
+Dialogue: 0,0:59:46.03,0:59:47.83,Default,,0000,0000,0000,,那架喷火战斗机着火了!\N{\fnMicrosoft YaHei\fs14}Smoke from the Spitfire!{\r}
+Dialogue: 0,0:59:49.16,0:59:51.00,Default,,0000,0000,0000,,注意降落伞的位置!\N{\fnMicrosoft YaHei\fs14}Watch for a parachute!{\r}
+Dialogue: 0,1:00:51.53,1:00:52.89,Default,,0000,0000,0000,,- 你是德国人?\N{\fnMicrosoft YaHei\fs14}Are you German?{\r}
+Dialogue: 0,1:00:53.06,1:00:54.39,Default,,0000,0000,0000,,- 不 荷兰人! 我是荷兰人!\N{\fnMicrosoft YaHei\fs14}No, Dutch. Dutch!{\r}
+Dialogue: 0,1:00:55.76,1:00:56.75,Default,,0000,0000,0000,,我是商船队的\N{\fnMicrosoft YaHei\fs14}Merchant navy.{\r}
+Dialogue: 0,1:00:57.60,1:00:59.09,Default,,0000,0000,0000,,- 来接你们 来帮忙的\N{\fnMicrosoft YaHei\fs14}Here to pick you up. To help you.{\r}
+Dialogue: 0,1:00:59.27,1:01:00.93,Default,,0000,0000,0000,,- 干嘛要离开船?\N{\fnMicrosoft YaHei\fs14}Why'd you leave your boat?{\r}
+Dialogue: 0,1:01:01.10,1:01:02.33,Default,,0000,0000,0000,,我们担心德国人会过来\N{\fnMicrosoft YaHei\fs14}In case the Germans come.{\r}
+Dialogue: 0,1:01:02.97,1:01:05.06,Default,,0000,0000,0000,,我们在海滩上\N{\fnMicrosoft YaHei\fs14}We wait up the beach.{\r}
+Dialogue: 0,1:01:05.24,1:01:06.83,Default,,0000,0000,0000,,跟大家一起 等涨潮呢\N{\fnMicrosoft YaHei\fs14}With the soldiers. Wait for the tide.{\r}
+Dialogue: 0,1:01:07.01,1:01:09.31,Default,,0000,0000,0000,,你回来了 那肯定是涨潮了\N{\fnMicrosoft YaHei\fs14}You came back. The tide must be in.{\r}
+Dialogue: 0,1:01:10.48,1:01:12.17,Default,,0000,0000,0000,,对 涨了 ... 没错儿\N{\fnMicrosoft YaHei\fs14}Coming. Coming, yes.{\r}
+Dialogue: 0,1:01:12.65,1:01:14.51,Default,,0000,0000,0000,,但还得再等几个小时 船才能浮起来\N{\fnMicrosoft YaHei\fs14}But more hours till we float.{\r}
+Dialogue: 0,1:01:14.82,1:01:15.81,Default,,0000,0000,0000,,几个小时!\N{\fnMicrosoft YaHei\fs14}Hours?{\r}
+Dialogue: 0,1:01:15.98,1:01:17.45,Default,,0000,0000,0000,,那怎么现在就回来了?\N{\fnMicrosoft YaHei\fs14}Why'd you come back?{\r}
+Dialogue: 0,1:01:19.35,1:01:20.51,Default,,0000,0000,0000,,我走的时候船里可没这么多人啊!\N{\fnMicrosoft YaHei\fs14}Not so heavy when I left.{\r}
+Dialogue: 0,1:01:33.80,1:01:35.36,Default,,0000,0000,0000,,没有降落伞!\N{\fnMicrosoft YaHei\fs14}No 'chute!{\r}
+Dialogue: 0,1:01:40.44,1:01:41.43,Default,,0000,0000,0000,,祝你好运 柯林斯\N{\fnMicrosoft YaHei\fs14}Best of luck, Collins.{\r}
+Dialogue: 0,1:01:46.98,1:01:48.85,Default,,0000,0000,0000,,柯林斯 你还好吗?\N{\fnMicrosoft YaHei\fs14}Collins, do you read?{\r}
+Dialogue: 0,1:02:14.98,1:02:16.00,Default,,0000,0000,0000,,飞机坠毁了\N{\fnMicrosoft YaHei\fs14}He's down.{\r}
+Dialogue: 0,1:02:59.12,1:03:00.11,Default,,0000,0000,0000,,爸\N{\fnMicrosoft YaHei\fs14}Dad.{\r}
+Dialogue: 0,1:03:00.29,1:03:01.52,Default,,0000,0000,0000,,爸 看那引擎\N{\fnMicrosoft YaHei\fs14}Dad, watch the engine.{\r}
+Dialogue: 0,1:03:02.39,1:03:04.82,Default,,0000,0000,0000,,他完蛋了 他没有降落伞\N{\fnMicrosoft YaHei\fs14}Dad, he's down. There was no 'chute.{\r}
+Dialogue: 0,1:03:09.13,1:03:10.46,Default,,0000,0000,0000,,爸 别去了 他没降落伞\N{\fnMicrosoft YaHei\fs14}Dad, come on. There was no 'chute.{\r}
+Dialogue: 0,1:03:11.47,1:03:12.46,Default,,0000,0000,0000,,估计人已经死了\N{\fnMicrosoft YaHei\fs14}He's probably dead.{\r}
+Dialogue: 0,1:03:12.63,1:03:14.80,Default,,0000,0000,0000,,彼得 别说了 我听到了\N{\fnMicrosoft YaHei\fs14}Damn it, I hear you, Peter! I hear you!{\r}
+Dialogue: 0,1:03:18.14,1:03:19.84,Default,,0000,0000,0000,,说不定还活着呢 谁说得准\N{\fnMicrosoft YaHei\fs14}He may be alive. Maybe.{\r}
+Dialogue: 0,1:03:21.91,1:03:23.74,Default,,0000,0000,0000,,也许还能救他一命\N{\fnMicrosoft YaHei\fs14}We may be able to help him.{\r}
+Dialogue: 0,1:04:17.33,1:04:19.60,Default,,0000,0000,0000,,别乱来! 我们会暴露的\N{\fnMicrosoft YaHei\fs14}No! Then they'll know we're in here.{\r}
+Dialogue: 0,1:04:19.77,1:04:21.26,Default,,0000,0000,0000,,除了咱们 他们还能射谁?!\N{\fnMicrosoft YaHei\fs14}Why else are they shooting at us?{\r}
+Dialogue: 0,1:04:21.77,1:04:23.29,Default,,0000,0000,0000,,你们看那队形\N{\fnMicrosoft YaHei\fs14}Look at the grouping.{\r}
+Dialogue: 0,1:04:27.14,1:04:28.61,Default,,0000,0000,0000,,在练靶子而已\N{\fnMicrosoft YaHei\fs14}Target practice.{\r}
+Dialogue: 0,1:05:29.84,1:05:33.24,Default,,0000,0000,0000,,去 堵上它 快去\N{\fnMicrosoft YaHei\fs14}Go. Plug it. Go, go.{\r}
+Dialogue: 0,1:05:53.46,1:05:54.76,Default,,0000,0000,0000,,咱们得把洞堵上!\N{\fnMicrosoft YaHei\fs14}We have to plug it.{\r}
+Dialogue: 0,1:05:54.93,1:05:56.59,Default,,0000,0000,0000,,那你先请吧!\N{\fnMicrosoft YaHei\fs14}After you, mate.{\r}
+Dialogue: 0,1:06:18.65,1:06:20.14,Default,,0000,0000,0000,,怎么离开这儿?!\N{\fnMicrosoft YaHei\fs14}You ready? Go!{\r}
+Dialogue: 0,1:06:24.83,1:06:27.32,Default,,0000,0000,0000,,我们得扔掉些压舱物?!\N{\fnMicrosoft YaHei\fs14}How do we get off? Do we need to ditch some ballast?{\r}
+Dialogue: 0,1:06:27.76,1:06:29.56,Default,,0000,0000,0000,,太重了! 我们要减轻重量!\N{\fnMicrosoft YaHei\fs14}Weight! Do we need to lose weight?{\r}
+Dialogue: 0,1:06:29.73,1:06:31.46,Default,,0000,0000,0000,,减重 对\N{\fnMicrosoft YaHei\fs14}Weight. Weight, yes.{\r}
+Dialogue: 0,1:06:31.63,1:06:32.96,Default,,0000,0000,0000,,没错\N{\fnMicrosoft YaHei\fs14}Yes.{\r}
+Dialogue: 0,1:06:33.13,1:06:34.50,Default,,0000,0000,0000,,我们要送个人出去\N{\fnMicrosoft YaHei\fs14}Somebody needs to get off.{\r}
+Dialogue: 0,1:06:35.57,1:06:36.97,Default,,0000,0000,0000,,有人自愿么?\N{\fnMicrosoft YaHei\fs14}Well volunteered.{\r}
+Dialogue: 0,1:06:37.14,1:06:38.66,Default,,0000,0000,0000,,不必这样\N{\fnMicrosoft YaHei\fs14}We don't need a volunteer.{\r}
+Dialogue: 0,1:06:39.14,1:06:40.77,Default,,0000,0000,0000,,我知道谁该出去 ...\N{\fnMicrosoft YaHei\fs14}I know someone who ought to get off.{\r}
+Dialogue: 0,1:06:43.21,1:06:44.20,Default,,0000,0000,0000,,就是他\N{\fnMicrosoft YaHei\fs14}This one.{\r}
+Dialogue: 0,1:06:45.58,1:06:46.84,Default,,0000,0000,0000,,他是德国间谍\N{\fnMicrosoft YaHei\fs14}He's a German spy.{\r}
+Dialogue: 0,1:06:47.02,1:06:48.41,Default,,0000,0000,0000,,别瞎说\N{\fnMicrosoft YaHei\fs14}Don't be daft.{\r}
+Dialogue: 0,1:06:48.58,1:06:50.11,Default,,0000,0000,0000,,他是德国鬼子\N{\fnMicrosoft YaHei\fs14}He's a fucking Jerry.{\r}
+Dialogue: 0,1:06:50.99,1:06:53.08,Default,,0000,0000,0000,,你们有没有注意到他一直一言不发\N{\fnMicrosoft YaHei\fs14}Have you noticed he hasn't said a word?{\r}
+Dialogue: 0,1:06:54.79,1:06:55.95,Default,,0000,0000,0000,,我是注意到了\N{\fnMicrosoft YaHei\fs14}'Cause I have.{\r}
+Dialogue: 0,1:06:56.83,1:06:57.81,Default,,0000,0000,0000,,他根本就不会英语\N{\fnMicrosoft YaHei\fs14}He don't speak English.{\r}
+Dialogue: 0,1:06:57.99,1:07:01.16,Default,,0000,0000,0000,,就算会说 也带着一股浓浓的德国泡菜味\N{\fnMicrosoft YaHei\fs14}If he does it's with an accent that's thicker than sauerkraut sauce.{\r}
+Dialogue: 0,1:07:01.33,1:07:03.02,Default,,0000,0000,0000,,胡说八道 快回击他\N{\fnMicrosoft YaHei\fs14}You're daft. Tell him.{\r}
+Dialogue: 0,1:07:03.60,1:07:04.79,Default,,0000,0000,0000,,没错\N{\fnMicrosoft YaHei\fs14}Yeah.{\r}
+Dialogue: 0,1:07:08.17,1:07:10.60,Default,,0000,0000,0000,,尽管说吧\N{\fnMicrosoft YaHei\fs14}Tell me.{\r}
+Dialogue: 0,1:07:35.70,1:07:36.96,Default,,0000,0000,0000,,说啊 吉布森!\N{\fnMicrosoft YaHei\fs14}Tell me, Gibson.{\r}
+Dialogue: 0,1:07:45.01,1:07:46.00,Default,,0000,0000,0000,,说话!\N{\fnMicrosoft YaHei\fs14}Tell me!{\r}
+Dialogue: 0,1:07:47.08,1:07:48.57,Default,,0000,0000,0000,,我的天 说句话啊!\N{\fnMicrosoft YaHei\fs14}Tell him, for God's sake!{\r}
+Dialogue: 0,1:07:57.42,1:07:59.05,Default,,0000,0000,0000,,青蛙佬\N{\fnMicrosoft YaHei\fs14}A frog.{\r}
+Dialogue: 0,1:07:59.52,1:08:01.05,Default,,0000,0000,0000,,你个臭青蛙佬\N{\fnMicrosoft YaHei\fs14}A bloody frog.{\r}
+Dialogue: 0,1:08:01.82,1:08:04.88,Default,,0000,0000,0000,,插队的懦夫\N{\fnMicrosoft YaHei\fs14}A cowardly little queue-jumping frog.{\r}
+Dialogue: 0,1:08:05.56,1:08:06.93,Default,,0000,0000,0000,,吉布森又是谁 嗯?\N{\fnMicrosoft YaHei\fs14}Who's Gibson, eh?{\r}
+Dialogue: 0,1:08:07.10,1:08:09.56,Default,,0000,0000,0000,,肯定是沙滩上某个裸死的英国人\N{\fnMicrosoft YaHei\fs14}Some naked, dead Englishman lying out on that sand?{\r}
+Dialogue: 0,1:08:09.73,1:08:11.76,Default,,0000,0000,0000,,你扒完他的衣服 有没有把人安葬好?\N{\fnMicrosoft YaHei\fs14}Did you at least have the decency to bury him?{\r}
+Dialogue: 0,1:08:12.00,1:08:13.73,Default,,0000,0000,0000,,葬好了 我俩一块埋的 我以为那是他的战友\N{\fnMicrosoft YaHei\fs14}He did. I helped him. I thought it was his mate.{\r}
+Dialogue: 0,1:08:13.94,1:08:15.20,Default,,0000,0000,0000,,- 没准儿就是他杀的吉布森呢 - 他没杀那人\N{\fnMicrosoft YaHei\fs14}- Maybe he killed him. - He didn't kill him.{\r}
+Dialogue: 0,1:08:15.37,1:08:16.36,Default,,0000,0000,0000,,你又怎么知道?!\N{\fnMicrosoft YaHei\fs14}How do we know?{\r}
+Dialogue: 0,1:08:16.54,1:08:18.94,Default,,0000,0000,0000,,在这儿的海滩上找一具英国人尸体 能有多难?\N{\fnMicrosoft YaHei\fs14}How hard is it to find a dead Englishman on Dunkirk beach?{\r}
+Dialogue: 0,1:08:19.11,1:08:20.37,Default,,0000,0000,0000,,他没杀人\N{\fnMicrosoft YaHei\fs14}He didn't kill anyone.{\r}
+Dialogue: 0,1:08:20.54,1:08:22.67,Default,,0000,0000,0000,,他跟咱们一样 只想赶紧离开这鬼地方!\N{\fnMicrosoft YaHei\fs14}He was just looking for a way off the sand, like the rest of us.{\r}
+Dialogue: 0,1:08:28.12,1:08:29.85,Default,,0000,0000,0000,,那边枪还没练够吗?!\N{\fnMicrosoft YaHei\fs14}Haven't they had enough practice by now?{\r}
+Dialogue: 0,1:08:30.02,1:08:32.01,Default,,0000,0000,0000,,他们在确保船没法浮起来\N{\fnMicrosoft YaHei\fs14}They're trying to make sure she won't float.{\r}
+Dialogue: 0,1:08:32.19,1:08:33.68,Default,,0000,0000,0000,,这船还能浮起来?!\N{\fnMicrosoft YaHei\fs14}Will she still float?{\r}
+Dialogue: 0,1:08:33.86,1:08:35.62,Default,,0000,0000,0000,,浮起来 可以的 减轻重量就行了\N{\fnMicrosoft YaHei\fs14}Float, yes. Yes, with less weight.{\r}
+Dialogue: 0,1:08:37.29,1:08:38.32,Default,,0000,0000,0000,,最该赶谁出去 大家心里都清楚\N{\fnMicrosoft YaHei\fs14}And we know who's getting off.{\r}
+Dialogue: 0,1:08:38.49,1:08:40.62,Default,,0000,0000,0000,,不能那样 他是法国的盟友 自己人\N{\fnMicrosoft YaHei\fs14}No, you can't do that. He's French. He's on our side.{\r}
+Dialogue: 0,1:08:40.80,1:08:42.29,Default,,0000,0000,0000,,好啊 那你走吧\N{\fnMicrosoft YaHei\fs14}Go on. Up you go.{\r}
+Dialogue: 0,1:08:42.46,1:08:44.73,Default,,0000,0000,0000,,你把他赶出去 他就死定了\N{\fnMicrosoft YaHei\fs14}As soon as he pokes his head out, they'll slaughter him.{\r}
+Dialogue: 0,1:08:44.90,1:08:46.13,Default,,0000,0000,0000,,反正死的不是我\N{\fnMicrosoft YaHei\fs14}Better him than me.{\r}
+Dialogue: 0,1:08:46.30,1:08:47.46,Default,,0000,0000,0000,,这不公平\N{\fnMicrosoft YaHei\fs14}It's not fair.{\r}
+Dialogue: 0,1:08:47.64,1:08:48.93,Default,,0000,0000,0000,,保命要紧 扯啥公平\N{\fnMicrosoft YaHei\fs14}Survival's not fair.{\r}
+Dialogue: 0,1:08:49.10,1:08:50.09,Default,,0000,0000,0000,,说得对\N{\fnMicrosoft YaHei\fs14}No, it's shit.{\r}
+Dialogue: 0,1:08:50.97,1:08:53.30,Default,,0000,0000,0000,,都怕死 都贪生\N{\fnMicrosoft YaHei\fs14}It's fear, and it's greed.{\r}
+Dialogue: 0,1:08:53.48,1:08:55.47,Default,,0000,0000,0000,,那就以多服少\N{\fnMicrosoft YaHei\fs14}Fate pushed through the bowels of men.{\r}
+Dialogue: 0,1:08:55.64,1:08:56.63,Default,,0000,0000,0000,,妈的\N{\fnMicrosoft YaHei\fs14}Shit.{\r}
+Dialogue: 0,1:08:58.15,1:08:59.41,Default,,0000,0000,0000,,他救过大家的命\N{\fnMicrosoft YaHei\fs14}He saved our lives.{\r}
+Dialogue: 0,1:08:59.58,1:09:00.81,Default,,0000,0000,0000,,那他马上可以再救一次了!\N{\fnMicrosoft YaHei\fs14}And he's about to do it again.{\r}
+Dialogue: 0,1:09:00.98,1:09:02.04,Default,,0000,0000,0000,,不! 等一等!\N{\fnMicrosoft YaHei\fs14}No, don't! Stop!{\r}
+Dialogue: 0,1:09:03.38,1:09:06.75,Default,,0000,0000,0000,,必须得让个人下船 不然全都活不成\N{\fnMicrosoft YaHei\fs14}Somebody's gotta get off, so the rest of us can live.{\r}
+Dialogue: 0,1:09:07.49,1:09:08.51,Default,,0000,0000,0000,,你愿不愿意出去?\N{\fnMicrosoft YaHei\fs14}If you wanna volunteer...{\r}
+Dialogue: 0,1:09:08.72,1:09:09.88,Default,,0000,0000,0000,,没门儿\N{\fnMicrosoft YaHei\fs14}Fuck no.{\r}
+Dialogue: 0,1:09:10.13,1:09:11.11,Default,,0000,0000,0000,,我要回家\N{\fnMicrosoft YaHei\fs14}I'm going home.{\r}
+Dialogue: 0,1:09:11.83,1:09:13.45,Default,,0000,0000,0000,,如果这就是条件呢?\N{\fnMicrosoft YaHei\fs14}And if this is the price?{\r}
+Dialogue: 0,1:09:18.43,1:09:19.59,Default,,0000,0000,0000,,我可以接受\N{\fnMicrosoft YaHei\fs14}I'll live with it.{\r}
+Dialogue: 0,1:09:20.24,1:09:21.22,Default,,0000,0000,0000,,但这错得离谱\N{\fnMicrosoft YaHei\fs14}But it's wrong.{\r}
+Dialogue: 0,1:09:22.00,1:09:22.99,Default,,0000,0000,0000,,出去!\N{\fnMicrosoft YaHei\fs14}Go on!{\r}
+Dialogue: 0,1:09:25.11,1:09:27.10,Default,,0000,0000,0000,,就赶一个人出去 也没多大用\N{\fnMicrosoft YaHei\fs14}One man's not going to make enough difference.{\r}
+Dialogue: 0,1:09:27.28,1:09:29.33,Default,,0000,0000,0000,,你最好希望这招有用 不然下一个就轮到你了\N{\fnMicrosoft YaHei\fs14}You'd best hope it does, because you'd be volunteering next.{\r}
+Dialogue: 0,1:09:30.51,1:09:31.50,Default,,0000,0000,0000,,什么?\N{\fnMicrosoft YaHei\fs14}What?{\r}
+Dialogue: 0,1:09:32.35,1:09:34.28,Default,,0000,0000,0000,,伙计 大家都是战友\N{\fnMicrosoft YaHei\fs14}We're regimental brothers, mate.{\r}
+Dialogue: 0,1:09:34.92,1:09:36.28,Default,,0000,0000,0000,,就该有牺牲自己的觉悟\N{\fnMicrosoft YaHei\fs14}It's just the way it is.{\r}
+Dialogue: 0,1:09:46.29,1:09:47.66,Default,,0000,0000,0000,,浮起来了!\N{\fnMicrosoft YaHei\fs14}We float!{\r}
+Dialogue: 0,1:09:48.36,1:09:49.49,Default,,0000,0000,0000,,浮起来了!\N{\fnMicrosoft YaHei\fs14}We float!{\r}
+Dialogue: 0,1:09:50.20,1:09:51.79,Default,,0000,0000,0000,,快启动发动机!\N{\fnMicrosoft YaHei\fs14}Start the bloody engine!{\r}
+Dialogue: 0,1:10:30.17,1:10:31.57,Default,,0000,0000,0000,,下午好\N{\fnMicrosoft YaHei\fs14}Afternoon.{\r}
+Dialogue: 0,1:11:26.93,1:11:29.29,Default,,0000,0000,0000,,抱歉 朋友 我 ... 我真的不知道\N{\fnMicrosoft YaHei\fs14}I'm sorry, son. I really don't know.{\r}
+Dialogue: 0,1:11:31.97,1:11:33.73,Default,,0000,0000,0000,,你做的对 不该挪动他\N{\fnMicrosoft YaHei\fs14}You're right not moving him.{\r}
+Dialogue: 0,1:11:37.31,1:11:38.80,Default,,0000,0000,0000,,你已经尽全力了\N{\fnMicrosoft YaHei\fs14}You've done the best for him you can.{\r}
+Dialogue: 0,1:11:50.92,1:11:52.08,Default,,0000,0000,0000,,我们白忙了一天\N{\fnMicrosoft YaHei\fs14}We've wasted the day.{\r}
+Dialogue: 0,1:11:52.25,1:11:54.28,Default,,0000,0000,0000,,我也很沮丧 上校\N{\fnMicrosoft YaHei\fs14}I share your frustration, Colonel.{\r}
+Dialogue: 0,1:11:55.82,1:11:56.81,Default,,0000,0000,0000,,约翰尼!\N{\fnMicrosoft YaHei\fs14}Johnny!{\r}
+Dialogue: 0,1:12:03.80,1:12:05.73,Default,,0000,0000,0000,,那艘搁浅的拖网渔船着火了\N{\fnMicrosoft YaHei\fs14}Grounded trawler, taking fire.{\r}
+Dialogue: 0,1:12:05.87,1:12:07.93,Default,,0000,0000,0000,,敌人从东侧沙丘带攻了过来\N{\fnMicrosoft YaHei\fs14}They're breaking through the dunes to the east.{\r}
+Dialogue: 0,1:12:11.74,1:12:13.14,Default,,0000,0000,0000,,守不住了\N{\fnMicrosoft YaHei\fs14}This is it.{\r}
+Dialogue: 0,1:12:21.25,1:12:22.31,Default,,0000,0000,0000,,堵住弹孔!\N{\fnMicrosoft YaHei\fs14}Plug the holes!{\r}
+Dialogue: 0,1:12:22.48,1:12:23.78,Default,,0000,0000,0000,,用什么堵\N{\fnMicrosoft YaHei\fs14}With what?{\r}
+Dialogue: 0,1:12:34.70,1:12:36.60,Default,,0000,0000,0000,,堵住弹孔!\N{\fnMicrosoft YaHei\fs14}Plug the holes!{\r}
+Dialogue: 0,1:12:38.33,1:12:41.13,Default,,0000,0000,0000,,那边 去那边堵住\N{\fnMicrosoft YaHei\fs14}Other side! Other side!{\r}
+Dialogue: 0,1:13:30.92,1:13:32.39,Default,,0000,0000,0000,,看到什么了?\N{\fnMicrosoft YaHei\fs14}What do you see?{\r}
+Dialogue: 0,1:13:39.26,1:13:40.59,Default,,0000,0000,0000,,家\N{\fnMicrosoft YaHei\fs14}Home.{\r}
+Dialogue: 0,1:15:35.18,1:15:37.17,Default,,0000,0000,0000,,他还好吧? 小伙?\N{\fnMicrosoft YaHei\fs14}Is he all right? The boy?{\r}
+Dialogue: 0,1:15:39.18,1:15:40.44,Default,,0000,0000,0000,,不\N{\fnMicrosoft YaHei\fs14}No.{\r}
+Dialogue: 0,1:15:40.62,1:15:42.24,Default,,0000,0000,0000,,他不好\N{\fnMicrosoft YaHei\fs14}No, he's not.{\r}
+Dialogue: 0,1:15:53.69,1:15:54.68,Default,,0000,0000,0000,,爸!\N{\fnMicrosoft YaHei\fs14}Dad!{\r}
+Dialogue: 0,1:16:02.57,1:16:04.87,Default,,0000,0000,0000,,加油 加油\N{\fnMicrosoft YaHei\fs14}Come on. Come on, Farrier. Come on.{\r}
+Dialogue: 0,1:16:23.86,1:16:25.42,Default,,0000,0000,0000,,那边有人在漂着\N{\fnMicrosoft YaHei\fs14}There's men in the water!{\r}
+Dialogue: 0,1:17:10.77,1:17:11.76,Default,,0000,0000,0000,,油\N{\fnMicrosoft YaHei\fs14}Oil.{\r}
+Dialogue: 0,1:17:13.24,1:17:15.73,Default,,0000,0000,0000,,油 浮油! 你要开进浮油里了!\N{\fnMicrosoft YaHei\fs14}It's oil. Oil. You're getting into oil!{\r}
+Dialogue: 0,1:17:51.18,1:17:52.65,Default,,0000,0000,0000,,继续往下走\N{\fnMicrosoft YaHei\fs14}Keep coming.{\r}
+Dialogue: 0,1:17:53.55,1:17:54.98,Default,,0000,0000,0000,,下面空间足够\N{\fnMicrosoft YaHei\fs14}Plenty of room.{\r}
+Dialogue: 0,1:18:00.02,1:18:01.82,Default,,0000,0000,0000,,好了 到下面去\N{\fnMicrosoft YaHei\fs14}All right, below deck.{\r}
+Dialogue: 0,1:18:37.89,1:18:39.79,Default,,0000,0000,0000,,- 弃船! - 弃船!\N{\fnMicrosoft YaHei\fs14}Abandon ship!{\r}
+Dialogue: 0,1:19:02.05,1:19:04.35,Default,,0000,0000,0000,,吉布森 快走\N{\fnMicrosoft YaHei\fs14}Gibson! Leave it!{\r}
+Dialogue: 0,1:19:47.36,1:19:48.52,Default,,0000,0000,0000,,到舱里吧\N{\fnMicrosoft YaHei\fs14}Below decks.{\r}
+Dialogue: 0,1:20:37.44,1:20:39.61,Default,,0000,0000,0000,,我们得让尽量多的人上船\N{\fnMicrosoft YaHei\fs14}Listen, we have to get as many of you on board as we can{\r}
+Dialogue: 0,1:20:39.78,1:20:40.87,Default,,0000,0000,0000,,不然浮油着火就全完了\N{\fnMicrosoft YaHei\fs14}before that oil catches fire.{\r}
+Dialogue: 0,1:20:41.08,1:20:43.68,Default,,0000,0000,0000,,你要么挪进舱去 要么就别待船上 自己选吧\N{\fnMicrosoft YaHei\fs14}You go below decks or you get off my boat. That's your choice.{\r}
+Dialogue: 0,1:20:46.62,1:20:48.35,Default,,0000,0000,0000,,后面的跟上\N{\fnMicrosoft YaHei\fs14}Keep coming.{\r}
+Dialogue: 0,1:20:49.69,1:20:52.18,Default,,0000,0000,0000,,小心! 小心! 别碰着他!\N{\fnMicrosoft YaHei\fs14}Whoa! Whoa! Whoa! Careful! Careful down there!{\r}
+Dialogue: 0,1:20:52.36,1:20:53.66,Default,,0000,0000,0000,,小心! 小心! 别碰着他!\N{\fnMicrosoft YaHei\fs14}Careful! Careful down there!{\r}
+Dialogue: 0,1:20:55.70,1:20:57.82,Default,,0000,0000,0000,,他死了 伙计\N{\fnMicrosoft YaHei\fs14}He's dead, mate.{\r}
+Dialogue: 0,1:21:02.44,1:21:04.53,Default,,0000,0000,0000,,那更不要动他!\N{\fnMicrosoft YaHei\fs14}So be bloody careful with him.{\r}
+Dialogue: 0,1:21:26.56,1:21:28.22,Default,,0000,0000,0000,,他能挺过去么?\N{\fnMicrosoft YaHei\fs14}Um, will he be okay?{\r}
+Dialogue: 0,1:21:29.00,1:21:30.05,Default,,0000,0000,0000,,那个年轻人?\N{\fnMicrosoft YaHei\fs14}The boy?{\r}
+Dialogue: 0,1:21:36.04,1:21:37.03,Default,,0000,0000,0000,,能的\N{\fnMicrosoft YaHei\fs14}Yeah.{\r}
+Dialogue: 0,1:23:00.79,1:23:02.55,Default,,0000,0000,0000,,飞机飞回来了\N{\fnMicrosoft YaHei\fs14}He's coming back round.{\r}
+Dialogue: 0,1:23:03.42,1:23:04.72,Default,,0000,0000,0000,,飞机飞回来了!\N{\fnMicrosoft YaHei\fs14}He's coming back round!{\r}
+Dialogue: 0,1:23:10.60,1:23:12.50,Default,,0000,0000,0000,,伙计 动作快点!\N{\fnMicrosoft YaHei\fs14}Come on, Farrier. Come on.{\r}
+Dialogue: 0,1:23:27.75,1:23:28.98,Default,,0000,0000,0000,,快跳船!\N{\fnMicrosoft YaHei\fs14}Get off the ship!{\r}
+Dialogue: 0,1:23:45.17,1:23:46.63,Default,,0000,0000,0000,,加油! 再打下一架\N{\fnMicrosoft YaHei\fs14}Come on, Farrier. Get around them.{\r}
+Dialogue: 0,1:23:46.80,1:23:48.10,Default,,0000,0000,0000,,加油!\N{\fnMicrosoft YaHei\fs14}Come on, come on.{\r}
+Dialogue: 0,1:24:44.76,1:24:45.75,Default,,0000,0000,0000,,快开船!\N{\fnMicrosoft YaHei\fs14}Go.{\r}
+Dialogue: 0,1:24:50.26,1:24:51.25,Default,,0000,0000,0000,,快! 快!\N{\fnMicrosoft YaHei\fs14}Go! Go! Go!{\r}
+Dialogue: 0,1:25:05.68,1:25:06.74,Default,,0000,0000,0000,,快! 快! 快!\N{\fnMicrosoft YaHei\fs14}Go!{\r}
+Dialogue: 0,1:25:40.51,1:25:41.50,Default,,0000,0000,0000,,慢点\N{\fnMicrosoft YaHei\fs14}Easy.{\r}
+Dialogue: 0,1:25:46.65,1:25:47.92,Default,,0000,0000,0000,,带我回家吧\N{\fnMicrosoft YaHei\fs14}Take me home.{\r}
+Dialogue: 0,1:26:45.81,1:26:47.11,Default,,0000,0000,0000,,你们是哪儿的?\N{\fnMicrosoft YaHei\fs14}Where are you from?{\r}
+Dialogue: 0,1:26:48.02,1:26:49.81,Default,,0000,0000,0000,,达特茅斯附近\N{\fnMicrosoft YaHei\fs14}Out of Dartmouth!{\r}
+Dialogue: 0,1:26:49.98,1:26:51.21,Default,,0000,0000,0000,,我的天\N{\fnMicrosoft YaHei\fs14}Christ.{\r}
+Dialogue: 0,1:26:52.32,1:26:53.65,Default,,0000,0000,0000,,从迪尔来的吗?\N{\fnMicrosoft YaHei\fs14}You from Deal?{\r}
+Dialogue: 0,1:26:53.82,1:26:55.29,Default,,0000,0000,0000,,是的\N{\fnMicrosoft YaHei\fs14}I am!{\r}
+Dialogue: 0,1:26:55.46,1:26:57.58,Default,,0000,0000,0000,,小心出口的水流!\N{\fnMicrosoft YaHei\fs14}You watch the current at the mouth!{\r}
+Dialogue: 0,1:26:57.79,1:26:58.78,Default,,0000,0000,0000,,好的\N{\fnMicrosoft YaHei\fs14}Aye.{\r}
+Dialogue: 0,1:26:58.96,1:27:00.02,Default,,0000,0000,0000,,谢谢你们!\N{\fnMicrosoft YaHei\fs14}And thank you!{\r}
+Dialogue: 0,1:27:49.84,1:27:50.87,Default,,0000,0000,0000,,有架敌机\N{\fnMicrosoft YaHei\fs14}That's a fighter.{\r}
+Dialogue: 0,1:27:51.04,1:27:52.20,Default,,0000,0000,0000,,嗯 一架ME-109 从南边飞来了\N{\fnMicrosoft YaHei\fs14}Yes, an Me 109.{\r}
+Dialogue: 0,1:27:52.38,1:27:54.04,Default,,0000,0000,0000,,彼得 你来掌舵\N{\fnMicrosoft YaHei\fs14}From the south. Peter, you take the tiller.{\r}
+Dialogue: 0,1:27:54.55,1:27:56.38,Default,,0000,0000,0000,,听我指令\N{\fnMicrosoft YaHei\fs14}Listen for my instructions.{\r}
+Dialogue: 0,1:27:57.22,1:27:58.41,Default,,0000,0000,0000,,往南开\N{\fnMicrosoft YaHei\fs14}Point her south!{\r}
+Dialogue: 0,1:28:11.06,1:28:12.05,Default,,0000,0000,0000,,全速前进 彼得\N{\fnMicrosoft YaHei\fs14}Full speed, Peter.{\r}
+Dialogue: 0,1:28:14.47,1:28:15.94,Default,,0000,0000,0000,,它一直在盘旋\N{\fnMicrosoft YaHei\fs14}Keep coming round.{\r}
+Dialogue: 0,1:28:16.10,1:28:17.30,Default,,0000,0000,0000,,要飞过来了\N{\fnMicrosoft YaHei\fs14}Keep coming.{\r}
+Dialogue: 0,1:28:18.64,1:28:22.30,Default,,0000,0000,0000,,它开火前肯定会降低高度 等我信号\N{\fnMicrosoft YaHei\fs14}Before he fires, he's gotta drop his nose. I'll give you the signal.{\r}
+Dialogue: 0,1:28:23.81,1:28:25.04,Default,,0000,0000,0000,,- 现在吗? - 不不 再等等 ...\N{\fnMicrosoft YaHei\fs14}- Now? - No, no. Wait.{\r}
+Dialogue: 0,1:28:26.25,1:28:28.27,Default,,0000,0000,0000,,等它开始瞄准了 ...\N{\fnMicrosoft YaHei\fs14}Wait for him to commit to his line.{\r}
+Dialogue: 0,1:28:45.50,1:28:46.56,Default,,0000,0000,0000,,就现在!\N{\fnMicrosoft YaHei\fs14}Now!{\r}
+Dialogue: 0,1:29:24.77,1:29:25.76,Default,,0000,0000,0000,,飞机坠毁了\N{\fnMicrosoft YaHei\fs14}He's gone.{\r}
+Dialogue: 0,1:29:25.87,1:29:27.20,Default,,0000,0000,0000,,是啊 掉海里喂鱼了\N{\fnMicrosoft YaHei\fs14}Yeah, bigger fish to fry.{\r}
+Dialogue: 0,1:29:27.37,1:29:29.27,Default,,0000,0000,0000,,你又怎么知道这些的?\N{\fnMicrosoft YaHei\fs14}How'd you know that stuff, anyway?{\r}
+Dialogue: 0,1:29:29.68,1:29:30.87,Default,,0000,0000,0000,,我儿子也是空军\N{\fnMicrosoft YaHei\fs14}My son's one of you lot.{\r}
+Dialogue: 0,1:29:31.68,1:29:33.37,Default,,0000,0000,0000,,我知道他会保佑咱们的\N{\fnMicrosoft YaHei\fs14}I knew he'd see us through.{\r}
+Dialogue: 0,1:29:39.45,1:29:40.44,Default,,0000,0000,0000,,你是皇家空军的?\N{\fnMicrosoft YaHei\fs14}You're RAF?{\r}
+Dialogue: 0,1:29:42.49,1:29:44.35,Default,,0000,0000,0000,,不 不是我\N{\fnMicrosoft YaHei\fs14}No. Not me.{\r}
+Dialogue: 0,1:29:44.52,1:29:47.86,Default,,0000,0000,0000,,是我兄弟 还开过飞机横穿飓风呢\N{\fnMicrosoft YaHei\fs14}My brother. He flew Hurricanes.{\r}
+Dialogue: 0,1:29:48.03,1:29:49.62,Default,,0000,0000,0000,,开战第三周就牺牲了\N{\fnMicrosoft YaHei\fs14}Died third week into the war.{\r}
+Dialogue: 0,1:30:29.87,1:30:31.93,Default,,0000,0000,0000,,麻烦待着 不要走动\N{\fnMicrosoft YaHei\fs14}No, stay downstairs, please.{\r}
+Dialogue: 0,1:30:32.57,1:30:34.56,Default,,0000,0000,0000,,我们只是想看看海崖\N{\fnMicrosoft YaHei\fs14}We just wanna see the cliffs.{\r}
+Dialogue: 0,1:30:41.52,1:30:43.42,Default,,0000,0000,0000,,- 那是多佛港么? - 不\N{\fnMicrosoft YaHei\fs14}- Is it Dover? - No.{\r}
+Dialogue: 0,1:30:43.98,1:30:45.42,Default,,0000,0000,0000,,那是多塞特港\N{\fnMicrosoft YaHei\fs14}That's Dorset.{\r}
+Dialogue: 0,1:30:45.99,1:30:47.54,Default,,0000,0000,0000,,终究是回家了\N{\fnMicrosoft YaHei\fs14}But it's home.{\r}
+Dialogue: 0,1:30:49.56,1:30:51.99,Default,,0000,0000,0000,,我们是不是让你们失望了?\N{\fnMicrosoft YaHei\fs14}We let you all down, didn't we?{\r}
+Dialogue: 0,1:31:31.33,1:31:34.20,Default,,0000,0000,0000,,我的天 你这船上装了多少人?\N{\fnMicrosoft YaHei\fs14}Christ, how many you got in there?{\r}
+Dialogue: 0,1:31:52.22,1:31:53.85,Default,,0000,0000,0000,,走到火车上去\N{\fnMicrosoft YaHei\fs14}Make your way to the trains.{\r}
+Dialogue: 0,1:31:55.52,1:31:57.11,Default,,0000,0000,0000,,大家参战 你又在哪!\N{\fnMicrosoft YaHei\fs14}Where the hell were you?{\r}
+Dialogue: 0,1:32:04.53,1:32:06.23,Default,,0000,0000,0000,,他们知道你的壮举\N{\fnMicrosoft YaHei\fs14}They know where you were.{\r}
+Dialogue: 0,1:32:11.51,1:32:12.49,Default,,0000,0000,0000,,再见\N{\fnMicrosoft YaHei\fs14}Bye.{\r}
+Dialogue: 0,1:32:32.33,1:32:33.69,Default,,0000,0000,0000,,喝茶吗?\N{\fnMicrosoft YaHei\fs14}Cup of tea?{\r}
+Dialogue: 0,1:32:35.63,1:32:36.99,Default,,0000,0000,0000,,喝杯茶吗?\N{\fnMicrosoft YaHei\fs14}Cup of tea?{\r}
+Dialogue: 0,1:32:37.83,1:32:40.56,Default,,0000,0000,0000,,干得漂亮\N{\fnMicrosoft YaHei\fs14}Well done. Well done.{\r}
+Dialogue: 0,1:32:41.00,1:32:42.13,Default,,0000,0000,0000,,干得漂亮!\N{\fnMicrosoft YaHei\fs14}Well done, lads.{\r}
+Dialogue: 0,1:32:42.27,1:32:44.90,Default,,0000,0000,0000,,干得漂亮 小伙子们\N{\fnMicrosoft YaHei\fs14}Well done. Well done, lads.{\r}
+Dialogue: 0,1:32:46.01,1:32:47.56,Default,,0000,0000,0000,,干得漂亮\N{\fnMicrosoft YaHei\fs14}Well done.{\r}
+Dialogue: 0,1:32:48.17,1:32:49.84,Default,,0000,0000,0000,,我们只是勉强活下来了而已\N{\fnMicrosoft YaHei\fs14}All we did is survive.{\r}
+Dialogue: 0,1:32:50.51,1:32:51.91,Default,,0000,0000,0000,,这就够了\N{\fnMicrosoft YaHei\fs14}That's enough.{\r}
+Dialogue: 0,1:32:59.69,1:33:00.68,Default,,0000,0000,0000,,干得漂亮\N{\fnMicrosoft YaHei\fs14}Well done.{\r}
+Dialogue: 0,1:33:01.86,1:33:03.15,Default,,0000,0000,0000,,干得漂亮!\N{\fnMicrosoft YaHei\fs14}Well done.{\r}
+Dialogue: 0,1:33:14.30,1:33:16.77,Default,,0000,0000,0000,,那老家伙都不愿正眼瞧咱们\N{\fnMicrosoft YaHei\fs14}That old bloke wouldn't even look us in the eye.{\r}
+Dialogue: 0,1:33:37.12,1:33:39.06,Default,,0000,0000,0000,,快过来吧 列兵\N{\fnMicrosoft YaHei\fs14}Come on, private!{\r}
+Dialogue: 0,1:33:39.96,1:33:44.56,Default,,0000,0000,0000,,我知道军官优先 但不是敌死就是我亡\N{\fnMicrosoft YaHei\fs14}I know we're officers, but it's us or the enemy.{\r}
+Dialogue: 0,1:33:45.63,1:33:47.96,Default,,0000,0000,0000,,不是讲究这些时候\N{\fnMicrosoft YaHei\fs14}So now is not the time to be particular.{\r}
+Dialogue: 0,1:33:51.61,1:33:54.23,Default,,0000,0000,0000,,已经撤回3万人了\N{\fnMicrosoft YaHei\fs14}Well, Churchill got his 30,000.{\r}
+Dialogue: 0,1:33:54.41,1:33:55.70,Default,,0000,0000,0000,,那可不止\N{\fnMicrosoft YaHei\fs14}And then some.{\r}
+Dialogue: 0,1:33:56.58,1:33:58.64,Default,,0000,0000,0000,,快有30万人了\N{\fnMicrosoft YaHei\fs14}Almost 300,000.{\r}
+Dialogue: 0,1:34:02.08,1:34:03.31,Default,,0000,0000,0000,,到目前为止\N{\fnMicrosoft YaHei\fs14}So far.{\r}
+Dialogue: 0,1:34:04.72,1:34:05.74,Default,,0000,0000,0000,,目前为止?\N{\fnMicrosoft YaHei\fs14}So far?{\r}
+Dialogue: 0,1:34:06.29,1:34:07.51,Default,,0000,0000,0000,,我要留下来\N{\fnMicrosoft YaHei\fs14}I'm staying.{\r}
+Dialogue: 0,1:34:08.72,1:34:10.09,Default,,0000,0000,0000,,等法军\N{\fnMicrosoft YaHei\fs14}For the French.{\r}
+Dialogue: 0,1:35:03.71,1:35:05.11,Default,,0000,0000,0000,,嘿!\N{\fnMicrosoft YaHei\fs14}Hey!{\r}
+Dialogue: 0,1:35:05.28,1:35:06.44,Default,,0000,0000,0000,,我们到哪儿了?!\N{\fnMicrosoft YaHei\fs14}Where are we?{\r}
+Dialogue: 0,1:35:06.58,1:35:09.38,Default,,0000,0000,0000,,临时停靠 马上就开车了\N{\fnMicrosoft YaHei\fs14}Siding. You'll be pulling in in a minute.{\r}
+Dialogue: 0,1:35:09.55,1:35:11.02,Default,,0000,0000,0000,,到哪一站?\N{\fnMicrosoft YaHei\fs14}What station?{\r}
+Dialogue: 0,1:35:11.18,1:35:12.67,Default,,0000,0000,0000,,沃金站\N{\fnMicrosoft YaHei\fs14}Woking.{\r}
+Dialogue: 0,1:35:13.32,1:35:14.95,Default,,0000,0000,0000,,帮我拿份报纸吧\N{\fnMicrosoft YaHei\fs14}Grab me one of them papers.{\r}
+Dialogue: 0,1:35:15.19,1:35:16.31,Default,,0000,0000,0000,,快去啊!\N{\fnMicrosoft YaHei\fs14}Go on!{\r}
+Dialogue: 0,1:35:30.17,1:35:31.57,Default,,0000,0000,0000,,我不忍心读下去\N{\fnMicrosoft YaHei\fs14}Can't bear it.{\r}
+Dialogue: 0,1:35:33.41,1:35:34.57,Default,,0000,0000,0000,,你念出来吧\N{\fnMicrosoft YaHei\fs14}You read it.{\r}
+Dialogue: 0,1:35:35.38,1:35:36.36,Default,,0000,0000,0000,,不忍心?\N{\fnMicrosoft YaHei\fs14}Can't bear it?{\r}
+Dialogue: 0,1:35:37.01,1:35:39.21,Default,,0000,0000,0000,,要是他们没有锁起门来等着沦陷\N{\fnMicrosoft YaHei\fs14}They'll be spitting at us in the streets.{\r}
+Dialogue: 0,1:35:40.25,1:35:43.08,Default,,0000,0000,0000,,那就肯定是到街上朝咱啐唾沫了\N{\fnMicrosoft YaHei\fs14}If they're not locked up waiting for the invasion.{\r}
+Dialogue: 0,1:36:29.63,1:36:32.10,Default,,0000,0000,0000,,"战争从不是靠撤退取胜的"\N{\fnMicrosoft YaHei\fs14}"Wars are not won by evacuations."{\r}
+Dialogue: 0,1:36:35.90,1:36:37.23,Default,,0000,0000,0000,,我看不下去了\N{\fnMicrosoft YaHei\fs14}I can't look.{\r}
+Dialogue: 0,1:36:37.60,1:36:39.60,Default,,0000,0000,0000,,"但应当注意到\N{\fnMicrosoft YaHei\fs14}"But there was a victory inside this deliverance,"{\r}
+Dialogue: 0,1:36:39.77,1:36:41.60,Default,,0000,0000,0000,,这次救援却孕育了胜利"\N{\fnMicrosoft YaHei\fs14}"which should be noted."{\r}
+Dialogue: 0,1:36:48.55,1:36:50.48,Default,,0000,0000,0000,,"众多盟军士兵得以成功撤回 我们对此满怀喜悦"\N{\fnMicrosoft YaHei\fs14}"Our thankfulness at the escape of our army"{\r}
+Dialogue: 0,1:36:50.65,1:36:53.08,Default,,0000,0000,0000,,"但不能因此 就对目前在法国和比利时的盟军溃败\N{\fnMicrosoft YaHei\fs14}"must not blind us to the fact that what has happened"{\r}
+Dialogue: 0,1:36:53.25,1:36:56.81,Default,,0000,0000,0000,,视而不见"\N{\fnMicrosoft YaHei\fs14}"in France and Belgium is a colossal military disaster."{\r}
+Dialogue: 0,1:37:14.41,1:37:17.74,Default,,0000,0000,0000,,"我们还须准备好 承受接踵而至的打击 ..."\N{\fnMicrosoft YaHei\fs14}"We must expect another blow to be struck almost immediately."{\r}
+Dialogue: 0,1:37:36.63,1:37:38.32,Default,,0000,0000,0000,,"我们将战斗到底"\N{\fnMicrosoft YaHei\fs14}"We shall go on to the end."{\r}
+Dialogue: 0,1:37:42.34,1:37:44.27,Default,,0000,0000,0000,,"我们将在法国领土上作战"\N{\fnMicrosoft YaHei\fs14}"We shall fight in France."{\r}
+Dialogue: 0,1:37:45.77,1:37:48.26,Default,,0000,0000,0000,,"我们将在海洋中作战 ..."\N{\fnMicrosoft YaHei\fs14}"We shall fight on the seas and oceans."{\r}
+Dialogue: 0,1:38:03.29,1:38:06.82,Default,,0000,0000,0000,,"我们将以越来越大的信心和越来越强的力量在空中作战 ..."\N{\fnMicrosoft YaHei\fs14}"We shall fight with growing confidence and growing strength in the air."{\r}
+Dialogue: 0,1:38:14.50,1:38:16.06,Default,,0000,0000,0000,,"我们将不惜一切代价 保卫本土"\N{\fnMicrosoft YaHei\fs14}"We shall defend our island whatever the cost..."{\r}
+Dialogue: 0,1:38:16.24,1:38:17.23,Default,,0000,0000,0000,,什么?!\N{\fnMicrosoft YaHei\fs14}What?{\r}
+Dialogue: 0,1:38:17.40,1:38:20.50,Default,,0000,0000,0000,,"我们将不惜一切代价 保卫本土"\N{\fnMicrosoft YaHei\fs14}"We shall defend our island whatever the cost may be."{\r}
+Dialogue: 0,1:38:20.94,1:38:23.00,Default,,0000,0000,0000,,"我们将在滩头作战"\N{\fnMicrosoft YaHei\fs14}"We shall fight on the beaches."{\r}
+Dialogue: 0,1:38:23.18,1:38:24.64,Default,,0000,0000,0000,,"我们将在敌人的登陆地作战 ..."\N{\fnMicrosoft YaHei\fs14}"We shall fight on the landing grounds."{\r}
+Dialogue: 0,1:38:24.81,1:38:26.80,Default,,0000,0000,0000,,"我们将在田间作战 在街头作战 ..."\N{\fnMicrosoft YaHei\fs14}"We shall fight in the fields and in the streets."{\r}
+Dialogue: 0,1:38:26.95,1:38:28.07,Default,,0000,0000,0000,,"我们将在山区作战 ..."\N{\fnMicrosoft YaHei\fs14}"We shall fight in the hills."{\r}
+Dialogue: 0,1:38:29.35,1:38:31.01,Default,,0000,0000,0000,,"决不投降 ..."\N{\fnMicrosoft YaHei\fs14}"We shall never surrender."{\r}
+Dialogue: 0,1:38:43.16,1:38:45.60,Default,,0000,0000,0000,,"即便全岛或本土的大部沦为敌占\N{\fnMicrosoft YaHei\fs14}"And even if this island or a large part of it"{\r}
+Dialogue: 0,1:38:45.77,1:38:47.53,Default,,0000,0000,0000,,全体民众饥寒交迫 ..."\N{\fnMicrosoft YaHei\fs14}"were subjugated and staring,"{\r}
+Dialogue: 0,1:38:47.70,1:38:51.76,Default,,0000,0000,0000,,"我们海外的帝国子民们"\N{\fnMicrosoft YaHei\fs14}"then our Empire beyond the seas, armed and guarded by the British Fleet,"{\r}
+Dialogue: 0,1:38:51.94,1:38:53.96,Default,,0000,0000,0000,,"将在大英舰队的武装和保护下 继续战斗 ..."\N{\fnMicrosoft YaHei\fs14}"would carry on the struggle"{\r}
+Dialogue: 0,1:38:54.41,1:38:57.34,Default,,0000,0000,0000,,"一直到天意注定之时 ..."\N{\fnMicrosoft YaHei\fs14}"until, in God's good time,"{\r}
+Dialogue: 0,1:38:57.51,1:38:59.74,Default,,0000,0000,0000,,"新的世界 将挺身而出"\N{\fnMicrosoft YaHei\fs14}"the New World, with all its power and might,"{\r}
+Dialogue: 0,1:38:59.91,1:39:03.58,Default,,0000,0000,0000,,"倾其全力 拯救旧世界 解放旧世界"\N{\fnMicrosoft YaHei\fs14}"steps forth to the rescue and the liberation of the old."{\r}
+

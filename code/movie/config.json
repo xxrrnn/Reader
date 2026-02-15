@@ -1,5 +1,9 @@
 {
   "projects": {
+    "Dunkirk": {
+      "project_dir": "data/source/Dunkirk",
+      "video_path": "/Volumes/PortableSSD/电影/Dunkirk.2017.1080p.BluRay.x264.DTS-BYRHD/Dunkirk.2017.1080p.BluRay.x264.DTS-BYRHD.mkv"
+    },
     "The Silence of the Lambs": {
       "project_dir": "data/source/The Silence of the Lambs",
       "video_path": "/Volumes/PortableSSD/电影/The.Silence.of.the.Lambs.1991.720p.Criterion.BluRay.DD5.1.x264-ZQ.mkv"

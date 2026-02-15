@@ -1,0 +1,1518 @@
+﻿[Script Info]
+; // 此字幕由TM生成 电波字幕组制作-
+; // 欢迎访问电波字幕组网站 http://dbfansub.com
+Title: DBfansub
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,微软雅黑,54,&H00FFFFFF,&HF0000000,&H00030304,&H00000000,0,0,0,0,100,100,0,0,1,2,1,2,5,5,2,0
+Style: Image,Arial,20,&H00FFFFFF,&H0000FFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,0
+Style: 工作表,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 背景,Arial,20,&HA0FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 片尾,微软雅黑,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,2,2,10,10,10,1
+Style: 委内瑞拉,微软雅黑,30,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,-1,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 电脑屏幕,迷你简粗圆,40,&H00AD9132,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 氧气瓶,黑体,25,&H00201605,&H000000FF,&H00000000,&H00000000,0,0,-1,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 白板,字体管家青葱,20,&H00352F25,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 中方,微软雅黑,20,&H00352C11,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 目的,腾祥范笑歌楷书简,20,&H001A160A,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 地标,微软雅黑,25,&H007D7C6D,&H000000FF,&H64302C1F,&H00000000,0,0,0,0,100,100,0,0,3,2,0,2,10,10,10,1
+Style: 红字,微软雅黑,80,&H00051555,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 分析软件,微软雅黑,20,&H000D0C00,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 对话,宋体,13,&H006F675B,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 宇宙语言,宋体,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,10,1
+Style: 片名,微软雅黑 Light,25,&H003F3B2C,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,10,0,1,0,0,2,10,10,10,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.00,工作表,NTP,0,0,0,,{\an8\fs32\fad(800,800)\c&HFFFFFF&\3c&H666562&\b1}{\fn时尚中黑简体} 翻译: AT 台风中的小花 胡子君 黄桑
+Dialogue: 0,0:00:05.00,0:00:10.00,工作表,NTP,0,0,0,,{\c&HFFFFFF&\b1\3c&H666562&}{\an8\fs32\fad(800,800)}{\fn时尚中黑简体}翻译: 光头强 Meowu 热爱Amy Adams一万年的安迟华
+Dialogue: 0,0:00:10.00,0:00:15.00,工作表,NTP,0,0,0,,{\c&HFFFFFF&}{\an8\fs32\fad(800,800)\b1\3c&H666562&}{\fn时尚中黑简体}校对: OneOne
+Dialogue: 0,0:00:15.00,0:00:20.00,工作表,NTP,0,0,0,,{\c&HFFFFFF&\an8}{\fs32\fad(800,800)\b1\3c&H666562&}{\fn时尚中黑简体\b1}后期: 天灵没有盖
+Dialogue: 0,0:00:20.00,0:00:25.00,工作表,NTP,0,0,0,,{\c&HFFFFFF&\an8}{\fs32\fad(800,800)\b1\3c&H666562&}{\fn时尚中黑简体\b1}压制: 怪查理
+Dialogue: 0,0:00:25.00,0:00:30.00,工作表,NTP,0,0,0,,{\c&HFFFFFF&\an8}{\fs32\fad(800,800)\b1\3c&H666562&}{\fn时尚中黑简体\b1}总监: 怪查理
+Dialogue: 0,0:00:00.00,0:00:30.70,背景,,0,0,0,,{\fs34}{\p1\c&H96955E&\fscx6000\fscy410\an8\fad(800,800)\pos(642,0)}m 0 0 b 0 0 0 0 0 0 b 0 0 0 0 0 0 b 0 4 0 9 0 13 b 4 13 9 13 13 13 b 13 9 13 4 13 0 {\p0}
+Dialogue: 0,1:50:58.29,1:56:22.95,片尾,NTP,0,0,0,,{\fn微软雅黑}{\fs65\c&HB5AEAA&\b1}电波字幕组 欢迎您的加入\N{\fs34}\N{\fs55\b0}官方网站:www.dbfansub.com\N{\fs34}\N{\fs60\b0}新浪微博:@电波字幕组
+Dialogue: 0,0:00:57.16,0:01:00.66,白板,,0,0,0,,{\fade(200,300)\i0\c&HAAAAAF&\fn造字工房悦黑体验版细体\fs28\pos(640,422)}电  波  诚  译{\i1}
+Dialogue: 0,0:01:05.83,0:01:09.38,白板,,0,0,0,,{\fade(300,300)\i0\c&HAAAAAF&\fn造字工房悦黑体验版细体\fs28\pos(640,422)}电  波  诚  译{\i1}
+Dialogue: 0,0:01:01.54,0:01:05.08,白板,,0,0,0,,{\fade(300,300)\i0\c&HAAAAAF&\fn造字工房悦黑体验版细体\fs28\pos(640,454)}电  波  诚  译{\i1}
+Dialogue: 0,0:08:40.95,0:08:44.92,中方,,0,0,0,,{\c&H68543C&\fs26\fn方正兰亭中黑_GBK\pos(574.067,514.467)}神秘飞船降临蒙大拿
+Dialogue: 0,0:08:44.92,0:08:49.46,中方,,0,0,0,,{\fs30\c&H22180C&\pos(830.143,497.143)}俄军动员装甲部队
+Dialogue: 0,0:08:49.46,0:08:51.38,中方,,0,0,0,,{\fs13\c&H22180C&\frz1.703\frx356\fry14\pos(294.777,397.143)}俄军动员装甲部队
+Dialogue: 0,0:09:20.29,0:09:35.30,委内瑞拉,,0,0,0,,{\fn方正兰亭粗黑_GBK\c&H98ABA7&\pos(315.334,607.057)}委内瑞拉   直播报道
+Dialogue: 0,0:09:20.29,0:09:35.30,委内瑞拉,,0,0,0,,{\fn方正兰亭粗黑_GBK\pos(144.858,167.325)\c&HB1BCBA&}直播    高清
+Dialogue: 0,0:21:47.03,0:21:49.91,电脑屏幕,,0,0,0,,{\frz1.148\pos(474.002,191.761)\c&H807553&}澳大利亚
+Dialogue: 0,0:21:52.70,0:21:56.46,电脑屏幕,,0,0,0,,{\fs30\frx0\fry6\c&H807553&\frz0.2814\pos(391.429,304.477)}丹麦                美国             澳大利亚         巴基斯坦 
+Dialogue: 0,0:21:52.70,0:21:56.46,电脑屏幕,,0,0,0,,{\fs30\frx0\fry6\c&H807553&\frz2.18\pos(383.429,438.877)}委内瑞拉             日本               中国             塞拉利昂   
+Dialogue: 0,0:21:52.70,0:21:56.46,电脑屏幕,,0,0,0,,{\fs30\frx0\fry6\c&H807553&\pos(393.029,568.477)\frz4.233}苏丹               黑海                 英国            西伯利亚 
+Dialogue: 0,0:34:05.73,0:34:08.44,片尾,,0,0,0,,{\fade(0,300)\frz90\move(1058.6,362.6,862.4,361.21,22,2650)}频率(赫兹)
+Dialogue: 0,0:34:09.11,0:34:11.86,片尾,,0,0,0,,{\fade(0,300)\frz90\move(1297,355,1094.4,355,20,2901)}幅度(满量程分贝)
+Dialogue: 0,0:34:09.02,0:34:11.86,片尾,,0,0,0,,{\fade(0,300)\move(1071.4,652.2,879,651,27,2780)}时间
+Dialogue: 0,0:34:50.02,0:34:53.40,电脑屏幕,,0,0,0,,{\fs25\an6\frz355.9\pos(488.259,303.368)}外星人\N危机\N第4天
+Dialogue: 0,0:34:50.02,0:34:53.40,电脑屏幕,,0,0,0,,{\frz4.567\fs26\pos(480.81,547.83)}专题报导
+Dialogue: 0,0:34:50.02,0:34:53.40,电脑屏幕,,0,0,0,,{\frz4.567\pos(544.81,583.03)}狂徒焚烧聚点
+Dialogue: 0,0:34:50.02,0:34:53.40,电脑屏幕,,0,0,0,,{\fs20\frz5.915\pos(529.429,604.796)}北达科他州144人遇难
+Dialogue: 0,0:35:16.34,0:35:25.10,电脑屏幕,,0,0,0,,{\frz1.123\pos(798.304,259.971)\c&H66543A&}澳大利亚
+Dialogue: 0,0:35:59.93,0:36:02.10,氧气瓶,,0,0,0,,{\fs20\c&H000000&\frz7.061\pos(242.483,373.219)}氧气瓶状态   全部充满
+Dialogue: 0,0:37:07.12,0:37:15.04,片名,,0,0,0,,{\an8\fs50\frz353.7\frx2\fry356\b0\fn字体管家青葱\pos(483.8,533.8)}人类{\b1}
+Dialogue: 0,0:38:13.69,0:38:15.86,片名,,0,0,0,,{\an8\fs45\fn字体管家青葱\pos(477,573)\frz345.3\frx0\fry346}人类
+Dialogue: 0,0:41:06.28,0:41:10.82,氧气瓶,,0,0,0,,{\fs55\frz40.65\fn字体管家青葱\pos(959.2,527.211)}人类?
+Dialogue: 0,0:41:27.00,0:41:31.43,电脑屏幕,,0,0,0,,{\fs60\c&H4C3E1D&\frz4.312\pos(658.2,154.423)}英国
+Dialogue: 0,0:41:42.81,0:41:50.24,中方,,0,0,0,,{\frz2.647\pos(505.2,454.271)\c&HA89864&}中方力求谨慎                 武装力量聚集上海降临点
+Dialogue: 0,0:41:42.81,0:41:50.24,中方,,0,0,0,,{\c&H2A210C&\frz358.6\pos(297.2,300.671)}外星人危机\N第5天
+Dialogue: 0,0:42:36.87,0:42:44.71,目的,,0,0,0,,{\fs40\frz3.529\pos(515.2,420.412)}你们来地球的目的是什么?
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(97,279.4,130,264.997,0,2000)}美国 \N蒙大拿
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(268.2,431.4,291.6,411.851,0,2000)}委内瑞拉\N马拉凯
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(356.429,221.571,376.829,214.753,0,2000)}格陵兰岛 \N库雅雷克
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(523.6,223.2,537,211.165,23,2000)}英国 \N德文郡
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(490.829,394.6,506,377.164,23,2000)}塞拉利昂\N凯内马
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(658.6,405.8,667.2,389.537,23,2000)}苏丹\N 喀土穆
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(693.8,292.2,696.6,282.313,23,2000)}俄罗斯 \N黑海
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(834.6,303.4,835,289.164,23,2000)}巴基斯坦\N 旁遮普
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\move(991.4,553,987,534.97,23,2000)}印度洋
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(986.6,178.6,978.6,167.746,23,2000)}俄罗斯\N 西伯利亚
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(1036.2,300.2,1031.2,286.716,23,2000)}中国 \N上海
+Dialogue: 0,0:53:46.70,0:53:49.58,地标,,0,0,0,,{\an4\move(1106.6,295.4,1099,284.314,23,2000)}日本 \N北海道
+Dialogue: 0,0:54:12.02,0:54:13.65,白板,,0,0,0,,{\fs80\move(1200,560.224,783,560.224)}Ian 走
+Dialogue: 0,0:54:37.05,0:54:37.42,红字,,0,0,0,,{\pos(837.6,463.328)}母 亲
+Dialogue: 0,0:54:37.42,0:54:37.80,红字,,0,0,0,,{\pos(837.6,463.328)}行 星
+Dialogue: 0,0:54:37.80,0:54:38.17,红字,,0,0,0,,{\pos(837.6,463.328)}生命
+Dialogue: 0,0:54:38.17,0:54:38.54,红字,,0,0,0,,{\pos(837.6,463.328)}男人
+Dialogue: 0,0:54:38.54,0:54:38.92,红字,,0,0,0,,{\pos(837.6,463.328)}星
+Dialogue: 0,0:54:38.92,0:54:39.29,红字,,0,0,0,,{\pos(837.6,463.328)}七肢桶
+Dialogue: 0,0:54:39.29,0:54:39.67,红字,,0,0,0,,{\pos(837.6,463.328)}儿童
+Dialogue: 0,0:54:39.67,0:54:40.04,红字,,0,0,0,,{\pos(837.6,463.328)}女人
+Dialogue: 0,0:54:40.04,0:54:40.42,红字,,0,0,0,,{\pos(837.6,463.328)}地球
+Dialogue: 0,0:54:40.42,0:54:40.79,红字,,0,0,0,,{\pos(837.6,463.328)}人类
+Dialogue: 0,0:54:40.79,0:54:41.17,红字,,0,0,0,,{\pos(837.6,463.328)}走
+Dialogue: 0,0:54:41.17,0:54:41.54,红字,,0,0,0,,{\pos(837.6,463.328)}时间
+Dialogue: 0,0:54:41.54,0:54:41.92,红字,,0,0,0,,{\pos(837.6,463.328)}死亡
+Dialogue: 0,0:54:41.92,0:54:42.30,红字,,0,0,0,,{\pos(837.6,463.328)}系统
+Dialogue: 0,0:54:42.30,0:54:42.67,红字,,0,0,0,,{\pos(837.6,463.328)}技术
+Dialogue: 0,0:54:42.67,0:54:43.05,红字,,0,0,0,,{\pos(837.6,463.328)}太阳系
+Dialogue: 0,0:54:43.05,0:54:43.42,红字,,0,0,0,,{\pos(837.6,463.328)}家
+Dialogue: 0,0:54:43.42,0:54:43.80,红字,,0,0,0,,{\pos(837.6,463.328)}数字
+Dialogue: 0,0:54:43.80,0:54:44.17,红字,,0,0,0,,{\pos(837.6,463.328)}写
+Dialogue: 0,0:55:08.28,0:55:14.16,分析软件,,0,0,0,,{\pos(680.889,146.667)}看
+Dialogue: 0,0:55:08.49,0:55:14.16,分析软件,,0,0,0,,{\pos(687.5,179)}找
+Dialogue: 0,0:55:08.91,0:55:14.16,分析软件,,0,0,0,,{\pos(745.5,212)}懂
+Dialogue: 0,0:55:09.32,0:55:14.16,分析软件,,0,0,0,,{\pos(693.176,243.765)}想
+Dialogue: 0,0:55:09.57,0:55:14.16,分析软件,,0,0,0,,{\pos(695.529,275.765)}询
+Dialogue: 0,0:55:09.86,0:55:14.16,分析软件,,0,0,0,,{\pos(681.333,308)}问
+Dialogue: 0,0:55:10.28,0:55:14.16,分析软件,,0,0,0,,{\pos(708.8,339.733)}真相
+Dialogue: 0,0:55:10.57,0:55:14.16,分析软件,,0,0,0,,{\pos(705,372)}着陆
+Dialogue: 0,0:55:10.78,0:55:14.16,分析软件,,0,0,0,,{\pos(709.714,404)}停驻
+Dialogue: 0,0:55:11.03,0:55:14.16,分析软件,,0,0,0,,{\pos(727.385,436.308)}搁浅
+Dialogue: 0,0:55:11.28,0:55:14.16,分析软件,,0,0,0,,{\pos(697.231,468.923)}拿
+Dialogue: 0,0:55:11.74,0:55:14.16,分析软件,,0,0,0,,{\pos(714.462,500.923)}选
+Dialogue: 0,0:55:12.20,0:55:14.16,分析软件,,0,0,0,,{\pos(689.333,533.333)}挑
+Dialogue: 0,0:55:12.45,0:55:14.16,分析软件,,0,0,0,,{\pos(694.545,566.545)}取
+Dialogue: 0,0:55:13.03,0:55:14.16,分析软件,,0,0,0,,{\pos(720,597.091)}同意
+Dialogue: 0,0:55:13.70,0:55:14.16,分析软件,,0,0,0,,{\pos(720,629.091)}探索
+Dialogue: 0,0:55:34.68,0:55:41.40,目的,,0,0,0,,{\fs40\frz1.719\pos(765.6,421.8)}你们来地球的目的是什么?
+Dialogue: 0,0:57:34.55,0:57:49.27,中方,,0,0,0,,{\fs30\c&H625B54&\fn方正兰亭粗黑_GBK\pos(1221,151)}外星人
+Dialogue: 0,0:57:34.55,0:57:49.27,中方,,0,0,0,,{\fs40\c&H1A2039&\fn方正兰亭粗黑_GBK\pos(1217,189)}危机
+Dialogue: 0,0:57:34.55,0:57:49.27,中方,,0,0,0,,{\c&H664E1B&\fn方正兰亭粗黑_GBK\pos(1215,214.6)}第25天
+Dialogue: 0,0:57:34.55,0:57:37.01,中方,,0,0,0,,{\fn方正兰亭粗黑_GBK\fs30\c&H625B54&\fax-0.3\pos(58.4,604.6)}委内瑞拉
+Dialogue: 0,0:57:37.01,0:57:39.35,中方,,0,0,0,,{\fn方正兰亭粗黑_GBK\fs30\c&H625B54&\fax-0.3\pos(58.4,604.6)}塞拉利昂
+Dialogue: 0,0:57:39.35,0:57:42.85,中方,,0,0,0,,{\fs30\fn方正兰亭粗黑_GBK\c&H625B54&\fax-0.3\pos(64.2,604.2)}英国
+Dialogue: 0,0:57:39.35,0:57:42.85,目的,,0,0,0,,{\fs80\frz5.509\pos(519,346)\c&H221904&}拯救人类！
+Dialogue: 0,0:58:19.47,0:58:22.85,分析软件,,0,0,0,,{\frz2.812\b\fs35\pos(532.4,580.8)}外星人入侵 :   {\b0}大敌当前 政府无为
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\fs25\pos(195,131)}丹麦
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\fs25\pos(195,131)}丹麦
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(169.143,230.857)}丹麦
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\fs25\pos(513,131)}美国
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\fs25\pos(513,131)}美国
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(518.714,228.143)}美国
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\fs25\pos(930,131)}澳大利亚
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\fs25\pos(930,131)}澳大利亚
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(982.857,227.428)}澳大利亚
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\fs25\pos(1053.8,131)}巴基斯坦
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\fs25\pos(1065,131)}巴基斯坦
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(1141.714,226.286)}巴基斯坦
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\pos(222,308)}{\fs25}委内瑞拉
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(222,308)}{\fs25}委内瑞拉
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\pos(194.286,428.571)}{\fs25}委内瑞拉
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\fs25\pos(528.2,307)}日本
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\fs25\pos(525,307)}日本
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(537.142,428.571)}日本
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\fs25\pos(879,307)}中国
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\fs25\pos(879,307)}中国
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(932.571,426.286)}中国
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\pos(1034.4,307.6)}{\fs25}塞拉利昂
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(1036,306)}{\fs25}塞拉利昂
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\pos(1113.143,426.285)}{\fs25}塞拉利昂
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\fs25\pos(556,485)}黑海
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\fs25\pos(556,485)}黑海
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(350.286,632.429)\clip(326.222,606.222,373.333,627.556)}黑海
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\pos(858,483)}{\fs25}英国
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(858,483)}{\fs25}英国
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\pos(814.857,628.572)}{\fs25}英国
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\pos(1076,482)}{\fs25}西伯利亚
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(1076,482)}{\fs25}西伯利亚
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\pos(1165.714,628.571)}{\fs25}西伯利亚
+Dialogue: 0,1:09:09.50,1:09:09.54,电脑屏幕,,0,0,0,,{\fs25\pos(136,632)\clip(98.909,602.182,173.818,628.364)}苏丹
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\pos(813,414)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(813,414)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\pos(1168,586)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(1168,586)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:08:55.15,1:08:57.94,电脑屏幕,,0,0,0,,{\pos(453,590)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(453,590)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:06.70,1:09:09.54,电脑屏幕,,0,0,0,,{\pos(864.429,543.143)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:22.93,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(454.857,235.429)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:23.51,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(89.143,414.857)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:07.99,1:09:09.54,电脑屏幕,,0,0,0,,{\pos(460.571,344)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:24.97,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(1166.857,233.143)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:09:25.55,1:09:26.35,电脑屏幕,,0,0,0,,{\pos(454.858,412.571)}{\fs30\c&H211E91&}离线
+Dialogue: 0,1:06:06.73,1:06:07.94,对话,,0,0,0,,{\frz357.7\pos(607.494,324.814)}对话绘制完毕
+Dialogue: 0,1:06:06.73,1:06:07.94,对话,,0,0,0,,{\fs10\pos(587.833,349.167)}是否发布
+Dialogue: 0,1:06:06.73,1:06:07.94,对话,,0,0,0,,{\pos(636.428,416.929)\frz0.8585\c&HBCEA67&}发布         {\c&H3C41EB&\b1}取消{\b0}
+Dialogue: 0,1:09:40.53,1:09:47.07,地标,,0,0,0,,{\b1\frx0\fry340\c&H665940&\fad(0,500)\pos(697,266)\3c&H302C1F&\3a&HFF&\fn迷你简粗圆}使用武器
+Dialogue: 0,1:09:50.41,1:09:53.12,中方,,0,0,0,,{\an6\c&H665940&\frx6\fry358\pos(917,332)\fn迷你简粗圆}"中国不再相信这些\N企图分裂人类的外星人
+Dialogue: 0,1:09:53.08,1:09:55.46,中方,,0,0,0,,{\an6\c&H665940&\fn迷你简粗圆\frx6\fry358\fs30\pos(944,363)\fad(300,0)}人类必须受到保护"
+Dialogue: 0,1:09:50.41,1:09:53.12,中方,,0,0,0,,{\pos(795,386)\frz358.2\frx0\fry2}{\an6\pos(902,339)\c&H665940&\frx6\fry358\fn迷你简粗圆}Shang将军
+Dialogue: 0,1:09:50.41,1:09:53.12,中方,,0,0,0,,{\an6\c&H665940&\frx0\fry352\frz358.6\pos(905,423)}人民解放军总参谋长
+Dialogue: 0,1:10:42.67,1:10:46.01,中方,,0,0,0,,{\fs50\b0\c&H122216&\pos(879,220)\fad(500,0)}M112 爆破用装药
+Dialogue: 0,1:12:04.17,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(801.231,148.923)}访客
+Dialogue: 0,1:12:04.55,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(798.588,180.235)}朋友
+Dialogue: 0,1:12:04.92,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(822.857,211.429)}七肢桶
+Dialogue: 0,1:12:05.42,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(787,243)}提供
+Dialogue: 0,1:12:05.71,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(776.5,274)}给予
+Dialogue: 0,1:12:06.05,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(798.933,306.133)}捐助
+Dialogue: 0,1:12:06.34,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(792,338)}奖励
+Dialogue: 0,1:12:06.63,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(828,370.5)}技术
+Dialogue: 0,1:12:07.05,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(816.667,400.667)}设备
+Dialogue: 0,1:12:07.46,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(802,432.667)}方法
+Dialogue: 0,1:12:07.80,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(813.6,463.2)}人类
+Dialogue: 0,1:12:08.22,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(778.667,495.333)}男人
+Dialogue: 0,1:12:08.55,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(800,526.545)}女人
+Dialogue: 0,1:12:08.84,1:12:09.17,分析软件,,0,0,0,,{\pos(780.364,558.545)\fs20\b0}主人
+Dialogue: 0,1:12:09.13,1:12:09.17,分析软件,,0,0,0,,{\fs20\b0\pos(786.909,589.818)}人
+Dialogue: 0,1:18:43.57,1:18:46.99,Default,,0,0,0,,{\fs38\pos(640,80)}兰利是美国中央情报局办公所在地
+Dialogue: 0,1:18:43.57,1:18:46.99,电脑屏幕,,0,0,0,,{\fs60\c&H554936&\b1\blur3\pos(836,314)}兰利
+Dialogue: 0,1:18:53.16,1:18:56.33,电脑屏幕,,0,0,0,,{\fs60\c&H554936&\b1\blur3\pos(827,315)}兰利
+Dialogue: 0,1:18:56.33,1:18:58.88,片尾,,0,0,0,,{\fs80\pos(637,589)\c&H545146&\fax-0.2\fad(1000,0)}重大新闻
+Dialogue: 0,1:19:03.67,1:19:04.38,片尾,,0,0,0,,{\fs80\pos(637,589)\c&H545146&\fax-0.2\fad(0,1000)}重大新闻
+Dialogue: 0,1:18:58.88,1:19:03.67,分析软件,,0,0,0,,{\fs30\pos(611,520)\c&H15140F&}重大新闻
+Dialogue: 0,1:18:58.88,1:19:03.67,中方,,0,0,0,,{\c&H7B7467&\fs40\pos(436,604)}中方下达最后通牒
+Dialogue: 0,1:29:15.24,1:29:18.29,分析软件,,0,0,0,,{\fs35\b1\pos(640,595)}Abbott在死亡过程{\b0}
+Dialogue: 0,1:29:57.66,1:30:00.87,分析软件,,0,0,0,,{\fs35\b1\pos(640,595)}Louise拥有武器{\b0}
+Dialogue: 0,1:30:08.88,1:30:11.30,分析软件,,0,0,0,,{\fs35\b1\pos(640,595)}使用武器{\b0}
+Dialogue: 0,1:30:24.94,1:30:29.36,分析软件,,0,0,0,,{\fs35\b1\pos(640,580)}我们帮助人类{\b0}
+Dialogue: 0,1:30:33.40,1:30:37.70,分析软件,,0,0,0,,{\fs35\b1\pos(640,580)}三千年后 …{\b0}
+Dialogue: 0,1:30:38.99,1:30:42.45,分析软件,,0,0,0,,{\fs35\b1\pos(640,580)}… 我们需要人类帮助{\b0}
+Dialogue: 0,1:31:31.67,1:31:35.21,分析软件,,0,0,0,,{\fs35\b1\pos(640,580)}Louise看到未来{\b0}
+Dialogue: 0,1:31:45.39,1:31:49.27,分析软件,,0,0,0,,{\fs35\b1\pos(640,580)}武器开启时间{\b0}
+Dialogue: 0,1:36:54.62,1:36:57.95,宇宙语言,,0,0,0,,{\pos(1062,282)}宇宙语言\NLOUISE BANKS博士
+Dialogue: 0,1:37:06.84,1:37:08.13,目的,,0,0,0,,{\b1\fs25\pos(686,411)\frz310.8}致 Hannah
+Dialogue: 0,1:37:18.31,1:37:20.73,宇宙语言,,0,0,0,,{\c&H2F2D1E&\b1\fs35\frz337.3\pos(595,274)\fn迷你简粗宋}宇宙语言
+Dialogue: 0,1:37:18.31,1:37:20.73,宇宙语言,,0,0,0,,{\frz336\pos(532,353)\c&H2F2D1E&\b1}Louise Banks博士 著
+Dialogue: 0,1:37:18.31,1:37:20.73,宇宙语言,,0,0,0,,{\pos(482,425)\frz336\c&H2F2D1E&}七肢桶语言翻译
+Dialogue: 0,1:37:18.31,1:37:20.73,宇宙语言,,0,0,0,,{\frz336\c&H2F2D1E&\pos(460,465)}必备指南
+Dialogue: 0,1:43:39.52,1:43:41.86,中方,,0,0,0,,{\c&H5C5048&\fad(500,500)\pos(610,442.6)}和平会谈无限停滞
+Dialogue: 0,1:43:41.65,1:43:45.44,宇宙语言,,0,0,0,,{\fad(1000,1000)\(887,593,870,560)\pos(884.8,634.8)}军事行动"无可避免"
+Dialogue: 0,1:43:47.40,1:43:50.87,中方,,0,0,0,,{\c&H5C5048&\fad(500,500)\move(114.6,649.6,210,615)}全球股市大跌
+Dialogue: 0,1:43:49.11,1:43:52.41,中方,,0,0,0,,{\c&H71655A&\move(1069,260,1016,275)}聚焦上海
+Dialogue: 0,1:43:52.20,1:43:54.87,宇宙语言,,0,0,0,,{\move(514,332,547,338)\fn迷你简粗圆\c&H78736D&}紧急发布会
+Dialogue: 0,1:44:00.67,1:44:06.38,中方,,0,0,0,,{\c&H726759&\move(984.571,644,954,600)\clip(909,575,1084,629)}上海危机
+Dialogue: 0,1:50:44.11,1:50:49.41,片名,,0,0,0,,{\fad(1000,0)\pos(645,411)}降   临
+Dialogue: 0,1:50:55.96,1:50:58.29,片名,,0,0,0,,{\c&HB5AEAA&\pos(633,527)}改编自\N<你一生的故事>\N作者\N特德·姜
+Dialogue: 0,1:19:19.85,1:19:30.41,中方,,0,0,0,,{\fs30\c&H52443A&\frz355.4\move(753,543,492,609)}中方下达最后通牒
+Dialogue: 0,0:01:32.84,0:01:36.15,*Default,NTP,0,0,0,,我曾以为你一生的故事是由此刻开始\N{\fs36}I used to think this was the beginning of your story.
+Dialogue: 0,0:01:43.64,0:01:45.16,*Default,NTP,0,0,0,,记忆真是玄妙\N{\fs36}Memory is a strange thing.
+Dialogue: 0,0:01:47.44,0:01:49.21,*Default,NTP,0,0,0,,其运作之道远远超出我的想象\N{\fs36}It doesn't work like I thought it did.
+Dialogue: 0,0:01:50.64,0:01:52.42,*Default,NTP,0,0,0,,我们囿于狭义的时间\N{\fs36}We are so bound by time,
+Dialogue: 0,0:01:54.04,0:01:55.01,*Default,NTP,0,0,0,,习惯将记忆顺成一条线\N{\fs36}by its order.
+Dialogue: 0,0:02:16.32,0:02:16.65,*Default,NTP,0,0,0,,好了\N{\fs36}Okay.
+Dialogue: 0,0:02:23.48,0:02:26.12,*Default,NTP,0,0,0,,乖 妈妈抱\N{\fs36}Okay, come back to me.
+Dialogue: 0,0:02:26.72,0:02:27.91,*Default,NTP,0,0,0,,到妈妈这儿来\N{\fs36}Come back to me.
+Dialogue: 0,0:02:29.56,0:02:30.83,*Default,NTP,0,0,0,,妈妈抱着你 \N{\fs36}Come back to me.
+Dialogue: 0,0:02:31.16,0:02:32.13,*Default,NTP,0,0,0,,举起手来\N{\fs36}Stick 'em up!
+Dialogue: 0,0:02:34.40,0:02:37.05,*Default,NTP,0,0,0,,你是这个小镇的警长吗\N{\fs36}Are you the sheriff in this here town?
+Dialogue: 0,0:02:38.08,0:02:40.73,*Default,NTP,0,0,0,,这是我的"痒痒枪" 我来抓你啦\N{\fs36}These are my tickle guns, and I'm gonna get ya.
+Dialogue: 0,0:02:41.28,0:02:41.72,*Default,NTP,0,0,0,,不\N{\fs36}No.
+Dialogue: 0,0:02:42.56,0:02:45.72,*Default,NTP,0,0,0,,想让我追你吗 快跑哇\N{\fs36}You want me to chase you? You better run.
+Dialogue: 0,0:03:05.56,0:03:07.37,*Default,NTP,0,0,0,,我记得其中的一些片段\N{\fs36}I remember moments in the middle.
+Dialogue: 0,0:03:11.28,0:03:12.21,*Default,NTP,0,0,0,,我爱你\N{\fs36}I love you.
+Dialogue: 0,0:03:13.72,0:03:14.84,*Default,NTP,0,0,0,,我恨你\N{\fs36}I hate you!
+Dialogue: 0,0:03:27.44,0:03:28.72,*Default,NTP,0,0,0,,你一生的故事在此刻完结\N{\fs36}And this was the end.
+Dialogue: 0,0:03:37.72,0:03:38.73,*Default,NTP,0,0,0,,到妈妈这儿来\N{\fs36}Come back to me.
+Dialogue: 0,0:03:40.08,0:03:41.49,*Default,NTP,0,0,0,,别离开妈妈\N{\fs36}Come back to me.
+Dialogue: 0,0:03:57.68,0:04:00.84,*Default,NTP,0,0,0,,但如今 我不知道纠结于开头和结尾还有没有意义\N{\fs36}But now I'm not so sure I believe in beginnings and endings.
+Dialogue: 0,0:04:02.28,0:04:05.47,*Default,NTP,0,0,0,,因为有些决定你命运的日子 其意义超越了生命本身  \N{\fs36}There are days that define your story beyond your life.
+Dialogue: 0,0:04:07.64,0:04:09.14,*Default,NTP,0,0,0,,比如它们降临的那一天\N{\fs36}Like the day they arrived.
+Dialogue: 0,0:04:21.32,0:04:22.32,*Default,NTP,0,0,0,,早上好\N{\fs36}Good morning.
+Dialogue: 0,0:04:22.40,0:04:23.65,*Default,NTP,0,0,0,,- 早  - 早\N{\fs36}- Morning. - Morning.
+Dialogue: 0,0:04:27.28,0:04:28.20,*Default,NTP,0,0,0,,人都哪儿去了\N{\fs36}Where is everyone?
+Dialogue: 0,0:04:30.72,0:04:32.71,*Default,NTP,0,0,0,,好吧 上课\N{\fs36}Okay. Well, let's get started.
+Dialogue: 0,0:04:33.00,0:04:35.50,*Default,NTP,0,0,0,,今天我们来谈谈葡萄牙语\N{\fs36}Today, we are talking about Portuguese
+Dialogue: 0,0:04:35.96,0:04:39.42,*Default,NTP,0,0,0,,说说为什么它的发音与别的罗曼语族大不相同\N{\fs36}and why it sounds so different from the other Romance languages.
+Dialogue: 0,0:04:40.56,0:04:44.53,*Default,NTP,0,0,0,,葡萄牙语起源于加利西亚自治区王国\N{\fs36}The story of Portuguese begins in the kingdom of Galicia...
+Dialogue: 0,0:04:46.43,0:04:48.22,*Default,NTP,0,0,0,,- 不好意思  - 在中世纪\N{\fs36}- Sorry. - ...in the Middle Ages,
+Dialogue: 0,0:04:49.52,0:04:53.49,*Default,NTP,0,0,0,,语言被视为一种艺术的表达形式\N{\fs36}where language was seen as an expression of art.
+Dialogue: 0,0:05:00.72,0:05:01.90,*Default,NTP,0,0,0,,你有什么新鲜事要跟大家分享吗\N{\fs36}Any news you wanna share?
+Dialogue: 0,0:05:03.28,0:05:06.12,*Default,NTP,0,0,0,,Banks博士 您能打开电视 调到新闻频道吗\N{\fs36}Dr. Banks, can you turn the TV to a news channel?
+Dialogue: 0,0:05:22.52,0:05:23.56,*Default,NTP,0,0,0,,已抵达现场\N{\fs36}...arrived here on scene,
+Dialogue: 0,0:05:23.64,0:05:26.76,*Default,NTP,0,0,0,,但警方已事先在这周围设置了路障\N{\fs36}but police have already set up a blockade here around the area.
+Dialogue: 0,0:05:26.80,0:05:29.32,*Default,NTP,0,0,0,,可以看到 我们已经尽可能地靠近现场\N{\fs36}As you can see, we've gotten just about as close as we can,
+Dialogue: 0,0:05:29.40,0:05:33.18,*Default,NTP,0,0,0,,不幸的是 此刻蒙大拿州已经被全面封锁\N{\fs36}but unfortunately, Montana, right now, is on complete lockdown.
+Dialogue: 0,0:05:34.24,0:05:35.81,*Default,NTP,0,0,0,,据悉\N{\fs36}The object apparently
+Dialogue: 0,0:05:35.81,0:05:39.32,*Default,NTP,0,0,0,,该物于40分钟前在94号州际公路北侧着陆\N{\fs36}touched down 40 minutes ago just north of I-94.
+Dialogue: 0,0:05:39.44,0:05:40.48,*Default,NTP,0,0,0,,我们正在等待确切消息\N{\fs36}We're waiting to hear
+Dialogue: 0,0:05:40.55,0:05:43.76,*Default,NTP,0,0,0,,来判断该物是试验飞船还是\N{\fs36}if this is perhaps an experimental vessel or...
+Dialogue: 0,0:05:45.00,0:05:45.95,*Default,NTP,0,0,0,,稍等\N{\fs36}Hold on.
+Dialogue: 0,0:05:47.00,0:05:50.68,*Default,NTP,0,0,0,,我刚刚得知已经有更多类似物体\N{\fs36}I'm learning that more objects like this have landed
+Dialogue: 0,0:05:50.76,0:05:53.95,*Default,NTP,0,0,0,,在全球范围内其他八个地点着陆\N{\fs36}at as many as eight other locations around the world.
+Dialogue: 0,0:05:54.48,0:05:55.58,*Default,NTP,0,0,0,,有视频资料吗 我们能播吗 \N{\fs36}Yes. Can we?
+Dialogue: 0,0:05:56.76,0:05:59.46,*Default,NTP,0,0,0,,您眼前所见的画面来自北海道的一个网站\N{\fs36}This is from a site in Hokkaido.
+Dialogue: 0,0:06:00.32,0:06:03.08,*Default,NTP,0,0,0,,这是一次全球性事件 此刻仍在进行中\N{\fs36}This is worldwide. It is happening right now.
+Dialogue: 0,0:06:09.68,0:06:10.43,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,0:06:12.80,0:06:14.56,*Default,NTP,0,0,0,,那是 下课\N{\fs36}That's... Class is dismissed.
+Dialogue: 0,0:07:02.84,0:07:05.24,*Default,NTP,0,0,0,,目前 我们只希望大家能多配合 \N{\fs36}For now, we're simply asking for cooperation
+Dialogue: 0,0:07:05.36,0:07:07.60,*Default,NTP,0,0,0,,该物将交由有关部门进行评估\N{\fs36}while authorities assess the object.
+Dialogue: 0,0:07:07.68,0:07:09.07,*Default,NTP,0,0,0,,所以你是说它不是我们国家的吗\N{\fs36}So, you're saying it's not ours?
+Dialogue: 0,0:07:09.36,0:07:10.77,*Default,NTP,0,0,0,,你们到底能不能确定它是否来自地球呢\N{\fs36}Do you even know if it's from Earth?
+Dialogue: 0,0:07:10.84,0:07:12.37,*Default,NTP,0,0,0,,我们还在搜集信息\N{\fs36}We're still collecting information.
+Dialogue: 0,0:07:12.37,0:07:14.12,*Default,NTP,0,0,0,,也在和其他国家商讨\N{\fs36}We're coordinating with other countries.
+Dialogue: 0,0:07:14.20,0:07:17.29,*Default,NTP,0,0,0,,我们不是唯一迎来不速之客的国家\N{\fs36}We are not the only ones to have one of these in our backyard.
+Dialogue: 0,0:07:18.52,0:07:21.36,*Default,NTP,0,0,0,,如果这是某种象征和平的"第一类接触"\N{\fs36}If this is some sort of peaceful first contact,
+Dialogue: 0,0:07:21.44,0:07:22.71,*Default,NTP,0,0,0,,为什么一下子送来12个\N{\fs36}why send 12?
+Dialogue: 0,0:07:23.36,0:07:24.29,*Default,NTP,0,0,0,,1个不就够了吗\N{\fs36}Why not just one?
+Dialogue: 0,0:07:35.36,0:07:37.52,*Default,NTP,0,0,0,,嗯 我知道 我也看到了\N{\fs36}Yeah, I know. I saw that, too.
+Dialogue: 0,0:07:48.48,0:07:51.61,*Default,NTP,0,0,0,,我不知道 妈 我跟你看的是一样的报道\N{\fs36}I don't know, Mom. I'm watching the same news coverage you are.
+Dialogue: 0,0:07:55.24,0:07:59.40,*Default,NTP,0,0,0,,好了 妈 那个频道就别看了好吗\N{\fs36}Well, Mom, please don't bother with that channel.
+Dialogue: 0,0:07:59.48,0:08:02.25,*Default,NTP,0,0,0,,还要我跟你说多少次啊 那些人都是白痴\N{\fs36}How many times do I have to tell you those people are idiots?
+Dialogue: 0,0:08:05.68,0:08:07.25,*Default,NTP,0,0,0,,我知道 那你觉得我听起来紧张吗\N{\fs36}Yeah, well, do I sound nervous?
+Dialogue: 0,0:08:08.92,0:08:10.42,*Default,NTP,0,0,0,,好吧 那不就得了\N{\fs36}Okay, exactly. So...
+Dialogue: 0,0:08:12.56,0:08:15.26,*Default,NTP,0,0,0,,我吗 嗯 你知道的 还是老样子\N{\fs36}Me? Yeah. You know me, I'm about the same.
+Dialogue: 0,0:08:20.60,0:08:21.64,*Default,NTP,0,0,0,,妈 我很好\N{\fs36}Mom, I'm fine.
+Dialogue: 0,0:08:23.60,0:08:25.76,*Default,NTP,0,0,0,,好的 再联系 再见\N{\fs36}Okay, I'll call you later. Bye.
+Dialogue: 0,0:08:35.28,0:08:37.85,*Default,NTP,0,0,0,,在这些物体着陆近八小时后\N{\fs36}And at around eight hours after landing,
+Dialogue: 0,0:08:37.91,0:08:40.87,*Default,,0,0,0,,{\fs38\pos(640,80)}第一类接触 泛指人类与外星生物的第一次相遇
+Dialogue: 0,0:08:37.92,0:08:40.87,*Default,NTP,0,0,0,,仍未出现任何"第一类接触"的迹象\N{\fs36}there are still no signs of what might be called "First contact."
+Dialogue: 0,0:08:41.16,0:08:45.00,*Default,NTP,0,0,0,,可以看到 这些物体至少有1500英尺高\N{\fs36}Now, the objects measure at least 1, 500 feet tall.
+Dialogue: 0,0:08:45.08,0:08:48.09,*Default,NTP,0,0,0,,有报道称其中有两个侵入了俄罗斯领空\N{\fs36}Two are reported to have penetrated Russian airspace,
+Dialogue: 0,0:08:48.17,0:08:51.36,*Default,NTP,0,0,0,,一个位于西伯利亚 另一个位于黑海沿岸\N{\fs36}one in Siberia and the other off the coast of the Black...
+Dialogue: 0,0:08:51.44,0:08:52.85,*Default,NTP,0,0,0,,悬浮在海面上\N{\fs36}...suspended above the ocean.
+Dialogue: 0,0:08:52.92,0:08:54.55,*Default,NTP,0,0,0,,截至目前\N{\fs36}So far, there are 12
+Dialogue: 0,0:08:54.63,0:08:56.72,*Default,NTP,0,0,0,,全球范围内已出现12个不明物体\N{\fs36}unidentified objects spread across the globe.
+Dialogue: 0,0:08:56.80,0:08:59.53,*Default,NTP,0,0,0,,其停驻地点间并无明显逻辑关联\N{\fs36}There is no obvious logic to their locations
+Dialogue: 0,0:08:59.64,0:09:02.16,*Default,NTP,0,0,0,,也无迹象表明这些船只内有\N{\fs36}and no evidence that the ships are even...
+Dialogue: 0,0:09:02.24,0:09:06.16,*Default,NTP,0,0,0,,一个大胆设想 如果它确是某种飞船\N{\fs36}...who entertain the idea that if it is a kind of vessel,
+Dialogue: 0,0:09:06.80,0:09:08.27,*Default,NTP,0,0,0,,那么这种飞船或许是无人驾驶的\N{\fs36}it may be unmanned.
+Dialogue: 0,0:09:08.56,0:09:12.00,*Default,NTP,0,0,0,,无论如何 我们有一套针对此类事况的章程 只是\N{\fs36}Regardless, we have a protocol for scenarios like this, but...
+Dialogue: 0,0:10:20.12,0:10:22.04,*Default,NTP,0,0,0,,在经历了周二的非常事件后\N{\fs36}After Tuesday's extraordinary events,
+Dialogue: 0,0:10:22.12,0:10:25.04,*Default,NTP,0,0,0,,总统于今晨宣布国家进入紧急状态\N{\fs36}the President, this morning, has declared a state of emergency,
+Dialogue: 0,0:10:25.12,0:10:27.88,*Default,NTP,0,0,0,,同时 5000名国家警卫队成员\N{\fs36}with as many as 5, 000 National Guard being deployed
+Dialogue: 0,0:10:27.96,0:10:29.80,*Default,NTP,0,0,0,,将被派遣至蒙大拿州\N{\fs36}to the state of Montana alone.
+Dialogue: 0,0:10:29.88,0:10:31.96,*Default,NTP,0,0,0,,边境已被封锁 航班全数停运\N{\fs36}Borders are closed and flights have been grounded,
+Dialogue: 0,0:10:32.04,0:10:33.73,*Default,NTP,0,0,0,,导致数百万旅客滞留\N{\fs36}stranding millions of travelers.
+Dialogue: 0,0:10:33.88,0:10:37.44,*Default,NTP,0,0,0,,因恐慌而哄抢汽油 饮用水和食物的现象不断恶化\N{\fs36}Panic buying of gas, water, and food continues to escalate
+Dialogue: 0,0:10:37.52,0:10:40.64,*Default,NTP,0,0,0,,联邦当局已临时解除\N{\fs36}and federal authorities have temporarily lifted all caps
+Dialogue: 0,0:10:40.72,0:10:42.66,*Default,NTP,0,0,0,,对执法部门的加班时长的限制\N{\fs36}on overtime for law enforcement.
+Dialogue: 0,0:10:43.04,0:10:46.48,*Default,NTP,0,0,0,,酒精烟草枪械管理局已不再下发新的持枪许可证\N{\fs36}The ATF has put a temporary ban on new gun licenses,
+Dialogue: 0,0:10:46.56,0:10:50.40,*Default,NTP,0,0,0,,迫使众多经营狩猎器材和枪械的个体商户\N{\fs36}forcing many independent suppliers of hunting equipment and firearms
+Dialogue: 0,0:10:50.48,0:10:52.21,*Default,NTP,0,0,0,,闭门歇业 不再对公众开放\N{\fs36}to close their doors to the public.
+Dialogue: 0,0:10:52.79,0:10:55.32,*Default,NTP,0,0,0,,距12个不明飞行物的出现已经48小时了\N{\fs36}Forty-eight hours later and no further development...
+Dialogue: 0,0:10:55.40,0:10:56.44,*Default,NTP,0,0,0,,才两天\N{\fs36}Two days.
+Dialogue: 0,0:10:56.52,0:10:57.93,*Default,NTP,0,0,0,,仍未有新的进展\N{\fs36}...from the sight of the 12 UFO...
+Dialogue: 0,0:10:58.00,0:11:00.22,*Default,NTP,0,0,0,,公众就指望我们能知道所有答案\N{\fs36}And already the public expects us to know the answers.
+Dialogue: 0,0:11:02.04,0:11:03.18,*Default,NTP,0,0,0,,我是G.T. Weber上校\N{\fs36}I'm Colonel G.T. Weber.
+Dialogue: 0,0:11:05.64,0:11:06.56,*Default,NTP,0,0,0,,我们从没正式见过面\N{\fs36}We never formally met,
+Dialogue: 0,0:11:06.64,0:11:07.27,*Default,NTP,0,0,0,,不过两年前\N{\fs36}but two years ago,
+Dialogue: 0,0:11:07.35,0:11:09.69,*Default,NTP,0,0,0,,你给陆军情报处提供了一些波斯语翻译吧\N{\fs36}you did some Farsi translations for Army intelligence.
+Dialogue: 0,0:11:11.19,0:11:13.52,*Default,NTP,0,0,0,,那些叛乱视频你翻译得很快\N{\fs36}You made quick work of those insurgent videos.
+Dialogue: 0,0:11:13.60,0:11:15.76,*Default,NTP,0,0,0,,那些叛乱人员你处理得也很快\N{\fs36}You made quick work of those insurgents.
+Dialogue: 0,0:11:18.40,0:11:21.49,*Default,NTP,0,0,0,,有涉及翻译方面的问题\N{\fs36}You are on the top of everyone's list
+Dialogue: 0,0:11:21.57,0:11:22.78,*Default,NTP,0,0,0,,人们都会第一个想到你\N{\fs36}when it comes to translations.
+Dialogue: 0,0:11:23.99,0:11:27.20,*Default,,0,0,0,,{\fs38\pos(640,80)}SSBI 是就职政府顶级机要部门需要接受的一种单一领域背景调查
+Dialogue: 0,0:11:23.99,0:11:27.20,*Default,NTP,0,0,0,,而且你之前的单一领域背景调查还有两年有效期\N{\fs36}And you have another two years in the SSBI.
+Dialogue: 0,0:11:27.58,0:11:29.44,*Default,NTP,0,0,0,,所以你仍有接触最高机密的权限\N{\fs36}So, you still have top-secret clearance.
+Dialogue: 0,0:11:30.29,0:11:32.46,*Default,NTP,0,0,0,,这就是我来你办公室 而没去伯克利的原因\N{\fs36}That's why I'm in your office and not at Berkeley.
+Dialogue: 0,0:11:33.96,0:11:34.71,*Default,NTP,0,0,0,,好吧\N{\fs36}Okay.
+Dialogue: 0,0:11:43.80,0:11:45.68,*Default,NTP,0,0,0,,有个东西 需要你帮我翻译\N{\fs36}I have something I need you to translate for me.
+Dialogue: 0,0:11:54.73,0:11:55.94,*Default,NTP,0,0,0,,你们为什么来这里\N{\fs36}Why are you here?
+Dialogue: 0,0:11:59.60,0:12:01.40,*Default,NTP,0,0,0,,你 你们能听得懂我们说的话吗\N{\fs36}Can you... Can you understand us?
+Dialogue: 0,0:12:09.83,0:12:11.12,*Default,NTP,0,0,0,,你们从哪里来\N{\fs36}Where did you come from?
+Dialogue: 0,0:12:20.00,0:12:20.97,*Default,NTP,0,0,0,,就这些\N{\fs36}Now you heard it.
+Dialogue: 0,0:12:22.32,0:12:23.18,*Default,NTP,0,0,0,,你怎么看\N{\fs36}What do you make of it?
+Dialogue: 0,0:12:27.00,0:12:27.76,*Default,NTP,0,0,0,,这是\N{\fs36}Is that...
+Dialogue: 0,0:12:29.00,0:12:29.72,*Default,NTP,0,0,0,,是的\N{\fs36}Yes.
+Dialogue: 0,0:12:32.52,0:12:33.27,*Default,NTP,0,0,0,,有几个\N{\fs36}How many?
+Dialogue: 0,0:12:34.44,0:12:35.06,*Default,NTP,0,0,0,,几个什么\N{\fs36}How many what?
+Dialogue: 0,0:12:36.65,0:12:38.60,*Default,NTP,0,0,0,,有几个在说话\N{\fs36}How many speaking?
+Dialogue: 0,0:12:42.44,0:12:43.07,*Default,NTP,0,0,0,,两个\N{\fs36}Two.
+Dialogue: 0,0:12:45.16,0:12:47.20,*Default,NTP,0,0,0,,假设当时它们不是同时发声的话\N{\fs36}Assume they were not speaking at the same time.
+Dialogue: 0,0:12:49.12,0:12:51.56,*Default,NTP,0,0,0,,你确定吗 它们有嘴吗\N{\fs36}Are you sure? Did they have mouths...
+Dialogue: 0,0:12:51.64,0:12:54.21,*Default,NTP,0,0,0,,你打算怎么翻译\N{\fs36}How would you approach translating this?
+Dialogue: 0,0:12:56.12,0:12:57.04,*Default,NTP,0,0,0,,有听出任何单词\N{\fs36}Do you hear any words?
+Dialogue: 0,0:12:58.20,0:12:59.04,*Default,NTP,0,0,0,,或者短语吗\N{\fs36}Phrases?
+Dialogue: 0,0:13:01.32,0:13:03.20,*Default,NTP,0,0,0,,我不 我不知道\N{\fs36}I don't... I don't know.
+Dialogue: 0,0:13:04.72,0:13:05.55,*Default,NTP,0,0,0,,那你能告诉我什么\N{\fs36}So, what can you tell me?
+Dialogue: 0,0:13:06.32,0:13:07.74,*Default,NTP,0,0,0,,我能告诉你的是\N{\fs36}I can tell you that it's
+Dialogue: 0,0:13:07.74,0:13:09.72,*Default,NTP,0,0,0,,单凭一个音频文件是无法实现翻译的\N{\fs36}impossible to translate from an audio file.
+Dialogue: 0,0:13:10.36,0:13:12.96,*Default,NTP,0,0,0,,我得到现场和它们互动\N{\fs36}I would need to be there to interact with them.
+Dialogue: 0,0:13:13.88,0:13:16.72,*Default,NTP,0,0,0,,你翻译波斯语的时候也没去现场啊\N{\fs36}You didn't need that with the Farsi translations.
+Dialogue: 0,0:13:16.80,0:13:18.64,*Default,NTP,0,0,0,,那是因为我会说波斯语\N{\fs36}I didn't need it because I already knew the language.
+Dialogue: 0,0:13:18.72,0:13:19.94,*Default,NTP,0,0,0,,但这个 这是\N{\fs36}But this, this is...
+Dialogue: 0,0:13:24.72,0:13:25.90,*Default,NTP,0,0,0,,我知道你想干什么\N{\fs36}I know what you're doing.
+Dialogue: 0,0:13:26.56,0:13:28.82,*Default,NTP,0,0,0,,- 那你倒是说说看  - 我是不会带你去蒙大拿的\N{\fs36}- Tell me what I'm doing. - I'm not taking you to Montana.
+Dialogue: 0,0:13:29.20,0:13:31.28,*Default,NTP,0,0,0,,我不能 否则那里就会变成旅游景点\N{\fs36}It's all I can do to keep it from turning into a tourist site
+Dialogue: 0,0:13:31.36,0:13:32.79,*Default,NTP,0,0,0,,每个有最高机密权限的人都会跑去一游\N{\fs36}for everybody who has a TS clearance.
+Dialogue: 0,0:13:32.87,0:13:35.04,*Default,NTP,0,0,0,,我是在告诉你如何才能完成这份工作\N{\fs36}I'm just telling you what it would take to do this job.
+Dialogue: 0,0:13:35.48,0:13:36.92,*Default,NTP,0,0,0,,这没得商量\N{\fs36}This is not a negotiation.
+Dialogue: 0,0:13:38.13,0:13:40.63,*Default,NTP,0,0,0,,我一走 你就会失去这个机会\N{\fs36}If I leave here, your chance is gone.
+Dialogue: 0,0:13:49.36,0:13:49.93,*Default,NTP,0,0,0,,再见\N{\fs36}Good day.
+Dialogue: 0,0:13:51.40,0:13:52.10,*Default,NTP,0,0,0,,上校\N{\fs36}Colonel?
+Dialogue: 0,0:13:54.92,0:13:57.94,*Default,NTP,0,0,0,,你刚才提到伯克利 接下来是要去那找Danvers翻译吗\N{\fs36}You mentioned Berkeley, are you going to ask Danvers next?
+Dialogue: 0,0:13:58.76,0:13:59.35,*Default,NTP,0,0,0,,可能吧\N{\fs36}Maybe.
+Dialogue: 0,0:14:00.69,0:14:01.82,*Default,NTP,0,0,0,,在你敲定他之前\N{\fs36}Before you commit to him,
+Dialogue: 0,0:14:02.44,0:14:05.57,*Default,NTP,0,0,0,,问问他梵语里的"战争"是哪个词 作何解\N{\fs36}ask him the Sanskrit word for "War" And its translation.
+Dialogue: 0,0:14:14.12,0:14:17.64,*Default,NTP,0,0,0,,今晚 随着俄罗斯和中国加入联合国会谈 \N{\fs36}An agreement on sharing scientific discoveries looks closer tonight,
+Dialogue: 0,0:14:17.72,0:14:20.80,*Default,NTP,0,0,0,,各国将有望达成一项协定 共享科研成就\N{\fs36}as Russia and China join talks at the United Nations.
+Dialogue: 0,0:14:21.36,0:14:24.88,*Default,NTP,0,0,0,,与此同时 全球金融市场陷入危机\N{\fs36}Meanwhile, financial markets across the world are in crisis
+Dialogue: 0,0:14:24.96,0:14:28.96,*Default,NTP,0,0,0,,道琼斯工业指数暴跌2000点\N{\fs36}as the Dow Jones Industrial Average fell over 2,000 points
+Dialogue: 0,0:14:28.96,0:14:31.28,*Default,NTP,0,0,0,,打破其单周跌幅最高记录\N{\fs36}in its worst weekly decline in history.
+Dialogue: 0,0:14:46.12,0:14:47.03,*Default,NTP,0,0,0,,早\N{\fs36}Mornin'.
+Dialogue: 0,0:14:47.32,0:14:48.44,*Default,NTP,0,0,0,,上校好\N{\fs36}Colonel.
+Dialogue: 0,0:14:49.61,0:14:52.49,*Default,,0,0,0,,{\fs38\pos(640,80)}梵语中有多个表达"战争"的词 "Gavisti"并非最贴切的词
+Dialogue: 0,0:14:49.60,0:14:52.49,*Default,NTP,0,0,0,,他选了Gavisti这个词 他说是"争论"的意思\N{\fs36}Gavisti. He says it means "An argument."
+Dialogue: 0,0:14:52.56,0:14:53.64,*Default,NTP,0,0,0,,这个词你怎么解\N{\fs36}What do you say it means?
+Dialogue: 0,0:14:53.76,0:14:55.48,*Default,NTP,0,0,0,,"对更多牛的渴望"\N{\fs36}"A desire for more cows."
+Dialogue: 0,0:14:56.20,0:14:57.56,*Default,NTP,0,0,0,,收拾行李吧\N{\fs36}Pack your bags.
+Dialogue: 0,0:14:59.08,0:15:00.36,*Default,NTP,0,0,0,,好的 给我20分钟可以吗\N{\fs36}All right, give me 20 minutes?
+Dialogue: 0,0:15:00.44,0:15:01.77,*Default,NTP,0,0,0,,我们10分钟内起飞\N{\fs36}We take off in 10.
+Dialogue: 0,0:15:03.16,0:15:05.48,*Default,NTP,0,0,0,,Banks博士 这边请\N{\fs36}Dr. Banks. Right this way, please.
+Dialogue: 0,0:15:19.52,0:15:21.52,*Default,NTP,0,0,0,,连接完毕 准备前往\N{\fs36}Contact and ready to approach...
+Dialogue: 0,0:15:22.60,0:15:25.08,*Default,NTP,0,0,0,,见谅 Banks博士 我检查一下你的安全措施\N{\fs36}Excuse me, Dr. Banks, let me make sure you're properly secured.
+Dialogue: 0,0:15:33.36,0:15:34.60,*Default,NTP,0,0,0,,你还好吧\N{\fs36}You okay?
+Dialogue: 0,0:16:11.56,0:16:12.84,*Default,NTP,0,0,0,,谢谢提醒\N{\fs36}Thanks.
+Dialogue: 0,0:16:15.96,0:16:17.96,*Default,NTP,0,0,0,,抱歉 你刚才说的我没听清\N{\fs36}Sorry, I couldn't hear what you were saying.
+Dialogue: 0,0:16:18.80,0:16:21.61,*Default,NTP,0,0,0,,"语言是文明的基础"\N{\fs36}"Language is the foundation of civilization."
+Dialogue: 0,0:16:21.68,0:16:24.28,*Default,NTP,0,0,0,,"它是凝聚一个民族的粘合剂"\N{\fs36}"It is the glue that holds a people together."
+Dialogue: 0,0:16:24.36,0:16:26.72,*Default,NTP,0,0,0,,"也是产生冲突时最先出鞘的武器"\N{\fs36}"It is the first weapon drawn in a conflict."
+Dialogue: 0,0:16:28.24,0:16:30.76,*Default,NTP,0,0,0,,Louise 这位是Ian Donnelly\N{\fs36}Louise, this is Ian Donnelly.
+Dialogue: 0,0:16:30.84,0:16:32.26,*Default,NTP,0,0,0,,她是Louise Banks 他是Ian Donnelly\N{\fs36}Louise Banks, Ian Donnelly.
+Dialogue: 0,0:16:32.56,0:16:33.60,*Default,NTP,0,0,0,,开场白很精彩啊\N{\fs36}It's quite a greeting.
+Dialogue: 0,0:16:33.72,0:16:35.24,*Default,NTP,0,0,0,,当然 引用了你的大作\N{\fs36}Yeah. Well, you wrote it.
+Dialogue: 0,0:16:35.72,0:16:36.76,*Default,NTP,0,0,0,,是啊 但\N{\fs36}Yeah, but...
+Dialogue: 0,0:16:37.16,0:16:39.60,*Default,NTP,0,0,0,,序言一般都得这么写\N{\fs36}It's the kind of thing you write as a preface,
+Dialogue: 0,0:16:39.68,0:16:41.60,*Default,NTP,0,0,0,,花式下定义 吸引注意力\N{\fs36}dazzle them with the basics.
+Dialogue: 0,0:16:41.92,0:16:43.57,*Default,NTP,0,0,0,,嗯 句子很优美\N{\fs36}Yeah. It's great.
+Dialogue: 0,0:16:43.80,0:16:44.92,*Default,NTP,0,0,0,,但话说错了\N{\fs36}Even if it's wrong.
+Dialogue: 0,0:16:45.94,0:16:47.00,*Default,NTP,0,0,0,,错了吗\N{\fs36}It's wrong?
+Dialogue: 0,0:16:47.10,0:16:48.56,*Default,NTP,0,0,0,,文明的基石\N{\fs36}Well, the cornerstone of civilization
+Dialogue: 0,0:16:48.56,0:16:50.53,*Default,NTP,0,0,0,,不是语言 是科学\N{\fs36}isn't language, it's science.
+Dialogue: 0,0:16:51.64,0:16:54.78,*Default,NTP,0,0,0,,Ian是洛斯阿拉莫斯国家实验室的理论物理学家\N{\fs36}Ian is a theoretical physicist from Los Alamos.
+Dialogue: 0,0:16:55.88,0:16:56.84,*Default,NTP,0,0,0,,你向我汇报工作\N{\fs36}You'll be reporting to me,
+Dialogue: 0,0:16:56.84,0:16:58.52,*Default,NTP,0,0,0,,不过在"壳"里的时候 你要和他搭档\N{\fs36}but you'll be working with him when you're in the shell.
+Dialogue: 0,0:16:59.76,0:17:01.29,*Default,NTP,0,0,0,,"壳"是他们给不明飞行物起的代号\N{\fs36}That's what they're calling the UFO.
+Dialogue: 0,0:17:01.76,0:17:05.08,*Default,NTP,0,0,0,,首要任务是搞清楚 它们要什么 它们从哪儿来\N{\fs36}Priority one. What do they want, where are they from.
+Dialogue: 0,0:17:05.36,0:17:07.42,*Default,NTP,0,0,0,,其次是 它们怎么来这里的\N{\fs36}And beyond that, how did they get here?
+Dialogue: 0,0:17:07.76,0:17:10.20,*Default,NTP,0,0,0,,它们有进行超光速旅行的能力吗\N{\fs36}Are they capable of faster-than-light travel?
+Dialogue: 0,0:17:10.28,0:17:11.32,*Default,NTP,0,0,0,,它们\N{\fs36}Are they...
+Dialogue: 0,0:17:11.40,0:17:14.84,*Default,NTP,0,0,0,,我列了一张问题清单 我们可以按顺序问\N{\fs36}I have a list of questions that, you know, we can go over.
+Dialogue: 0,0:17:14.92,0:17:17.27,*Default,NTP,0,0,0,,从"交流"二进制数列开始\N{\fs36}Starting with a series of just a "Handshake" of binary sequences...
+Dialogue: 0,0:17:17.56,0:17:19.05,*Default,NTP,0,0,0,,不如从谈话开始吧\N{\fs36}How about we just talk to them
+Dialogue: 0,0:17:19.12,0:17:21.24,*Default,NTP,0,0,0,,别急着砸一堆数学题\N{\fs36}before we start throwing math problems at them?
+Dialogue: 0,0:17:23.64,0:17:25.27,*Default,NTP,0,0,0,,这就是请你们一起过来的原因\N{\fs36}This is why you're both here.
+Dialogue: 0,0:17:27.80,0:17:29.29,*Default,NTP,0,0,0,,我会带着咖啡的\N{\fs36}I'll bring the coffee.
+Dialogue: 0,0:17:31.72,0:17:33.40,*Default,NTP,0,0,0,,和外星人喝咖啡\N{\fs36}Coffee with some aliens.
+Dialogue: 0,0:19:43.72,0:19:46.92,*Default,NTP,0,0,0,,你把这两位带到Kettler医生那里\N{\fs36}All right. I want you to take these two to Dr. Kettler.
+Dialogue: 0,0:19:47.00,0:19:48.04,*Default,NTP,0,0,0,,遵命 长官\N{\fs36}Yes, sir.
+Dialogue: 0,0:19:48.12,0:19:49.64,*Default,NTP,0,0,0,,跟着这位上尉去医务室\N{\fs36}Follow the captain to Medical.
+Dialogue: 0,0:19:49.72,0:19:51.49,*Default,NTP,0,0,0,,花几分钟走个程序\N{\fs36}The procedure should take just a few minutes,
+Dialogue: 0,0:19:51.50,0:19:52.60,*Default,NTP,0,0,0,,然后 我们就开始工作\N{\fs36}and then, we'll get started.
+Dialogue: 0,0:20:04.52,0:20:05.93,*Default,NTP,0,0,0,,行李交给这几位吧\N{\fs36}These men are gonna take care of your bags.
+Dialogue: 0,0:20:06.44,0:20:07.64,*Default,NTP,0,0,0,,手机交给我保管\N{\fs36}I'll take your cell phones.
+Dialogue: 0,0:20:08.44,0:20:09.14,*Default,NTP,0,0,0,,手机给我\N{\fs36}Cell phones.
+Dialogue: 0,0:20:11.04,0:20:11.81,*Default,NTP,0,0,0,,跟我来\N{\fs36}Follow me.
+Dialogue: 0,0:20:13.12,0:20:14.69,*Default,NTP,0,0,0,,把这个戴上 你们得一直戴着\N{\fs36}Put these on. You're gonna wear them at all times.
+Dialogue: 0,0:20:22.76,0:20:25.20,*Default,NTP,0,0,0,,- 他们来了再说  - 好\N{\fs36}- Not until they're here. - Great.
+Dialogue: 0,0:20:28.64,0:20:29.70,*Default,NTP,0,0,0,,长官 他们来了\N{\fs36}Sir, they're here.
+Dialogue: 0,0:20:30.60,0:20:32.46,*Default,NTP,0,0,0,,Louise Banks和Ian Donnelly吗\N{\fs36}Louise Banks? Ian Donnelly?
+Dialogue: 0,0:20:33.12,0:20:34.48,*Default,NTP,0,0,0,,你们上一次进食是什么时候\N{\fs36}When was the last time either of you have eaten?
+Dialogue: 0,0:20:35.00,0:20:36.24,*Default,NTP,0,0,0,,- 昨晚  - 我也是\N{\fs36}- Last night. - Same.
+Dialogue: 0,0:20:36.32,0:20:37.96,*Default,NTP,0,0,0,,你们上一次感受到压力是什么时候\N{\fs36}When's the last time you did something stressful?
+Dialogue: 0,0:20:38.48,0:20:39.48,*Default,NTP,0,0,0,,现在算吗\N{\fs36}Does now count?
+Dialogue: 0,0:20:41.24,0:20:42.40,*Default,NTP,0,0,0,,我说说而已\N{\fs36}Just saying.
+Dialogue: 0,0:20:42.48,0:20:45.59,*Default,NTP,0,0,0,,被抬进救援直升机的是谁啊\N{\fs36}Who was being carted off in the medevac?
+Dialogue: 0,0:20:46.32,0:20:48.97,*Default,NTP,0,0,0,,不是所有人都能承受得住这番经历的\N{\fs36}Not everyone is able to process experiences like this.
+Dialogue: 0,0:20:49.20,0:20:50.39,*Default,NTP,0,0,0,,我会给你们抽点血\N{\fs36}I'm gonna get some blood from you
+Dialogue: 0,0:20:51.12,0:20:52.36,*Default,NTP,0,0,0,,再给你们打一针疫苗\N{\fs36}and give you an immunization dose
+Dialogue: 0,0:20:52.36,0:20:54.48,*Default,NTP,0,0,0,,抵御细菌入侵感染\N{\fs36}that covers a battery of bacterial threats.
+Dialogue: 0,0:20:54.56,0:20:55.73,*Default,NTP,0,0,0,,请把这些文件签了 好吗\N{\fs36}Would you sign these, please?
+Dialogue: 0,0:20:56.00,0:20:56.86,*Default,NTP,0,0,0,,然后把袖子卷起来\N{\fs36}And roll up your sleeves.
+Dialogue: 0,0:20:58.28,0:20:59.48,*Default,NTP,0,0,0,,你们谁患有幽闭恐惧症吗\N{\fs36}Either of you claustrophobic?
+Dialogue: 0,0:20:59.56,0:21:00.89,*Default,NTP,0,0,0,,- 没有  - 没有\N{\fs36}- Nope. - No.
+Dialogue: 0,0:21:00.96,0:21:05.04,*Default,NTP,0,0,0,,最近在服用药物吗 有过敏史吗 怀孕了吗\N{\fs36}Currently taking any medications? Allergies? Pregnant?
+Dialogue: 0,0:21:05.68,0:21:06.32,*Default,NTP,0,0,0,,没有\N{\fs36}No.
+Dialogue: 0,0:21:06.84,0:21:08.80,*Default,NTP,0,0,0,,强效疫苗对人体作用力很猛 \N{\fs36}The booster is a kick to your system,
+Dialogue: 0,0:21:08.88,0:21:10.60,*Default,NTP,0,0,0,,所以可能会出现一些副作用\N{\fs36}so you may experience some side-effects,
+Dialogue: 0,0:21:10.68,0:21:12.29,*Default,NTP,0,0,0,,例如恶心 眩晕 头痛\N{\fs36}nausea, dizziness, headaches,
+Dialogue: 0,0:21:12.84,0:21:14.71,*Default,NTP,0,0,0,,耳朵里出现像耳鸣一般的嗡嗡声\N{\fs36}a ringing in your ears like you have tinnitus.
+Dialogue: 0,0:21:27.04,0:21:28.45,*Default,NTP,0,0,0,,你看到他怎么了吗\N{\fs36}You see what's happening to him?
+Dialogue: 0,0:21:28.52,0:21:29.80,*Default,NTP,0,0,0,,这究竟怎么回事\N{\fs36}How does this even work?
+Dialogue: 0,0:21:29.88,0:21:31.80,*Default,NTP,0,0,0,,读数没有变化 但是\N{\fs36}The readings do not change, but...
+Dialogue: 0,0:21:31.88,0:21:34.28,*Default,NTP,0,0,0,,我不知道 我们就像是爬在纸上的虫\N{\fs36}I don't know. It's like we're insects on a piece of paper
+Dialogue: 0,0:21:34.36,0:21:36.69,*Default,NTP,0,0,0,,它们轻飘飘地把我们扫地出门了\N{\fs36}and they're easing us out of the house.
+Dialogue: 0,0:21:37.12,0:21:39.73,*Default,NTP,0,0,0,,就在112分钟19秒那一刻\N{\fs36}At exactly 112 minutes and 19 seconds,
+Dialogue: 0,0:21:40.20,0:21:43.61,*Default,NTP,0,0,0,,重力出现变化 我们就滑了出去\N{\fs36}the gravity starts to shift and slides us out of the room.
+Dialogue: 0,0:21:43.72,0:21:46.45,*Default,NTP,0,0,0,,这事儿你找到一个科学的解释了吗\N{\fs36}Have you found a scientific explanation for it?
+Dialogue: 0,0:21:46.72,0:21:48.49,*Default,NTP,0,0,0,,比如 是出自它们的需要吗\N{\fs36}Like, is it for them?
+Dialogue: 0,0:21:48.80,0:21:50.00,*Default,NTP,0,0,0,,不 我觉得是为了我们\N{\fs36}No, we think it's for us.
+Dialogue: 0,0:21:50.56,0:21:52.80,*Default,NTP,0,0,0,,交流舱内的空气好像并不能流通\N{\fs36}The air doesn't seem to circulate inside the chamber,
+Dialogue: 0,0:21:52.88,0:21:55.33,*Default,NTP,0,0,0,,所以大约两小时后 氧气就耗尽了\N{\fs36}so after about two hours, you run out of oxygen.
+Dialogue: 0,0:21:55.88,0:21:59.32,*Default,NTP,0,0,0,,把新鲜空气泵入房间用不着18小时啊\N{\fs36}It doesn't take 18 hours to pump fresh air into a room.
+Dialogue: 0,0:21:59.40,0:22:00.52,*Default,NTP,0,0,0,,大气\N{\fs36}Atmosphere.
+Dialogue: 0,0:22:02.68,0:22:03.64,*Default,NTP,0,0,0,,你说什么\N{\fs36}Excuse me?
+Dialogue: 0,0:22:03.72,0:22:05.76,*Default,NTP,0,0,0,,如果它们的大气与地球的不同\N{\fs36}If their atmosphere is different from Earth,
+Dialogue: 0,0:22:06.24,0:22:07.68,*Default,NTP,0,0,0,,那肯定需要好几个小时\N{\fs36}it would certainly take hours to
+Dialogue: 0,0:22:07.76,0:22:09.72,*Default,NTP,0,0,0,,为我们重新平衡氧气的含量和压强\N{\fs36}to rebalance the O2 content and pressure for us
+Dialogue: 0,0:22:09.80,0:22:10.96,*Default,NTP,0,0,0,,每开一次门 它们就要重复一次\N{\fs36}every time they open their door.
+Dialogue: 0,0:22:12.32,0:22:14.58,*Default,NTP,0,0,0,,照你这么说 它们随时可以让我们窒息而死\N{\fs36}So, you're saying they could suffocate us if they wanted?
+Dialogue: 0,0:22:14.60,0:22:16.40,*Default,NTP,0,0,0,,这是美国中央情报局的David Halpern特工\N{\fs36}This is Agent David Halpern with the CIA.
+Dialogue: 0,0:22:17.32,0:22:19.16,*Default,NTP,0,0,0,,我带两位去你们的岗位吧\N{\fs36}Let me get you two to your stations.
+Dialogue: 0,0:22:19.24,0:22:20.20,*Default,NTP,0,0,0,,好的 长官\N{\fs36}Yes, sir.
+Dialogue: 0,0:22:20.28,0:22:22.52,*Default,NTP,0,0,0,,记住 我们需要尽快得到答案\N{\fs36}Remember, we need answers as soon as possible.
+Dialogue: 0,0:22:22.88,0:22:26.00,*Default,NTP,0,0,0,,它们要什么 它们从哪儿来 它们为什么来这儿\N{\fs36}What do they want, where are they from, why they're here.
+Dialogue: 0,0:22:26.08,0:22:27.52,*Default,NTP,0,0,0,,- 这是首要任务  - 明白\N{\fs36}- This is the priority. - Yeah.
+Dialogue: 0,0:22:27.60,0:22:30.03,*Default,NTP,0,0,0,,大家注意 这是Ian Donnelly博士\N{\fs36}Everyone, this is Dr. Ian Donnelly.
+Dialogue: 0,0:22:30.12,0:22:31.32,*Default,NTP,0,0,0,,他将负责管理这个团队\N{\fs36}He'll be running this team here.
+Dialogue: 0,0:22:31.60,0:22:33.80,*Default,NTP,0,0,0,,嗯 它们对什么有过回应吗\N{\fs36}Yeah, have they responded to anything?
+Dialogue: 0,0:22:33.87,0:22:36.37,*Default,,0,0,0,,{\fs38\pos(640,80)}斐波那契数 即黄金分割数列 常见于自然界规律中
+Dialogue: 0,0:22:33.88,0:22:36.36,*Default,NTP,0,0,0,,比如形状 图案 数字 斐波那契数 \N{\fs36}Shapes, patterns, numbers, Fibonacci?
+Dialogue: 0,0:22:36.44,0:22:38.62,*Default,NTP,0,0,0,,我们连它们回应"你好"时说的是什么都不知道\N{\fs36}We can't tell what they are saying when they respond to "Hello,"
+Dialogue: 0,0:22:40.40,0:22:41.60,*Default,NTP,0,0,0,,不要操之过急了\N{\fs36}so don't get ahead of yourself.
+Dialogue: 0,0:22:44.80,0:22:45.96,*Default,NTP,0,0,0,,那你们到底有哪些进展\N{\fs36}What have you figured out?
+Dialogue: 0,0:22:46.04,0:22:47.12,*Default,NTP,0,0,0,,我们才刚刚开始\N{\fs36}We're just getting started.
+Dialogue: 0,0:22:47.52,0:22:49.32,*Default,NTP,0,0,0,,- 早上好  - 早上好\N{\fs36}- Good morning. - Good morning.
+Dialogue: 0,0:22:49.40,0:22:51.12,*Default,NTP,0,0,0,,这是Louise Banks博士\N{\fs36}This is Dr. Louise Banks.
+Dialogue: 0,0:22:51.20,0:22:52.24,*Default,NTP,0,0,0,,她将负责管理你们的团队\N{\fs36}She'll be heading your team.
+Dialogue: 0,0:22:52.32,0:22:54.08,*Default,NTP,0,0,0,,- Banks博士 见到你很荣幸  - 你好\N{\fs36}- Dr. Banks. It's a pleasure meeting you. - Hi.
+Dialogue: 0,0:22:54.16,0:22:56.32,*Default,NTP,0,0,0,,Banks博士将接手Walker博士的工作\N{\fs36}Dr. Banks is taking over the mission from Dr. Walker.
+Dialogue: 0,0:22:56.40,0:22:58.32,*Default,NTP,0,0,0,,- 你好  - Banks博士 又见面了\N{\fs36}- Nice to see you. - Dr. Banks, glad to see you again.
+Dialogue: 0,0:22:58.40,0:22:59.70,*Default,NTP,0,0,0,,这警报会在任务开始前15分钟拉响\N{\fs36}That's your 15-minute warning.
+Dialogue: 0,0:23:01.12,0:23:02.15,*Default,NTP,0,0,0,,你潜过水吗\N{\fs36}You scuba-dive before?
+Dialogue: 0,0:23:05.64,0:23:07.40,*Default,NTP,0,0,0,,现场环境的辐射很强吗\N{\fs36}What kind of radiation exposure are we walking into?
+Dialogue: 0,0:23:07.84,0:23:09.53,*Default,NTP,0,0,0,,很弱 装备只是为了安全起见\N{\fs36}Nominal, these are just for safety.
+Dialogue: 0,0:23:09.96,0:23:12.49,*Default,NTP,0,0,0,,那么 会需要身体接触那个 \N{\fs36}So, is there any physical contact with the...
+Dialogue: 0,0:23:13.12,0:23:15.62,*Default,NTP,0,0,0,,说不出"外星人"的只有我一个人吗\N{\fs36}Am I the only one having trouble saying "Aliens"?
+Dialogue: 0,0:23:16.20,0:23:19.01,*Default,NTP,0,0,0,,有一面墙 类似玻璃的墙 你没法接触到它们\N{\fs36}There's a wall, like a glass wall. You can't get to them.
+Dialogue: 0,0:23:21.12,0:23:21.96,*Default,NTP,0,0,0,,它们长什么样啊\N{\fs36}So, what do they look like?
+Dialogue: 0,0:23:23.92,0:23:25.25,*Default,NTP,0,0,0,,你很快就知道了 快点吧\N{\fs36}You'll see soon enough. Hurry up.
+Dialogue: 0,0:23:26.32,0:23:28.12,*Default,NTP,0,0,0,,谢谢 请走这边\N{\fs36}Thank you. Turn this way, please.
+Dialogue: 0,0:23:34.16,0:23:36.20,*Default,NTP,0,0,0,,各单位注意 随时待命 完毕\N{\fs36}All units, stand by. Over.
+Dialogue: 0,0:23:45.80,0:23:49.00,*Default,NTP,0,0,0,,一开始会觉得这套防护服笨重 但你会习惯的\N{\fs36}The suits are clumsy at first, but you get used to them.
+Dialogue: 0,0:23:51.32,0:23:52.84,*Default,NTP,0,0,0,,装到第二辆车上\N{\fs36}Load up in the second vehicle.
+Dialogue: 0,0:23:54.36,0:23:55.80,*Default,NTP,0,0,0,,快点 快点 把它放好\N{\fs36}Hurry up, hurry up. Bring it over here.
+Dialogue: 0,0:23:55.88,0:23:56.88,*Default,NTP,0,0,0,,我们准备好了 长官\N{\fs36}We're clear over here, sir.
+Dialogue: 0,0:23:57.00,0:23:57.83,*Default,NTP,0,0,0,,准备完毕 长官 这是这辆车上最后一箱了\N{\fs36}All set, sir. This is the last box for this truck.
+Dialogue: 0,0:23:57.83,0:23:59.24,*Default,NTP,0,0,0,,卡车装载完毕\N{\fs36}This truck's clear.
+Dialogue: 0,0:23:59.52,0:24:00.52,*Default,NTP,0,0,0,,出发了\N{\fs36}Let's go!
+Dialogue: 0,0:24:00.60,0:24:02.04,*Default,NTP,0,0,0,,我们几分钟后就到那\N{\fs36}We'll be there in a few minutes.
+Dialogue: 0,0:24:03.04,0:24:04.37,*Default,NTP,0,0,0,,一定要抓牢了\N{\fs36}Make sure you hold on to something.
+Dialogue: 0,0:24:10.16,0:24:12.44,*Default,NTP,0,0,0,,我们已进入非军事区\N{\fs36}We are now inside the demilitarized zone.
+Dialogue: 0,0:24:12.52,0:24:15.33,*Default,NTP,0,0,0,,- 升高1.2千米 完毕  - 收到 阿尔法小队\N{\fs36}- Raise 1.2 klicks. Over. - Copy, Alpha.
+Dialogue: 0,0:24:15.40,0:24:16.85,*Default,NTP,0,0,0,,我们将持续监视各项生命体征\N{\fs36}We'll continue to monitor vitals
+Dialogue: 0,0:24:16.85,0:24:19.29,*Default,NTP,0,0,0,,以及行动中信号指令的清晰度\N{\fs36}and signal clarity from operations.
+Dialogue: 0,0:24:19.36,0:24:21.80,*Default,NTP,0,0,0,,空中哨兵已就位 全面运转中\N{\fs36}Airpicket's in position and fully operational.
+Dialogue: 0,0:24:21.88,0:24:24.32,*Default,NTP,0,0,0,,反制措施已就绪 随时服从调度 完毕\N{\fs36}Countermeasures in place and ready for deployment. Over.
+Dialogue: 0,0:25:00.76,0:25:04.24,*Default,NTP,0,0,0,,收到 神鹰 我们只会观察 不会采取行动 完毕\N{\fs36}Copy, Condor. We will observe, but not initiate. Over.
+Dialogue: 0,0:25:04.84,0:25:05.92,*Default,NTP,0,0,0,,小心点\N{\fs36}Watch your step.
+Dialogue: 0,0:25:07.24,0:25:09.52,*Default,NTP,0,0,0,,阿尔法小队的频道将保持畅通 完毕\N{\fs36}We'll keep Alpha channel open. Over.
+Dialogue: 0,0:25:09.60,0:25:12.33,*Default,NTP,0,0,0,,阿尔法小队 请知悉 湿度从昨天开始上升\N{\fs36}Alpha, be advised. Humidity increased since yesterday.
+Dialogue: 0,0:25:12.40,0:25:13.68,*Default,NTP,0,0,0,,每过18小时\N{\fs36}Every 18 hours,
+Dialogue: 0,0:25:14.56,0:25:16.28,*Default,NTP,0,0,0,,底部的门就会打开\N{\fs36}the door opens up at the bottom.
+Dialogue: 0,0:25:19.12,0:25:20.28,*Default,NTP,0,0,0,,我们就从那进去\N{\fs36}That's where we go in.
+Dialogue: 0,0:25:22.52,0:25:24.04,*Default,NTP,0,0,0,,红队待命\N{\fs36}Red team on standby.
+Dialogue: 0,0:25:30.24,0:25:33.24,*Default,NTP,0,0,0,,未见异常 阿尔法特遣队 准备就绪 完毕\N{\fs36}Zero movement. Alpha detail, clear to proceed. Over.
+Dialogue: 0,0:25:33.56,0:25:36.53,*Default,NTP,0,0,0,,收到 神鹰 我们现在上去 完毕\N{\fs36}Copy, Condor. Beginning our ascent now Over.
+Dialogue: 0,0:25:42.44,0:25:43.44,*Default,NTP,0,0,0,,十英尺\N{\fs36}Ten feet.
+Dialogue: 0,0:25:47.88,0:25:49.29,*Default,NTP,0,0,0,,五英尺\N{\fs36}Five feet.
+Dialogue: 0,0:25:50.80,0:25:52.78,*Default,NTP,0,0,0,,二英尺 一英尺\N{\fs36}Two. One.
+Dialogue: 0,0:26:11.00,0:26:13.68,*Default,NTP,0,0,0,,阿尔法小队 可以进入过渡舱了 完毕\N{\fs36}Alpha, clear to enter antechamber. Over.
+Dialogue: 0,0:26:20.52,0:26:23.72,*Default,NTP,0,0,0,,收到 神鹰 行进中 完毕\N{\fs36}Copy, Condor. Moving into position. Over.
+Dialogue: 0,0:26:33.76,0:26:35.56,*Default,NTP,0,0,0,,离目标还有三十英尺\N{\fs36}Thirty feet from target.
+Dialogue: 0,0:26:35.64,0:26:39.36,*Default,NTP,0,0,0,,出现未知干扰 防护服遥测功能未受影响 完毕\N{\fs36}Suit telemetry now full strength, despite unknown interference. Over.
+Dialogue: 0,0:26:46.60,0:26:49.36,*Default,NTP,0,0,0,,五英尺 二英尺 一英尺\N{\fs36}Five feet. Two, one.
+Dialogue: 0,0:27:12.04,0:27:15.56,*Default,NTP,0,0,0,,氧气浓度为20.3% 未测出常见污染物 完毕\N{\fs36}Oxygen level, 20.3%. No known contaminates. Over.
+Dialogue: 0,0:27:15.84,0:27:16.88,*Default,NTP,0,0,0,,生命体征正常\N{\fs36}Vitals normal.
+Dialogue: 0,0:27:19.12,0:27:20.92,*Default,NTP,0,0,0,,重力为0.97\N{\fs36}Gravity at 0. 97.
+Dialogue: 0,0:27:29.68,0:27:31.80,*Default,NTP,0,0,0,,无线电信号正在减弱\N{\fs36}Radio signal strength decreasing.
+Dialogue: 0,0:27:31.92,0:27:35.40,*Default,NTP,0,0,0,,90% 85% 波动中\N{\fs36}90%. 85%. Fluctuating...
+Dialogue: 0,0:27:53.44,0:27:54.52,*Default,NTP,0,0,0,,嗯 我算是开眼了\N{\fs36}Yeah, that just happened.
+Dialogue: 0,0:28:15.68,0:28:18.05,*Default,NTP,0,0,0,,好了 行动吧 时间有限\N{\fs36}All right, let's move. Time is wasting.
+Dialogue: 0,0:28:18.80,0:28:21.20,*Default,NTP,0,0,0,,你准备好了吗 你呢\N{\fs36}You ready? You ready?
+Dialogue: 0,0:28:22.08,0:28:22.97,*Default,NTP,0,0,0,,咱们走吧\N{\fs36}Let's do it.
+Dialogue: 0,0:28:23.44,0:28:26.80,*Default,NTP,0,0,0,,神鹰 我和Marks上尉先行动 完毕\N{\fs36}Condor, I'm proceeding first with Captain Marks. Over.
+Dialogue: 0,0:28:29.56,0:28:33.04,*Default,NTP,0,0,0,,无线电信号强度为75% 完毕\N{\fs36}Radio signal strength 75%. Over.
+Dialogue: 0,0:28:33.12,0:28:36.01,*Default,NTP,0,0,0,,安全着陆 过渡舱内重力微弱 完毕\N{\fs36}Landed. Gravity nominal in the antechamber. Over.
+Dialogue: 0,0:28:38.08,0:28:39.20,*Default,NTP,0,0,0,,一切正常 长官\N{\fs36}It's all good, sir.
+Dialogue: 0,0:28:39.36,0:28:40.86,*Default,NTP,0,0,0,,- 你们可以行动了  - 原地待命\N{\fs36}- You can proceed. - Stand by.
+Dialogue: 0,0:28:41.72,0:28:42.78,*Default,NTP,0,0,0,,好了 把东西拿上来\N{\fs36}Okay, bring it up.
+Dialogue: 0,0:28:48.91,0:28:49.80,*Default,NTP,0,0,0,,生命体征稳定\N{\fs36}Vitals in line.
+Dialogue: 0,0:28:49.88,0:28:53.48,*Default,NTP,0,0,0,,无线电信号强度稳定在75% 完毕\N{\fs36}Radio signal strength stable at 75%. Over.
+Dialogue: 0,0:28:55.24,0:28:56.00,*Default,NTP,0,0,0,,你还好吗\N{\fs36}You okay?
+Dialogue: 0,0:29:00.00,0:29:00.64,*Default,NTP,0,0,0,,还好\N{\fs36}Yeah.
+Dialogue: 0,0:29:02.17,0:29:03.13,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks.
+Dialogue: 0,0:29:07.56,0:29:08.51,*Default,NTP,0,0,0,,你能做到的\N{\fs36}You can do this.
+Dialogue: 0,0:29:09.48,0:29:10.18,*Default,NTP,0,0,0,,加油\N{\fs36}Come on.
+Dialogue: 0,0:29:10.84,0:29:13.04,*Default,NTP,0,0,0,,我不知道 我 我觉得\N{\fs36}I don't know, I... I think...
+Dialogue: 0,0:29:21.44,0:29:21.86,*Default,NTP,0,0,0,,抓住她\N{\fs36}Grab her.
+Dialogue: 0,0:29:35.56,0:29:37.17,*Default,NTP,0,0,0,,Donnelly博士 你怎么样\N{\fs36}Dr. Donnelly, are you all right?
+Dialogue: 0,0:29:38.52,0:29:40.68,*Default,NTP,0,0,0,,Donnelly博士 你还好吗\N{\fs36}Dr. Donnelly. You good?
+Dialogue: 0,0:29:42.44,0:29:46.28,*Default,NTP,0,0,0,,Donnelly博士 你怎么样 请回答 完毕\N{\fs36}Dr. Donnelly, are you all right? Please respond. Over.
+Dialogue: 0,0:29:46.76,0:29:47.34,*Default,NTP,0,0,0,,我还好\N{\fs36}Yeah.
+Dialogue: 0,0:29:51.36,0:29:52.39,*Default,NTP,0,0,0,,我勒个槽\N{\fs36}Holy fuck.
+Dialogue: 0,0:29:58.24,0:30:00.11,*Default,NTP,0,0,0,,我们要到那里面去\N{\fs36}We're gonna go down there,
+Dialogue: 0,0:30:00.52,0:30:01.73,*Default,NTP,0,0,0,,然后你们就可以开工了\N{\fs36}and you're gonna start your job.
+Dialogue: 0,0:30:02.16,0:30:02.78,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,0:30:03.40,0:30:05.61,*Default,NTP,0,0,0,,- 好了吗 同志们 我们走  - 好的\N{\fs36}- Okay? Everybody, move out. - Okay.
+Dialogue: 0,0:30:06.12,0:30:08.04,*Default,NTP,0,0,0,,阿尔法特遣队到达指定位置\N{\fs36}Alpha detail is in position.
+Dialogue: 0,0:30:08.20,0:30:09.64,*Default,NTP,0,0,0,,队伍已就位\N{\fs36}Team is in position.
+Dialogue: 0,0:30:10.04,0:30:10.99,*Default,NTP,0,0,0,,我们在行进中\N{\fs36}We're on the move.
+Dialogue: 0,0:30:57.16,0:30:59.32,*Default,NTP,0,0,0,,神鹰 阿尔法小队已抵达舱内\N{\fs36}Condor, Alpha's now in the nave.
+Dialogue: 0,0:30:59.76,0:31:02.12,*Default,NTP,0,0,0,,正安置设备和遥测装置 完毕\N{\fs36}Setting up equipment and telemetry. Over.
+Dialogue: 0,0:31:22.20,0:31:24.77,*Default,NTP,0,0,0,,氧气含量为21.3% 完毕\N{\fs36}Oxygen level, 21.3%. Over.
+Dialogue: 0,0:31:34.92,0:31:37.57,*Default,NTP,0,0,0,,现在什么情况\N{\fs36}So, what happens now?
+Dialogue: 0,0:31:40.60,0:31:41.50,*Default,NTP,0,0,0,,等它们来\N{\fs36}They arrive.
+Dialogue: 0,0:32:46.04,0:32:47.06,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks.
+Dialogue: 0,0:32:52.52,0:32:53.68,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks.
+Dialogue: 0,0:32:55.84,0:32:57.20,*Default,NTP,0,0,0,,你可以开始了\N{\fs36}You can start.
+Dialogue: 0,0:32:59.12,0:33:02.09,*Default,NTP,0,0,0,,阿尔法特遣队 请径直穿过消毒通道\N{\fs36}Alpha detail, proceed directly through the decontamination
+Dialogue: 0,0:33:02.16,0:33:03.60,*Default,NTP,0,0,0,,前往气密隔离室\N{\fs36}to the inner airlock.
+Dialogue: 0,0:33:03.68,0:33:07.28,*Default,NTP,0,0,0,,在穿过隔离阀前请勿逗留\N{\fs36}Do not stop until you have passed through the airlock doors.
+Dialogue: 0,0:33:07.36,0:33:09.32,*Default,NTP,0,0,0,,如无专业人员协助\N{\fs36}Do not attempt to remove the hazmat suit
+Dialogue: 0,0:33:09.40,0:33:12.00,*Default,NTP,0,0,0,,请勿擅自脱除防护服\N{\fs36}without proper assistance of authorized personnel.
+Dialogue: 0,0:33:12.08,0:33:15.76,*Default,NTP,0,0,0,,重复一遍 如无专业人员协助 请勿擅自脱除防护服\N{\fs36}Repeat. Hazmat suits without assistance of authorized personnel.
+Dialogue: 0,0:33:15.84,0:33:18.00,*Default,NTP,0,0,0,,- 等等 等一下 等一下  - 好的\N{\fs36}- Wait, just a minute. A minute. - All right.
+Dialogue: 0,0:33:18.08,0:33:19.44,*Default,NTP,0,0,0,,保持低头姿势\N{\fs36}Keep your head low.
+Dialogue: 0,0:33:31.20,0:33:32.16,*Default,NTP,0,0,0,,可以了\N{\fs36}Clear.
+Dialogue: 0,0:33:32.28,0:33:33.69,*Default,NTP,0,0,0,,- 好的  - 请站出去\N{\fs36}- All right. - Step on out, please.
+Dialogue: 0,0:33:33.96,0:33:34.96,*Default,NTP,0,0,0,,拿着那个\N{\fs36}Now hold that.
+Dialogue: 0,0:33:38.56,0:33:39.56,*Default,NTP,0,0,0,,我是不是被炒了\N{\fs36}Am I fired?
+Dialogue: 0,0:33:40.28,0:33:41.61,*Default,NTP,0,0,0,,你比上一个人强\N{\fs36}You did better than the last guy.
+Dialogue: 0,0:33:43.36,0:33:45.52,*Default,NTP,0,0,0,,这话可算不上安慰\N{\fs36}That doesn't make me feel any better.
+Dialogue: 0,0:33:46.72,0:33:49.42,*Default,NTP,0,0,0,,你们二位得在凌晨2点前整理出头绪\N{\fs36}You both have till 0200 hours to figure something out.
+Dialogue: 0,0:33:50.12,0:33:51.30,*Default,NTP,0,0,0,,好的 那之后怎么安排\N{\fs36}Okay, what happens then?
+Dialogue: 0,0:33:52.44,0:33:53.80,*Default,NTP,0,0,0,,你们再进去\N{\fs36}You go back in.
+Dialogue: 0,0:34:28.28,0:34:31.09,*Default,NTP,0,0,0,,12个不明飞行物的降临\N{\fs36}Violence continues to spread across the US today
+Dialogue: 0,0:34:31.16,0:34:33.00,*Default,NTP,0,0,0,,导致今日全美各地频发暴力事件\N{\fs36}in the wake of the 12 landings.
+Dialogue: 0,0:34:33.08,0:34:36.05,*Default,NTP,0,0,0,,鉴于国家警卫队连续三晚保卫失利\N{\fs36}The President has declared a mandatory dusk-to-dawn curfew
+Dialogue: 0,0:34:36.12,0:34:38.16,*Default,NTP,0,0,0,,未能制止全国范围内的打砸抢行为\N{\fs36}after the crackdown by the National Guard
+Dialogue: 0,0:34:38.24,0:34:41.30,*Default,NTP,0,0,0,,总统宣布了一项强制性夜间宵禁令\N{\fs36}failed to prevent a third night of looting across the country.
+Dialogue: 0,0:34:41.80,0:34:46.08,*Default,NTP,0,0,0,,在北达科他州 144名圣劳伦斯五旬节派异教团体成员\N{\fs36}In North Dakota, 144 members of the St. Lawrence Pentecostal Cult
+Dialogue: 0,0:34:46.16,0:34:49.40,*Default,NTP,0,0,0,,火烧其聚点 恐全员遇难 无人生还\N{\fs36}are feared dead after they set their compound ablaze.
+Dialogue: 0,0:34:49.40,0:34:51.92,*Default,NTP,0,0,0,,他们的网站宣称外星人的降临\N{\fs36}Their website claims the arrival of the aliens
+Dialogue: 0,0:34:52.00,0:34:53.57,*Default,NTP,0,0,0,,印证了一个神谕\N{\fs36}set in motion a prophecy
+Dialogue: 0,0:34:53.57,0:34:56.74,*Default,,0,0,0,,{\fs38\pos(640,80)}启示录14:1-5中将羔羊比作神的使徒 甘为献祭之物救世 信徒应当响应 也曾反复提到数字12(羔羊的使徒)及其144000(羔羊血买到的人)
+Dialogue: 0,0:34:53.57,0:34:56.76,*Default,NTP,0,0,0,,该团体以12人为一组 化身为12组"跟随羔羊"的信徒 以身为祭\N{\fs36}that 12 sets of 12 should "Follow the lamb."
+Dialogue: 0,0:35:06.48,0:35:08.88,*Default,NTP,0,0,0,,这里是7-11 明白 稍等\N{\fs36}And this is Seven-November. Roger, stand by...
+Dialogue: 0,0:35:09.00,0:35:10.24,*Default,NTP,0,0,0,,收到请求\N{\fs36}Got that request...
+Dialogue: 0,0:35:14.16,0:35:17.13,*Default,NTP,0,0,0,,距我们下一趟行动还有15分钟 你们什么有新情报吗\N{\fs36}We're up in 15. You got any new intel?
+Dialogue: 0,0:35:17.20,0:35:19.63,*Default,NTP,0,0,0,,我们向它们回放了一些它们的声音片段\N{\fs36}Yeah, we've been playing back some of their sounds.
+Dialogue: 0,0:35:20.72,0:35:22.00,*Default,NTP,0,0,0,,结果如何\N{\fs36}Where does that get you?
+Dialogue: 0,0:35:22.44,0:35:25.20,*Default,NTP,0,0,0,,它们也通过未知媒介向我们播放了音频\N{\fs36}Well, they play audio back at us from an unseen source.
+Dialogue: 0,0:35:26.44,0:35:27.35,*Default,NTP,0,0,0,,什么音频\N{\fs36}Audio of what?
+Dialogue: 0,0:35:28.20,0:35:29.85,*Default,NTP,0,0,0,,一些在那个房间里发生的谈话\N{\fs36}It's bits of conversation from the room,
+Dialogue: 0,0:35:30.63,0:35:31.90,*Default,NTP,0,0,0,,随机的几段对话\N{\fs36}random clips of dialogue.
+Dialogue: 0,0:35:32.72,0:35:35.40,*Default,NTP,0,0,0,,真的 我们 我们一无所获\N{\fs36}Really, we... We have nothing.
+Dialogue: 0,0:35:39.60,0:35:41.96,*Default,NTP,0,0,0,,入"壳"倒计时14分钟\N{\fs36}T-minus 14 minutes to shell access.
+Dialogue: 0,0:35:42.36,0:35:43.72,*Default,NTP,0,0,0,,你接收得到我的信号吗\N{\fs36}Are you receiving my signal?
+Dialogue: 0,0:35:44.40,0:35:45.56,*Default,NTP,0,0,0,,是的 正在发送\N{\fs36}Yes. It's sending.
+Dialogue: 0,0:35:45.64,0:35:47.64,*Default,NTP,0,0,0,,- 好的 谢谢  - 好了 祝你有所收获\N{\fs36}- Okay, thanks. - Okay. Good hunting.
+Dialogue: 0,0:35:47.72,0:35:48.68,*Default,NTP,0,0,0,,出发\N{\fs36}Heading out.
+Dialogue: 0,0:35:48.76,0:35:50.25,*Default,NTP,0,0,0,,正在检查无线电通信 你能听到我说话吗\N{\fs36}Checking in for radio. Are you receiving me?
+Dialogue: 0,0:35:50.88,0:35:52.24,*Default,NTP,0,0,0,,听得清清楚楚\N{\fs36}You're coming in loud and clear.
+Dialogue: 0,0:35:54.08,0:35:55.08,*Default,NTP,0,0,0,,祝你好运 博士\N{\fs36}Good luck, Doctor.
+Dialogue: 0,0:36:04.68,0:36:10.39,*Default,NTP,0,0,0,,入"壳"倒计时9分钟\N{\fs36}T-minus nine minutes to shell access.
+Dialogue: 0,0:36:10.60,0:36:11.48,*Default,NTP,0,0,0,,拿那个干什么\N{\fs36}What's that for?
+Dialogue: 0,0:36:12.20,0:36:13.44,*Default,NTP,0,0,0,,视觉辅助工具\N{\fs36}A visual aid.
+Dialogue: 0,0:36:14.72,0:36:16.68,*Default,NTP,0,0,0,,听着 如果它们那样发声真的是在说话\N{\fs36}Look, I'm never going to be able to speak their words
+Dialogue: 0,0:36:16.68,0:36:17.62,*Default,NTP,0,0,0,,那我永远也说不来它们那种语言\N{\fs36}if they are talking.
+Dialogue: 0,0:36:18.17,0:36:20.91,*Default,NTP,0,0,0,,但是或许它们有书写语言或者书写方式\N{\fs36}But they might have some sort of written language or basis
+Dialogue: 0,0:36:20.91,0:36:23.68,*Default,NTP,0,0,0,,可以方便进行视觉交流\N{\fs36}for visual communication.
+Dialogue: 0,0:36:23.76,0:36:25.49,*Default,NTP,0,0,0,,好吧 我们出发吧\N{\fs36}Okay. Let's get started.
+Dialogue: 0,0:36:35.96,0:36:37.00,*Default,NTP,0,0,0,,人类\N{\fs36}Human.
+Dialogue: 0,0:37:05.16,0:37:06.16,*Default,NTP,0,0,0,,"人类"\N{\fs36}"Human."
+Dialogue: 0,0:37:10.16,0:37:11.44,*Default,NTP,0,0,0,,我是人类\N{\fs36}I'm human.
+Dialogue: 0,0:37:12.80,0:37:14.00,*Default,NTP,0,0,0,,你们是什么\N{\fs36}What are you?
+Dialogue: 0,0:37:25.44,0:37:26.64,*Default,NTP,0,0,0,,人类\N{\fs36}Human.
+Dialogue: 0,0:38:14.84,0:38:15.88,*Default,NTP,0,0,0,,收到 阿尔法小队\N{\fs36}Affirmative, Alpha...
+Dialogue: 0,0:38:17.08,0:38:18.08,*Default,NTP,0,0,0,,我的天哪\N{\fs36}Oh, my God.
+Dialogue: 0,0:38:18.40,0:38:19.73,*Default,NTP,0,0,0,,你们记录下来了吗\N{\fs36}Are you getting this?
+Dialogue: 0,0:38:19.84,0:38:21.80,*Default,NTP,0,0,0,,是的 长官 正在将信息传回营地\N{\fs36}Yes, sir. It's uploading back to base camp.
+Dialogue: 0,0:38:23.44,0:38:24.44,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise.
+Dialogue: 0,0:38:25.24,0:38:26.65,*Default,NTP,0,0,0,,太不可思议了\N{\fs36}That's incredible.
+Dialogue: 0,0:38:40.88,0:38:41.88,*Default,NTP,0,0,0,,人类\N{\fs36}Human.
+Dialogue: 0,0:38:44.48,0:38:45.52,*Default,NTP,0,0,0,,人类\N{\fs36}Human.
+Dialogue: 0,0:38:47.08,0:38:48.08,*Default,NTP,0,0,0,,人类\N{\fs36}Human.
+Dialogue: 0,0:38:59.76,0:39:00.84,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,0:39:01.20,0:39:02.53,*Default,NTP,0,0,0,,好的 慢慢来 大家伙们\N{\fs36}Okay, slow down, fellas.
+Dialogue: 0,0:39:03.52,0:39:04.52,*Default,NTP,0,0,0,,慢慢来\N{\fs36}Slow down.
+Dialogue: 0,0:39:21.96,0:39:24.04,*Default,NTP,0,0,0,,我不是想给你泼冷水\N{\fs36}I don't wanna take away from your success in there,
+Dialogue: 0,0:39:24.48,0:39:26.96,*Default,NTP,0,0,0,,但是 Banks博士 你这招真的行吗\N{\fs36}but, Dr. Banks, is this really the right approach?
+Dialogue: 0,0:39:27.44,0:39:30.38,*Default,NTP,0,0,0,,试着去教它们怎么说和读\N{\fs36}Trying to teach 'em how to speak and read?
+Dialogue: 0,0:39:30.96,0:39:32.12,*Default,NTP,0,0,0,,肯定要花好长时间\N{\fs36}That's gotta take longer.
+Dialogue: 0,0:39:32.43,0:39:34.77,*Default,NTP,0,0,0,,你错了 这样更快\N{\fs36}You're wrong. It's faster.
+Dialogue: 0,0:39:37.89,0:39:39.12,*Default,NTP,0,0,0,,你在现场的一举一动\N{\fs36}Everything you do in there
+Dialogue: 0,0:39:39.44,0:39:41.35,*Default,NTP,0,0,0,,我都得向一屋子的人解释\N{\fs36}I have to explain to a room full of men
+Dialogue: 0,0:39:41.35,0:39:43.19,*Default,NTP,0,0,0,,而他们只关心一个问题\N{\fs36}whose first and last question
+Dialogue: 0,0:39:43.76,0:39:45.23,*Default,NTP,0,0,0,,"这样对我们有什么危害"\N{\fs36}is "How can this be used against us?"
+Dialogue: 0,0:39:46.11,0:39:47.32,*Default,NTP,0,0,0,,所以 你得详细给我解释一下你的计划\N{\fs36}So, you're gonna have to give me more than that.
+Dialogue: 0,0:39:49.96,0:39:50.86,*Default,NTP,0,0,0,,袋鼠\N{\fs36}Kangaroo.
+Dialogue: 0,0:39:52.44,0:39:53.12,*Default,NTP,0,0,0,,那是什么\N{\fs36}What is that?
+Dialogue: 0,0:39:53.92,0:39:55.33,*Default,NTP,0,0,0,,1770年\N{\fs36}In 1770,
+Dialogue: 0,0:39:55.66,0:39:58.72,*Default,NTP,0,0,0,,库克船长的船在澳大利亚的海岸搁浅\N{\fs36}Captain James Cook's ship ran aground off the coast of Australia,
+Dialogue: 0,0:39:58.80,0:40:00.19,*Default,NTP,0,0,0,,于是他带领一行人深入这个地区\N{\fs36}and he led a party into the country
+Dialogue: 0,0:40:00.19,0:40:01.87,*Default,NTP,0,0,0,,并且遇到了当地的土著居民\N{\fs36}and they met the Aboriginal people.
+Dialogue: 0,0:40:02.48,0:40:05.52,*Default,NTP,0,0,0,,其中一个船员指着那种跳来跳去\N{\fs36}One of the sailors pointed at the animals that hop around
+Dialogue: 0,0:40:05.60,0:40:06.96,*Default,NTP,0,0,0,,并把幼崽放在育儿袋里的动物\N{\fs36}and put their babies in their pouch,
+Dialogue: 0,0:40:07.42,0:40:10.76,*Default,,0,0,0,,{\fs38\pos(640,80)}此处的"kanguru"与英文中袋鼠的发音"kangaroo"相同
+Dialogue: 0,0:40:07.44,0:40:10.76,*Default,NTP,0,0,0,,问道 那是什么 土著居民说道"Kanguru"\N{\fs36}and he asked what they were, and the Aborigines said, "Kanguru."
+Dialogue: 0,0:40:13.12,0:40:14.18,*Default,NTP,0,0,0,,你的重点是什么\N{\fs36}And the point is?
+Dialogue: 0,0:40:14.68,0:40:16.15,*Default,NTP,0,0,0,,直到后来他们才了解到\N{\fs36}It wasn't until later that they learned that
+Dialogue: 0,0:40:16.15,0:40:18.52,*Default,NTP,0,0,0,,"Kanguru"的意思是"我听不懂"\N{\fs36}"Kanguru" Means "I don't understand."
+Dialogue: 0,0:40:18.60,0:40:22.24,*Default,NTP,0,0,0,,所以 我需要通过读写交流来避免出现这种错误\N{\fs36}So, I need this so that we don't misinterpret things in there,
+Dialogue: 0,0:40:22.32,0:40:24.65,*Default,NTP,0,0,0,,不然会花费比这多10倍的时间\N{\fs36}otherwise this is gonna take 10 times as long.
+Dialogue: 0,0:40:26.76,0:40:28.11,*Default,NTP,0,0,0,,这理由能拖住一阵子\N{\fs36}I could sell that for now.
+Dialogue: 0,0:40:29.68,0:40:31.72,*Default,NTP,0,0,0,,但是我需要你在进行下一次会话之前\N{\fs36}But I need you to submit your vocabulary words
+Dialogue: 0,0:40:31.80,0:40:32.88,*Default,NTP,0,0,0,,提交一份词汇表\N{\fs36}Before the next session.
+Dialogue: 0,0:40:33.52,0:40:34.20,*Default,NTP,0,0,0,,行\N{\fs36}Fair.
+Dialogue: 0,0:40:34.56,0:40:36.24,*Default,NTP,0,0,0,,还有 别忘了土著居民的下场\N{\fs36}And remember what happened to the Aborigines.
+Dialogue: 0,0:40:37.53,0:40:40.41,*Default,NTP,0,0,0,,一个更先进的种族差点将他们消灭\N{\fs36}A more advanced race nearly wiped'em out.
+Dialogue: 0,0:40:48.52,0:40:49.63,*Default,NTP,0,0,0,,刚刚的故事不错\N{\fs36}It's a good story.
+Dialogue: 0,0:40:50.40,0:40:51.30,*Default,NTP,0,0,0,,谢谢\N{\fs36}Thanks.
+Dialogue: 0,0:40:52.36,0:40:53.30,*Default,NTP,0,0,0,,故事是假的\N{\fs36}It's not true.
+Dialogue: 0,0:40:53.96,0:40:55.47,*Default,NTP,0,0,0,,但印证了我的观点\N{\fs36}But it proves my point.
+Dialogue: 0,0:41:13.44,0:41:15.32,*Default,NTP,0,0,0,,我们好像成功从它们那儿\N{\fs36}We think we were able to reproduce
+Dialogue: 0,0:41:15.40,0:41:18.00,*Default,NTP,0,0,0,,推导出了一些质数数列\N{\fs36}some prime number sequences back at them.
+Dialogue: 0,0:41:18.12,0:41:19.24,*Default,NTP,0,0,0,,所以 算是有点进展\N{\fs36}So, that's something.
+Dialogue: 0,0:41:19.32,0:41:21.36,*Default,NTP,0,0,0,,那恭喜了 你成了学舌的鹦鹉\N{\fs36}Well, congratulations. You're a parrot.
+Dialogue: 0,0:41:21.44,0:41:23.96,*Default,NTP,0,0,0,,这是很有意义的 你个臭小子\N{\fs36}Well, it's a lot more than that, you cheeky bastard.
+Dialogue: 0,0:41:24.04,0:41:26.96,*Default,NTP,0,0,0,,还不懂吗 它们似乎无法理解我们的代数\N{\fs36}Don't you see? They can't seem to follow our algebra.
+Dialogue: 0,0:41:27.40,0:41:31.08,*Default,NTP,0,0,0,,但却可以理解更复杂的领域 \N{\fs36}But complex behaviors? That clicks.
+Dialogue: 0,0:41:34.44,0:41:37.33,*Default,NTP,0,0,0,,这根本不合理啊 是吧\N{\fs36}Well, that doesn't make any sense at all, does it?
+Dialogue: 0,0:41:42.20,0:41:44.52,*Default,NTP,0,0,0,,问题是 在与外星人坦诚相待的政策上 \N{\fs36}The problem is, not everyone shares our policy
+Dialogue: 0,0:41:44.60,0:41:46.31,*Default,NTP,0,0,0,,并不是所有人都能和我们达成共识\N{\fs36}of being open with the aliens.
+Dialogue: 0,0:41:46.40,0:41:47.48,*Default,NTP,0,0,0,,你知道Shang将军吗\N{\fs36}Have you met General Shang?
+Dialogue: 0,0:41:48.90,0:41:50.36,*Default,,0,0,0,,{\fs38\pos(640,80)}呼号是无线电通信的法定代码 世界范围内具有唯一性
+Dialogue: 0,0:41:48.92,0:41:50.36,*Default,NTP,0,0,0,,他的呼号是"关键牌"\N{\fs36}Call sign for him is "Big Domino."
+Dialogue: 0,0:41:50.44,0:41:53.15,*Default,NTP,0,0,0,,无论Shang将军采取什么行动 至少会有四个国家紧随其后\N{\fs36}Whatever Shang does, at least four other nations will follow.
+Dialogue: 0,0:41:53.92,0:41:56.57,*Default,NTP,0,0,0,,- Louise 你今天得有新进展  - 好的\N{\fs36}- Louise, you have to gain ground today. - Okay.
+Dialogue: 0,0:41:56.64,0:41:58.82,*Default,NTP,0,0,0,,- 你的词汇表准备好了吗  - 准备了\N{\fs36}- You have a vocabulary list for me? - I do.
+Dialogue: 0,0:42:05.04,0:42:07.54,*Default,NTP,0,0,0,,你打算把你和Ian的名字教给它们吗\N{\fs36}You're gonna teach them your name and Ian's?
+Dialogue: 0,0:42:08.32,0:42:10.44,*Default,NTP,0,0,0,,是的 这样我们就能知道它们的名字 \N{\fs36}Yes, so that we can learn their names,
+Dialogue: 0,0:42:10.44,0:42:11.29,*Default,NTP,0,0,0,,前提是它们也有名字\N{\fs36}if they have names,
+Dialogue: 0,0:42:11.29,0:42:13.40,*Default,NTP,0,0,0,,之后再介绍代词\N{\fs36}and then introduce pronouns later.
+Dialogue: 0,0:42:13.80,0:42:15.12,*Default,NTP,0,0,0,,这些都是小学词汇\N{\fs36}These are all grade-school words.
+Dialogue: 0,0:42:16.00,0:42:17.63,*Default,NTP,0,0,0,,"吃" "走"\N{\fs36}"Eat." "Walk."
+Dialogue: 0,0:42:20.04,0:42:20.93,*Default,NTP,0,0,0,,说说为什么要教这些\N{\fs36}Help me understand.
+Dialogue: 0,0:42:22.56,0:42:23.22,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,0:42:27.72,0:42:29.06,*Default,NTP,0,0,0,,不 不 不 别擦上面\N{\fs36}No, no, no, not the top!
+Dialogue: 0,0:42:35.15,0:42:36.95,*Default,NTP,0,0,0,,好 这就是你想问清楚的问题 对吧\N{\fs36}Okay, this is where you wanna get to, right?
+Dialogue: 0,0:42:37.28,0:42:38.72,*Default,NTP,0,0,0,,- 是的没错  - 好的\N{\fs36}- That is the question. - Okay.
+Dialogue: 0,0:42:38.80,0:42:41.03,*Default,NTP,0,0,0,,那么 首先我们要保证\N{\fs36}So, first we need to make sure
+Dialogue: 0,0:42:41.12,0:42:43.08,*Default,NTP,0,0,0,,它们能够理解什么是"问题"\N{\fs36}that they understand what a question is.
+Dialogue: 0,0:42:43.68,0:42:46.77,*Default,NTP,0,0,0,,对吧 这是一种请求\N{\fs36}Okay? The nature of a request
+Dialogue: 0,0:42:46.77,0:42:48.76,*Default,NTP,0,0,0,,获得答复信息的句式\N{\fs36}for information along with a response.
+Dialogue: 0,0:42:48.84,0:42:52.08,*Default,NTP,0,0,0,,那么 我们应该阐明\N{\fs36}Then, we need to clarify
+Dialogue: 0,0:42:52.16,0:42:56.32,*Default,NTP,0,0,0,,特称的"你"与群体的"你们"之间的差别\N{\fs36}the difference between a specific "You" And a collective "You,"
+Dialogue: 0,0:42:56.40,0:43:00.80,*Default,NTP,0,0,0,,因为我们不想知道外星人甲来这里干什么\N{\fs36}because we don't want to know why Joe Alien is here.
+Dialogue: 0,0:43:00.88,0:43:03.36,*Default,NTP,0,0,0,,我们想知道的是这个群体为何要着陆于此\N{\fs36}We want to know why they all landed.
+Dialogue: 0,0:43:03.76,0:43:07.08,*Default,NTP,0,0,0,,而"目的"这个词包含对意图的理解\N{\fs36}And "Purpose" Requires an understanding of intent.
+Dialogue: 0,0:43:07.16,0:43:09.92,*Default,NTP,0,0,0,,我们需要搞清楚 它们能自主做出选择吗\N{\fs36}We need to find out, do they make conscious choices
+Dialogue: 0,0:43:10.00,0:43:12.20,*Default,NTP,0,0,0,,还是它们的动机都只是由直觉驱使\N{\fs36}or is their motivation so instinctive
+Dialogue: 0,0:43:12.28,0:43:15.36,*Default,NTP,0,0,0,,因而无法理解涉及到"为什么"的问题\N{\fs36}that they don't understand a "Why" Question at all.
+Dialogue: 0,0:43:15.44,0:43:16.99,*Default,NTP,0,0,0,,以及 最关键的一点是\N{\fs36}And... And biggest of all,
+Dialogue: 0,0:43:16.99,0:43:19.57,*Default,NTP,0,0,0,,我们与它们之间要有足够丰富的词汇储备\N{\fs36}we need to have enough vocabulary with them
+Dialogue: 0,0:43:19.64,0:43:21.07,*Default,NTP,0,0,0,,这样我们才能理解它们的回答\N{\fs36}that we understand their answer.
+Dialogue: 0,0:43:23.76,0:43:24.62,*Default,NTP,0,0,0,,我明白了\N{\fs36}I get it.
+Dialogue: 0,0:43:25.79,0:43:26.83,*Default,NTP,0,0,0,,就按你的单子来\N{\fs36}Stick to your list.
+Dialogue: 0,0:43:28.12,0:43:32.64,*Default,NTP,0,0,0,,可别再补充了\N{\fs36}Just don't add anything to it.
+Dialogue: 0,0:43:46.88,0:43:51.52,*Default,NTP,0,0,0,,重力为0.97 氧气含量为21.4% 完毕\N{\fs36}Gravity, 0.97. Oxygen level, 21.4%. Over.
+Dialogue: 0,0:43:51.60,0:43:53.84,*Default,NTP,0,0,0,,神鹰 阿尔法小队已基本就位\N{\fs36}Condor, Alpha's now in the main.
+Dialogue: 0,0:43:53.92,0:43:56.32,*Default,NTP,0,0,0,,正安置设备和遥测装置 完毕\N{\fs36}Setting up equipment and telemetry. Over.
+Dialogue: 0,0:43:56.40,0:43:57.19,*Default,NTP,0,0,0,,我们开始吧\N{\fs36}Let's get started.
+Dialogue: 0,0:44:08.08,0:44:09.20,*Default,NTP,0,0,0,,"Louise."\N{\fs36}"Louise."
+Dialogue: 0,0:44:10.24,0:44:12.08,*Default,NTP,0,0,0,,Louise 我叫Louise\N{\fs36}Louise. I am Louise.
+Dialogue: 0,0:44:19.16,0:44:20.05,*Default,NTP,0,0,0,,那是什么\N{\fs36}What is that?
+Dialogue: 0,0:44:22.72,0:44:24.32,*Default,NTP,0,0,0,,是新的符号吗 我看不出来\N{\fs36}Is that a new symbol? I can't tell.
+Dialogue: 0,0:44:24.93,0:44:27.32,*Default,NTP,0,0,0,,我不知道 我觉得应该还是代表"人类"的那个符号\N{\fs36}I don't know I think it's the symbol for "Human" Again.
+Dialogue: 0,0:44:27.40,0:44:29.31,*Default,NTP,0,0,0,,只是符号尾部卷了一点\N{\fs36}It just has a little curl on the end,
+Dialogue: 0,0:44:29.80,0:44:31.68,*Default,NTP,0,0,0,,可能是表示提问\N{\fs36}maybe to indicate a question.
+Dialogue: 0,0:44:31.76,0:44:32.64,*Default,NTP,0,0,0,,我不敢肯定\N{\fs36}I don't know.
+Dialogue: 0,0:44:33.69,0:44:34.60,*Default,NTP,0,0,0,,不好说 Louise\N{\fs36}I don't know, Louise.
+Dialogue: 0,0:44:35.36,0:44:36.82,*Default,NTP,0,0,0,,我觉得它们可能被弄糊涂了\N{\fs36}I think they're getting confused.
+Dialogue: 0,0:44:37.36,0:44:40.15,*Default,NTP,0,0,0,,Banks博士 也许我们应该继续下一个单词\N{\fs36}Dr. Banks, perhaps we should move on to the next word.
+Dialogue: 0,0:44:59.80,0:45:00.64,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks?
+Dialogue: 0,0:45:02.80,0:45:04.37,*Default,NTP,0,0,0,,- 没事的  - 怎么回事\N{\fs36}- It's okay. - What's going on?
+Dialogue: 0,0:45:04.44,0:45:06.14,*Default,NTP,0,0,0,,嘿 嘿 嘿 你在干什么\N{\fs36}Hey, hey, hey. What are you doing?
+Dialogue: 0,0:45:06.64,0:45:08.76,*Default,NTP,0,0,0,,- 我没事  - 你疯了吗\N{\fs36}- Yeah, I'm fine. - Are you insane?
+Dialogue: 0,0:45:08.96,0:45:10.02,*Default,NTP,0,0,0,,得让它们看见我\N{\fs36}They need to see me.
+Dialogue: 0,0:45:10.72,0:45:12.48,*Default,NTP,0,0,0,,她在脱她的防护服 Banks博士\N{\fs36}She's taking off her hazmat suit. Dr. Banks!
+Dialogue: 0,0:45:14.84,0:45:16.04,*Default,NTP,0,0,0,,这样可以吗\N{\fs36}Is it okay?
+Dialogue: 0,0:45:16.12,0:45:17.48,*Default,NTP,0,0,0,,你这样有接触污染的危险\N{\fs36}You're risking contamination.
+Dialogue: 0,0:45:18.20,0:45:19.48,*Default,NTP,0,0,0,,得让它们看清我的样子\N{\fs36}They need to see me.
+Dialogue: 0,0:45:19.56,0:45:20.56,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks.
+Dialogue: 0,0:45:22.28,0:45:23.00,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks.
+Dialogue: 0,0:45:23.08,0:45:24.12,*Default,NTP,0,0,0,,她朝玻璃屏走过去了\N{\fs36}She's walking towards the screen.
+Dialogue: 0,0:45:27.28,0:45:28.49,*Default,NTP,0,0,0,,我们要中止任务吗\N{\fs36}Should we abort?
+Dialogue: 0,0:45:28.96,0:45:31.56,*Default,NTP,0,0,0,,请求收到 等待蓄意杀伤指令\N{\fs36}Request noted. Stand by for frag order.
+Dialogue: 0,0:45:31.64,0:45:32.68,*Default,NTP,0,0,0,,回到你们的原位\N{\fs36}Go back to your stations.
+Dialogue: 0,0:46:48.32,0:46:50.64,*Default,NTP,0,0,0,,这下算是正式介绍了\N{\fs36}Now that's a proper introduction.
+Dialogue: 0,0:46:50.72,0:46:51.80,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,0:47:03.16,0:47:04.20,*Default,NTP,0,0,0,,"Louise."\N{\fs36}"Louise."
+Dialogue: 0,0:47:07.44,0:47:08.59,*Default,NTP,0,0,0,,我叫Louise\N{\fs36}I am Louise.
+Dialogue: 0,0:47:10.02,0:47:12.31,*Default,NTP,0,0,0,,Ian 你想做个自我介绍吗\N{\fs36}Ian, you want to introduce yourself?
+Dialogue: 0,0:47:16.18,0:47:16.93,*Default,NTP,0,0,0,,是的\N{\fs36}Yeah.
+Dialogue: 0,0:47:20.54,0:47:21.40,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise.
+Dialogue: 0,0:47:26.38,0:47:27.07,*Default,NTP,0,0,0,,去他的\N{\fs36}Screw it.
+Dialogue: 0,0:47:32.62,0:47:33.71,*Default,NTP,0,0,0,,人固有一死 对吧\N{\fs36}Everybody dies, right?
+Dialogue: 0,0:47:36.50,0:47:38.79,*Default,NTP,0,0,0,,长官 Donnelly要脱掉他的防护服\N{\fs36}Sir, Donnelly is taking off his hazmat suit.
+Dialogue: 0,0:47:39.30,0:47:39.92,*Default,NTP,0,0,0,,是否中止任务\N{\fs36}Permission to abort?
+Dialogue: 0,0:47:41.34,0:47:42.29,*Default,NTP,0,0,0,,继续执行\N{\fs36}Continue the session.
+Dialogue: 0,0:47:59.10,0:47:59.85,*Default,NTP,0,0,0,,Ian\N{\fs36}Ian.
+Dialogue: 0,0:48:00.86,0:48:01.69,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise.
+Dialogue: 0,0:48:04.06,0:48:04.40,*Default,NTP,0,0,0,,你\N{\fs36}You.
+Dialogue: 0,0:48:06.90,0:48:07.78,*Default,NTP,0,0,0,,你们是谁\N{\fs36}Who are you?
+Dialogue: 0,0:48:35.66,0:48:37.18,*Default,NTP,0,0,0,,我猜这是它们的名字\N{\fs36}I think those are their names.
+Dialogue: 0,0:48:41.18,0:48:42.02,*Default,NTP,0,0,0,,它们有名字\N{\fs36}They have names.
+Dialogue: 0,0:48:43.34,0:48:44.56,*Default,NTP,0,0,0,,那么 我们要怎么称呼它们呢\N{\fs36}So, what are we gonna call them?
+Dialogue: 0,0:48:45.90,0:48:46.69,*Default,NTP,0,0,0,,我不知道\N{\fs36}I don't know.
+Dialogue: 0,0:48:48.40,0:48:50.11,*Default,,0,0,0,,{\fs38\pos(640,80)}<两傻双人秀>主演Abbott和Costello 是上世纪40年代到50年代好莱坞一对著名喜剧搭档
+Dialogue: 0,0:48:48.42,0:48:50.11,*Default,NTP,0,0,0,,我想叫它们Abbott和Costello\N{\fs36}I was thinking Abbott and Costello.
+Dialogue: 0,0:48:53.54,0:48:54.55,*Default,NTP,0,0,0,,好啊\N{\fs36}Yeah.
+Dialogue: 0,0:48:54.94,0:48:56.49,*Default,NTP,0,0,0,,- 可以吗  - 好啊 我喜欢这两个名字\N{\fs36}- Yeah? - Yeah, I like it.
+Dialogue: 0,0:48:59.30,0:49:00.08,*Default,NTP,0,0,0,,我很喜欢\N{\fs36}I like it.
+Dialogue: 0,0:49:15.46,0:49:17.39,*Default,NTP,0,0,0,,第一小队 请下车\N{\fs36}Team 1, exit your vehicle
+Dialogue: 0,0:49:17.46,0:49:20.22,*Default,NTP,0,0,0,,请立刻前往消毒棚\N{\fs36}and proceed directly ahead to the decontamination tent.
+Dialogue: 0,0:49:26.46,0:49:30.11,*Default,NTP,0,0,0,,抵达设备间之前请勿摘除防毒面具\N{\fs36}Leave your respirator on until you reach the equipment room.
+Dialogue: 0,0:49:59.14,0:50:00.01,*Default,NTP,0,0,0,,我知道\N{\fs36}I know.
+Dialogue: 0,0:50:07.30,0:50:09.81,*Default,NTP,0,0,0,,第二小队 请下车\N{\fs36}Team 2, exit your vehicles
+Dialogue: 0,0:50:10.27,0:50:12.48,*Default,NTP,0,0,0,,并立刻前往消毒棚\N{\fs36}and continue to the decontamination tent.
+Dialogue: 0,0:50:14.06,0:50:15.59,*Default,NTP,0,0,0,,请勿摘除防毒面具\N{\fs36}Leave your respirators on
+Dialogue: 0,0:50:15.66,0:50:18.79,*Default,NTP,0,0,0,,抵达设备间之前请勿逗留\N{\fs36}and do not hesitate until you reach the equipment room.
+Dialogue: 0,0:50:22.34,0:50:23.33,*Default,NTP,0,0,0,,你感觉怎么样\N{\fs36}How do you feel?
+Dialogue: 0,0:50:24.62,0:50:25.46,*Default,NTP,0,0,0,,精疲力尽\N{\fs36}Overworked.
+Dialogue: 0,0:50:26.70,0:50:27.87,*Default,NTP,0,0,0,,我想不用我多说你也明白\N{\fs36}Well, I guess I don't need to tell you,
+Dialogue: 0,0:50:27.92,0:50:29.13,*Default,NTP,0,0,0,,你以身涉险了\N{\fs36}you're putting yourself at risk.
+Dialogue: 0,0:50:31.42,0:50:33.38,*Default,NTP,0,0,0,,暂时没有辐射中毒的迹象\N{\fs36}There are no signs of radiation poisoning yet.
+Dialogue: 0,0:50:34.26,0:50:36.05,*Default,NTP,0,0,0,,等你的验血结果出来后 我们再复查\N{\fs36}We'll see how your blood tests look.
+Dialogue: 0,0:50:36.78,0:50:38.26,*Default,NTP,0,0,0,,我这儿再给你打一针强效疫苗\N{\fs36}For now, I'm gonna give you another boost.
+Dialogue: 0,0:50:38.70,0:50:39.43,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,0:50:41.10,0:50:41.97,*Default,NTP,0,0,0,,没测出辐射\N{\fs36}No radiation.
+Dialogue: 0,0:50:42.70,0:50:44.31,*Default,NTP,0,0,0,,我们没测出任何异常\N{\fs36}Nothing else we can detect either,
+Dialogue: 0,0:50:44.38,0:50:46.27,*Default,NTP,0,0,0,,但我还是建议给他们各打一针全效疫苗\N{\fs36}but I'd give'em a strong cocktail regardless.
+Dialogue: 0,0:50:46.94,0:50:48.73,*Default,NTP,0,0,0,,这是我们第一次取得突破性进展\N{\fs36}It's the first time we've made significant progress.
+Dialogue: 0,0:50:51.06,0:50:51.94,*Default,NTP,0,0,0,,好吧\N{\fs36}All right.
+Dialogue: 0,0:50:53.26,0:50:54.48,*Default,NTP,0,0,0,,这风险我们担了\N{\fs36}We'll take the risk.
+Dialogue: 0,0:50:55.70,0:50:57.55,*Default,NTP,0,0,0,,- 好了 亲爱的  - 那边到底什么情况\N{\fs36}- Okay, honey... - What is going on there?
+Dialogue: 0,0:50:57.62,0:51:00.15,*Default,NTP,0,0,0,,- 亲爱的  - 能给我露点口风吗\N{\fs36}- Honey. - Is there anything you can tell me?
+Dialogue: 0,0:51:00.22,0:51:03.15,*Default,NTP,0,0,0,,不能 但你不用担心 好吗\N{\fs36}No... You don't need to worry, okay?
+Dialogue: 0,0:51:03.22,0:51:05.04,*Default,NTP,0,0,0,,- 我怎么能不担心  - 冷静点\N{\fs36}- How can I not worry? - Just calm down.
+Dialogue: 0,0:51:05.70,0:51:06.50,*Default,NTP,0,0,0,,冷静一下\N{\fs36}Just calm down.
+Dialogue: 0,0:51:07.66,0:51:10.33,*Default,NTP,0,0,0,,Becky问我 那些怪物会不会杀了爸爸\N{\fs36}Becky asked me if the monsters are going to kill Daddy,
+Dialogue: 0,0:51:10.82,0:51:12.84,*Default,NTP,0,0,0,,亲爱的 不会的\N{\fs36}Honey, it's not gonna happen.
+Dialogue: 0,0:51:16.10,0:51:17.30,*Default,NTP,0,0,0,,一定要保重\N{\fs36}Just stay safe.
+Dialogue: 0,0:51:17.74,0:51:18.59,*Default,NTP,0,0,0,,你不用担心\N{\fs36}You don't need to worry.
+Dialogue: 0,0:51:19.06,0:51:20.64,*Default,NTP,0,0,0,,求你保重 我好害怕\N{\fs36}Please, I'm so scared.
+Dialogue: 0,0:51:24.10,0:51:27.60,*Default,NTP,0,0,0,,全体初级外星语言学家和科研人员\N{\fs36}All junior xenolinguistics and science personnel
+Dialogue: 0,0:51:27.66,0:51:31.03,*Default,NTP,0,0,0,,必须遵守通用宵禁守则 如无指挥官特许\N{\fs36}must observe general curfew unless expressly authorized
+Dialogue: 0,0:51:31.10,0:51:33.65,*Default,NTP,0,0,0,,请勿超时工作\N{\fs36}for extended work hours by unit COs.
+Dialogue: 0,0:51:33.86,0:51:37.24,*Default,NTP,0,0,0,,宵禁每晚10点起生效\N{\fs36}Curfew in effect as of 2200 hours.
+Dialogue: 0,0:51:38.02,0:51:42.15,*Default,NTP,0,0,0,,全体加班人员 消防人员 守夜人员请注意\N{\fs36}Notice to all late workers, fire watchers and night staff.
+Dialogue: 0,0:51:42.22,0:51:46.29,*Default,NTP,0,0,0,,即刻起 将通宵供应夜宵\N{\fs36}Effective immediately, midnight rations will be served all night.
+Dialogue: 0,0:52:34.98,0:52:38.30,*Default,NTP,0,0,0,,七肢桶带来了太多未解之谜 以下只是冰山一角\N{\fs36}Here are some of the many things we don't know about heptapods.
+Dialogue: 0,0:52:38.82,0:52:41.97,*Default,NTP,0,0,0,,在希腊语中 Hepta表示"七" Pod表示"脚"\N{\fs36}Greek. Hepta, "Seven. " Pod, "Foot."
+Dialogue: 0,0:52:42.34,0:52:44.43,*Default,NTP,0,0,0,,"七只脚" 是七肢桶名字的由来\N{\fs36}"Seven feet." Heptapod.
+Dialogue: 0,0:52:46.34,0:52:47.31,*Default,NTP,0,0,0,,它们是谁\N{\fs36}Who are they?
+Dialogue: 0,0:52:49.10,0:52:51.43,*Default,NTP,0,0,0,,企图有理有据地解答这个疑问的尝试\N{\fs36}Trying to answer this in any meaningful way
+Dialogue: 0,0:52:51.54,0:52:53.23,*Default,NTP,0,0,0,,都被一个事实所击败\N{\fs36}is hampered by the fact that,
+Dialogue: 0,0:52:53.30,0:52:55.73,*Default,NTP,0,0,0,,那就是尽管我们可以看得到 听得到七肢桶\N{\fs36}outside being able to see them and hear them,
+Dialogue: 0,0:52:55.74,0:52:58.87,*Default,NTP,0,0,0,,但它们却从未留下任何可追踪的痕迹\N{\fs36}the heptapods leave absolutely no footprint.
+Dialogue: 0,0:53:00.74,0:53:03.20,*Default,NTP,0,0,0,,我们不知道它们宇宙飞船的化学成分\N{\fs36}The chemical composition of their spaceship is unknown.
+Dialogue: 0,0:53:04.02,0:53:07.28,*Default,NTP,0,0,0,,那"壳"状的飞船没有废料 未曾排气 也无辐射\N{\fs36}The shell emits no waste, no gas, no radiation.
+Dialogue: 0,0:53:08.14,0:53:10.45,*Default,NTP,0,0,0,,若是这些飞船之间存在沟通的渠道\N{\fs36}Assuming that the shells communicate with each other,
+Dialogue: 0,0:53:10.90,0:53:12.47,*Default,NTP,0,0,0,,也是无从探测 无迹可寻\N{\fs36}they do so without detection.
+Dialogue: 0,0:53:13.10,0:53:14.78,*Default,NTP,0,0,0,,因为这些飞船附近的空气\N{\fs36}The air between the shells
+Dialogue: 0,0:53:14.78,0:53:17.46,*Default,NTP,0,0,0,,都没有受声波或光波干扰的痕迹\N{\fs36}is untroubled by sonic emission or light wave.
+Dialogue: 0,0:53:19.70,0:53:22.26,*Default,NTP,0,0,0,,它们究竟是科学家还是观光客\N{\fs36}Are they scientists or tourists?
+Dialogue: 0,0:53:22.50,0:53:25.72,*Default,NTP,0,0,0,,若是科学家 为什么它们甚少发问\N{\fs36}If they're scientists, they don't seem to ask a lot of questions.
+Dialogue: 0,0:53:28.90,0:53:30.83,*Default,NTP,0,0,0,,为什么它们会选择在这些地方停驻\N{\fs36}Why did they park where they did?
+Dialogue: 0,0:53:31.54,0:53:34.31,*Default,NTP,0,0,0,,全世界最负盛名的专家们都毫无头绪\N{\fs36}The world's most decorated experts can't crack that one.
+Dialogue: 0,0:53:35.06,0:53:38.19,*Default,NTP,0,0,0,,最靠谱的解释是 它们选择的这些地方\N{\fs36}The most plausible theory is that they chose places on Earth
+Dialogue: 0,0:53:38.26,0:53:40.23,*Default,NTP,0,0,0,,是地球上遭到雷击可能性最小的地方\N{\fs36}with the lowest incidence of lightning strikes.
+Dialogue: 0,0:53:41.06,0:53:42.91,*Default,NTP,0,0,0,,但其中仍有个别例外\N{\fs36}But there are exceptions.
+Dialogue: 0,0:53:42.98,0:53:44.21,*Default,NTP,0,0,0,,其次靠谱的解释\N{\fs36}The next most plausible theory
+Dialogue: 0,0:53:44.24,0:53:46.49,*Default,,0,0,0,,{\fs38\pos(640,80)}西娜·阿斯顿 80年代英国的流行乐天后 其热门单曲曾蝉联世界各地的排行版单
+Dialogue: 0,0:53:44.21,0:53:46.51,*Default,NTP,0,0,0,,提出80年代歌手西娜·阿斯顿的单曲\N{\fs36}is that Sheena Easton had a hit song
+Dialogue: 0,0:53:46.58,0:53:49.79,*Default,NTP,0,0,0,,曾经在这些地点成为大热门 实在是牵强附会\N{\fs36}at each of these sites in 1980. So, we just don't know.
+Dialogue: 0,0:53:52.74,0:53:54.71,*Default,NTP,0,0,0,,它们如何沟通呢\N{\fs36}How do they communicate?
+Dialogue: 0,0:53:55.26,0:53:57.42,*Default,NTP,0,0,0,,Louise在这方面的研究成果 让我们都自叹不如\N{\fs36}Here, Louise is putting us all to shame.
+Dialogue: 0,0:53:58.38,0:53:59.25,*Default,NTP,0,0,0,,第一个重大突破\N{\fs36}The first breakthrough
+Dialogue: 0,0:53:59.34,0:54:01.46,*Default,NTP,0,0,0,,是我们发现了\N{\fs36}was to discover that there's no correlation
+Dialogue: 0,0:54:02.10,0:54:05.55,*Default,NTP,0,0,0,,七肢桶的口语和文字之间没有关联\N{\fs36}between what a heptapod says and what a heptapod writes.
+Dialogue: 0,0:54:21.38,0:54:23.28,*Default,NTP,0,0,0,,与人类所有的书面语言不同\N{\fs36}Unlike all written human languages,
+Dialogue: 0,0:54:23.85,0:54:25.78,*Default,NTP,0,0,0,,它们的文字是会意象形的语标式文字\N{\fs36}their writing is semasiographic.
+Dialogue: 0,0:54:26.18,0:54:29.20,*Default,NTP,0,0,0,,这种文字能表意 但是无对应发音\N{\fs36}It conveys meaning. It doesn't represent sound.
+Dialogue: 0,0:54:34.62,0:54:38.04,*Default,NTP,0,0,0,,也许在它们看来 我们的文字形式反而是多此一举\N{\fs36}Perhaps they view our form of writing as a wasted opportunity,
+Dialogue: 0,0:54:38.82,0:54:41.07,*Default,NTP,0,0,0,,浪费了建立另一种沟通渠道的机会\N{\fs36}passing up a second communications channel.
+Dialogue: 0,0:54:46.82,0:54:48.68,*Default,NTP,0,0,0,,我们要感谢巴基斯坦的朋友们\N{\fs36}We have our friends in Pakistan to thank
+Dialogue: 0,0:54:48.76,0:54:51.01,*Default,NTP,0,0,0,,他们对七肢桶的书写方式做了研究\N{\fs36}for their study of how heptapods write.
+Dialogue: 0,0:54:52.78,0:54:56.35,*Default,NTP,0,0,0,,与口语不同 标记文字不受时间的束缚\N{\fs36}Because, unlike speech, a logogram is free of time.
+Dialogue: 0,0:54:59.66,0:55:01.81,*Default,NTP,0,0,0,,正如七肢桶的飞船和身体一样\N{\fs36}Like their ship or their bodies,
+Dialogue: 0,0:55:02.18,0:55:05.39,*Default,NTP,0,0,0,,它们的书面语言并无先后顺序之分\N{\fs36}their written language has no forward or backward direction.
+Dialogue: 0,0:55:06.06,0:55:08.78,*Default,NTP,0,0,0,,语言学家称之为"非线性拼写"\N{\fs36}Linguists call this "Nonlinear orthography,"
+Dialogue: 0,0:55:09.30,0:55:12.37,*Default,NTP,0,0,0,,这不禁引发了疑问"它们的思维方式也是如此吗"\N{\fs36}which raises the question, "Is this how they think?"
+Dialogue: 0,0:55:14.86,0:55:17.55,*Default,NTP,0,0,0,,假使你要用双手来写一个句子\N{\fs36}Imagine you wanted to write a sentence using two hands,
+Dialogue: 0,0:55:17.62,0:55:18.92,*Default,NTP,0,0,0,,两只手同时从两端落笔\N{\fs36}starting from either side.
+Dialogue: 0,0:55:20.34,0:55:22.63,*Default,NTP,0,0,0,,你不仅得想好句子中的每一个词\N{\fs36}You would have to know each word you wanted to use
+Dialogue: 0,0:55:23.14,0:55:25.46,*Default,NTP,0,0,0,,还要先预计每个词所占用的空间\N{\fs36}as well as how much space that it would occupy.
+Dialogue: 0,0:55:27.90,0:55:30.03,*Default,NTP,0,0,0,,对七肢桶来说 写一句复杂的句子\N{\fs36}A heptapod can write a complex sentence
+Dialogue: 0,0:55:30.10,0:55:31.64,*Default,NTP,0,0,0,,只需两秒 不费吹灰之力\N{\fs36}in two seconds, effortlessly.
+Dialogue: 0,0:55:32.30,0:55:34.68,*Default,NTP,0,0,0,,而我们用了一个月的时间 才写出一句最简单的回应\N{\fs36}It's taken us a month to make the simplest reply.
+Dialogue: 0,0:55:35.74,0:55:37.93,*Default,NTP,0,0,0,,接下来 我们要扩充词汇量\N{\fs36}Next, expanding vocabulary.
+Dialogue: 0,0:55:38.58,0:55:40.58,*Default,NTP,0,0,0,,Louise认为至少还要一个月\N{\fs36}Louise thinks it could easily take another month
+Dialogue: 0,0:55:40.58,0:55:41.60,*Default,NTP,0,0,0,,才能准备充分\N{\fs36}to be ready for that.
+Dialogue: 0,0:55:59.30,0:55:59.87,*Default,NTP,0,0,0,,嘿\N{\fs36}Hey.
+Dialogue: 0,0:56:02.10,0:56:02.67,*Default,NTP,0,0,0,,嗨\N{\fs36}Hey.
+Dialogue: 0,0:56:03.22,0:56:04.34,*Default,NTP,0,0,0,,Weber在找你呢\N{\fs36}Weber's looking for you.
+Dialogue: 0,0:56:06.02,0:56:07.84,*Default,NTP,0,0,0,,我知道 不然我干嘛藏在这儿呢\N{\fs36}Yeah, well, why do you think I'm hiding out here?
+Dialogue: 0,0:56:09.92,0:56:10.63,*Default,NTP,0,0,0,,上来吧\N{\fs36}Come on up.
+Dialogue: 0,0:56:12.42,0:56:13.01,*Default,NTP,0,0,0,,来吧\N{\fs36}Come on.
+Dialogue: 0,0:56:13.58,0:56:14.10,*Default,NTP,0,0,0,,谢谢\N{\fs36}Thanks.
+Dialogue: 0,0:56:17.94,0:56:18.98,*Default,NTP,0,0,0,,这外面很美吧\N{\fs36}Nice out here, huh?
+Dialogue: 0,0:56:20.30,0:56:21.44,*Default,NTP,0,0,0,,嗯 景色不错\N{\fs36}Yeah, it's a nice view.
+Dialogue: 0,0:56:22.94,0:56:23.94,*Default,NTP,0,0,0,,远离喧嚣\N{\fs36}Away from the noise.
+Dialogue: 0,0:56:27.90,0:56:29.40,*Default,NTP,0,0,0,,我刚才正想着你\N{\fs36}You know, I was just thinking about you.
+Dialogue: 0,0:56:32.70,0:56:34.83,*Default,NTP,0,0,0,,你处理语言的方式就像个数学家\N{\fs36}You approach language like a mathematician.
+Dialogue: 0,0:56:34.90,0:56:35.74,*Default,NTP,0,0,0,,你懂我的意思吗\N{\fs36}You know that, right?
+Dialogue: 0,0:56:38.54,0:56:40.25,*Default,NTP,0,0,0,,我就当你是在夸我了\N{\fs36}I will take that as a compliment.
+Dialogue: 0,0:56:41.02,0:56:42.11,*Default,NTP,0,0,0,,我确实是在夸你\N{\fs36}Yeah, well, it is.
+Dialogue: 0,0:56:44.58,0:56:45.54,*Default,NTP,0,0,0,,其实\N{\fs36}It's...
+Dialogue: 0,0:56:45.90,0:56:48.47,*Default,NTP,0,0,0,,你带着我们躲开了沟通交流的误区\N{\fs36}I watch you steer us around these communication traps
+Dialogue: 0,0:56:48.54,0:56:49.92,*Default,NTP,0,0,0,,我之前对这些根本一无所知\N{\fs36}that I didn't even know existed.
+Dialogue: 0,0:56:50.58,0:56:51.55,*Default,NTP,0,0,0,,总在想"这也行啊"\N{\fs36}It's like "What"?
+Dialogue: 0,0:56:54.34,0:56:55.85,*Default,NTP,0,0,0,,我想这就是我单身的原因吧\N{\fs36}I guess that's why I'm single.
+Dialogue: 0,0:56:56.38,0:56:59.55,*Default,NTP,0,0,0,,相信我 就算深谙沟通之道\N{\fs36}Trust me, you can understand communication
+Dialogue: 0,0:56:59.62,0:57:00.81,*Default,NTP,0,0,0,,也一样可能孤独终老\N{\fs36}and still end up single.
+Dialogue: 0,0:57:10.62,0:57:12.86,*Default,NTP,0,0,0,,我觉得那里发生的一切\N{\fs36}I feel like everything that happens in there
+Dialogue: 0,0:57:14.18,0:57:15.78,*Default,NTP,0,0,0,,最终都取决于我们俩\N{\fs36}comes down to the two of us.
+Dialogue: 0,0:57:17.82,0:57:21.25,*Default,NTP,0,0,0,,嗯 这应该算好事啊 靠你和我的话\N{\fs36}Yeah, it's a good thing though, right? You and I?
+Dialogue: 0,0:57:25.02,0:57:27.50,*Default,NTP,0,0,0,,和我们一起工作的那帮废柴你也看到了吧\N{\fs36}Have you seen the jokers that we're working with?
+Dialogue: 0,0:57:28.82,0:57:30.00,*Default,NTP,0,0,0,,幸好和我搭档的是你\N{\fs36}I'm glad I got you.
+Dialogue: 0,0:57:42.06,0:57:44.52,*Default,NTP,0,0,0,,今晚 第一张外星人的照片被疯传\N{\fs36}Tonight, the first photograph of the aliens goes viral.
+Dialogue: 0,0:57:45.78,0:57:49.55,*Default,NTP,0,0,0,,环保团体声称蒙大拿的飞船降临点\N{\fs36}Biological contamination is a major risk factor at the Montana site,
+Dialogue: 0,0:57:49.66,0:57:51.48,*Default,NTP,0,0,0,,正面临"生化污染"的重大危机\N{\fs36}so say environmental pressure groups.
+Dialogue: 0,0:57:52.02,0:57:54.11,*Default,NTP,0,0,0,,八十万民众走上华盛顿街头\N{\fs36}Eight-hundred thousand march on Washington
+Dialogue: 0,0:57:54.18,0:57:56.83,*Default,NTP,0,0,0,,抗议政府对危机的处理不力\N{\fs36}to protest the government's handling of the crisis.
+Dialogue: 0,0:57:56.90,0:57:59.51,*Default,NTP,0,0,0,,以上及更多专题报道敬请关注\N{\fs36}All this, and more special coverage.
+Dialogue: 0,0:58:01.12,0:58:03.75,*Default,NTP,0,0,0,,不管那玩意儿里面到底是什么 \N{\fs36}First contact with whoever it is that is inside that thing,
+Dialogue: 0,0:58:03.82,0:58:05.71,*Default,NTP,0,0,0,,是谁在安排第一次接触 是政府\N{\fs36}and who do we have running the show? The government.
+Dialogue: 0,0:58:05.78,0:58:07.75,*Default,NTP,0,0,0,,没错 大伙儿们 就是这个政府\N{\fs36}That's right, folks. The same government
+Dialogue: 0,0:58:07.82,0:58:10.59,*Default,NTP,0,0,0,,毁了我们的医疗保险 还把我们的军队搞破产了\N{\fs36}who ruined our healthcare and bankrupted our military.
+Dialogue: 0,0:58:10.66,0:58:11.67,*Default,NTP,0,0,0,,看看这些人\N{\fs36}Look at these people.
+Dialogue: 0,0:58:11.74,0:58:13.05,*Default,NTP,0,0,0,,大多数甚至都没有配枪\N{\fs36}Most of them don't even have guns.
+Dialogue: 0,0:58:13.86,0:58:15.99,*Default,NTP,0,0,0,,我们很可能将遭受一场全面入侵\N{\fs36}We could be facing a full-scale invasion,
+Dialogue: 0,0:58:16.06,0:58:17.99,*Default,NTP,0,0,0,,而我们的总统却还能坐得住\N{\fs36}and our president is just willing to sit back
+Dialogue: 0,0:58:18.06,0:58:19.99,*Default,NTP,0,0,0,,放任它们从天而降 占山为王\N{\fs36}and let them waltz in and take our country.
+Dialogue: 0,0:58:20.06,0:58:22.47,*Default,NTP,0,0,0,,大难当头 我们还蒙在鼓里啊 同胞们\N{\fs36}We are falling asleep at the wheel, people.
+Dialogue: 0,0:58:22.54,0:58:24.43,*Default,NTP,0,0,0,,你们明白我的意思 你们懂的\N{\fs36}You know what I'm talking about. I know you do.
+Dialogue: 0,0:58:24.50,0:58:26.79,*Default,NTP,0,0,0,,事到如今 我们最明智的做法\N{\fs36}What if the smartest thing we could do right now
+Dialogue: 0,0:58:26.86,0:58:28.86,*Default,NTP,0,0,0,,难道不是出动武力震慑吗\N{\fs36}would be to give them a show of force?
+Dialogue: 0,0:58:28.98,0:58:31.07,*Default,NTP,0,0,0,,给它们一次警告\N{\fs36}I'm talking about a shot across the bow
+Dialogue: 0,0:58:31.14,0:58:32.15,*Default,NTP,0,0,0,,我想知道你们是怎么想的\N{\fs36}I wanna hear what you think.
+Dialogue: 0,0:58:32.22,0:58:33.63,*Default,NTP,0,0,0,,首位来电观众 你的电话接通了\N{\fs36}Caller number one, you're on the air.
+Dialogue: 0,0:58:33.63,0:58:34.44,*Default,NTP,0,0,0,,你对整件事有何高见\N{\fs36}What do you think about all this?
+Dialogue: 0,0:59:01.03,0:59:02.43,*Default,NTP,0,0,0,,这是什么词\N{\fs36}What's this word?
+Dialogue: 0,0:59:18.96,0:59:19.78,*Default,NTP,0,0,0,,"行星"\N{\fs36}"Planet."
+Dialogue: 0,0:59:21.26,0:59:21.99,*Default,NTP,0,0,0,,不 不\N{\fs36}No, no.
+Dialogue: 0,0:59:26.18,0:59:29.27,*Default,NTP,0,0,0,,比如 地球是一个行星\N{\fs36}That's, like... The Earth is a planet.
+Dialogue: 0,0:59:29.96,0:59:32.50,*Default,NTP,0,0,0,,你想看看我在Garriott老师课上做得作业吗\N{\fs36}Want to see my project from Miss Garriott's class?
+Dialogue: 0,0:59:33.26,0:59:34.13,*Default,NTP,0,0,0,,好啊 小鼻怪\N{\fs36}Yeah, little nose.
+Dialogue: 0,0:59:38.18,0:59:39.80,*Default,NTP,0,0,0,,我们得编一集我们自己的电视节目\N{\fs36}We had to make up our own TV show.
+Dialogue: 0,0:59:40.93,0:59:42.14,*Default,NTP,0,0,0,,就是假设我们有这么一档栏目的话\N{\fs36}If we had one.
+Dialogue: 0,0:59:43.22,0:59:45.83,*Default,NTP,0,0,0,,- 那两个人是谁  - 是你和爸爸\N{\fs36}- And who are those two people? - That's you and Dad.
+Dialogue: 0,0:59:46.60,0:59:48.98,*Default,NTP,0,0,0,,节目的名字叫<妈妈爸爸与动物谈话>\N{\fs36}The show is called Mommy and Daddy Talk to Animals.
+Dialogue: 0,0:59:51.56,0:59:52.73,*Default,NTP,0,0,0,,画得真可爱\N{\fs36}Well, it's lovely.
+Dialogue: 0,0:59:57.53,0:59:58.19,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,1:00:02.78,1:00:04.99,*Default,NTP,0,0,0,,如果你因为爸爸妈妈的事情而难过 没关系的\N{\fs36}You know it's okay to be sad that your dad and I...
+Dialogue: 0,1:00:05.08,1:00:06.20,*Default,NTP,0,0,0,,我知道 我不难过\N{\fs36}I know. I'm not.
+Dialogue: 0,1:00:08.75,1:00:10.33,*Default,NTP,0,0,0,,我们都很爱你\N{\fs36}'Cause we both love you very much.
+Dialogue: 0,1:00:10.71,1:00:13.46,*Default,NTP,0,0,0,,我知道 只是把你们画在一起 不是真的要你们一起\N{\fs36}I know. It's just a cartoon. Not real.
+Dialogue: 0,1:00:13.56,1:00:14.38,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise?
+Dialogue: 0,1:00:19.47,1:00:20.19,*Default,NTP,0,0,0,,你还好吗\N{\fs36}You all right?
+Dialogue: 0,1:00:21.44,1:00:22.54,*Default,NTP,0,0,0,,是的\N{\fs36}Yeah.
+Dialogue: 0,1:00:23.51,1:00:24.68,*Default,NTP,0,0,0,,我还好\N{\fs36}Yeah, I'm fine.
+Dialogue: 0,1:00:27.39,1:00:30.85,*Default,NTP,0,0,0,,有些事情 我也不知道怎么解释\N{\fs36}I'm not sure it's something I can explain.
+Dialogue: 0,1:00:31.12,1:00:32.56,*Default,NTP,0,0,0,,你上一次找Kettler医生体检是什么时候\N{\fs36}When was your last checkup with Dr. Kettler?
+Dialogue: 0,1:00:34.20,1:00:35.48,*Default,NTP,0,0,0,,我没事\N{\fs36}I'm okay.
+Dialogue: 0,1:00:36.12,1:00:37.28,*Default,NTP,0,0,0,,我去透透气\N{\fs36}I'm gonna get some air.
+Dialogue: 0,1:00:38.40,1:00:39.56,*Default,NTP,0,0,0,,我没事的\N{\fs36}I'm okay.
+Dialogue: 0,1:00:39.64,1:00:41.49,*Default,NTP,0,0,0,,- 好吧  - 我很好\N{\fs36}- All right. - I'm fine. Yeah.
+Dialogue: 0,1:01:41.52,1:01:42.51,*Default,NTP,0,0,0,,你感觉怎么样\N{\fs36}How you feeling?
+Dialogue: 0,1:01:47.36,1:01:50.43,*Default,NTP,0,0,0,,我得补补觉 不过我没事\N{\fs36}I need some sleep, but I'm fine.
+Dialogue: 0,1:01:51.88,1:01:52.68,*Default,NTP,0,0,0,,好\N{\fs36}Yeah.
+Dialogue: 0,1:01:54.52,1:01:57.73,*Default,NTP,0,0,0,,我最近读到的一个理论中提到\N{\fs36}You know, I was doing some reading about this idea that
+Dialogue: 0,1:01:58.90,1:02:01.12,*Default,NTP,0,0,0,,通过全身心的投入研究一门外语\N{\fs36}if you immerse yourself into a foreign language,
+Dialogue: 0,1:02:01.20,1:02:03.86,*Default,NTP,0,0,0,,是可以实现思维重构的\N{\fs36}that you can actually rewire your brain.
+Dialogue: 0,1:02:03.99,1:02:06.24,*Default,,0,0,0,,{\fs38\pos(640,80)}萨佩尔-沃尔夫假说又称"语言相对论" 提出在不同文化下 不同的语言在很大程度上影响了使用者的思考方式 即语言决定人的思维
+Dialogue: 0,1:02:04.00,1:02:06.24,*Default,NTP,0,0,0,,对 这是萨佩尔-沃尔夫假说\N{\fs36}Yeah, the Sapir-Whorf Hypothesis.
+Dialogue: 0,1:02:07.72,1:02:08.82,*Default,NTP,0,0,0,,这个理论它\N{\fs36}The theory that...
+Dialogue: 0,1:02:09.72,1:02:11.45,*Default,NTP,0,0,0,,它讲得是\N{\fs36}It's the theory that
+Dialogue: 0,1:02:11.80,1:02:14.96,*Default,NTP,0,0,0,,你所讲的语言决定了你思考的方式\N{\fs36}the language you speak determines how you think and...
+Dialogue: 0,1:02:15.48,1:02:18.54,*Default,NTP,0,0,0,,对 语言会影响你对一切事物的感知\N{\fs36}Yeah. It affects how you see everything. It was...
+Dialogue: 0,1:02:19.56,1:02:20.54,*Default,NTP,0,0,0,,我有点好奇\N{\fs36}I'm curious,
+Dialogue: 0,1:02:21.16,1:02:23.13,*Default,NTP,0,0,0,,你在做梦的时候 也说它们的语言吗\N{\fs36}are you dreaming in their language?
+Dialogue: 0,1:02:33.40,1:02:35.39,*Default,NTP,0,0,0,,我可能是做了几个梦 但是我没有\N{\fs36}I may have had a few dreams, but I don't...
+Dialogue: 0,1:02:37.76,1:02:41.07,*Default,NTP,0,0,0,,这并没有影响到我工作的能力\N{\fs36}I don't think that that makes me unfit to do this job.
+Dialogue: 0,1:03:00.76,1:03:01.76,*Default,NTP,0,0,0,,你睡过觉了么\N{\fs36}Did you sleep?
+Dialogue: 0,1:03:02.52,1:03:03.46,*Default,NTP,0,0,0,,睡了一会儿\N{\fs36}A little.
+Dialogue: 0,1:03:04.40,1:03:05.30,*Default,NTP,0,0,0,,你会汉语么\N{\fs36}Do you know Mandarin?
+Dialogue: 0,1:03:10.00,1:03:11.01,*Default,NTP,0,0,0,,目标在移动\N{\fs36}It is shifting.
+Dialogue: 0,1:03:18.48,1:03:22.40,*Default,NTP,0,0,0,,你马上要听到的这个声音来自中方军事首脑\N{\fs36}The voice you're about to hear belongs to China's military chief,
+Dialogue: 0,1:03:24.40,1:03:25.61,*Default,NTP,0,0,0,,Shang将军\N{\fs36}General Shang.
+Dialogue: 0,1:03:26.76,1:03:27.65,*Default,NTP,0,0,0,,调出来\N{\fs36}Pull it up.
+Dialogue: 0,1:03:31.04,1:03:33.04,*Default,NTP,0,0,0,,这里有我们收到的卫星讯息 他正在和某个人说话\N{\fs36}We got a satellite feed here of who he's talking to,
+Dialogue: 0,1:03:33.20,1:03:34.08,*Default,NTP,0,0,0,,你可以边看边听\N{\fs36}if you want to look.
+Dialogue: 0,1:03:35.72,1:03:36.75,*Default,NTP,0,0,0,,等等 往回倒\N{\fs36}Wait, go back.
+Dialogue: 0,1:03:38.72,1:03:39.50,*Default,NTP,0,0,0,,停 \N{\fs36}Stop.
+Dialogue: 0,1:03:42.08,1:03:45.38,*Default,NTP,0,0,0,,他说12艘飞船都会提供先进的技术\N{\fs36}He's saying that each of the 12 is offering advanced technology.
+Dialogue: 0,1:03:48.48,1:03:50.51,*Default,NTP,0,0,0,,再往回倒 然后播放\N{\fs36}And back again. And play.
+Dialogue: 0,1:03:54.22,1:03:58.23,*Default,,0,0,0,,{\fs38\pos(640,80)}刻子 麻将术语 指一组三张同样的牌
+Dialogue: 0,1:03:54.24,1:03:58.21,*Default,NTP,0,0,0,,"我们的科研团队正在尝试解码这些组合(刻子)"\N{\fs36}"Our science team is attempting to decode the sets."
+Dialogue: 0,1:03:58.92,1:04:00.90,*Default,NTP,0,0,0,,"组合(刻子)" 我不知道这是什么意思\N{\fs36}"Sets." I don't know what that means.
+Dialogue: 0,1:04:01.60,1:04:02.98,*Default,NTP,0,0,0,,和占据优势有关\N{\fs36}Something about advantage.
+Dialogue: 0,1:04:03.40,1:04:05.61,*Default,,0,0,0,,{\fs38\pos(640,80)}花色指麻将中的筒条万 字牌指麻将中的东南西北中发白 花牌指麻将中的春夏秋冬梅兰竹菊
+Dialogue: 0,1:04:03.40,1:04:05.61,*Default,NTP,0,0,0,,"华裳(花色) 正派(字牌) 还有花(花牌)"\N{\fs36}"Suits, honor, and flowers."
+Dialogue: 0,1:04:06.12,1:04:06.82,*Default,NTP,0,0,0,,我不\N{\fs36}I don't...
+Dialogue: 0,1:04:08.84,1:04:09.90,*Default,NTP,0,0,0,,我不知道什么意思 就这些了\N{\fs36}I don't know, that's all.
+Dialogue: 0,1:04:10.68,1:04:12.03,*Default,NTP,0,0,0,,我也不知道是什么意思\N{\fs36}I don't know what it means either.
+Dialogue: 0,1:04:12.92,1:04:15.08,*Default,NTP,0,0,0,,一个小时前 中方开始集结军队\N{\fs36}An hour ago, China mobilized forces.
+Dialogue: 0,1:04:15.76,1:04:17.37,*Default,NTP,0,0,0,,现在俄罗斯也准备跟风出牌\N{\fs36}And now, Russia is following suit.
+Dialogue: 0,1:04:18.36,1:04:19.83,*Default,NTP,0,0,0,,Shang已经蓄势待发了\N{\fs36}Shang's about to start something.
+Dialogue: 0,1:04:20.60,1:04:22.60,*Default,NTP,0,0,0,,跟风出牌 牌的"花色"\N{\fs36}Following suit, "Suits".
+Dialogue: 0,1:04:24.76,1:04:27.17,*Default,NTP,0,0,0,,是花色 字牌 花牌\N{\fs36}Suits. Honor. Flowers.
+Dialogue: 0,1:04:27.40,1:04:29.59,*Default,NTP,0,0,0,,上校 这些都是麻将里的牌型\N{\fs36}Colonel, those are all tile sets in mahjong.
+Dialogue: 0,1:04:31.96,1:04:33.01,*Default,NTP,0,0,0,,天呐 他们\N{\fs36}God, are they...
+Dialogue: 0,1:04:33.92,1:04:36.60,*Default,NTP,0,0,0,,他们是在用游戏和他们的七肢桶交流吗\N{\fs36}Are they using a game to converse with their heptapods?
+Dialogue: 0,1:04:38.64,1:04:40.32,*Default,NTP,0,0,0,,有可能 怎么了\N{\fs36}Maybe. Why?
+Dialogue: 0,1:04:40.40,1:04:44.20,*Default,NTP,0,0,0,,假如我没有教它们说英语 而是教它们国际象棋\N{\fs36}Well, let's say that I taught them chess instead of English.
+Dialogue: 0,1:04:44.28,1:04:46.04,*Default,NTP,0,0,0,,每一场对话都会是一局博弈\N{\fs36}Every conversation would be a game,
+Dialogue: 0,1:04:46.12,1:04:49.44,*Default,NTP,0,0,0,,每个想法都出自对立面 不是你赢 就是我输 \N{\fs36}every idea expressed through opposition, victory, defeat.
+Dialogue: 0,1:04:49.52,1:04:50.64,*Default,NTP,0,0,0,,你看出问题了么\N{\fs36}You see the problem?
+Dialogue: 0,1:04:52.08,1:04:54.41,*Default,NTP,0,0,0,,如授人以锤\N{\fs36}If all I ever gave you was a hammer...
+Dialogue: 0,1:04:55.16,1:04:56.58,*Default,,0,0,0,,{\fs38\pos(640,80)}出自心理学大师马斯洛 作两解 一是头脑简单的人会滥用手中有限的工具 二是仅熟悉某一物件的人会因为证实性偏差而试图用此物解决一切问题
+Dialogue: 0,1:04:55.16,1:04:56.57,*Default,NTP,0,0,0,,万物于他皆是钉\N{\fs36}Everything's a nail.
+Dialogue: 0,1:04:58.70,1:05:00.16,*Default,NTP,0,0,0,,我们必须提出那个关键问题\N{\fs36}We need to ask the big question.
+Dialogue: 0,1:05:01.96,1:05:02.79,*Default,NTP,0,0,0,,没时间再铺垫了\N{\fs36}Ready or not.
+Dialogue: 0,1:05:07.52,1:05:08.56,*Default,NTP,0,0,0,,好的 那么\N{\fs36}Right, so...
+Dialogue: 0,1:05:08.64,1:05:10.42,*Default,NTP,0,0,0,,好的 告诉我你用的什么温度 好吗\N{\fs36}Okay, let me know what temperature you use, okay?
+Dialogue: 0,1:05:11.96,1:05:14.53,*Default,NTP,0,0,0,,不 这和之前的一样\N{\fs36}No, this is the same as before.
+Dialogue: 0,1:05:15.12,1:05:16.16,*Default,NTP,0,0,0,,- 你看  - 我\N{\fs36}- See. - I...
+Dialogue: 0,1:05:16.80,1:05:18.32,*Default,NTP,0,0,0,,对 不 在三和四之间\N{\fs36}Yeah, no, but between three and four.
+Dialogue: 0,1:05:20.28,1:05:21.85,*Default,NTP,0,0,0,,- 好了 该出发了  - 好\N{\fs36}- All right, time to go. - Okay.
+Dialogue: 0,1:05:32.96,1:05:35.85,*Default,NTP,0,0,0,,会话剩余时间96分钟 完毕\N{\fs36}Ninety-six minutes remaining in the session. Over.
+Dialogue: 0,1:05:44.56,1:05:45.68,*Default,NTP,0,0,0,,好\N{\fs36}Okay.
+Dialogue: 0,1:05:49.88,1:05:50.96,*Default,NTP,0,0,0,,七肢桶的目的\N{\fs36}Heptapod's purpose.
+Dialogue: 0,1:06:02.64,1:06:05.21,*Default,NTP,0,0,0,,七肢桶 目的 地球 你们的目的是什么\N{\fs36}Heptapod purpose. Earth. What is your purpose?
+Dialogue: 0,1:06:12.76,1:06:13.96,*Default,NTP,0,0,0,,只有Costello来了吗\N{\fs36}Do we only have Costello?
+Dialogue: 0,1:06:19.40,1:06:21.20,*Default,NTP,0,0,0,,好的 都来了\N{\fs36}Okay. There you are.
+Dialogue: 0,1:06:43.52,1:06:44.76,*Default,NTP,0,0,0,,它说什么\N{\fs36}What does it say?
+Dialogue: 0,1:06:53.60,1:06:54.82,*Default,NTP,0,0,0,,"提供武器"\N{\fs36}"Offer weapon."
+Dialogue: 0,1:07:00.00,1:07:01.20,*Default,NTP,0,0,0,,但你亲眼看见它们这么写的\N{\fs36}But you saw what they wrote.
+Dialogue: 0,1:07:01.28,1:07:02.61,*Default,NTP,0,0,0,,用的是它们没有完全理解的单词\N{\fs36}Using a word they don't fully understand.
+Dialogue: 0,1:07:02.68,1:07:04.09,*Default,NTP,0,0,0,,- 这可能只是一个请求  - 或者是警告\N{\fs36}- It could be just a request. - Or a warning.
+Dialogue: 0,1:07:04.16,1:07:04.75,*Default,NTP,0,0,0,,够了\N{\fs36}Enough!
+Dialogue: 0,1:07:05.76,1:07:06.62,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise?
+Dialogue: 0,1:07:07.48,1:07:09.52,*Default,NTP,0,0,0,,我们不知道它们是否明白\N{\fs36}We don't know if they understand
+Dialogue: 0,1:07:09.60,1:07:12.34,*Default,NTP,0,0,0,,武器和工具之间的区别\N{\fs36}the difference between a weapon and a tool.
+Dialogue: 0,1:07:12.76,1:07:14.68,*Default,NTP,0,0,0,,我们的语言 和我们的文化一样混乱复杂\N{\fs36}Our language, like our culture, is messy,
+Dialogue: 0,1:07:14.80,1:07:16.37,*Default,NTP,0,0,0,,有的时候一词会有多义\N{\fs36}and sometimes one can be both.
+Dialogue: 0,1:07:16.44,1:07:17.75,*Default,NTP,0,0,0,,我觉得很有可能它们是想\N{\fs36}I think it's quite possible
+Dialogue: 0,1:07:17.75,1:07:20.04,*Default,NTP,0,0,0,,让我们提供一些东西给它们\N{\fs36}that they're asking us to offer them something,
+Dialogue: 0,1:07:20.12,1:07:23.40,*Default,NTP,0,0,0,,而不是反过来提供给我们 也许这是寻求贸易之举\N{\fs36}not the other way around, like the first part of a trade.
+Dialogue: 0,1:07:23.56,1:07:26.80,*Default,NTP,0,0,0,,那么 我们怎么才能弄清它们的言外之意呢\N{\fs36}So, how do we clarify their intentions beyond those two words?
+Dialogue: 0,1:07:26.92,1:07:27.98,*Default,NTP,0,0,0,,我可以再回去\N{\fs36}Well, I go back in.
+Dialogue: 0,1:07:28.32,1:07:30.48,*Default,NTP,0,0,0,,我们立刻回那里去 然后把它弄清楚\N{\fs36}Right away, we go back in and we clear this up.
+Dialogue: 0,1:07:30.56,1:07:31.64,*Default,NTP,0,0,0,,这比你想的更复杂\N{\fs36}It's more complicated than that.
+Dialogue: 0,1:07:31.72,1:07:32.88,*Default,NTP,0,0,0,,怎么就复杂了\N{\fs36}How is it more complicated than that?
+Dialogue: 0,1:07:34.80,1:07:37.53,*Default,NTP,0,0,0,,上校 您有来自国防部长的电话\N{\fs36}Colonel, the Secretary of Defense is on the line for you.
+Dialogue: 0,1:07:45.28,1:07:47.87,*Default,NTP,0,0,0,,在弄清确切含义之前 我们得封锁这个消息\N{\fs36}We need to sit on this information till we know what it means.
+Dialogue: 0,1:07:48.76,1:07:50.25,*Default,NTP,0,0,0,,不能冒险分享给我们的敌人\N{\fs36}So, we aren't sharing it with our enemies.
+Dialogue: 0,1:07:50.32,1:07:51.65,*Default,NTP,0,0,0,,我们还必须考虑一种可能性\N{\fs36}We have to consider the idea
+Dialogue: 0,1:07:51.72,1:07:53.88,*Default,NTP,0,0,0,,或许这些访客是想怂恿我们发动内战\N{\fs36}that our visitors are prodding us to fight among ourselves
+Dialogue: 0,1:07:53.96,1:07:56.24,*Default,NTP,0,0,0,,直至分出最终胜负\N{\fs36}until only one faction prevails.
+Dialogue: 0,1:07:56.32,1:07:57.48,*Default,NTP,0,0,0,,这种说法毫无依据\N{\fs36}There's no evidence of that.
+Dialogue: 0,1:07:57.56,1:07:58.47,*Default,NTP,0,0,0,,当然有 \N{\fs36}Sure there is.
+Dialogue: 0,1:07:59.00,1:08:00.13,*Default,NTP,0,0,0,,翻翻历史书\N{\fs36}Just grab a history book.
+Dialogue: 0,1:08:01.14,1:08:03.85,*Default,,0,0,0,,{\fs38\pos(640,80)}英国和德国曾分别殖民印度及卢旺达 并在殖民地开展大屠杀
+Dialogue: 0,1:08:01.16,1:08:03.84,*Default,NTP,0,0,0,,英国人对印度 德国人对卢旺达\N{\fs36}The British with India, the Germans with Rwanda.
+Dialogue: 0,1:08:04.93,1:08:06.85,*Default,,0,0,0,,{\fs38\pos(640,80)}匈牙利在历史上曾数次被侵略和占领
+Dialogue: 0,1:08:04.92,1:08:06.85,*Default,NTP,0,0,0,,在匈牙利 这种事都有了专门的名词\N{\fs36}They even got a name for it in Hungary.
+Dialogue: 0,1:08:12.04,1:08:12.90,*Default,NTP,0,0,0,,真的\N{\fs36}Yeah.
+Dialogue: 0,1:08:13.84,1:08:15.86,*Default,NTP,0,0,0,,我们这个世界 大家各自为政\N{\fs36}We're a world with no single leader.
+Dialogue: 0,1:08:16.60,1:08:18.86,*Default,NTP,0,0,0,,想要逐个击破太困难了\N{\fs36}It's impossible to deal with just one of us.
+Dialogue: 0,1:08:19.16,1:08:20.84,*Default,NTP,0,0,0,,所以 "武器"这个词很耐人寻味\N{\fs36}And with the word "Weapon" Now...
+Dialogue: 0,1:08:21.68,1:08:22.53,*Default,NTP,0,0,0,,我是Halpern\N{\fs36}Halpern.
+Dialogue: 0,1:08:24.04,1:08:24.66,*Default,NTP,0,0,0,,是的 长官 \N{\fs36}Yes, sir.
+Dialogue: 0,1:08:39.68,1:08:42.38,*Default,NTP,0,0,0,,收到 请等待指示\N{\fs36}Copy that. Waiting for instructions.
+Dialogue: 0,1:08:42.60,1:08:43.72,*Default,NTP,0,0,0,,情况尚未确认\N{\fs36}No confirmation yet.
+Dialogue: 0,1:08:44.40,1:08:45.35,*Default,NTP,0,0,0,,保持待命状态\N{\fs36}Standing by.
+Dialogue: 0,1:08:46.20,1:08:46.93,*Default,NTP,0,0,0,,有什么情况\N{\fs36}Anything?
+Dialogue: 0,1:08:48.84,1:08:49.77,*Default,NTP,0,0,0,,到底说什么了\N{\fs36}What did they say?
+Dialogue: 0,1:08:51.12,1:08:52.33,*Default,NTP,0,0,0,,中国和俄罗斯切断了通讯\N{\fs36}China and Russia are off the grid.
+Dialogue: 0,1:08:52.33,1:08:53.44,*Default,NTP,0,0,0,,他们不再和任何人交流\N{\fs36}They aren't speaking to anyone.
+Dialogue: 0,1:08:53.72,1:08:56.64,*Default,NTP,0,0,0,,不知道最后一场会话中说了什么 把他们吓到了\N{\fs36}Whatever they learned in their last session has them spooked.
+Dialogue: 0,1:08:59.48,1:09:00.64,*Default,NTP,0,0,0,,是 长官\N{\fs36}Yes, sir.
+Dialogue: 0,1:09:01.12,1:09:02.53,*Default,NTP,0,0,0,,我们收到命令 和他们一样离线\N{\fs36}We have orders to do the same.
+Dialogue: 0,1:09:02.64,1:09:03.80,*Default,NTP,0,0,0,,等等 这都是我们的盟友啊\N{\fs36}Wait, these are our allies.
+Dialogue: 0,1:09:03.88,1:09:04.96,*Default,NTP,0,0,0,,上校 你不能切断我们的信号\N{\fs36}Colonel, you can't shut us down.
+Dialogue: 0,1:09:05.04,1:09:06.37,*Default,NTP,0,0,0,,- 开启无线电静默  - 照做\N{\fs36}- Put us on radio silence. - Do it.
+Dialogue: 0,1:09:07.24,1:09:08.48,*Default,NTP,0,0,0,,我们收到一则消息是来自七\N{\fs36}We received a message from the He...
+Dialogue: 0,1:09:09.68,1:09:10.79,*Default,NTP,0,0,0,,该死的\N{\fs36}Damn it!
+Dialogue: 0,1:09:11.72,1:09:13.00,*Default,NTP,0,0,0,,我们得保持相互交流\N{\fs36}We need to be talking to each other.
+Dialogue: 0,1:09:13.08,1:09:15.25,*Default,NTP,0,0,0,,你想和他们交流 先弄清楚这是什么意思\N{\fs36}You wanna talk to them? Find out what this means.
+Dialogue: 0,1:09:21.24,1:09:23.04,*Default,NTP,0,0,0,,营地通讯已离线 \N{\fs36}Base-camp talk is now offline.
+Dialogue: 0,1:09:23.44,1:09:26.01,*Default,NTP,0,0,0,,- 全体翻译  - 无法确认 他们已经离线\N{\fs36}- All interpreters... - No confirmation. They're offline.
+Dialogue: 0,1:09:26.08,1:09:28.81,*Default,NTP,0,0,0,,停止工作并向各小组协调员汇报\N{\fs36}...stand down and report to unit coordinators.
+Dialogue: 0,1:09:31.20,1:09:33.16,*Default,NTP,0,0,0,,我们从来没有去而复返过\N{\fs36}We've never re-entered a session before.
+Dialogue: 0,1:09:33.24,1:09:35.92,*Default,NTP,0,0,0,,Louise 相信我好吗 我们还有时间\N{\fs36}Look, Louise, trust me, okay? We've got time.
+Dialogue: 0,1:09:36.00,1:09:37.44,*Default,NTP,0,0,0,,我们只要抓紧一点 好吗\N{\fs36}We've just gotta step on it, all right?
+Dialogue: 0,1:09:38.80,1:09:40.13,*Default,NTP,0,0,0,,"使用武器"\N{\fs36}"Use weapon."
+Dialogue: 0,1:09:40.68,1:09:41.84,*Default,NTP,0,0,0,,据称正是这则外星人的讯息\N{\fs36}This is the alien message
+Dialogue: 0,1:09:41.92,1:09:43.84,*Default,NTP,0,0,0,,促使中国政府于今日\N{\fs36}said to have provoked the Chinese government
+Dialogue: 0,1:09:43.92,1:09:45.50,*Default,NTP,0,0,0,,将中方科学家\N{\fs36}to withdraw their scientists
+Dialogue: 0,1:09:45.50,1:09:47.60,*Default,NTP,0,0,0,,从国际联合行动中撤出\N{\fs36}from the international mission today.
+Dialogue: 0,1:09:48.20,1:09:50.52,*Default,NTP,0,0,0,,在一则声明中 Shang将军表示\N{\fs36}In a statement, General Shang said,
+Dialogue: 0,1:09:50.60,1:09:54.00,*Default,NTP,0,0,0,,"中国不再相信这些企图分裂人类的外星人"\N{\fs36}"China no longer trusts the aliens who want to divide us."
+Dialogue: 0,1:09:54.08,1:09:55.92,*Default,NTP,0,0,0,,"人类必须受到保护"\N{\fs36}"Humanity must be protected."
+Dialogue: 0,1:09:56.24,1:09:58.75,*Default,NTP,0,0,0,,中国已向联合国请求召开紧急会谈\N{\fs36}China has asked for immediate talks at the UN.
+Dialogue: 0,1:10:02.40,1:10:05.05,*Default,NTP,0,0,0,,阿尔法19 这里是神鹰 完毕\N{\fs36}Alpha one-niner, this is Condor. Over.
+Dialogue: 0,1:10:09.60,1:10:12.06,*Default,NTP,0,0,0,,阿尔法19 这里是神鹰\N{\fs36}Alpha one-niner, this is Condor.
+Dialogue: 0,1:10:12.28,1:10:13.52,*Default,NTP,0,0,0,,请回答 完毕\N{\fs36}Come in. Over.
+Dialogue: 0,1:10:18.72,1:10:20.19,*Default,NTP,0,0,0,,Marks上尉 这里是神鹰\N{\fs36}Captain Marks, Condor.
+Dialogue: 0,1:10:20.40,1:10:23.56,*Default,NTP,0,0,0,,没有收到回应 如果你听到 请回应两声静噪\N{\fs36}Not receiving transmission. Squelch twice if you hear mine.
+Dialogue: 0,1:10:24.92,1:10:26.14,*Default,NTP,0,0,0,,Marks上尉 全体护卫人员\N{\fs36}Captain Marks, all escort groups
+Dialogue: 0,1:10:26.14,1:10:28.16,*Default,NTP,0,0,0,,受命终止一切活动\N{\fs36}are ordered to cease all activity.
+Dialogue: 0,1:10:59.16,1:11:01.24,*Default,NTP,0,0,0,,不不不 Banks教授 你不能进来\N{\fs36}No, no, no. Dr. Banks, you can't go in there.
+Dialogue: 0,1:11:01.36,1:11:02.64,*Default,NTP,0,0,0,,我们问个问题就好\N{\fs36}We just need to ask one question.
+Dialogue: 0,1:11:02.72,1:11:06.00,*Default,NTP,0,0,0,,Banks教授 这次会话已经结束了 你不能\N{\fs36}Dr. Banks, the session is finished. You can't...
+Dialogue: 0,1:11:06.28,1:11:07.61,*Default,NTP,0,0,0,,你不能进去 里面很危险\N{\fs36}You can't go back in. It's dangerous.
+Dialogue: 0,1:11:07.68,1:11:09.40,*Default,NTP,0,0,0,,我们只需要五分钟 别担心\N{\fs36}Look, we just need five minutes. Don't sweat it.
+Dialogue: 0,1:11:09.48,1:11:11.44,*Default,NTP,0,0,0,,Marks 让他们进去\N{\fs36}Marks, let them go.
+Dialogue: 0,1:11:14.36,1:11:15.66,*Default,NTP,0,0,0,,嗨 Abbott\N{\fs36}Hey, Abbott.
+Dialogue: 0,1:11:21.24,1:11:24.21,*Default,NTP,0,0,0,,那么 这回怎么算 第37次会话吗\N{\fs36}So, what are we calling this, session 37?
+Dialogue: 0,1:11:24.64,1:11:26.29,*Default,NTP,0,0,0,,不 第36次 第二部分\N{\fs36}No, 36, part two.
+Dialogue: 0,1:11:26.40,1:11:27.52,*Default,NTP,0,0,0,,好的\N{\fs36}Okay.
+Dialogue: 0,1:11:27.96,1:11:29.04,*Default,NTP,0,0,0,,好了\N{\fs36}Yeah.
+Dialogue: 0,1:11:34.80,1:11:35.88,*Default,NTP,0,0,0,,为什么就他们两个人\N{\fs36}Why they on their own?
+Dialogue: 0,1:11:35.96,1:11:37.73,*Default,NTP,0,0,0,,我们一直在尝试呼叫Marks上尉\N{\fs36}We've been attempting to hail Captain Marks.
+Dialogue: 0,1:11:38.00,1:11:39.80,*Default,NTP,0,0,0,,护卫小组没有回应 长官\N{\fs36}The escort units are not responding, sir.
+Dialogue: 0,1:11:39.88,1:11:40.60,*Default,NTP,0,0,0,,为什么不回应\N{\fs36}Why not?
+Dialogue: 0,1:11:42.24,1:11:43.15,*Default,NTP,0,0,0,,派安保过去\N{\fs36}Send security.
+Dialogue: 0,1:11:46.84,1:11:50.11,*Default,NTP,0,0,0,,"提供武器 问号"\N{\fs36}"Offer weapon. Question mark."
+Dialogue: 0,1:11:55.24,1:11:57.25,*Default,NTP,0,0,0,,你们是要向我们提供什么吗\N{\fs36}Are you offering us something?
+Dialogue: 0,1:12:06.56,1:12:09.13,*Default,NTP,0,0,0,,"技术 设备 方法"\N{\fs36}"Technology. Apparatus. Method"?
+Dialogue: 0,1:12:09.56,1:12:11.51,*Default,NTP,0,0,0,,对 你看 这是另一个词\N{\fs36}Yeah, see, this is a different word.
+Dialogue: 0,1:12:11.76,1:12:14.24,*Default,NTP,0,0,0,,这一段要紧凑的多\N{\fs36}This segment, it's a lot busier.
+Dialogue: 0,1:12:19.96,1:12:21.08,*Default,NTP,0,0,0,,"给予"\N{\fs36}"Give."
+Dialogue: 0,1:12:22.04,1:12:23.45,*Default,NTP,0,0,0,,"技术"\N{\fs36}"Technology."
+Dialogue: 0,1:12:25.00,1:12:26.08,*Default,NTP,0,0,0,,"现在"\N{\fs36}"Now."
+Dialogue: 0,1:12:34.84,1:12:36.44,*Default,NTP,0,0,0,,它在干什么\N{\fs36}What's he doing?
+Dialogue: 0,1:12:42.04,1:12:43.61,*Default,NTP,0,0,0,,上尉 10点钟方向\N{\fs36}Captain, on your 10.
+Dialogue: 0,1:12:47.00,1:12:49.65,*Default,NTP,0,0,0,,禁止交火 生擒所有反叛人员\N{\fs36}Mutineers are to be apprehended without engaging.
+Dialogue: 0,1:12:49.76,1:12:52.52,*Default,NTP,0,0,0,,不要冒险激怒我们的访客 完毕\N{\fs36}We don't want to risk antagonizing our visitors. Over.
+Dialogue: 0,1:12:53.28,1:12:56.48,*Default,NTP,0,0,0,,安保人员就位 长官 倒计时四分钟\N{\fs36}Security detail inbound, sir. T-minus four minutes remaining.
+Dialogue: 0,1:12:56.60,1:12:58.02,*Default,NTP,0,0,0,,请指示\N{\fs36}We need to see this through.
+Dialogue: 0,1:12:58.36,1:12:59.93,*Default,NTP,0,0,0,,好 听着 子弹上膛\N{\fs36}Okay, this is it. Lock and load.
+Dialogue: 0,1:13:00.00,1:13:01.92,*Default,NTP,0,0,0,,我们只要守住阵地 拖到任务完成\N{\fs36}We just need to hold them off until it's done.
+Dialogue: 0,1:13:02.00,1:13:04.52,*Default,NTP,0,0,0,,收到 仅需鸣枪示警 压制火力\N{\fs36}Copy that. Warning shots and suppressive fire only.
+Dialogue: 0,1:13:04.60,1:13:05.84,*Default,NTP,0,0,0,,子弹上膛 找好掩护\N{\fs36}Load up and get to cover.
+Dialogue: 0,1:13:05.92,1:13:07.84,*Default,NTP,0,0,0,,打起精神 避免伤亡\N{\fs36}Stay fresh and we can avoid casualties.
+Dialogue: 0,1:13:34.96,1:13:36.72,*Default,NTP,0,0,0,,Abbott想让我写在视镜上\N{\fs36}Abbott wants me to write on the barrier.
+Dialogue: 0,1:13:42.32,1:13:43.44,*Default,NTP,0,0,0,,你能做到吗\N{\fs36}Can you even do that?
+Dialogue: 0,1:13:45.44,1:13:46.88,*Default,NTP,0,0,0,,我不知道\N{\fs36}I don't know.
+Dialogue: 0,1:14:03.16,1:14:04.68,*Default,NTP,0,0,0,,我没法用两只手同时写\N{\fs36}I can't do it with both hands.
+Dialogue: 0,1:15:16.76,1:15:17.76,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise.
+Dialogue: 0,1:15:33.16,1:15:34.16,*Default,NTP,0,0,0,,什么声音\N{\fs36}What is that?
+Dialogue: 0,1:15:34.24,1:15:36.13,*Default,NTP,0,0,0,,- 走火了  - 在那边\N{\fs36}- Free fire!  - Over there!
+Dialogue: 0,1:15:36.97,1:15:38.22,*Default,NTP,0,0,0,,我被击中了 我被击中了\N{\fs36} I'm hit! I'm hit!
+Dialogue: 0,1:16:20.08,1:16:22.34,*Default,NTP,0,0,0,,嘿 嘿 嘿 慢点起\N{\fs36}Hey, hey, hey. Take it easy.
+Dialogue: 0,1:16:22.76,1:16:23.93,*Default,NTP,0,0,0,,你脑部受到了震荡\N{\fs36}You suffered a concussion.
+Dialogue: 0,1:16:24.32,1:16:24.97,*Default,NTP,0,0,0,,快躺回去\N{\fs36}Just lay back.
+Dialogue: 0,1:16:28.52,1:16:29.48,*Default,NTP,0,0,0,,你感觉怎么样\N{\fs36}How are you feeling?
+Dialogue: 0,1:16:38.80,1:16:39.69,*Default,NTP,0,0,0,,Ian怎么样了\N{\fs36}How is Ian?
+Dialogue: 0,1:16:40.28,1:16:41.53,*Default,NTP,0,0,0,,和你一样 他没事\N{\fs36}Same as you. He's okay.
+Dialogue: 0,1:16:43.84,1:16:44.66,*Default,NTP,0,0,0,,谁\N{\fs36}Who...
+Dialogue: 0,1:16:45.44,1:16:46.41,*Default,NTP,0,0,0,,是谁干的\N{\fs36}Who did this?
+Dialogue: 0,1:16:47.28,1:16:49.70,*Default,NTP,0,0,0,,一些士兵 煽动的电视节目看多了\N{\fs36}Some soldiers. Been watching too much TV.
+Dialogue: 0,1:16:53.84,1:16:54.88,*Default,NTP,0,0,0,,那是什么动静\N{\fs36}What is that?
+Dialogue: 0,1:16:55.36,1:16:56.88,*Default,NTP,0,0,0,,慢点起 慢慢来\N{\fs36}Now, take it easy. Take it easy.
+Dialogue: 0,1:16:57.52,1:16:58.84,*Default,NTP,0,0,0,,这个降临点已经不安全了\N{\fs36}The site's no longer secure.
+Dialogue: 0,1:16:59.36,1:17:00.76,*Default,NTP,0,0,0,,我们正在准备撤退\N{\fs36}We're standing by to evacuate.
+Dialogue: 0,1:17:01.20,1:17:02.05,*Default,NTP,0,0,0,,Ian在哪\N{\fs36}Where's Ian?
+Dialogue: 0,1:17:03.84,1:17:05.72,*Default,NTP,0,0,0,,Weber大概10分钟前来过 把他带走了\N{\fs36}Weber came and got him maybe 10 minutes ago.
+Dialogue: 0,1:17:06.72,1:17:08.85,*Default,NTP,0,0,0,,不过确认你没事之前 他都不肯离开\N{\fs36}But he wouldn't leave until he knew you were okay.
+Dialogue: 0,1:17:12.76,1:17:13.90,*Default,NTP,0,0,0,,全营的人都在加班加点\N{\fs36}The whole tent is on the clock
+Dialogue: 0,1:17:13.94,1:17:16.19,*Default,NTP,0,0,0,,试图破解你们在交流舱得到的信息\N{\fs36}to figure out whatever it is you were given up there.
+Dialogue: 0,1:17:22.84,1:17:23.78,*Default,NTP,0,0,0,,内容都在这了\N{\fs36}This is all of it.
+Dialogue: 0,1:17:24.88,1:17:26.74,*Default,NTP,0,0,0,,图像传输没有被爆炸打断吗\N{\fs36}The feed wasn't interrupted by the explosion?
+Dialogue: 0,1:17:27.88,1:17:29.12,*Default,NTP,0,0,0,,目前看来并没有\N{\fs36}Not as far as we can see.
+Dialogue: 0,1:17:31.87,1:17:32.83,*Default,NTP,0,0,0,,你看出什么了吗\N{\fs36}You see something?
+Dialogue: 0,1:17:33.24,1:17:34.48,*Default,NTP,0,0,0,,我还不清楚\N{\fs36}I don't know yet.
+Dialogue: 0,1:17:35.04,1:17:37.48,*Default,NTP,0,0,0,,我需要召集我的团队和Louise的团队\N{\fs36}I'm gonna need my team to get together with Louise's team.
+Dialogue: 0,1:17:37.56,1:17:38.89,*Default,NTP,0,0,0,,我需要大家一起研究它\N{\fs36}I need everybody working on this.
+Dialogue: 0,1:17:38.96,1:17:39.96,*Default,NTP,0,0,0,,我们不能离开\N{\fs36}We cannot leave.
+Dialogue: 0,1:17:40.84,1:17:42.04,*Default,NTP,0,0,0,,太好了 你醒了\N{\fs36}Glad to see you're awake.
+Dialogue: 0,1:17:42.12,1:17:44.06,*Default,NTP,0,0,0,,我们得回交流舱去 和它们说明\N{\fs36}We need to go back in and we need to explain to them
+Dialogue: 0,1:17:44.06,1:17:44.88,*Default,NTP,0,0,0,,爆炸不是我们造成的\N{\fs36}this wasn't our fault.
+Dialogue: 0,1:17:44.96,1:17:46.76,*Default,NTP,0,0,0,,- 不能再回去了  - 我们得告诉它们 一定得去\N{\fs36}- We can't go back inside. - We have to tell them... We have to.
+Dialogue: 0,1:17:47.20,1:17:48.93,*Default,NTP,0,0,0,,在"壳"里发生的是一起袭击性事件\N{\fs36}What happened in there was an attack.
+Dialogue: 0,1:17:49.24,1:17:50.28,*Default,NTP,0,0,0,,我们可以抱最好的希望\N{\fs36}We can hope for the best,
+Dialogue: 0,1:17:50.28,1:17:51.98,*Default,NTP,0,0,0,,但上头下了命令 让我准备迎接反击\N{\fs36}but I have orders to prepare for retaliation.
+Dialogue: 0,1:17:52.24,1:17:53.52,*Default,NTP,0,0,0,,搞不好我们必须得撤\N{\fs36}We may have to evacuate.
+Dialogue: 0,1:17:53.60,1:17:57.02,*Default,NTP,0,0,0,,不 这样做是错的 只要它们还在 我们就必须留下\N{\fs36}No, that's the wrong move. As long as they stay, we have to stay.
+Dialogue: 0,1:18:31.28,1:18:32.64,*Default,NTP,0,0,0,,它们不打算离开\N{\fs36}Well, they're not leaving.
+Dialogue: 0,1:18:35.04,1:18:36.56,*Default,NTP,0,0,0,,为什么比之前的感觉更糟了\N{\fs36}Why does this feel worse?
+Dialogue: 0,1:18:41.84,1:18:43.68,*Default,NTP,0,0,0,,中国准备进攻\N{\fs36}China is on the offensive.
+Dialogue: 0,1:18:43.76,1:18:45.15,*Default,NTP,0,0,0,,他们正在部署军队\N{\fs36}They're positioning their military
+Dialogue: 0,1:18:45.15,1:18:47.04,*Default,NTP,0,0,0,,打算一举将外星飞船炸飞\N{\fs36}to blow the alien vessel right out of the sky.
+Dialogue: 0,1:18:47.12,1:18:48.45,*Default,NTP,0,0,0,,事情一旦发生\N{\fs36}And if this happens,
+Dialogue: 0,1:18:48.52,1:18:51.99,*Default,NTP,0,0,0,,我们不能坐以待毙 所以做好准备吧\N{\fs36}we can't sit around waiting for retaliation, so get prepared.
+Dialogue: 0,1:18:52.82,1:18:55.32,*Default,NTP,0,0,0,,空军和陆军随时待命\N{\fs36}The Air Force and infantry are standing by.
+Dialogue: 0,1:18:55.40,1:18:56.40,*Default,NTP,0,0,0,,好的 长官\N{\fs36}Yes, sir.
+Dialogue: 0,1:18:58.16,1:19:01.28,*Default,NTP,0,0,0,,今晚 中国成为首个\N{\fs36}Tonight, China becomes the first world power
+Dialogue: 0,1:19:01.36,1:19:03.60,*Default,NTP,0,0,0,,向外星人宣战的世界强国\N{\fs36}to declare war against the aliens.
+Dialogue: 0,1:19:04.52,1:19:08.04,*Default,NTP,0,0,0,,继联合国宣告斡旋失败后\N{\fs36}Following the failure of diplomatic efforts at the United Nations,
+Dialogue: 0,1:19:08.12,1:19:11.48,*Default,NTP,0,0,0,,中方证实 其语言专家已于今晚\N{\fs36}China has confirmed that its language experts have, tonight,
+Dialogue: 0,1:19:11.60,1:19:14.18,*Default,NTP,0,0,0,,在上海降临点向外星人发出了最后通牒\N{\fs36}delivered an ultimatum at the Shanghai site.
+Dialogue: 0,1:19:14.68,1:19:16.06,*Default,NTP,0,0,0,,在一段电视声明中 \N{\fs36}In a televised statement,
+Dialogue: 0,1:19:16.14,1:19:19.02,*Default,NTP,0,0,0,,Shang将军 中国人民解放军总参谋长\N{\fs36}General Shang, Chairman of the People's Liberation Army,
+Dialogue: 0,1:19:19.12,1:19:22.80,*Default,NTP,0,0,0,,限外星人在24小时内离开中国领土\N{\fs36}said the aliens have 24 hours to leave Chinese territory
+Dialogue: 0,1:19:22.88,1:19:24.56,*Default,NTP,0,0,0,,否则将面临毁灭性打击\N{\fs36}or face destruction.
+Dialogue: 0,1:19:24.64,1:19:27.84,*Default,NTP,0,0,0,,同时 他呼吁各国领导人 与中方联合起来\N{\fs36}And he urged all other world leaders to unite with China
+Dialogue: 0,1:19:27.92,1:19:29.57,*Default,NTP,0,0,0,,统一战线\N{\fs36}and take a similar stance.
+Dialogue: 0,1:19:30.52,1:19:33.88,*Default,NTP,0,0,0,,在降临点附近集结了大批兵力的还包括\N{\fs36}With a huge buildup of forces at their landing sites,
+Dialogue: 0,1:19:33.96,1:19:35.97,*Default,NTP,0,0,0,,巴基斯坦 俄罗斯和苏丹\N{\fs36}Pakistan, Russia, and Sudan
+Dialogue: 0,1:19:35.98,1:19:39.04,*Default,NTP,0,0,0,,以上国家或将响应中方号召\N{\fs36}are thought to be following China's lead.
+Dialogue: 0,1:19:54.64,1:19:55.77,*Default,NTP,0,0,0,,不可能毫无规律\N{\fs36}It can't be random.
+Dialogue: 0,1:20:12.04,1:20:13.62,*Default,NTP,0,0,0,,研究它得花好几年时间\N{\fs36}It's going to take us years.
+Dialogue: 0,1:20:19.20,1:20:20.50,*Default,NTP,0,0,0,,那词怎么说来着\N{\fs36}What's this term here?
+Dialogue: 0,1:20:25.08,1:20:25.55,*Default,NTP,0,0,0,,妈妈\N{\fs36}Mom.
+Dialogue: 0,1:20:28.97,1:20:29.52,*Default,NTP,0,0,0,,妈妈\N{\fs36}Mom.
+Dialogue: 0,1:20:31.43,1:20:32.01,*Default,NTP,0,0,0,,宝贝\N{\fs36}Sweetie?
+Dialogue: 0,1:20:32.24,1:20:34.68,*Default,NTP,0,0,0,,有个词怎么说的来着\N{\fs36}What's this term for that thing like a...
+Dialogue: 0,1:20:34.76,1:20:35.96,*Default,NTP,0,0,0,,像专业术语那种\N{\fs36}Like a technical term?
+Dialogue: 0,1:20:36.76,1:20:39.43,*Default,NTP,0,0,0,,说的是我们达成协议 并且都能从中获利\N{\fs36}Where we make a deal and we both get something out of it?
+Dialogue: 0,1:20:40.12,1:20:41.14,*Default,NTP,0,0,0,,"妥协"\N{\fs36}"Compromise."
+Dialogue: 0,1:20:41.76,1:20:42.88,*Default,NTP,0,0,0,,不是\N{\fs36}No.
+Dialogue: 0,1:20:43.56,1:20:48.11,*Default,NTP,0,0,0,,有点竞争的意思 但是最终双方都能满意\N{\fs36}Like, it's a competition, but both sides end up happy.
+Dialogue: 0,1:20:50.24,1:20:51.20,*Default,NTP,0,0,0,,听着像"双赢"\N{\fs36}Like a win-win.
+Dialogue: 0,1:20:52.24,1:20:53.44,*Default,NTP,0,0,0,,还要更偏理科方面的\N{\fs36}More science-y than that.
+Dialogue: 0,1:20:54.49,1:20:55.95,*Default,NTP,0,0,0,,如果你想问理科方面的 打电话给你爸\N{\fs36}If you want science, call your father.
+Dialogue: 0,1:21:11.12,1:21:12.30,*Default,NTP,0,0,0,,谢谢你\N{\fs36}Thank you.
+Dialogue: 0,1:21:23.12,1:21:23.90,*Default,NTP,0,0,0,,抱歉\N{\fs36}Sorry.
+Dialogue: 0,1:21:24.88,1:21:27.28,*Default,NTP,0,0,0,,没事 我醒了\N{\fs36}It's okay. I'm up.
+Dialogue: 0,1:21:32.28,1:21:33.40,*Default,NTP,0,0,0,,这会儿什么时候了\N{\fs36}What time is it?
+Dialogue: 0,1:21:35.49,1:21:37.08,*Default,NTP,0,0,0,,该是你开瓶庆功的时候了\N{\fs36}It's time you open that bottle you've been hiding.
+Dialogue: 0,1:21:41.84,1:21:43.58,*Default,NTP,0,0,0,,你有突破了 对不对\N{\fs36}You cracked something, didn't you?
+Dialogue: 0,1:21:44.62,1:21:45.44,*Default,NTP,0,0,0,,对 你来\N{\fs36}Yeah, come here.
+Dialogue: 0,1:21:47.60,1:21:49.01,*Default,NTP,0,0,0,,看看这个部分\N{\fs36}Take a look at this section.
+Dialogue: 0,1:21:49.48,1:21:51.52,*Default,NTP,0,0,0,,好像与时间有关\N{\fs36}It seems to be talking about time.
+Dialogue: 0,1:21:51.60,1:21:54.72,*Default,NTP,0,0,0,,它们表示"时间"的标记无处不在\N{\fs36}Their symbol for "Time" is everywhere.
+Dialogue: 0,1:21:55.08,1:21:55.97,*Default,NTP,0,0,0,,那 这到底是什么\N{\fs36}So, what is this?
+Dialogue: 0,1:21:57.68,1:21:59.60,*Default,NTP,0,0,0,,超光速旅行的公式吗\N{\fs36}A formula for faster-than-light travel?
+Dialogue: 0,1:22:00.80,1:22:01.64,*Default,NTP,0,0,0,,谁知道呢\N{\fs36}Who can tell?
+Dialogue: 0,1:22:03.27,1:22:04.31,*Default,NTP,0,0,0,,空白太多了\N{\fs36}There are too many gaps.
+Dialogue: 0,1:22:04.64,1:22:05.84,*Default,NTP,0,0,0,,都不完整\N{\fs36}Nothing's complete.
+Dialogue: 0,1:22:06.16,1:22:07.40,*Default,NTP,0,0,0,,然后我恍然大悟\N{\fs36}Then it dawned on me.
+Dialogue: 0,1:22:07.68,1:22:08.57,*Default,NTP,0,0,0,,过来\N{\fs36}Come here.
+Dialogue: 0,1:22:10.84,1:22:11.57,*Default,NTP,0,0,0,,就这儿\N{\fs36}Right here.
+Dialogue: 0,1:22:13.32,1:22:15.91,*Default,NTP,0,0,0,,别拘泥于有形的部分 也该注意无形的部分 \N{\fs36}Stop focusing on the ones, look at the zeroes.
+Dialogue: 0,1:22:16.32,1:22:19.52,*Default,NTP,0,0,0,,这里面数据占几成 留白又占几成呢\N{\fs36}How much of this is data? How much of it is negative space?
+Dialogue: 0,1:22:20.96,1:22:22.25,*Default,NTP,0,0,0,,我就做了个测算\N{\fs36}So, I measured it.
+Dialogue: 0,1:22:24.52,1:22:26.20,*Default,NTP,0,0,0,,0.0833 循环\N{\fs36}0.0833 recurring.
+Dialogue: 0,1:22:32.84,1:22:34.55,*Default,NTP,0,0,0,,也许化成分数你更熟悉\N{\fs36}Perhaps you'd like that as a fraction.
+Dialogue: 0,1:22:38.36,1:22:39.43,*Default,NTP,0,0,0,,十二分之一\N{\fs36}One of 12.
+Dialogue: 0,1:22:43.32,1:22:46.29,*Default,NTP,0,0,0,,它们要表达的是 这是十二分之一\N{\fs36}What they're saying right here is that this is one of 12.
+Dialogue: 0,1:22:46.68,1:22:48.56,*Default,NTP,0,0,0,,我们是整体的其中一部分\N{\fs36}We are part of a larger whole.
+Dialogue: 0,1:22:48.64,1:22:50.40,*Default,NTP,0,0,0,,或者我们是12名夺奖者之一\N{\fs36}Or we're one of 12 contestants for the prize.
+Dialogue: 0,1:22:50.48,1:22:51.64,*Default,NTP,0,0,0,,为什么我非得跟他解释\N{\fs36}Why do I have to talk to him?
+Dialogue: 0,1:22:51.72,1:22:52.94,*Default,NTP,0,0,0,,在座都是一条心\N{\fs36}We're all working together here.
+Dialogue: 0,1:22:53.44,1:22:55.12,*Default,NTP,0,0,0,,我们得和其他降临点联络\N{\fs36}We need to talk to the other sites.
+Dialogue: 0,1:22:55.24,1:22:56.15,*Default,NTP,0,0,0,,我们得帮助他们理解\N{\fs36}We need to help them with
+Dialogue: 0,1:22:56.15,1:22:57.81,*Default,NTP,0,0,0,,他们从其他七肢桶那儿得到的信息\N{\fs36}what they've gotten from the other heptapods.
+Dialogue: 0,1:22:57.88,1:22:59.60,*Default,NTP,0,0,0,,你可能忘了 通讯全被切断了\N{\fs36}In case you don't remember, we're blacked out.
+Dialogue: 0,1:22:59.80,1:23:02.61,*Default,NTP,0,0,0,,刚中国还威胁说要摧毁那儿的飞船 我们只能自保\N{\fs36}China just threatened to destroy their shell. We're on our own.
+Dialogue: 0,1:23:02.68,1:23:04.48,*Default,NTP,0,0,0,,但根据提示 所有碎片该拼到一起\N{\fs36}Yeah, but this says that all of the pieces fit together.
+Dialogue: 0,1:23:04.56,1:23:06.58,*Default,NTP,0,0,0,,我这就可以告诉你没人会在乎\N{\fs36}And I'm telling you that no one else cares.
+Dialogue: 0,1:23:07.44,1:23:08.34,*Default,NTP,0,0,0,,两个小时前 \N{\fs36}Two hours ago,
+Dialogue: 0,1:23:08.34,1:23:10.48,*Default,NTP,0,0,0,,我们从一个俄罗斯加密频道截获了这段音频\N{\fs36}we pulled this audio off a secure channel in Russia.
+Dialogue: 0,1:23:10.56,1:23:13.21,*Default,NTP,0,0,0,,有个科研团队的人员当时正在对外广播\N{\fs36}Someone on the science team there was broadcasting wide.
+Dialogue: 0,1:23:15.76,1:23:19.59,*Default,NTP,0,0,0,,在俄方的最后一次会话中 外星人说 "没有时间了"\N{\fs36}In their final session, the alien said, "There is no time."
+Dialogue: 0,1:23:20.24,1:23:21.93,*Default,NTP,0,0,0,,"由众化一"\N{\fs36}"Many become one."
+Dialogue: 0,1:23:22.60,1:23:24.25,*Default,NTP,0,0,0,,恐怕我们被授予了武器\N{\fs36}I fear we have all been given weapons.
+Dialogue: 0,1:23:24.96,1:23:28.08,*Default,NTP,0,0,0,,如果有人能收到这段话 求你们\N{\fs36}If anyone is receiving this, please...
+Dialogue: 0,1:23:34.48,1:23:35.61,*Default,NTP,0,0,0,,好吧 我觉得\N{\fs36}Well, I mean,
+Dialogue: 0,1:23:37.15,1:23:39.61,*Default,NTP,0,0,0,,他这段话可以翻译成很多不同的意思\N{\fs36}there are a lot of ways you can interpret what he's saying.
+Dialogue: 0,1:23:39.68,1:23:41.68,*Default,NTP,0,0,0,,我不需要翻译也知道这是什么意思\N{\fs36}I don't need an interpreter to know what this means.
+Dialogue: 0,1:23:41.76,1:23:44.10,*Default,NTP,0,0,0,,俄罗斯刚刚处决了一名他们自己的专家\N{\fs36}Russia just executed one of their own experts
+Dialogue: 0,1:23:44.10,1:23:45.62,*Default,NTP,0,0,0,,来保守他们的秘密\N{\fs36}to keep their secrets.
+Dialogue: 0,1:23:45.70,1:23:48.00,*Default,NTP,0,0,0,,"由众化一"可能只是它们表达\N{\fs36}"Many become one" could just be their way of saying,
+Dialogue: 0,1:23:48.08,1:23:49.53,*Default,NTP,0,0,0,,"需要集合"的方式\N{\fs36}"Some assembly required."
+Dialogue: 0,1:23:49.60,1:23:51.60,*Default,NTP,0,0,0,,为什么把信息以碎片的方式传递给我们\N{\fs36}Why hand it out to us in pieces?
+Dialogue: 0,1:23:51.68,1:23:53.20,*Default,NTP,0,0,0,,为什么不直接全部交出来呢\N{\fs36}Why not just give it all over?
+Dialogue: 0,1:23:53.28,1:23:55.17,*Default,NTP,0,0,0,,还有更好的办法 能逼出人类团结合作的奇迹吗\N{\fs36}Well, what better way to force us to work together for once?
+Dialogue: 0,1:23:56.67,1:23:57.64,*Default,NTP,0,0,0,,就算我信了你这番话\N{\fs36}Even if I did believe you,
+Dialogue: 0,1:23:57.76,1:24:00.26,*Default,NTP,0,0,0,,你又怎么可能说服其他国家来配合我们\N{\fs36}how in the world you gonna get anybody else to play along
+Dialogue: 0,1:24:00.32,1:24:01.73,*Default,NTP,0,0,0,,或者交出他们的数据呢\N{\fs36}or give up their data?
+Dialogue: 0,1:24:02.88,1:24:04.31,*Default,NTP,0,0,0,,我们可以提供我们的成果作为报答\N{\fs36}We offer ours in return.
+Dialogue: 0,1:24:05.72,1:24:06.39,*Default,NTP,0,0,0,,是吗\N{\fs36}Yeah?
+Dialogue: 0,1:24:06.98,1:24:07.81,*Default,NTP,0,0,0,,什么 交易吗\N{\fs36}What, trade?
+Dialogue: 0,1:24:08.27,1:24:10.27,*Default,,0,0,0,,{\fs38\pos(640,80)}非零和博弈是一种合作下的博弈,博弈中各方的收益或损失的总和不是零值,\N使博弈双方存在"双赢"的可能
+Dialogue: 0,1:24:08.28,1:24:09.64,*Default,NTP,0,0,0,,这是场"非零和博弈"\N{\fs36}It's a non-zero sum game.
+Dialogue: 0,1:24:12.81,1:24:13.80,*Default,NTP,0,0,0,,"非零和博弈"\N{\fs36}"Non-zero sum game."
+Dialogue: 0,1:24:15.96,1:24:16.86,*Default,NTP,0,0,0,,就是它\N{\fs36}That's it.
+Dialogue: 0,1:24:17.32,1:24:18.86,*Default,NTP,0,0,0,,谢啦\N{\fs36}Yeah, thanks.
+Dialogue: 0,1:24:26.24,1:24:29.16,*Default,NTP,0,0,0,,九个降临点基地都彻底切断通讯信号了\N{\fs36}Nine of the landing sites have gone total comms blackout.
+Dialogue: 0,1:24:30.00,1:24:32.17,*Default,NTP,0,0,0,,联络他们的唯一途径是开车过去\N{\fs36}Only way to reach them is to physically drive there
+Dialogue: 0,1:24:32.25,1:24:33.96,*Default,NTP,0,0,0,,然后朝边防守卫大喊 我们已经着手在办了\N{\fs36}and yell at the border guards, which we're doing,
+Dialogue: 0,1:24:34.11,1:24:35.21,*Default,NTP,0,0,0,,但这样肯定来不及\N{\fs36}but it won't be fast enough.
+Dialogue: 0,1:24:35.28,1:24:37.80,*Default,NTP,0,0,0,,肯定还有别的方法 能把消息传给他们\N{\fs36}There's got to be a way to... To get the message to them.
+Dialogue: 0,1:24:37.88,1:24:39.07,*Default,NTP,0,0,0,,传给我们的盟友或许还有可能 \N{\fs36}To our allies maybe,
+Dialogue: 0,1:24:39.08,1:24:40.80,*Default,NTP,0,0,0,,不过事到如今 回天乏术 已经太迟了\N{\fs36}but at this stage, it's too little too late.
+Dialogue: 0,1:24:40.88,1:24:43.72,*Default,NTP,0,0,0,,我们得在某个国家挑起全球战争前\N{\fs36}What we need is to get all the other nations online
+Dialogue: 0,1:24:43.80,1:24:45.52,*Default,NTP,0,0,0,,组织其他国家恢复连线\N{\fs36}before one starts global war,
+Dialogue: 0,1:24:45.64,1:24:47.68,*Default,NTP,0,0,0,,但是我们没办法联系到他们\N{\fs36}and there's no way for us to reach them.
+Dialogue: 0,1:24:47.76,1:24:49.25,*Default,NTP,0,0,0,,等等 等一下\N{\fs36}Wait. Hold on a second.
+Dialogue: 0,1:24:49.32,1:24:50.56,*Default,NTP,0,0,0,,有办法啊\N{\fs36}There is.
+Dialogue: 0,1:24:51.44,1:24:52.65,*Default,NTP,0,0,0,,就在我们头顶上\N{\fs36}It's right above us.
+Dialogue: 0,1:24:53.88,1:24:55.60,*Default,NTP,0,0,0,,这办法目前很成问题\N{\fs36}That's problematic for us right now.
+Dialogue: 0,1:24:56.36,1:24:58.53,*Default,NTP,0,0,0,,五角大楼认定了我们这只"壳"会发动反击\N{\fs36}The Pentagon's convinced our shell will retaliate.
+Dialogue: 0,1:24:59.00,1:25:01.49,*Default,NTP,0,0,0,,我猜一小时内他们就会下令让我们撤离\N{\fs36}My guess is they'll order us to evacuate within the hour.
+Dialogue: 0,1:25:02.66,1:25:04.01,*Default,NTP,0,0,0,,听着 它们不是我们的敌人\N{\fs36}Look, they're not our enemy.
+Dialogue: 0,1:25:04.08,1:25:05.80,*Default,NTP,0,0,0,,它们从未对我们展现过侵略性\N{\fs36}They've made no act of aggression towards us.
+Dialogue: 0,1:25:05.88,1:25:07.84,*Default,NTP,0,0,0,,或许这就是它们侵略的方式\N{\fs36}Maybe this is their way of being aggressive.
+Dialogue: 0,1:25:07.92,1:25:09.16,*Default,NTP,0,0,0,,问题不在此\N{\fs36}That's not the question.
+Dialogue: 0,1:25:09.92,1:25:11.16,*Default,NTP,0,0,0,,那到底有什么问题\N{\fs36}Well, what is the question?
+Dialogue: 0,1:25:12.13,1:25:13.61,*Default,NTP,0,0,0,,我们怎么把你们弄回交流舱去\N{\fs36}How do we get you back in that room
+Dialogue: 0,1:25:13.61,1:25:15.60,*Default,NTP,0,0,0,,现在它离地半英里了啊\N{\fs36}when it's half a mile straight up?
+Dialogue: 0,1:25:15.68,1:25:17.25,*Default,NTP,0,0,0,,我觉得我们已经达成使命\N{\fs36}I think our work here is done.
+Dialogue: 0,1:25:18.16,1:25:20.38,*Default,NTP,0,0,0,,现在该由上头拿主意了\N{\fs36}It's in the hands of our superiors now.
+Dialogue: 0,1:25:41.04,1:25:42.57,*Default,NTP,0,0,0,,她这又是搞什么\N{\fs36}What the hell is she doing?
+Dialogue: 0,1:26:36.20,1:26:39.88,*Default,NTP,0,0,0,,不要 天哪 天哪 别\N{\fs36}No. God. Oh, God. No.
+Dialogue: 0,1:28:59.76,1:29:00.85,*Default,NTP,0,0,0,,是Costello吗\N{\fs36}Costello?
+Dialogue: 0,1:29:04.00,1:29:05.06,*Default,NTP,0,0,0,,Abbott在哪儿\N{\fs36}Where's Abbott?
+Dialogue: 0,1:29:35.12,1:29:36.22,*Default,NTP,0,0,0,,我很抱歉\N{\fs36}I'm sorry.
+Dialogue: 0,1:29:39.20,1:29:39.97,*Default,NTP,0,0,0,,我们很抱歉\N{\fs36}We're sorry.
+Dialogue: 0,1:29:44.88,1:29:45.94,*Default,NTP,0,0,0,,我需要你\N{\fs36}I need you to...
+Dialogue: 0,1:29:47.84,1:29:51.08,*Default,NTP,0,0,0,,我需要你给其他降临点发送一条信息\N{\fs36}I need you to send a message to the other sites.
+Dialogue: 0,1:30:10.64,1:30:11.88,*Default,NTP,0,0,0,,我不\N{\fs36}I don't...
+Dialogue: 0,1:30:12.48,1:30:14.00,*Default,NTP,0,0,0,,我不明白\N{\fs36}I don't understand.
+Dialogue: 0,1:30:14.64,1:30:17.76,*Default,NTP,0,0,0,,你们来这儿的目的是什么\N{\fs36}What is your purpose here?
+Dialogue: 0,1:30:44.84,1:30:46.42,*Default,NTP,0,0,0,,你们怎么会知道未来的事\N{\fs36}How can you know the future?
+Dialogue: 0,1:31:03.88,1:31:04.98,*Default,NTP,0,0,0,,我不\N{\fs36}I don't...
+Dialogue: 0,1:31:06.68,1:31:08.06,*Default,NTP,0,0,0,,我不明白\N{\fs36}I don't understand.
+Dialogue: 0,1:31:09.00,1:31:10.56,*Default,NTP,0,0,0,,这个孩子是谁\N{\fs36}Who is this child?
+Dialogue: 0,1:31:16.00,1:31:18.91,*Default,NTP,0,0,0,,节目的名字叫<妈妈爸爸与动物谈话>\N{\fs36}The show is called Mommy and Daddy Talk to Animals.
+Dialogue: 0,1:31:53.76,1:31:54.92,*Default,NTP,0,0,0,,等等\N{\fs36}Wait.
+Dialogue: 0,1:31:55.04,1:31:57.07,*Default,NTP,0,0,0,,不 等等\N{\fs36}No... Wait!
+Dialogue: 0,1:32:46.20,1:32:47.70,*Default,NTP,0,0,0,,- Banks博士  - Louise\N{\fs36}- Dr. Banks! - Louise!
+Dialogue: 0,1:32:47.88,1:32:48.83,*Default,NTP,0,0,0,,你还好吗\N{\fs36}Are you all right?
+Dialogue: 0,1:32:52.37,1:32:54.04,*Default,NTP,0,0,0,,- 嘿 你还好吗  - 嗯\N{\fs36}- Hey. You all right? - Yeah.
+Dialogue: 0,1:32:54.48,1:32:56.16,*Default,NTP,0,0,0,,- 来 怎么了 发生了什么  - 我很好\N{\fs36}- Here, come on. What happened? - I'm fine.
+Dialogue: 0,1:32:56.24,1:32:58.00,*Default,NTP,0,0,0,,我在想办法理清头绪 这事关重大\N{\fs36}I'm trying to figure it out. This is too big.
+Dialogue: 0,1:32:58.08,1:33:00.59,*Default,NTP,0,0,0,,现在都无所谓了 我们已经得令要撤离了\N{\fs36}Doesn't matter now. We have orders to evacuate.
+Dialogue: 0,1:33:00.96,1:33:03.64,*Default,NTP,0,0,0,,- 为什么  - 俄罗斯和苏丹决定站中国那边了\N{\fs36}- Why? - Russia and Sudan are following China.
+Dialogue: 0,1:33:06.16,1:33:08.32,*Default,NTP,0,0,0,,Ian 我不明白为什么\N{\fs36}Ian. I don't understand why the...
+Dialogue: 0,1:33:08.40,1:33:09.64,*Default,NTP,0,0,0,,帮帮我 妈妈\N{\fs36}Help me, Mama.
+Dialogue: 0,1:33:10.84,1:33:11.94,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise?
+Dialogue: 0,1:33:12.16,1:33:13.40,*Default,NTP,0,0,0,,我的天啊\N{\fs36}Oh, my God.
+Dialogue: 0,1:33:13.48,1:33:14.84,*Default,NTP,0,0,0,,妈\N{\fs36}Mom.
+Dialogue: 0,1:33:17.19,1:33:18.03,*Default,NTP,0,0,0,,妈妈\N{\fs36}Mama!
+Dialogue: 0,1:33:21.32,1:33:22.36,*Default,NTP,0,0,0,,抱歉 亲爱的\N{\fs36}Sorry, honey.
+Dialogue: 0,1:33:26.28,1:33:27.99,*Default,NTP,0,0,0,,今天是什么日子 你知道吗 宝贝\N{\fs36}What day is it? Do you know, baby?
+Dialogue: 0,1:33:28.68,1:33:29.50,*Default,NTP,0,0,0,,周日\N{\fs36}Sunday.
+Dialogue: 0,1:33:35.75,1:33:37.67,*Default,NTP,0,0,0,,你也会像爸爸一样离开我吗\N{\fs36}Are you gonna leave me like Daddy did?
+Dialogue: 0,1:33:39.88,1:33:41.92,*Default,NTP,0,0,0,,Hannah 亲爱的 你爸爸没有离开你\N{\fs36}Hannah, honey, your daddy didn't leave you.
+Dialogue: 0,1:33:42.56,1:33:44.30,*Default,NTP,0,0,0,,你这周末就能见到他了\N{\fs36}You're gonna see him this weekend.
+Dialogue: 0,1:33:45.92,1:33:47.97,*Default,NTP,0,0,0,,他看我的眼神都跟以前不一样了\N{\fs36}He doesn't look at me the same way anymore.
+Dialogue: 0,1:33:57.04,1:33:58.15,*Default,NTP,0,0,0,,那是因为我犯错了\N{\fs36}That's my fault.
+Dialogue: 0,1:34:01.00,1:34:03.70,*Default,NTP,0,0,0,,我告诉了他一些事情 他没做好心理准备\N{\fs36}I told him something that he wasn't ready to hear.
+Dialogue: 0,1:34:06.04,1:34:06.91,*Default,NTP,0,0,0,,什么事情\N{\fs36}What?
+Dialogue: 0,1:34:11.52,1:34:12.79,*Default,NTP,0,0,0,,好吧 不管你信不信\N{\fs36}Well, believe it or not,
+Dialogue: 0,1:34:13.88,1:34:15.96,*Default,NTP,0,0,0,,我知道一些注定会发生的事情\N{\fs36}I know something that's going to happen.
+Dialogue: 0,1:34:18.72,1:34:20.88,*Default,NTP,0,0,0,,我没办法解释我怎么知道的 我就是知道\N{\fs36}I can't explain how I know. I just do.
+Dialogue: 0,1:34:22.92,1:34:25.72,*Default,NTP,0,0,0,,当我告诉你爸爸的时候 他很生气\N{\fs36}And when I told your daddy, he got really mad.
+Dialogue: 0,1:34:27.92,1:34:29.56,*Default,NTP,0,0,0,,然后他说我不应该这么做\N{\fs36}And he said I made the wrong choice.
+Dialogue: 0,1:34:33.08,1:34:35.44,*Default,NTP,0,0,0,,那到底是什么事情要发生啊\N{\fs36}What? What's going to happen?
+Dialogue: 0,1:34:38.72,1:34:42.28,*Default,NTP,0,0,0,,和一种非常罕见的疾病有关\N{\fs36}It has to do with a really rare disease.
+Dialogue: 0,1:34:45.95,1:34:47.07,*Default,NTP,0,0,0,,它是不可阻挡的\N{\fs36}And it's unstoppable.
+Dialogue: 0,1:34:49.76,1:34:50.87,*Default,NTP,0,0,0,,就跟你一样\N{\fs36}Kind of like you are.
+Dialogue: 0,1:34:52.49,1:34:55.56,*Default,NTP,0,0,0,,你游泳的冲劲 你诗歌的灵气\N{\fs36}Your swimming, and your poetry,
+Dialogue: 0,1:34:55.64,1:34:58.38,*Default,NTP,0,0,0,,还有你给世界带来的那些形形色色的美好\N{\fs36}and all the other amazing things that you share with the world.
+Dialogue: 0,1:34:59.44,1:35:00.88,*Default,NTP,0,0,0,,我是不可阻挡的吗\N{\fs36}I am unstoppable?
+Dialogue: 0,1:35:02.16,1:35:02.88,*Default,NTP,0,0,0,,对啊\N{\fs36}Yeah.
+Dialogue: 0,1:35:20.28,1:35:21.36,*Default,NTP,0,0,0,,我接住你了\N{\fs36}I got you.
+Dialogue: 0,1:35:23.48,1:35:24.32,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise?
+Dialogue: 0,1:35:25.64,1:35:26.45,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise.
+Dialogue: 0,1:35:28.44,1:35:30.66,*Default,NTP,0,0,0,,我刚刚才明白过来为什么我丈夫离开了我\N{\fs36}I just realized why my husband left me.
+Dialogue: 0,1:35:31.16,1:35:32.49,*Default,NTP,0,0,0,,我丈夫离开了我\N{\fs36}My husband left me.
+Dialogue: 0,1:35:32.76,1:35:33.66,*Default,NTP,0,0,0,,你结过婚的吗\N{\fs36}You were married?
+Dialogue: 0,1:35:34.64,1:35:36.71,*Default,NTP,0,0,0,,快点 我们得赶紧离开这里\N{\fs36}Come on. Let's get out of here.
+Dialogue: 0,1:36:11.64,1:36:12.41,*Default,NTP,0,0,0,,妈妈\N{\fs36}Mama?
+Dialogue: 0,1:36:12.84,1:36:13.53,*Default,NTP,0,0,0,,怎么了\N{\fs36}Yeah?
+Dialogue: 0,1:36:14.52,1:36:15.91,*Default,NTP,0,0,0,,为什么我叫Hannah\N{\fs36}Why is my name Hannah?
+Dialogue: 0,1:36:17.40,1:36:18.81,*Default,NTP,0,0,0,,对 东西都在这里\N{\fs36}Yeah, got it right here.
+Dialogue: 0,1:36:18.88,1:36:20.72,*Default,NTP,0,0,0,,请把那些人召集回来\N{\fs36}Get those people back, please.
+Dialogue: 0,1:36:21.68,1:36:26.81,*Default,NTP,0,0,0,,嗯 你的名字非常特殊 因为它是回文\N{\fs36}Well, your name is very special because it is a palindrome.
+Dialogue: 0,1:36:26.88,1:36:30.16,*Default,NTP,0,0,0,,无论是顺着念还是倒着念 都是一样的\N{\fs36}It reads the same forward and backward.
+Dialogue: 0,1:36:30.56,1:36:33.08,*Default,NTP,0,0,0,,- 好了 伙计们 过来给我帮把手  - 明白 长官\N{\fs36}- All right, guys, give me a hand here. - Yes, sir.
+Dialogue: 0,1:36:33.84,1:36:35.76,*Default,NTP,0,0,0,,这个搬到后面去\N{\fs36}That goes in the back.
+Dialogue: 0,1:36:49.80,1:36:52.37,*Default,NTP,0,0,0,,民间承包商务必携带本人授权胸章\N{\fs36}Civilian contractors must have their authorization badges
+Dialogue: 0,1:36:52.44,1:36:53.93,*Default,NTP,0,0,0,,和通行证以通过检查\N{\fs36}and passkeys when checking...
+Dialogue: 0,1:37:01.12,1:37:02.88,*Default,NTP,0,0,0,,撤离进行中\N{\fs36}Evacuation underway...
+Dialogue: 0,1:37:07.04,1:37:07.84,*Default,NTP,0,0,0,,嘿\N{\fs36}Hey.
+Dialogue: 0,1:37:08.84,1:37:10.13,*Default,NTP,0,0,0,,我们该离开这儿了\N{\fs36}Look, we're done here.
+Dialogue: 0,1:37:11.04,1:37:12.20,*Default,NTP,0,0,0,,我们要把这个一起带走的\N{\fs36}We're taking this with us.
+Dialogue: 0,1:37:37.32,1:37:38.24,*Default,NTP,0,0,0,,我能读懂了\N{\fs36}I can read it.
+Dialogue: 0,1:37:42.96,1:37:44.63,*Default,NTP,0,0,0,,- 我知道这是什么了 - 什么\N{\fs36}- I know what it is. - What?
+Dialogue: 0,1:37:44.84,1:37:46.92,*Default,NTP,0,0,0,,这不是一件武器 这是一件礼物\N{\fs36}It's not a weapon, it's a gift.
+Dialogue: 0,1:37:47.72,1:37:49.48,*Default,NTP,0,0,0,,它们的语言就是它们的武器\N{\fs36}The weapon is their language.
+Dialogue: 0,1:37:49.56,1:37:51.60,*Default,NTP,0,0,0,,它们对我们倾囊相授 你明白这意味着什么吗\N{\fs36}They gave it all to us. Do you understand what that means?
+Dialogue: 0,1:37:52.04,1:37:54.34,*Default,NTP,0,0,0,,就是说我们能学习七肢桶的语言 前提是能逃过这劫\N{\fs36}So we can learn Heptapod, if we survive.
+Dialogue: 0,1:37:54.80,1:37:57.43,*Default,NTP,0,0,0,,如果你学了 等你学到一定程度\N{\fs36}If you learn it, when you really learn it,
+Dialogue: 0,1:37:57.76,1:37:59.89,*Default,NTP,0,0,0,,你就会开始以它们的方式感知时间\N{\fs36}you begin to perceive time the way that they do.
+Dialogue: 0,1:38:00.24,1:38:02.52,*Default,NTP,0,0,0,,然后你就能看见未来将会发生什么\N{\fs36}So you can see what's to come.
+Dialogue: 0,1:38:02.96,1:38:05.12,*Default,NTP,0,0,0,,但它们所感知的时间 与我们的不同\N{\fs36}But time, it isn't the same for them.
+Dialogue: 0,1:38:05.48,1:38:07.40,*Default,NTP,0,0,0,,- 是非线性的  - 听着\N{\fs36}- It's non-linear. - Look.
+Dialogue: 0,1:38:07.80,1:38:09.98,*Default,NTP,0,0,0,,我们已经尽力了 可还是没能挽救\N{\fs36}We did our best, but it wasn't enough.
+Dialogue: 0,1:38:11.53,1:38:12.74,*Default,NTP,0,0,0,,你们跟这位上尉同行\N{\fs36}The captain will load you up.
+Dialogue: 0,1:38:13.08,1:38:14.52,*Default,NTP,0,0,0,,五分钟之后你们就出发\N{\fs36}You're lifting off in five minutes.
+Dialogue: 0,1:38:15.04,1:38:18.24,*Default,NTP,0,0,0,,Ian 还有Louise 能和你们共事是我的荣幸\N{\fs36}Ian, Louise, it was an honor to work with ya.
+Dialogue: 0,1:38:19.72,1:38:20.66,*Default,NTP,0,0,0,,祝你们好运\N{\fs36}Good luck.
+Dialogue: 0,1:38:24.48,1:38:25.37,*Default,NTP,0,0,0,,嘿 上校\N{\fs36}Hey, Colonel!
+Dialogue: 0,1:38:32.96,1:38:34.22,*Default,NTP,0,0,0,,我去问问要把我们带哪儿去\N{\fs36}I'm gonna find out where we're going.
+Dialogue: 0,1:38:42.64,1:38:44.52,*Default,NTP,0,0,0,,醒醒 妈妈\N{\fs36}Wake up, Mommy.
+Dialogue: 0,1:39:20.48,1:39:21.64,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks.
+Dialogue: 0,1:39:23.24,1:39:24.22,*Default,NTP,0,0,0,,幸会\N{\fs36}A pleasure.
+Dialogue: 0,1:39:25.20,1:39:26.32,*Default,NTP,0,0,0,,Shang将军\N{\fs36}General Shang.
+Dialogue: 0,1:39:26.40,1:39:27.97,*Default,NTP,0,0,0,,是我的荣幸才对\N{\fs36}The pleasure is mine, really.
+Dialogue: 0,1:39:28.92,1:39:30.48,*Default,NTP,0,0,0,,你们总统说\N{\fs36}Your President said
+Dialogue: 0,1:39:31.04,1:39:34.32,*Default,NTP,0,0,0,,他很荣幸能请到我来参加庆典\N{\fs36}he was honored to host me at the celebration...
+Dialogue: 0,1:39:34.40,1:39:35.99,*Default,NTP,0,0,0,,- 当然  - 但我得承认\N{\fs36}- Yes. - ...but I confess,
+Dialogue: 0,1:39:37.24,1:39:39.89,*Default,NTP,0,0,0,,我来这里只有一个原因\N{\fs36}the only reason why I'm here is to
+Dialogue: 0,1:39:41.40,1:39:42.87,*Default,NTP,0,0,0,,就是亲自见你一面\N{\fs36}meet you in person.
+Dialogue: 0,1:39:44.36,1:39:46.68,*Default,NTP,0,0,0,,见我吗 真是受宠若惊 谢谢\N{\fs36}Me? Well, I'm flattered. Thank you.
+Dialogue: 0,1:39:48.08,1:39:49.67,*Default,NTP,0,0,0,,18个月前\N{\fs36}Now, 18 months ago,
+Dialogue: 0,1:39:50.20,1:39:51.88,*Default,NTP,0,0,0,,你做了一件非同凡响的事\N{\fs36}you did something remarkable.
+Dialogue: 0,1:39:52.92,1:39:56.34,*Default,NTP,0,0,0,,连我的上级都未曾做到的事\N{\fs36}Something not even my superior has done.
+Dialogue: 0,1:39:58.24,1:39:59.47,*Default,NTP,0,0,0,,您指的是\N{\fs36}And what's that?
+Dialogue: 0,1:39:59.92,1:40:01.51,*Default,NTP,0,0,0,,你让我改变了心意\N{\fs36}You changed my mind.
+Dialogue: 0,1:40:04.04,1:40:07.48,*Default,NTP,0,0,0,,这场联合是因你而存在\N{\fs36}You're the reason for this unification.
+Dialogue: 0,1:40:08.60,1:40:11.94,*Default,NTP,0,0,0,,一切都因你打通了我的私人号码而起\N{\fs36}All because you reached out to me on my private number.
+Dialogue: 0,1:40:14.48,1:40:15.48,*Default,NTP,0,0,0,,您的私人号码\N{\fs36}Your private number.
+Dialogue: 0,1:40:15.56,1:40:17.74,*Default,NTP,0,0,0,,将军 我不知道您的私人号码啊\N{\fs36}General, I don't know your private number.
+Dialogue: 0,1:40:25.44,1:40:26.37,*Default,NTP,0,0,0,,这样你就知道了\N{\fs36}Now you know.
+Dialogue: 0,1:40:29.32,1:40:31.76,*Default,NTP,0,0,0,,我也不明白这其中的奥妙\N{\fs36}I do not claim to know how your mind works, but
+Dialogue: 0,1:40:33.44,1:40:36.67,*Default,NTP,0,0,0,,但我相信让你看到我的号码至关重要\N{\fs36}I believe it was important for you to see that.
+Dialogue: 0,1:40:38.48,1:40:39.80,*Default,NTP,0,0,0,,我是给您打电话了 对吗\N{\fs36}I called you, didn't I?
+Dialogue: 0,1:40:41.44,1:40:42.51,*Default,NTP,0,0,0,,没错 你打了\N{\fs36}Yes, you did.
+Dialogue: 0,1:40:54.84,1:40:55.96,*Default,NTP,0,0,0,,Louise\N{\fs36}Louise.
+Dialogue: 0,1:41:12.52,1:41:15.00,*Default,NTP,0,0,0,,- 好了 咱们把系统全线关闭  - 长官\N{\fs36}- All right, let's shut down the system. - Sir.
+Dialogue: 0,1:41:16.36,1:41:18.51,*Default,NTP,0,0,0,,这里有台正在打去中国的卫星电话\N{\fs36}There's a sat-line here dialing China.
+Dialogue: 0,1:41:21.12,1:41:22.48,*Default,NTP,0,0,0,,这里吗 你说的"这里"是哪里\N{\fs36}Here? What do you mean "Here"?
+Dialogue: 0,1:41:25.00,1:41:26.10,*Default,NTP,0,0,0,,快点 快点\N{\fs36}Come on, come on.
+Dialogue: 0,1:41:27.76,1:41:28.68,*Default,NTP,0,0,0,,是谁的电话\N{\fs36}Whose phone is it?
+Dialogue: 0,1:41:33.44,1:41:34.60,*Default,NTP,0,0,0,,是你的电话 长官\N{\fs36}It's your phone, sir.
+Dialogue: 0,1:41:42.28,1:41:43.56,*Default,NTP,0,0,0,,立刻搜查营地\N{\fs36}Search base camp now.
+Dialogue: 0,1:41:44.28,1:41:45.84,*Default,NTP,0,0,0,,找出到底是谁在用那台电话\N{\fs36}Find out who's using that phone.
+Dialogue: 0,1:41:46.44,1:41:48.33,*Default,NTP,0,0,0,,- 盯紧那些坐标  - 明白 长官\N{\fs36}- Hold on to those coordinates. - Yes, sir.
+Dialogue: 0,1:41:48.92,1:41:51.04,*Default,NTP,0,0,0,,快点 我怎么说\N{\fs36}Come on. What'd I say?
+Dialogue: 0,1:41:52.36,1:41:55.48,*Default,NTP,0,0,0,,我怎么说啊 快想\N{\fs36}What'd I say? Come on.
+Dialogue: 0,1:42:04.72,1:42:06.05,*Default,NTP,0,0,0,,快啊\N{\fs36}Come on.
+Dialogue: 0,1:42:07.24,1:42:09.68,*Default,NTP,0,0,0,,你说的那番话 我永生不会忘记\N{\fs36}I will never forget what you said.
+Dialogue: 0,1:42:13.50,1:42:15.15,*Default,NTP,0,0,0,,喂 你是谁
+Dialogue: 0,1:42:20.60,1:42:23.57,*Default,NTP,0,0,0,,你对我说的是我妻子的临终遗言\N{\fs36}You told me my wife's dying words.
+Dialogue: 0,1:42:24.74,1:42:26.07,*Default,NTP,0,0,0,,将军
+Dialogue: 0,1:42:29.64,1:42:30.64,*Default,NTP,0,0,0,,我在美国营地
+Dialogue: 0,1:42:31.64,1:42:33.91,*Default,NTP,0,0,0,,将军 您夫人给我托梦了
+Dialogue: 0,1:42:34.54,1:42:35.64,*Default,NTP,0,0,0,,妻子的遗言
+Dialogue: 0,1:42:36.04,1:42:39.88,*Default,NTP,0,0,0,,- 你应凭借勇气来  - 她说 你应凭借
+Dialogue: 0,1:42:41.36,1:42:42.80,*Default,NTP,0,0,0,,目标电话找到了\N{\fs36}Found the source of the phone call.
+Dialogue: 0,1:42:42.92,1:42:44.88,*Default,NTP,0,0,0,,在净化室里 请指示\N{\fs36}It's in the clean room. Waiting for instructions.
+Dialogue: 0,1:42:44.88,1:42:47.39,*Default,NTP,0,0,0,,凭借勇气来帮助拯救世界
+Dialogue: 0,1:42:47.64,1:42:48.85,*Default,NTP,0,0,0,,你在做什么\N{\fs36}What are you doing?
+Dialogue: 0,1:42:50.20,1:42:52.04,*Default,NTP,0,0,0,,- 你在做什么啊  - 改变某人的心意\N{\fs36}- What are you doing? - Changing someone's mind.
+Dialogue: 0,1:42:52.12,1:42:52.91,*Default,NTP,0,0,0,,你能帮我争取20秒吗\N{\fs36}Can you buy me 20 seconds?
+Dialogue: 0,1:42:52.91,1:42:54.04,*Default,NTP,0,0,0,,我们现在根本就没时间好吗\N{\fs36}We don't have time for this right now.
+Dialogue: 0,1:42:54.12,1:42:56.16,*Default,NTP,0,0,0,,不 你信我 20秒就好 你相信我吗\N{\fs36}No, trust me, buy me 20 seconds. Do you trust me?
+Dialogue: 0,1:42:56.24,1:42:57.68,*Default,NTP,0,0,0,,- 好吧 行吧  - 你相信我对吧\N{\fs36}- Okay! Yeah. - You trust me?
+Dialogue: 0,1:43:01.00,1:43:02.08,*Default,NTP,0,0,0,,Banks博士\N{\fs36}Dr. Banks!
+Dialogue: 0,1:43:02.92,1:43:04.57,*Default,NTP,0,0,0,,立刻放下电话 否则我们就开枪了\N{\fs36}Drop the phone now or we shoot!
+Dialogue: 0,1:43:04.57,1:43:06.57,*Default,NTP,0,0,0,,战争不成就英雄
+Dialogue: 0,1:43:07.84,1:43:10.28,*Default,NTP,0,0,0,,- 放下  - 听到了 我很抱歉\N{\fs36}- Drop it! - Yeah. I'm sorry!
+Dialogue: 0,1:43:10.28,1:43:12.83,*Default,NTP,0,0,0,,只会留下孤儿寡母
+Dialogue: 0,1:43:13.08,1:43:14.64,*Default,NTP,0,0,0,,你们犯下的可是叛国罪\N{\fs36}You're committing an act of treason!
+Dialogue: 0,1:43:20.36,1:43:21.77,*Default,NTP,0,0,0,,- 是啊  - 放下\N{\fs36}- Yes. - Drop it!
+Dialogue: 0,1:43:21.96,1:43:23.45,*Default,NTP,0,0,0,,好了 我打完了\N{\fs36}It's done. I'm done.
+Dialogue: 0,1:43:30.18,1:43:34.52,*Default,NTP,0,0,0,,谢谢 谢谢
+Dialogue: 0,1:43:38.92,1:43:40.52,*Default,NTP,0,0,0,,直至今夜 十二个降临点的\N{\fs36}Communications blackout from
+Dialogue: 0,1:43:40.52,1:43:43.05,*Default,NTP,0,0,0,,通讯仍处于全面封锁中\N{\fs36}all 12 landing sites continues this evening.
+Dialogue: 0,1:43:44.12,1:43:45.84,*Default,NTP,0,0,0,,稍等 刚收到最新消息\N{\fs36}Hold on, we are just hearing...
+Dialogue: 0,1:43:45.92,1:43:46.92,*Default,NTP,0,0,0,,我台刚刚收到消息\N{\fs36}And I'm being told
+Dialogue: 0,1:43:47.00,1:43:49.68,*Default,NTP,0,0,0,,我们将暂停当前节目并插播一则突发新闻\N{\fs36}we're going to cut this report to tell you breaking news.
+Dialogue: 0,1:43:49.76,1:43:52.44,*Default,NTP,0,0,0,,重大新闻 中国召开了一场紧急发布会\N{\fs36}Breaking now, China has called an emergency press conference.
+Dialogue: 0,1:43:52.52,1:43:53.21,*Default,NTP,0,0,0,,Shang将军\N{\fs36}General Shang,
+Dialogue: 0,1:43:53.21,1:43:55.72,*Default,NTP,0,0,0,,即中国人民解放军最高指挥官\N{\fs36}Commander-in-chief of the People's Liberation Army,
+Dialogue: 0,1:43:55.80,1:43:58.04,*Default,NTP,0,0,0,,在紧急发布会中正式宣布\N{\fs36}has announced in an emergency press conference
+Dialogue: 0,1:43:58.12,1:43:59.80,*Default,NTP,0,0,0,,中国军队正在撤离\N{\fs36}that China is standing down.
+Dialogue: 0,1:43:59.92,1:44:02.89,*Default,NTP,0,0,0,,中方强调 他们获取的全部情报\N{\fs36}China is stating that all intelligence they have received
+Dialogue: 0,1:44:02.96,1:44:05.44,*Default,NTP,0,0,0,,将会即刻向其余降临点公布\N{\fs36}will be shared immediately with all the other landing sites.
+Dialogue: 0,1:44:05.52,1:44:06.41,*Default,NTP,0,0,0,,来自全球各地的科研人员\N{\fs36}Scientists from around the world
+Dialogue: 0,1:44:06.41,1:44:08.00,*Default,NTP,0,0,0,,正在筛理着他们从各地所得到的信息\N{\fs36}are sifting through information received
+Dialogue: 0,1:44:08.08,1:44:09.41,*Default,NTP,0,0,0,,- 包括英国 日本  - 重大新闻\N{\fs36}- from the UK, Japan... - Breaking news,
+Dialogue: 0,1:44:09.48,1:44:11.76,*Default,NTP,0,0,0,,俄罗斯军方现已披露\N{\fs36}the Russian armed forces are now revealing the information
+Dialogue: 0,1:44:11.84,1:44:14.08,*Default,NTP,0,0,0,,俄方两个降临点所获取的信息\N{\fs36}they've acquired from both of their landing sites
+Dialogue: 0,1:44:14.16,1:44:16.24,*Default,NTP,0,0,0,,并宣布黑海区域为非军事区域\N{\fs36}and have declared the Black Sea a demilitarized zone.
+Dialogue: 0,1:44:16.32,1:44:17.24,*Default,NTP,0,0,0,,被分成12片的谜题\N{\fs36}...one of the 12 pieces of this puzzle
+Dialogue: 0,1:44:17.24,1:44:18.84,*Default,NTP,0,0,0,,将渐渐拼凑完整\N{\fs36}that's being slowly put together.
+Dialogue: 0,1:46:08.36,1:46:11.04,*Default,NTP,0,0,0,,所以 Hannah\N{\fs36}So, Hannah.
+Dialogue: 0,1:46:12.24,1:46:14.92,*Default,NTP,0,0,0,,你一生的故事就从此刻开始\N{\fs36}This is where your story begins.
+Dialogue: 0,1:46:17.08,1:46:18.35,*Default,NTP,0,0,0,,从它们离去的那一天\N{\fs36}The day they departed.
+Dialogue: 0,1:46:23.04,1:46:24.02,*Default,NTP,0,0,0,,你还好吗\N{\fs36}You all right?
+Dialogue: 0,1:46:27.76,1:46:31.82,*Default,NTP,0,0,0,,尽管我已知晓历历旅程与归宿所在\N{\fs36}Despite knowing the journey and where it leads,
+Dialogue: 0,1:46:35.32,1:46:36.66,*Default,NTP,0,0,0,,我坦然接受\N{\fs36}I embrace it,
+Dialogue: 0,1:46:39.44,1:46:42.25,*Default,NTP,0,0,0,,并期盼当中的每一分每一秒\N{\fs36}and I welcome every moment of it.
+Dialogue: 0,1:46:57.48,1:47:02.00,*Default,NTP,0,0,0,,- H a n n a h  - H a n n a h\N{\fs36}- H-a-n-n-a-h. - H-a-n-n-a-h.
+Dialogue: 0,1:47:15.80,1:47:21.12,*Default,NTP,0,0,0,,- 再倒着念一遍 H a n n a h  - a n n a h\N{\fs36}- Now backward. H-a-n-n-a-h. - a n n a h.
+Dialogue: 0,1:47:21.20,1:47:22.24,*Default,NTP,0,0,0,,Hannah\N{\fs36}Hannah.
+Dialogue: 0,1:47:22.76,1:47:23.70,*Default,NTP,0,0,0,,你准备好了吗 宝贝\N{\fs36}You ready, baby?
+Dialogue: 0,1:47:25.56,1:47:26.25,*Default,NTP,0,0,0,,好了\N{\fs36}Okay.
+Dialogue: 0,1:47:27.52,1:47:28.17,*Default,NTP,0,0,0,,你好啊\N{\fs36}Hi.
+Dialogue: 0,1:47:29.88,1:47:33.28,*Default,NTP,0,0,0,,- 你能行吗  - 没问题 一会儿见\N{\fs36}- You good? - All right. See ya.
+Dialogue: 0,1:47:35.04,1:47:36.01,*Default,NTP,0,0,0,,爸爸\N{\fs36}Daddy!
+Dialogue: 0,1:47:45.68,1:47:46.80,*Default,NTP,0,0,0,,你还好吗\N{\fs36}You okay?
+Dialogue: 0,1:47:46.88,1:47:48.29,*Default,NTP,0,0,0,,爸爸要从你身上滚过去咯\N{\fs36}Daddy's gonna roll over you.
+Dialogue: 0,1:47:51.20,1:47:52.57,*Default,NTP,0,0,0,,好了 你准备好了吧\N{\fs36}All right, you ready?
+Dialogue: 0,1:47:57.32,1:47:58.65,*Default,NTP,0,0,0,,哎哟 这是讲星星的哦\N{\fs36}Guess what? Star stuff.
+Dialogue: 0,1:48:01.56,1:48:03.45,*Default,NTP,0,0,0,,- 还好  - 那就好\N{\fs36}- Yeah. - Yeah.
+Dialogue: 0,1:48:04.40,1:48:07.33,*Default,NTP,0,0,0,,如果你能看见你这一生 从开始到结束的每个细节\N{\fs36}If you could see your whole life from the start to finish,
+Dialogue: 0,1:48:09.92,1:48:11.25,*Default,NTP,0,0,0,,你会做任何改变吗\N{\fs36}would you change things?
+Dialogue: 0,1:48:18.08,1:48:21.84,*Default,NTP,0,0,0,,也许我会多表达我的感受吧\N{\fs36}Maybe I'd say what I feel more often.
+Dialogue: 0,1:48:21.92,1:48:22.93,*Default,NTP,0,0,0,,我也不知道\N{\fs36}I... I don't know.
+Dialogue: 0,1:48:39.08,1:48:41.32,*Default,NTP,0,0,0,,你知道吗 打我记事起\N{\fs36}You know, I've had my head tilted up to the stars
+Dialogue: 0,1:48:41.32,1:48:43.03,*Default,NTP,0,0,0,,我就对天上的星星无比着迷\N{\fs36}for as long as I can remember.
+Dialogue: 0,1:48:46.04,1:48:47.62,*Default,NTP,0,0,0,,你知道让我最惊喜的是什么吗\N{\fs36}You know what surprised me the most?
+Dialogue: 0,1:48:50.40,1:48:51.67,*Default,NTP,0,0,0,,不是遇见了它们\N{\fs36}It wasn't meeting them.
+Dialogue: 0,1:48:57.20,1:48:58.30,*Default,NTP,0,0,0,,而是遇见了你\N{\fs36}It was meeting you.
+Dialogue: 0,1:49:39.48,1:49:41.97,*Default,NTP,0,0,0,,我都忘了被你抱住的感觉有多美妙\N{\fs36}I forgot how good it felt to be held by you.
+Dialogue: 0,1:49:52.28,1:49:53.60,*Default,NTP,0,0,0,,你想要个孩子吗\N{\fs36}You wanna make a baby?
+Dialogue: 0,1:50:28.68,1:50:29.56,*Default,NTP,0,0,0,,当然\N{\fs36}Yes.
+Dialogue: 0,1:50:30.28,1:50:31.28,*Default,NTP,0,0,0,,好啊\N{\fs36}Yeah.
