@@ -68,7 +68,11 @@ def parse_idiom_block(entry) -> Dict:
     pos: Dict = {
         "type": "",
         "wordPrototype": "",
+        "pronunciationUK": {"phonetic": "", "pronUrl": ""},
+        "pronunciationUS": {"phonetic": "", "pronUrl": ""},
         "definitions": [],   # 每项: {"enMeaning": "...", "chMeaning": "..."}
+        "phrases": [],
+        "phraseDefinitions": []
     }
 
     # 词头（原型）—— snippet 中 headword 在 h2.headword ... <b>on track</b>
@@ -120,9 +124,9 @@ def parse_idiom_block(entry) -> Dict:
 
 
 
-def parse_entry_body(entry) -> Dict:
-    """解析单个 .entry-body__el，返回 PartOfSpeech 的字典表示"""
-    pos: Dict = {
+def _new_part_of_speech() -> Dict:
+    """创建一个空的 part-of-speech 结构。"""
+    return {
         "type": "",
         "wordPrototype": "",
         "pronunciationUK": {"phonetic": "", "pronUrl": ""},
@@ -132,14 +136,47 @@ def parse_entry_body(entry) -> Dict:
         "phraseDefinitions": []
     }
 
+
+def _is_non_empty_pos(pos: Dict) -> bool:
+    """判断词性结构是否包含有效内容。"""
+    return bool(pos.get("wordPrototype") or pos.get("definitions") or pos.get("phrases"))
+
+
+def _nearest_pos_body(node):
+    """
+    返回节点最近的 .pos-body 祖先（如果存在）。
+    用于避免外层 pos-body 误抓到内层 pos-body 的 definition。
+    """
+    if not node:
+        return None
+    return node.find_parent(
+        lambda tag: tag.name == "div" and "pos-body" in (tag.get("class") or [])
+    )
+
+
+def _parse_pos_block(meta_scope, content_scope, fallback_headword: str = "") -> Dict:
+    """
+    解析一个词性区块。
+    - meta_scope: 词头/词性/发音优先来源（通常是 .pos-header）
+    - content_scope: 释义/短语来源（通常是 .pos-body）
+    """
+    pos: Dict = _new_part_of_speech()
+    meta_scope = meta_scope or content_scope
+
     # word prototype & type
-    headword = entry.select_one(".headword.dhw")
-    pos["wordPrototype"] = _text_or_empty(headword)
-    posgram = entry.select_one(".posgram.dpos-g.hdib.lmr-5")
+    headword = meta_scope.select_one(".headword.dhw, .headword") if meta_scope else None
+    if not headword and content_scope is not meta_scope:
+        headword = content_scope.select_one(".headword.dhw, .headword")
+    pos["wordPrototype"] = _text_or_empty(headword) or fallback_headword
+    posgram = meta_scope.select_one(".posgram.dpos-g.hdib.lmr-5, .posgram.dpos-g, .posgram") if meta_scope else None
+    if not posgram and content_scope is not meta_scope:
+        posgram = content_scope.select_one(".posgram.dpos-g.hdib.lmr-5, .posgram.dpos-g, .posgram")
     pos["type"] = _text_or_empty(posgram)
 
     # UK pronunciation
-    uk = entry.select_one(".uk.dpron-i")
+    uk = meta_scope.select_one(".uk.dpron-i") if meta_scope else None
+    if not uk and content_scope is not meta_scope:
+        uk = content_scope.select_one(".uk.dpron-i")
     if uk:
         phon = uk.select_one(".pron.dpron")
         pos["pronunciationUK"]["phonetic"] = _text_or_empty(phon)
@@ -150,7 +187,9 @@ def parse_entry_body(entry) -> Dict:
         pos["pronunciationUK"]["pronUrl"] = _abs_audio_url(src)
 
     # US pronunciation
-    us = entry.select_one(".us.dpron-i")
+    us = meta_scope.select_one(".us.dpron-i") if meta_scope else None
+    if not us and content_scope is not meta_scope:
+        us = content_scope.select_one(".us.dpron-i")
     if us:
         phon = us.select_one(".pron.dpron")
         pos["pronunciationUS"]["phonetic"] = _text_or_empty(phon)
@@ -161,7 +200,11 @@ def parse_entry_body(entry) -> Dict:
         pos["pronunciationUS"]["pronUrl"] = _abs_audio_url(src)
 
     # definitions (exclude those inside phrase-block)
-    for ddef in entry.select("div.def-block.ddef_block"):
+    for ddef in content_scope.select("div.def-block.ddef_block"):
+        # 仅处理“最近 pos-body 就是当前 content_scope”的 definition，
+        # 避免把嵌套词性块（如 Verb）混进当前词性（如 Noun）。
+        if _nearest_pos_body(ddef) is not content_scope:
+            continue
         # 判断是否在短语块中
         if ddef.find_parent(class_="phrase-block"):
             continue
@@ -184,7 +227,10 @@ def parse_entry_body(entry) -> Dict:
         pos["definitions"].append({"enMeaning": en_def, "chMeaning": ch_text})
 
     # phrases and phrase definitions
-    for phrase_block in entry.select(".phrase-block.dphrase-block"):
+    for phrase_block in content_scope.select(".phrase-block.dphrase-block, .phrase-block"):
+        # 同样限制在当前 pos-body 归属范围内，避免跨词性污染。
+        if _nearest_pos_body(phrase_block) is not content_scope:
+            continue
         # phrase title
         phrase_title = _text_or_empty(phrase_block.select_one(".phrase-head.dphrase_h .phrase-title"))
         if phrase_title:
@@ -207,6 +253,34 @@ def parse_entry_body(entry) -> Dict:
             pos["phraseDefinitions"].append({"enMeaning": en_phrase_def, "chMeaning": ch_text})
 
     return pos
+
+
+def parse_entry_body(entry) -> List[Dict]:
+    """
+    解析单个 .entry-body__el，返回 PartOfSpeech 列表。
+    重点：按每个 pos-body 分段，避免把不同词性的 definition 混在一起。
+    """
+    pos_list: List[Dict] = []
+    fallback_headword = _text_or_empty(entry.select_one(".headword.dhw, .headword"))
+
+    # Cambridge 的一个 entry 可能包含多个 pos-body（如同词包含 noun + verb）。
+    pos_bodies = entry.select(".pos-body")
+    if pos_bodies:
+        for body in pos_bodies:
+            header = body.find_previous_sibling(
+                lambda tag: tag.name == "div" and "pos-header" in (tag.get("class") or [])
+            )
+            pos_dict = _parse_pos_block(header if header else entry, body, fallback_headword)
+            if _is_non_empty_pos(pos_dict):
+                pos_list.append(pos_dict)
+        if pos_list:
+            return pos_list
+
+    # 兼容旧结构：没有显式 pos-body 时，回退到整块解析。
+    fallback_pos = _parse_pos_block(entry, entry, fallback_headword)
+    if _is_non_empty_pos(fallback_pos):
+        pos_list.append(fallback_pos)
+    return pos_list
 
 def _merge_pronunciations_from_english(ch_res: Dict, en_res: Dict) -> Dict:
     """
@@ -276,16 +350,17 @@ def get_word_info_from_url(url: str, sleep: float = 0.0) -> Dict:
     entry_elems = soup.select(".entry-body__el")
     if len(entry_elems):
         for entry_el in entry_elems:
-            pos_dict = parse_entry_body(entry_el)
-            # 仅当至少有 headword 或 definitions 时认为有效
-            if pos_dict["wordPrototype"] or pos_dict["definitions"] or pos_dict["phrases"]:
-                # push a shallow copy to avoid引用
-                result["partOfSpeech"].append(dict(pos_dict))
-    di_elems = soup.select(".di-body")
-    if len(di_elems):
-        for entry_idiom in di_elems:
+            pos_list = parse_entry_body(entry_el)
+            for pos_dict in pos_list:
+                if _is_non_empty_pos(pos_dict):
+                    # push a shallow copy to avoid引用
+                    result["partOfSpeech"].append(dict(pos_dict))
+    # 仅解析真正的 idiom block，避免把整个 .di-body（二次包含所有词性）重复抓取。
+    idiom_elems = soup.select(".idiom-block.didiom-block, .didiom-block, .idiom-block")
+    if len(idiom_elems):
+        for entry_idiom in idiom_elems:
             pos_dict = parse_idiom_block(entry_idiom)
-            if pos_dict["wordPrototype"] or pos_dict["definitions"] or pos_dict["phrases"]:
+            if pos_dict.get("wordPrototype") or pos_dict.get("definitions") or pos_dict.get("phrases"):
                 # push a shallow copy to avoid引用
                 result["partOfSpeech"].append(dict(pos_dict))
     return result
@@ -348,6 +423,3 @@ if __name__ == "__main__":
     # 或直接用 URL
     # res2 = get_word_info("https://dictionary.cambridge.org/dictionary/english/methane")
     # print("By URL:", res2)
-
-
-

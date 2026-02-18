@@ -1,5 +1,9 @@
 {
   "projects": {
+    "Gone Girl": {
+      "project_dir": "data/source/Gone Girl",
+      "video_path": "/Volumes/PortableSSD/电影/Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD/Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD.mkv"
+    },
     "Dunkirk": {
       "project_dir": "data/source/Dunkirk",
       "video_path": "/Volumes/PortableSSD/电影/Dunkirk.2017.1080p.BluRay.x264.DTS-BYRHD/Dunkirk.2017.1080p.BluRay.x264.DTS-BYRHD.mkv"
