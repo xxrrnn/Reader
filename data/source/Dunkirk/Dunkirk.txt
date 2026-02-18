@@ -30,6 +30,74 @@ destroyers
 We don't have enough small boats to ferry men to the destroyers.
 Highlanders
 Right, Highlanders.
+minesweeper
+She's lining up to drop her load on that minesweeper.
+escort
+Where's the escort?
+ditching
+No, the swell looks good. I'm ditching.
+Torpedo
+Torpedo!
+capsize
+You men, leave off. You'll capsize the boat.
+rough
+Don't panic, boys. The water's not too rough
+Oars
+Oars in!
+lad
+Be a brave lad.
+Cadet
+Sea Cadet. It's the only thing I've ever done.
+piers
+The Royal Engineers are building piers from lorries.
+lorries
+The Royal Engineers are building piers from lorries.
+Vanquisher
+There. Vanquisher.
+spooked
+Probably got spooked after they ran aground.
+Scarpered
+Scarpered up the beach.
+Strapped
+Strapped him up, made him comfortable.
+Talkative
+Talkative sod, aren't you?
+sod
+Talkative sod, aren't you?
+ballast
+How do we get off? Do we need to ditch some ballast?
+daft
+Don't be daft.
+Jerry
+He's a fucking Jerry.
+sauerkraut
+If he does it's with an accent that's thicker than sauerkraut sauce.
+queue-jumping
+A cowardly little queue-jumping frog.
+decency
+Did you at least have the decency to bury him?
+bowels
+Fate pushed through the bowels of men.
+regimental
+We're regimental brothers, mate.
+trawler
+Grounded trawler, taking fire.
+tiller
+From the south. Peter, you take the tiller.
+bloke
+That old bloke wouldn't even look us in the eye.
+evacuations
+"Wars are not won by evacuations."
+deliverance
+"But there was a victory inside this deliverance,"
+thankfulness
+"Our thankfulness at the escape of our army"
+Belgium
+"in France and Belgium is a colossal military disaster."
+colossal
+"in France and Belgium is a colossal military disaster."
+Fleet
+"then our Empire beyond the seas, armed and guarded by the British Fleet,"
 
 
 
