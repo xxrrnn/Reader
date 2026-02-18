@@ -316,7 +316,7 @@ def build_example_with_image(image_filename: str, audio_filename: str,
     return example_html
 
 
-def build_blanked_example(sentence: str, target_word: str) -> str:
+def build_blanked_example(sentence: str, target_word: str, book_name: str = "Movie", timestamp: str = "") -> str:
     """构建Blanked_Examples字段"""
     from anki.anki import replace_alnum_with_underscores
     
@@ -331,7 +331,13 @@ def build_blanked_example(sentence: str, target_word: str) -> str:
     blanked_sentence = pattern.sub(replace_alnum_with_underscores, sentence)
     escaped_blanked = html.escape(blanked_sentence)
     
-    return f"<div class='example'><div class='example-text'>{escaped_blanked}</div></div>"
+    # 格式化时间戳
+    formatted_timestamp = format_timestamp(timestamp) if timestamp else ""
+    meta_text = f" — 《{html.escape(book_name)}》"
+    if formatted_timestamp:
+        meta_text += f" {formatted_timestamp}"
+    
+    return f"<div class='example'><div class='example-text'>{escaped_blanked}</div><div class='example-meta'>{meta_text}</div></div>"
 
 
 def get_word_prototype_and_pos(sentence: str, target_word: str) -> Tuple[str, str]:
@@ -480,6 +486,9 @@ def main():
     ass_file = base_dir / 'data' / 'source' / 'Tenet' / 'Tenet.2020.IMAX.1080p.BluRay.x264.DTS-HD.MA.5.1-FGT.简体&英文.ass'
     audio_dir = base_dir / 'data' / 'source' / 'Tenet' / 'audio'
     
+    # 从路径中提取 book_name
+    book_name = words_file.parent.name
+    
     # 解析文件
     print("正在解析单词文件...")
     words_sentences = parse_words_file(str(words_file))
@@ -558,8 +567,8 @@ def main():
                 continue
             
             # 7. 构建图片例句HTML和Blanked_Examples
-            image_html = build_example_with_image(image_filename, audio_filename, sentence, chinese_text)
-            blanked_html = build_blanked_example(sentence, word)
+            image_html = build_example_with_image(image_filename, audio_filename, sentence, chinese_text, book_name=book_name)
+            blanked_html = build_blanked_example(sentence, word, book_name=book_name)
             
             # 8. 添加或更新到Anki
             add_or_update_word_to_anki(DECK_NAME, word_info, image_html, blanked_html, audio_filename, sentence)

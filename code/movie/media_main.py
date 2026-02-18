@@ -355,7 +355,7 @@ def main():
             # 6. 构建图片例句HTML和Blanked_Examples
             image_html = build_example_with_image(image_filename, audio_filename, sentence, chinese_text_for_anki, 
                                                  book_name=book_name, timestamp=timestamp)
-            blanked_html = build_blanked_example(sentence, word)
+            blanked_html = build_blanked_example(sentence, word, book_name=book_name, timestamp=timestamp)
             
             # 7. 添加或更新到Anki
             add_or_update_word_to_anki(deck_name, word_info, image_html, blanked_html, audio_filename, sentence, book_name=book_name)
