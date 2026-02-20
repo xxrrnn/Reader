@@ -126,6 +126,20 @@ def main():
     chinese_font_size = config.get('chinese_font_size', 60)
     english_font_size = config.get('english_font_size', 50)
     
+    # 句子来源配置
+    sentence_source = config.get('sentence_source', 'txt').lower()
+    if sentence_source not in ['txt', 'subtitle']:
+        print(f"警告: sentence_source 配置值 '{sentence_source}' 无效，使用默认值 'txt'")
+        sentence_source = 'txt'
+    print(f"英文句子来源: {'txt文件下一行' if sentence_source == 'txt' else '字幕文件'}")
+    
+    # 词形还原方法配置
+    lemmatization_methods = config.get('lemmatization_methods', ['nltk_spacy', 'spacy', 'normalization'])
+    if not isinstance(lemmatization_methods, list):
+        print(f"警告: lemmatization_methods 配置无效，使用默认值")
+        lemmatization_methods = ['nltk_spacy', 'spacy', 'normalization']
+    print(f"词形还原方法顺序: {', '.join(lemmatization_methods)}")
+    
     # 音频配置
     audio_config = config.get('audio', {})
     normalize_volume = audio_config.get('normalize_volume', True)
@@ -260,15 +274,23 @@ def main():
                 fail_count += 1
                 continue
             
-            start_time_str, end_time_str, chinese_text, english_text = match
+            start_time_str, end_time_str, chinese_text, english_text_from_subtitle = match
             start_seconds = time_to_seconds(start_time_str)
             end_seconds = time_to_seconds(end_time_str)
+            
+            # 根据配置选择英文句子来源
+            if sentence_source == 'subtitle' and english_text_from_subtitle and english_text_from_subtitle.strip():
+                english_sentence = english_text_from_subtitle.strip()
+            else:  # 'txt' 或字幕为空时回退到 txt
+                english_sentence = sentence
+                if sentence_source == 'subtitle' and not english_text_from_subtitle:
+                    print(f"  [警告] 字幕文件中未找到英文文本，使用txt文件中的句子")
             
             print(f"  找到匹配字幕:")
             print(f"    时间: {start_time_str} -> {end_time_str}")
             if chinese_text:
                 print(f"    中文: {chinese_text}")
-            print(f"    英文: {english_text}")
+            print(f"    英文: {english_sentence}")
             
             # 生成输出文件名（数字在前，按照txt顺序）
             audio_output_path = audio_dir / f"{file_num:02d}_{safe_word}.mp3"
@@ -297,8 +319,8 @@ def main():
                 continue
             print(f"  [成功] 截图: {screenshot_output_path.name}")
             
-            # 添加字幕
-            if not add_subtitle_to_image(str(screenshot_output_path), chinese_text, english_text,
+            # 添加字幕（根据配置选择英文句子来源）
+            if not add_subtitle_to_image(str(screenshot_output_path), chinese_text, english_sentence,
                                       chinese_font_size, english_font_size):
                 print(f"  [警告] 添加字幕失败，继续处理")
             
@@ -308,32 +330,29 @@ def main():
             image_filename = screenshot_output_path.name
             audio_filename = audio_output_path.name
             
-            # 1. 使用NLP获取单词原型和词性
-            prototype, pos = get_word_prototype_and_pos(sentence, word)
+            # 1. 使用NLP获取单词原型和词性（使用选择的英文句子）
+            prototype, pos = get_word_prototype_and_pos(english_sentence, word, methods=lemmatization_methods)
             print(f"  原型: {prototype}, 词性: {pos}")
             
             # 2. 从Cambridge Dictionary获取单词信息
             print(f"  正在从Cambridge Dictionary获取信息...")
             word_info = get_word_info_by_word(prototype, sleep=0.5)
             
-            if not word_info or not word_info.get("partOfSpeech"):
-                print(f"  [警告] 未获取到单词信息，使用基本信息")
-                word_info = {
-                    "word": prototype,
-                    "wordUrl": "",
-                    "partOfSpeech": [{
-                        "type": pos,
-                        "wordPrototype": prototype,
-                        "pronunciationUK": {"phonetic": "", "pronUrl": ""},
-                        "pronunciationUS": {"phonetic": "", "pronUrl": ""},
-                        "definitions": [],
-                        "phrases": [],
-                        "phraseDefinitions": []
-                    }]
-                }
+            # 检查 word_info 是否有效
+            from movie.import_to_anki import is_word_info_valid
+            is_valid, error_msg = is_word_info_valid(word_info)
+            if not is_valid:
+                print(f"  [错误] 无法获取单词信息: {error_msg}")
+                print(f"  [错误] 单词 '{prototype}' 可能不存在于 Cambridge Dictionary 或网络请求失败")
+                fail_count += 1
+                continue
             
-            # 3. 从ASS文件获取中文翻译
-            chinese_text_for_anki = find_chinese_for_sentence(sentence, dialogues_map)
+            # 确保 word_info 有 word 字段
+            if not word_info.get("word"):
+                word_info["word"] = prototype
+            
+            # 3. 从ASS文件获取中文翻译（使用选择的英文句子）
+            chinese_text_for_anki = find_chinese_for_sentence(english_sentence, dialogues_map)
             
             # 4. 存储媒体文件到Anki
             print(f"  图片: {image_filename}")
@@ -352,13 +371,13 @@ def main():
             # 5. 获取时间戳（从ASS文件中查找）
             timestamp = start_time_str
             
-            # 6. 构建图片例句HTML和Blanked_Examples
-            image_html = build_example_with_image(image_filename, audio_filename, sentence, chinese_text_for_anki, 
+            # 6. 构建图片例句HTML和Blanked_Examples（使用选择的英文句子）
+            image_html = build_example_with_image(image_filename, audio_filename, english_sentence, chinese_text_for_anki, 
                                                  book_name=book_name, timestamp=timestamp)
-            blanked_html = build_blanked_example(sentence, word, book_name=book_name, timestamp=timestamp)
+            blanked_html = build_blanked_example(english_sentence, word, book_name=book_name, timestamp=timestamp)
             
-            # 7. 添加或更新到Anki
-            add_or_update_word_to_anki(deck_name, word_info, image_html, blanked_html, audio_filename, sentence, book_name=book_name)
+            # 7. 添加或更新到Anki（使用选择的英文句子）
+            add_or_update_word_to_anki(deck_name, word_info, image_html, blanked_html, audio_filename, english_sentence, book_name=book_name)
             print(f"  [成功] 单词已导入到Anki")
             success_count += 1
             

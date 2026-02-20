@@ -340,10 +340,117 @@ def build_blanked_example(sentence: str, target_word: str, book_name: str = "Mov
     return f"<div class='example'><div class='example-text'>{escaped_blanked}</div><div class='example-meta'>{meta_text}</div></div>"
 
 
-def get_word_prototype_and_pos(sentence: str, target_word: str) -> Tuple[str, str]:
+def normalize_verb(word: str) -> str:
     """
-    使用NLP获取单词的原型和词性
-    返回: (prototype, pos)
+    一般规范化规则：处理常见的动词形式
+    返回: 规范化后的单词
+    """
+    word_lower = word.lower()
+    
+    # 规则1: -ing 结尾的动词
+    if word_lower.endswith('ing') and len(word_lower) > 3:
+        base = word_lower[:-3]  # 去掉 'ing'
+        
+        # 如果以 'e' 结尾，去掉 'e'（如 unspooling -> unspool）
+        if base.endswith('e'):
+            return base[:-1]
+        # 如果以双辅音结尾，去掉一个（如 running -> run）
+        elif len(base) > 2 and base[-1] == base[-2] and base[-1] in 'bcdfghjklmnpqrstvwxz':
+            return base[:-1]
+        else:
+            return base
+    
+    # 规则2: -ed 结尾的动词
+    if word_lower.endswith('ed') and len(word_lower) > 2:
+        base = word_lower[:-2]
+        if base.endswith('e'):
+            return base[:-1]
+        # 如果以双辅音结尾，去掉一个
+        elif len(base) > 2 and base[-1] == base[-2] and base[-1] in 'bcdfghjklmnpqrstvwxz':
+            return base[:-1]
+        return base
+    
+    # 规则3: -s 结尾（第三人称单数）
+    if word_lower.endswith('s') and len(word_lower) > 1:
+        base = word_lower[:-1]
+        if base.endswith('e'):
+            return base[:-1]
+        return base
+    
+    # 规则4: -es 结尾
+    if word_lower.endswith('es') and len(word_lower) > 2:
+        base = word_lower[:-2]
+        return base
+    
+    return word_lower
+
+
+def lemmatize_with_nltk_spacy(sentence: str, target_word: str) -> Optional[Tuple[str, str]]:
+    """
+    方法1: 使用 NLTK WordNetLemmatizer + spaCy 词性标注
+    返回: (prototype, pos) 或 None
+    """
+    try:
+        from nltk.stem import WordNetLemmatizer
+        from nltk.corpus import wordnet
+        
+        # 初始化 lemmatizer（可以缓存）
+        if not hasattr(lemmatize_with_nltk_spacy, 'lemmatizer'):
+            try:
+                lemmatize_with_nltk_spacy.lemmatizer = WordNetLemmatizer()
+            except LookupError:
+                # WordNet 数据未下载
+                import nltk
+                try:
+                    nltk.download('wordnet', quiet=True)
+                    lemmatize_with_nltk_spacy.lemmatizer = WordNetLemmatizer()
+                except Exception as e:
+                    print(f"  [警告] NLTK WordNet 未安装: {e}")
+                    return None
+        
+        lemmatizer = lemmatize_with_nltk_spacy.lemmatizer
+        
+        # 词性映射
+        def convert_spacy_pos_to_wordnet(spacy_pos: str) -> str:
+            mapping = {
+                'VERB': wordnet.VERB,
+                'NOUN': wordnet.NOUN,
+                'ADJ': wordnet.ADJ,
+                'ADV': wordnet.ADV,
+            }
+            return mapping.get(spacy_pos, wordnet.NOUN)
+        
+        # 使用 spaCy 获取词性
+        doc = nlp(sentence)
+        for token in doc:
+            if token.text.lower() == target_word.lower():
+                pos = token.pos_
+                
+                # 如果是动词，使用 WordNetLemmatizer
+                if pos == "VERB":
+                    wordnet_pos = convert_spacy_pos_to_wordnet(pos)
+                    prototype = lemmatizer.lemmatize(target_word.lower(), pos=wordnet_pos)
+                    
+                    # 如果 WordNet 返回原词（可能不在词典中），认为失败
+                    if prototype != target_word.lower():
+                        return prototype, pos
+                else:
+                    # 非动词，直接返回原词
+                    return token.text, pos
+        
+        return None
+    except ImportError:
+        print(f"  [警告] NLTK 未安装，跳过 NLTK+spaCy 方法")
+        return None
+    except Exception as e:
+        print(f"  [警告] NLTK+spaCy 方法失败: {e}")
+        return None
+
+
+def lemmatize_with_spacy(sentence: str, target_word: str) -> Optional[Tuple[str, str]]:
+    """
+    方法2: 使用纯 spaCy 词形还原
+    返回: (prototype, pos) 或 None
     """
     try:
         doc = nlp(sentence)
@@ -352,13 +459,88 @@ def get_word_prototype_and_pos(sentence: str, target_word: str) -> Tuple[str, st
                 pos = token.pos_
                 if pos == "VERB":
                     prototype = token.lemma_
+                    # 修正常见的错误：-ing 结尾的动词，lemma 以 e 结尾
+                    if target_word.lower().endswith('ing') and prototype.lower().endswith('e'):
+                        base = target_word.lower()[:-3]  # 去掉 'ing'
+                        if base == prototype.lower()[:-1]:  # 去掉 'e'
+                            prototype = base
+                    return prototype, pos
                 else:
-                    prototype = token.text
-                return prototype, pos
+                    return token.text, pos
+        return None
     except Exception as e:
-        print(f"  [警告] NLP分析失败: {e}")
+        print(f"  [警告] spaCy 方法失败: {e}")
+        return None
+
+
+def lemmatize_with_normalization(sentence: str, target_word: str) -> Optional[Tuple[str, str]]:
+    """
+    方法3: 使用一般规范化规则
+    返回: (prototype, pos) 或 None
+    """
+    try:
+        # 先尝试用 spaCy 获取词性
+        doc = nlp(sentence)
+        pos = None
+        for token in doc:
+            if token.text.lower() == target_word.lower():
+                pos = token.pos_
+                break
+        
+        # 如果是动词，使用规范化规则
+        if pos == "VERB":
+            prototype = normalize_verb(target_word)
+            # 如果规范化后与原词不同，认为成功
+            if prototype != target_word.lower():
+                return prototype, pos
+        
+        # 非动词或规范化失败，返回 None
+        return None
+    except Exception as e:
+        print(f"  [警告] 规范化方法失败: {e}")
+        return None
+
+
+def get_word_prototype_and_pos(sentence: str, target_word: str, 
+                               methods: List[str] = None) -> Tuple[str, str]:
+    """
+    使用多种方法获取单词的原型和词性
+    按配置顺序依次尝试，成功一个后停止
     
-    # 回退：直接使用目标词
+    Args:
+        sentence: 包含目标词的句子
+        target_word: 目标单词
+        methods: 方法列表，可选。如果为 None，使用默认顺序
+    
+    Returns:
+        (prototype, pos)
+    """
+    if methods is None:
+        methods = ["nltk_spacy", "spacy", "normalization"]
+    
+    # 方法映射
+    method_map = {
+        "nltk_spacy": lemmatize_with_nltk_spacy,
+        "spacy": lemmatize_with_spacy,
+        "normalization": lemmatize_with_normalization,
+    }
+    
+    # 依次尝试每种方法
+    for method_name in methods:
+        if method_name not in method_map:
+            print(f"  [警告] 未知的方法: {method_name}，跳过")
+            continue
+        
+        method_func = method_map[method_name]
+        result = method_func(sentence, target_word)
+        
+        if result is not None:
+            prototype, pos = result
+            print(f"  [成功] 使用方法 '{method_name}': {prototype}, 词性: {pos}")
+            return prototype, pos
+    
+    # 所有方法都失败，回退到原始单词
+    print(f"  [回退] 所有方法失败，使用原始单词: {target_word}")
     return target_word, ""
 
 
@@ -389,6 +571,39 @@ def check_if_example_exists(deck_name: str, word_prototype: str, image_filename:
     return False  # 例句不存在
 
 
+def is_word_info_valid(word_info: Dict[str, Any]) -> Tuple[bool, str]:
+    """
+    检查 word_info 是否有效
+    返回: (is_valid, error_message)
+    """
+    if not word_info:
+        return False, "word_info 为空（None 或空字典）"
+    
+    if not isinstance(word_info, dict):
+        return False, f"word_info 类型错误: {type(word_info)}"
+    
+    pos_list = word_info.get("partOfSpeech") or []
+    if not pos_list:
+        return False, "word_info 中没有 partOfSpeech 字段或为空"
+    
+    # 检查是否有有效的 partOfSpeech（至少有一个包含 wordPrototype、definitions 或 phrases）
+    has_valid_pos = False
+    for pos in pos_list:
+        if pos.get("wordPrototype") or pos.get("definitions") or pos.get("phrases"):
+            has_valid_pos = True
+            break
+    
+    if not has_valid_pos:
+        # 检查是否有 word 字段
+        word = word_info.get("word", "").strip()
+        if not word:
+            return False, "word_info 无效：partOfSpeech 中没有任何有效内容（wordPrototype、definitions、phrases 都为空），且没有 word 字段"
+        # 如果有 word 字段，至少可以创建基本笔记
+        return True, ""
+    
+    return True, ""
+
+
 def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any], 
                                image_html: str, blanked_html: str, audio_filename: str,
                                sentence: str = None, book_name: str = "Movie"):
@@ -396,10 +611,29 @@ def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any],
     添加或更新单词到Anki
     如果单词已存在，则添加例句；否则创建新笔记
     """
+    # 首先检查 word_info 是否有效
+    is_valid, error_msg = is_word_info_valid(word_info)
+    if not is_valid:
+        print(f"  [错误] word_info 无效: {error_msg}")
+        print(f"  [错误] 跳过导入，请检查单词 '{sentence.split()[0] if sentence else 'unknown'}' 是否正确")
+        return
+    
     # 获取单词原型
     pos_list = word_info.get("partOfSpeech") or []
     primary_pos = pos_list[0] if pos_list else {}
     word_prototype = (primary_pos.get("wordPrototype") or word_info.get("word") or "").strip()
+    
+    # 如果 word_prototype 为空，尝试从 sentence 中提取单词
+    if not word_prototype and sentence:
+        # 从句子中提取第一个单词作为原型
+        first_word = sentence.split()[0] if sentence.split() else ""
+        word_prototype = re.sub(r'[^\w\s-]', '', first_word).strip()
+    
+    # 如果仍然为空，报错
+    if not word_prototype:
+        print(f"  [错误] 无法确定单词原型，跳过导入")
+        print(f"  [错误] word_info: {word_info}")
+        return
     
     # 构建字段
     fields = build_html_from_word_info(word_info)
@@ -454,6 +688,24 @@ def add_or_update_word_to_anki(deck_name: str, word_info: Dict[str, Any],
             tags = "phrase"
         else:
             tags = "word"
+        
+        # 检查必填字段是否为空
+        if not word_prototype:
+            print(f"  [错误] Word 字段为空，无法创建笔记")
+            return
+        
+        # 确保至少有一个非空字段（除了 Word）
+        has_content = any([
+            fields.get("Pronunciation", ""),
+            fields.get("Definition", ""),
+            fields.get("POS_Definitions", ""),
+            fields.get("Examples", ""),
+            fields.get("Blanked_Examples", "")
+        ])
+        
+        if not has_content:
+            print(f"  [错误] 所有字段都为空，无法创建笔记")
+            return
         
         note = {
             "deckName": deck_name,

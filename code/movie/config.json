@@ -24,5 +24,11 @@
   "audio": {
     "normalize_volume": true,
     "reference_audio": "data/source/reference.mp3"
+  },
+  "sentence_source": "txt",
+  "lemmatization_methods": ["spacy","nltk_spacy",  "normalization"],
+  "comment": {
+    "sentence_source": "选择英文句子来源: 'txt' 表示从txt文件的下一行获取, 'subtitle' 表示从字幕文件获取",
+    "lemmatization_methods": "词形还原方法顺序: 'nltk_spacy'(NLTK+spaCy组合,最准确), 'spacy'(纯spaCy), 'normalization'(一般规范化规则如去除-ing)"
   }
 }
