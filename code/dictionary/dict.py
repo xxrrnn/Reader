@@ -4,8 +4,9 @@
 # %%
 import requests
 from bs4 import BeautifulSoup
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Set, Tuple
 import time
+import re
 
 DEFAULT_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -22,6 +23,11 @@ default_part_of_speech = {
     "phrases": [],
     "phraseDefinitions": []
 }
+
+SPELLING_OF_PATTERN = re.compile(
+    r"\b(?:mainly\s+)?(?:US|UK|British|American|Australian|Canadian)?\s*spelling of\s+([A-Za-z][A-Za-z\- '\u2019]{0,80})",
+    re.IGNORECASE
+)
 
 
 def fetch_html(url: str, headers: Optional[Dict] = None, timeout: int = 10) -> Optional[str]:
@@ -140,6 +146,91 @@ def _new_part_of_speech() -> Dict:
 def _is_non_empty_pos(pos: Dict) -> bool:
     """判断词性结构是否包含有效内容。"""
     return bool(pos.get("wordPrototype") or pos.get("definitions") or pos.get("phrases"))
+
+
+def _clean_spelling_target(raw: str) -> str:
+    """清洗 'spelling of xxx' 中提取到的目标词。"""
+    if not raw:
+        return ""
+    target = " ".join(raw.split())
+    # 去掉尾部的地区标签（如 UK/US/British）
+    target = re.sub(r"\b(?:UK|US|British|American|Australian|Canadian)\b\s*$", "", target, flags=re.IGNORECASE).strip()
+    # 仅保留常见单词字符，避免把解释文本一并抓进来
+    target = re.sub(r"[^A-Za-z\- '\u2019]", "", target).strip(" -")
+    return target
+
+
+def _extract_spelling_targets(part_of_speech: List[Dict], source_word: str) -> List[str]:
+    """
+    从释义中提取 'US/UK spelling of xxx' 的目标词。
+    保留顺序并去重。
+    """
+    source_l = (source_word or "").strip().lower()
+    targets: List[str] = []
+    seen: Set[str] = set()
+
+    for pos in part_of_speech or []:
+        for ddef in pos.get("definitions", []) or []:
+            en = (ddef.get("enMeaning") or ddef.get("en") or "").strip()
+            if not en:
+                continue
+            normalized = " ".join(en.split())
+            match = SPELLING_OF_PATTERN.search(normalized)
+            if not match:
+                continue
+            target = _clean_spelling_target(match.group(1))
+            if not target:
+                continue
+            key = target.lower()
+            if key == source_l or key in seen:
+                continue
+            seen.add(key)
+            targets.append(target)
+
+    return targets
+
+
+def _pos_signature(pos: Dict) -> Tuple:
+    """用于判断两个 part-of-speech 是否相同的签名。"""
+    defs = tuple(
+        sorted(
+            (
+                (d.get("enMeaning") or d.get("en") or "").strip(),
+                (d.get("chMeaning") or d.get("ch") or "").strip()
+            )
+            for d in (pos.get("definitions") or [])
+        )
+    )
+    phrase_defs = tuple(
+        sorted(
+            (
+                (d.get("enMeaning") or d.get("en") or "").strip(),
+                (d.get("chMeaning") or d.get("ch") or "").strip()
+            )
+            for d in (pos.get("phraseDefinitions") or [])
+        )
+    )
+    phrases = tuple(sorted(((p or "").strip() for p in (pos.get("phrases") or []))))
+    return (
+        (pos.get("type") or "").strip(),
+        (pos.get("wordPrototype") or "").strip(),
+        defs,
+        phrases,
+        phrase_defs,
+    )
+
+
+def _merge_part_of_speech(base_parts: List[Dict], extra_parts: List[Dict]) -> None:
+    """将 extra_parts 合并到 base_parts，避免重复项。"""
+    seen = {_pos_signature(p) for p in base_parts if _is_non_empty_pos(p)}
+    for p in extra_parts or []:
+        if not _is_non_empty_pos(p):
+            continue
+        sig = _pos_signature(p)
+        if sig in seen:
+            continue
+        seen.add(sig)
+        base_parts.append(dict(p))
 
 
 def _nearest_pos_body(node):
@@ -366,13 +457,30 @@ def get_word_info_from_url(url: str, sleep: float = 0.0) -> Dict:
     return result
 
 
-def get_word_info_by_word(word: str, sleep: float = 0.0) -> Dict:
+def get_word_info_by_word(
+    word: str,
+    sleep: float = 0.0,
+    _visited: Optional[Set[str]] = None,
+    _depth: int = 0,
+    _max_spelling_expand_depth: int = 1
+) -> Dict:
     """
     用单词尝试两个可能的 Cambridge Dictionary 路径，返回第一个包含有效内容的 page results。
     """
+    query_word = (word or "").strip()
+    if not query_word:
+        return {"wordUrl": "", "partOfSpeech": [default_part_of_speech.copy()]}
+
+    if _visited is None:
+        _visited = set()
+    lower_word = query_word.lower()
+    if lower_word in _visited:
+        return {"wordUrl": "", "partOfSpeech": [default_part_of_speech.copy()]}
+    _visited.add(lower_word)
+
     url_list = [
-        f"https://dictionary.cambridge.org/dictionary/english-chinese-simplified/{word}",
-        f"https://dictionary.cambridge.org/dictionary/english/{word}"
+        f"https://dictionary.cambridge.org/dictionary/english-chinese-simplified/{query_word}",
+        f"https://dictionary.cambridge.org/dictionary/english/{query_word}"
     ]
     for url in url_list:
         res = get_word_info_from_url(url, sleep=sleep)
@@ -384,6 +492,22 @@ def get_word_info_by_word(word: str, sleep: float = 0.0) -> Dict:
                 for p in res["partOfSpeech"]
             )
             if non_empty:
+                # 处理类似“US spelling of litre”的词条：
+                # 保留原结果，并补抓指向词（如 litre）的完整释义。
+                if _depth < _max_spelling_expand_depth:
+                    targets = _extract_spelling_targets(res.get("partOfSpeech", []), query_word)
+                    for target in targets:
+                        extra = get_word_info_by_word(
+                            target,
+                            sleep=sleep,
+                            _visited=_visited,
+                            _depth=_depth + 1,
+                            _max_spelling_expand_depth=_max_spelling_expand_depth
+                        )
+                        _merge_part_of_speech(
+                            res["partOfSpeech"],
+                            extra.get("partOfSpeech", [])
+                        )
                 return res
     # 都没有抓到有效信息，返回占位
     return {"wordUrl": "", "partOfSpeech": [default_part_of_speech.copy()]}
