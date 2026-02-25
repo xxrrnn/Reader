@@ -30,7 +30,7 @@ from anki.anki import MODEL_NAME, ensure_model_and_deck
 
 
 def load_config(config_path: Path = None) -> dict:
-    """加载配置文件"""
+    """加载配置文件，支持 /**/ 注释"""
     if config_path is None:
         config_path = Path(__file__).parent / 'config.json'
     
@@ -38,9 +38,42 @@ def load_config(config_path: Path = None) -> dict:
         raise FileNotFoundError(f"配置文件不存在: {config_path}")
     
     with open(config_path, 'r', encoding='utf-8') as f:
-        config = json.load(f)
+        content = f.read()
     
+    # 移除 /**/ 格式的注释
+    content = remove_json_comments(content)
+    
+    config = json.loads(content)
     return config
+
+
+def remove_json_comments(text: str) -> str:
+    """
+    移除 JSON 文本中的 /**/ 格式注释
+    支持多行注释和单行注释
+    """
+    import re
+    
+    # 正则表达式匹配 /**/ 注释（包括多行）
+    # \/\* 匹配 /*
+    # .*? 非贪婪匹配任意字符（包括换行符）
+    # \*\/ 匹配 */
+    pattern = r'/\*\*?.*?\*/'
+    
+    # 使用 DOTALL 标志使 . 可以匹配换行符
+    cleaned_text = re.sub(pattern, '', text, flags=re.DOTALL)
+    
+    # 清理多余的空行和空格
+    lines = cleaned_text.split('\n')
+    cleaned_lines = []
+    
+    for line in lines:
+        stripped = line.strip()
+        if stripped or (cleaned_lines and cleaned_lines[-1].strip()):
+            # 保留非空行，或者在非空行后面的空行
+            cleaned_lines.append(line)
+    
+    return '\n'.join(cleaned_lines)
 
 
 def find_files_in_dir(directory: Path, extensions: list) -> list:

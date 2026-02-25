@@ -1,8 +1,11 @@
 {
+  /** 配置文件 - 电影字幕与音频处理项目 */
   "projects": {
+    /** 项目配置 - 包含各个电影项目的路径信息 */
     "Gone Girl": {
       "project_dir": "data/source/Gone Girl",
-      "video_path": "/Volumes/PortableSSD/电影/Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD/Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD.mkv"
+      /** 备用视频路径: "/Volumes/PortableSSD/电影/Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD/Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD.mkv" */
+      "video_path": "E:\\电影\\Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD\\Gone.Girl.2014.1080p.BluRay.DTS-ES.x264-VietHD.mkv"
     },
     "Dunkirk": {
       "project_dir": "data/source/Dunkirk",
@@ -17,18 +20,28 @@
       "video_path": "G:\\BYR\\Interstellar 2014 IMAX Edition 720p BluRay DTS x264-TayTO.mkv"
     }
   },
+  
+  /** 默认使用的项目名称 */
   "default_project": "Tenet",
+  
+  /** Anki 牌组名称 */
   "deck_name": "Media",
+  
+  /** 字体设置 */
   "chinese_font_size": 60,
   "english_font_size": 50,
+  
+  /** 音频处理配置 */
   "audio": {
+    /** 是否标准化音量 */
     "normalize_volume": true,
+    /** 参考音频文件路径 */
     "reference_audio": "data/source/reference.mp3"
   },
+  
+  /** 句子来源设置: 'txt' 表示从txt文件的下一行获取, 'subtitle' 表示从字幕文件获取 */
   "sentence_source": "txt",
-  "lemmatization_methods": ["spacy","nltk_spacy",  "normalization"],
-  "comment": {
-    "sentence_source": "选择英文句子来源: 'txt' 表示从txt文件的下一行获取, 'subtitle' 表示从字幕文件获取",
-    "lemmatization_methods": "词形还原方法顺序: 'nltk_spacy'(NLTK+spaCy组合,最准确), 'spacy'(纯spaCy), 'normalization'(一般规范化规则如去除-ing)"
-  }
+  
+  /** 词形还原方法顺序: 'nltk_spacy'(NLTK+spaCy组合,最准确), 'spacy'(纯spaCy), 'normalization'(一般规范化规则如去除-ing) */
+  "lemmatization_methods": ["spacy", "nltk_spacy", "normalization"]
 }
